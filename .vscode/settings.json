@@ -1,0 +1,10 @@
+{
+    "spellright.language": [
+        "da"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ]
+}

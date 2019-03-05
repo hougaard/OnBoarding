@@ -1,0 +1,23 @@
+{
+  "id": "7afe78e7-5bc0-4652-814f-348be24ed6ba",
+  "name": "OnBoarding",
+  "publisher": "Erik Hougaard",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "idRange": {
+    "from": 92100,
+    "to": 92149
+  },
+  "runtime": "2.3"
+}

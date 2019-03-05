@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Your own server",
+            "server": "http://bcca",
+            "serverInstance": "nav",
+            "authentication": "UserPassword",
+            "startupObjectId": 92107,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "schemaUpdateMode": "Recreate"
+        }
+    ]
+}
