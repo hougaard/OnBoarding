@@ -32,8 +32,19 @@ page 92100 "Package List"
     {
         area(Processing)
         {
+            action(UpdatePackageList)
+            {
+                ApplicationArea = All;
+                trigger OnAction()
+                var
+                    OnMgt: Codeunit "OnBoarding Management";
+                begin
+                    OnMgt.GetPackages();
+                end;
+            }
             action(CreatePackage)
             {
+                ApplicationArea = All;
                 trigger OnAction()
                 var
                     PackageMgt: Codeunit "Onboarding Package Export";

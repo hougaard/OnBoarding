@@ -14,6 +14,9 @@ codeunit 92100 "Onboarding Package Export"
         T: Record AllObjWithCaption;
         i: Integer;
         PackageTxt: Text;
+        http: HttpClient;
+        Content: HttpContent;
+        response: HttpResponseMessage;
     begin
         T.SETRANGE("Object Type", T."Object Type"::Table);
         T.SETFILTER("Object ID", TableFilter);
@@ -30,7 +33,15 @@ codeunit 92100 "Onboarding Package Export"
         Info.Add('Version', VersionTxt);
         J.Add('Info', Info);
         J.AsToken().WriteTo(PackageTxt);
-        MEssage('Json=%1', PackageTxt);
+        Content.WriteFrom(PackageTxt);
+        if http.Post('http://10.3.1.13:9999/' +
+                          PackageID + '_' +
+                          Country + '_' +
+                          VersionTxt, Content, response) then begin
+            if response.HttpStatusCode() <> 200 then
+                ERROR('Cannot contact package receiver');
+        end;
+        //MEssage('Json=%1', PackageTxt);
     end;
 
     procedure TableToJson(TableNo: Integer): JsonObject
@@ -43,33 +54,66 @@ codeunit 92100 "Onboarding Package Export"
         T.OPEN(TableNo);
         if T.FINDSET then
             repeat
-                JA.Insert(i, RecToJson(T));
+                JA.Insert(i, RecToJson(T, true));
                 i += 1;
             until T.Next = 0;
         O.Add('T' + FORMAT(TableNo), JA);
         exit(O);
     end;
 
-    procedure RecToJson(R: RecordRef): JsonObject
+    procedure RecToJson(R: RecordRef; HandleTags: Boolean): JsonObject
     var
         J: JsonObject;
         f: FieldRef;
         i: Integer;
+        GL: Record "G/L Account";
+        NS: Record "No. Series";
+        RecRef: RecordRef;
     begin
         for i := 1 to R.FieldCount() do begin
             f := R.FieldIndex(i);
-            case F.Relation() of
-                15:
-                    begin
-
-                    END;
-                308:
-                    begin
-
-                    end;
-                else
-                    J.Add('f' + format(f.Number()), format(f.Value));
-            end;
-            exit(J);
+            if HandleTags then begin
+                case F.Relation() of
+                    15:
+                        begin
+                            if GL.GET(f.Value) then begin
+                                // J.Add('f' + format(f.Number()),
+                                //         '@G(' +
+                                //         GL."No." +
+                                //         ',' +
+                                //         GL.Name + ')');
+                                RecRef.GetTable(GL);
+                                J.Add('f' + format(f.Number()), RecToJson(RecRef, false));
+                            end else
+                                J.Add('f' + format(f.Number()),
+                                        '@G(f' +
+                                        format(f.Number) +
+                                        ',' +
+                                        f.Caption() + ')');
+                        END;
+                    308:
+                        begin
+                            if NS.Get(f.Value) then begin
+                                // J.Add('f' + format(f.Number()),
+                                //         '@N(' +
+                                //         Ns.Code +
+                                //         ',' +
+                                //         NS.Description + ')')
+                                RecRef.GetTable(NS);
+                                J.Add('f' + format(f.Number()), RecToJson(RecRef, false));
+                            end else
+                                J.Add('f' + format(f.Number()),
+                                        '@N(f' +
+                                        format(f.Number) +
+                                        ',' +
+                                        f.Caption() + ')');
+                        end;
+                    else
+                        J.Add('f' + format(f.Number()), format(f.Value));
+                end;
+            end else
+                J.Add('f' + format(f.Number()), format(f.Value));
         end;
+        exit(J);
+    end;
 }

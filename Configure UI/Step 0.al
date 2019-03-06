@@ -13,7 +13,7 @@ page 92107 "OnBoarding Step 0"
                 label(Welcome)
                 {
                     ApplicationArea = All;
-                    Caption = 'OnBoarding is a tool that will let select setup for the entire system.';
+                    Caption = 'OnBoarding is a tool that will let you select setup for the entire system in one easy operation.';
                 }
                 label(What)
                 {
@@ -32,6 +32,12 @@ page 92107 "OnBoarding Step 0"
     {
         area(Processing)
         {
+            action(Setup)
+            {
+                ApplicationArea = All;
+                InFooterBar = true;
+                RunObject = Page "Package List";
+            }
             action(Start)
             {
                 ApplicationArea = All;

@@ -27,7 +27,7 @@ table 92102 "OnBoarding Field"
     }
     keys
     {
-        key(PK; "Package ID", "Table No.", "Field No.")
+        key(PK; "Package ID", "Table No.", "Record No.", "Field No.")
         { }
     }
 }
