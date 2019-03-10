@@ -122,9 +122,62 @@ codeunit 92101 "OnBoarding Management"
                 Keys.Get(i, FieldNoTxt);
                 Evaluate(FieldNo, copystr(FieldNoTxt, 2));
                 FieldRec."Field No." := FieldNo;
-                FieldRec."Field Value" := jField.AsValue().AsText();
+                case FieldNoTxt[1] of
+                    'f':
+                        FieldRec."Field Value" := jField.AsValue().AsText();
+                    'G':
+                        begin
+                            FieldRec."Field Value" := CreateTag(PackageID, 'G', jField);
+                        END;
+                    'N':
+                        begin
+                            FieldRec."Field Value" := CreateTag(PackageID, 'N', jField);
+                        end;
+                end;
                 FieldRec.INSERT;
             end;
+        end;
+    end;
+
+    procedure CreateTag(PackageID: Text; TagType: Text; jField: JsonToken): Text;
+    var
+        Tag: Record "Package Tag";
+    begin
+        case TagType of
+            'G':
+                begin
+                    /*
+                    Yes	8	Account Category	Option		
+                    Yes	9	Income/Balance	Option		
+                    Yes	14	Direct Posting	Boolean		
+                    Yes	16	Reconciliation Account	Boolean		
+                    Yes	43	Gen. Posting Type	Option		
+                    Yes	44	Gen. Bus. Posting Group	Code	20	
+                    Yes	45	Gen. Prod. Posting Group	Code	20	
+                    Yes	54	Tax Area Code	Code	20	
+                    Yes	55	Tax Liable	Boolean		
+                    Yes	56	Tax Group Code	Code	20	
+                    Yes	57	VAT Bus. Posting Group	Code	20	
+                    Yes	58	VAT Prod. Posting Group	Code	20	
+                    */
+                    Tag.INIT;
+                    Tag."Package ID" := PackageID;
+                    Tag.Tag := '@' + TagType + GetTextFromToken(jField, 'f1');
+                    Tag."Tag Type" := Tag."Tag Type"::"G/L Account";
+                    Tag.Description := GetTextFromToken(jField, 'f2');
+                    Tag.Groups := GetTextFromToken(jField, 'Totals');
+                    if Tag.INSERT then;
+                end;
+            'N':
+                begin
+                    Tag.INIT;
+                    Tag."Package ID" := PackageID;
+                    Tag.Tag := '@' + TagType + GetTextFromToken(jField, 'f1');
+                    Tag."Tag Type" := Tag."Tag Type"::"No. Series";
+                    Tag.Description := GetTextFromToken(jField, 'f2');
+                    if Tag.INSERT then;
+
+                end;
         end;
     end;
 
@@ -144,12 +197,13 @@ codeunit 92101 "OnBoarding Management"
     var
         Step1: Page "OnBoarding Step 1";
         Step2: Page "OnBoarding Step 2";
+        Step3: Page "OnBoarding Step 3";
         Modules: Record "OnBoarding Modules";
         Packages: Record "OnBoarding Package";
         PF: Record "OnBoarding Field";
     begin
         RefreshModules();
-        RefreshPackages();
+        GetPackages();
         COMMIT;
 
         Step1.Editable(true);
@@ -170,37 +224,41 @@ codeunit 92101 "OnBoarding Management"
         Packages.reset;
         packages.Setrange(Select, true);
         if not packages.IsEmpty() then begin
-            // Loop Through selected packages:
-            // - Locate accounts
-            // - Locate number series
-            // - Dates?
-            if Packages.findset then
-                repeat
-                    PF.Setrange("Package ID", packages.ID);
-                    pf.Setrange("Record No.", 1);
-                    if pf.findset then
-                        repeat
-                        //if pf
-                        until pf.next = 0;
-                until Packages.next = 0;
+            SelectTagsFromSelectedPackages();
+            COMMIT;
+            Step3.Editable(true);
+            Step3.RunModal();
+
         end else
             error('No packages selected, aborting');
     end;
 
-    procedure RefreshPackages()
+    procedure SelectTagsFromSelectedPackages()
     var
+        STag: Record "OnBoarding Selected Tag";
+        Tag: Record "Package Tag";
         Package: Record "OnBoarding Package";
     begin
-        Package.DELETEALL;
-        // Refresh from web services
-        Package.INIT;
-        Package."Module" := 'FIN';
-        Package.Description := 'Base Finance setup';
-        Package.ID := 'FIN';
-        Package.Author := 'Microsoft';
-        Package.Country := 'NA';
-        Package."Minimum Version" := '13.0.0.0';
-        Package.INSERT;
+        Package.SetRange(Select, true);
+        if Package.FINDSET then
+            repeat
+                Tag.setrange("Package ID", Package.ID);
+                if Tag.findset then
+                    repeat
+                        Stag.INIT;
+                        STag.Tag := Tag.Tag;
+                        Stag.Description := Tag.Description;
+                        Stag."Tag Type" := Tag."Tag Type";
+                        if STag.Insert() then; // We allow getting
+                                               // the same tag from
+                                               // multiple packages
+                    until tag.next = 0;
+            until Package.next = 0;
+    end;
+
+    procedure GenerateCOA()
+    begin
+
     end;
 
     procedure RefreshModules()

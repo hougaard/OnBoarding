@@ -1,8 +1,9 @@
-page 92106 "OnBoarding Step 2"
+page 92108 "OnBoarding Step 3"
 {
     PageType = List;
     Caption = 'OnBoarding';
-    SourceTable = "OnBoarding Package";
+    SourceTable = "OnBoarding Selected Tag";
+    SourceTableView = where ("Tag Type" = const ("G/L Account"));
     InsertAllowed = false;
     DeleteAllowed = false;
     ModifyAllowed = true;
@@ -13,28 +14,18 @@ page 92106 "OnBoarding Step 2"
         {
             group(Title)
             {
-                Caption = 'Module';
-                field(PackageCaption; DescTxt)
-                {
-                    Caption = 'Select packages for module';
-                    ApplicationArea = All;
-                    Editable = false;
-                    Style = Attention;
-                }
-            }
-            group(SelectPackages)
-            {
+                Caption = 'Define your chart of accounts';
                 repeater(Rep)
                 {
-                    field(Select; Select)
+                    field(TagValue; TagValue)
                     {
                         ApplicationArea = All;
                         Editable = true;
                     }
                     field(Description; Description)
                     {
-                        Editable = false;
                         ApplicationArea = All;
+                        Editable = false;
                     }
                 }
             }
@@ -44,25 +35,21 @@ page 92106 "OnBoarding Step 2"
     {
         area(Processing)
         {
-            action(Continue)
+            action(GenerateCOA)
             {
+                Caption = 'Build Chart of Account';
+                ApplicationArea = All;
                 Promoted = true;
+                PromotedCategory = New;
+                PromotedOnly = true;
                 PromotedIsBig = true;
-                PromotedCategory = Process;
-                Caption = 'Continue to next step';
                 trigger OnAction()
+                var
+                    OnMgt: Codeunit "OnBoarding Management";
                 begin
-                    CurrPage.Close();
+                    OnMgt.GenerateCOA();
                 end;
             }
         }
     }
-    procedure SetCaption(Cap: Text)
-    begin
-        DescTxt := Cap;
-    end;
-
-    var
-        DescTxt: Text;
-
 }

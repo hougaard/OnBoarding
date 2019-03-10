@@ -25,6 +25,7 @@ page 92100 "Package List"
             part(Tables; "Package Tables FactBox")
             {
                 ApplicationArea = All;
+                SubPageLink = "Package ID" = field (ID);
             }
         }
     }
@@ -34,6 +35,7 @@ page 92100 "Package List"
         {
             action(UpdatePackageList)
             {
+                Caption = 'Read Packages from GitHub';
                 ApplicationArea = All;
                 trigger OnAction()
                 var
@@ -44,17 +46,21 @@ page 92100 "Package List"
             }
             action(CreatePackage)
             {
+                Caption = 'Create Packages from CRONUS';
                 ApplicationArea = All;
                 trigger OnAction()
                 var
                     PackageMgt: Codeunit "Onboarding Package Export";
                 begin
-                    PackageMgt.xx('FIN',
+                    PackageMgt.BuildPackageAndExportToGitHub('FIN',
                                    'Finance',
                                    'Microsoft',
                                    'NA',
                                    '13.0.0.0',
-                                   '3|5|98|247|252');
+                                   '3|5|98|247|250|251|252');
+                    PackageMgt.BuildAccountSchedulePackges('Microsoft',
+                                                           'NA',
+                                                           '13.0.0.0');
                 end;
             }
         }
@@ -65,6 +71,14 @@ page 92100 "Package List"
                 Caption = 'Tables';
                 RunObject = Page "Package Tables";
                 RunPageLink = "Package ID" = field (ID);
+                ApplicationArea = All;
+            }
+            action(TagsAction)
+            {
+                Caption = 'Tags';
+                RunObject = Page "Package Tags";
+                RunPageLink = "Package ID" = field (ID);
+                ApplicationArea = All;
             }
         }
     }
@@ -114,8 +128,10 @@ page 92102 "Package Tables Factbox"
             {
                 repeater(Rep)
                 {
-                    field("Table No."; "Table No.") { ApplicationArea = All; }
-                    field(Desciption; Desciption) { ApplicationArea = All; }
+                    field("Table No."; "Table No.")
+                    { ApplicationArea = All; }
+                    field(Desciption; Desciption)
+                    { ApplicationArea = All; }
                 }
             }
         }
@@ -137,6 +153,29 @@ page 92103 "Table Fields"
                     field("Record No."; "Record No.") { ApplicationArea = All; }
                     field("Field No."; "Field No.") { ApplicationArea = All; }
                     field("Field Value"; "Field Value") { ApplicationArea = All; }
+                }
+            }
+        }
+    }
+}
+
+page 92105 "Package Tags"
+{
+    SourceTable = "Package Tag";
+    PageType = List;
+    layout
+    {
+        area(Content)
+        {
+            group(Tags)
+            {
+                Caption = 'Tags';
+                repeater(Rep)
+                {
+                    field(Tag; Tag) { ApplicationArea = All; }
+                    field("Tag Type"; "Tag Type") { ApplicationArea = All; }
+                    field(Description; Description) { ApplicationArea = All; }
+                    field(Groups; Groups) { ApplicationArea = All; }
                 }
             }
         }
