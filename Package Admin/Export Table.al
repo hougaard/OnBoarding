@@ -1,6 +1,7 @@
 codeunit 92100 "Onboarding Package Export"
 {
-    procedure BuildAccountSchedulePackges(Author: Text;
+    procedure BuildAccountSchedulePackges(Module: Text;
+                                          Author: Text;
                                           Country: Text;
                                           VersionTxt: Text)
     var
@@ -13,12 +14,14 @@ codeunit 92100 "Onboarding Package Export"
         F: FieldRef;
         i: Integer;
         PackageTxt: Text;
-        http: HttpClient;
-        Content: HttpContent;
-        response: HttpResponseMessage;
     begin
         if AS.FINDSET then
             repeat
+                i := 0;
+                CLEAR(TJA);
+                CLEAR(J);
+                Clear(Info);
+
                 // Account Schedule
                 T.OPEN(84);
                 F := T.Field(1);
@@ -35,7 +38,7 @@ codeunit 92100 "Onboarding Package Export"
                 i += 1;
                 T.CLOSE();
 
-                T.OPEN(344); //Column Layout
+                T.OPEN(334); //Column Layout
                 F := T.Field(1);
                 F.SetRange(AS."Default Column Layout");
                 TJA.Insert(i, TableRefToJson(T));
@@ -44,25 +47,37 @@ codeunit 92100 "Onboarding Package Export"
 
                 J.Add('Tables', TJA);
                 Info.Add('ID', AS.Name);
-                Info.Add('Description', AS.Description);
+                Info.Add('Module', Module);
+                Info.Add('Description', 'Account Schedule: ' + AS.Description);
                 Info.Add('Author', Author);
                 Info.Add('Country', Country);
                 Info.Add('Version', VersionTxt);
                 J.Add('Info', Info);
                 J.AsToken().WriteTo(PackageTxt);
-                Content.WriteFrom(PackageTxt);
-                if http.Post('http://10.3.1.13:9999/' +
-                                AS.Name + '_' +
-                                Country + '_' +
-                                VersionTxt, Content, response) then begin
-                    if response.HttpStatusCode() <> 200 then
-                        ERROR('Cannot contact package receiver');
-                end;
+
+                SendToPackageReceiver(PackageTxt, AS.Name, Country, VersionTxt);
 
             until AS.NEXT = 0;
     end;
 
-    procedure BuildPackageAndExportToGitHub(PackageID: Text;
+    procedure SendToPackageReceiver(PackageTxt: Text; PackageID: Text; Country: Text; VersionTxt: Text)
+    var
+        http: HttpClient;
+        content: HttpContent;
+        response: HttpResponseMessage;
+    begin
+        Content.WriteFrom(PackageTxt);
+        if http.Post('http://10.3.1.13:9999/' +
+                        PackageID + '_' +
+                        Country + '_' +
+                        VersionTxt, Content, response) then begin
+            if response.HttpStatusCode() <> 200 then
+                ERROR('Cannot contact package receiver');
+        end;
+    end;
+
+    procedure BuildPackageAndExportToGitHub(Module: Text;
+                 PackageID: Text;
                  Description: Text;
                  Author: Text;
                  Country: Text;
@@ -89,21 +104,15 @@ codeunit 92100 "Onboarding Package Export"
             until T.NEXT = 0;
         J.Add('Tables', TJA);
         Info.Add('ID', PackageID);
+        Info.Add('Module', Module);
         Info.Add('Description', Description);
         Info.Add('Author', Author);
         Info.Add('Country', Country);
         Info.Add('Version', VersionTxt);
         J.Add('Info', Info);
         J.AsToken().WriteTo(PackageTxt);
-        Content.WriteFrom(PackageTxt);
-        if http.Post('http://10.3.1.13:9999/' +
-                          PackageID + '_' +
-                          Country + '_' +
-                          VersionTxt, Content, response) then begin
-            if response.HttpStatusCode() <> 200 then
-                ERROR('Cannot contact package receiver');
-        end;
-        //MEssage('Json=%1', PackageTxt);
+
+        SendToPackageReceiver(PackageTxt, PackageID, Country, VersionTxt);
     end;
 
     procedure TableToJson(TableNo: Integer): JsonObject
@@ -137,6 +146,7 @@ codeunit 92100 "Onboarding Package Export"
         GL: Record "G/L Account";
         NS: Record "No. Series";
         RecRef: RecordRef;
+        FilterTest: Text;
     begin
         for i := 1 to R.FieldCount() do begin
             f := R.FieldIndex(i);
@@ -145,12 +155,23 @@ codeunit 92100 "Onboarding Package Export"
                     case F.Relation() of
                         15:
                             begin
-                                if GL.GET(f.Value) then begin
-                                    RecRef.GetTable(GL);
-                                    J.Add('G' + format(f.Number()), GLTagToJson(RecRef));
-                                end else
-                                    if format(f.value) <> '' then
-                                        error('Unknown G/L Account %1 in table %2', f.Value, R.Caption());
+                                FilterTest := f.Value;
+
+                                if (strpos(FilterTest, '|') <> 0) or
+                                   (strpos(FilterTest, '..') <> 0) or
+                                   (strpos(FilterTest, '&') <> 0) or
+                                   (strpos(FilterTest, '*') <> 0) or
+                                   (strpos(FilterTest, '?') <> 0) then begin
+                                    // This is a filter value
+                                end else begin
+                                    if GL.GET(f.Value) then begin
+                                        RecRef.GetTable(GL);
+                                        J.Add('G' + format(f.Number()), GLTagToJson(RecRef));
+                                    end else
+                                        if format(f.value) <> '' then;
+                                    //message('Unknown G/L Account %1 in table %2', f.Value, R.Caption());
+                                end;
+
                             END;
                         308:
                             begin

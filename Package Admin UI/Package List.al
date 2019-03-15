@@ -12,6 +12,7 @@ page 92100 "Package List"
             {
                 repeater(Rep)
                 {
+                    field(Module; Module) { ApplicationArea = All; }
                     field(ID; ID) { ApplicationArea = All; }
                     field(Description; Description) { ApplicationArea = All; }
                     field(Author; Author) { ApplicationArea = All; }
@@ -52,15 +53,36 @@ page 92100 "Package List"
                 var
                     PackageMgt: Codeunit "Onboarding Package Export";
                 begin
+                    // Finance
                     PackageMgt.BuildPackageAndExportToGitHub('FIN',
+                                   'BASE-FIN',
                                    'Finance',
                                    'Microsoft',
                                    'NA',
                                    '13.0.0.0',
                                    '3|5|98|247|250|251|252');
-                    PackageMgt.BuildAccountSchedulePackges('Microsoft',
+                    PackageMgt.BuildAccountSchedulePackges('FIN',
+                                                           'Microsoft',
                                                            'NA',
                                                            '13.0.0.0');
+
+                    // Sale
+                    PackageMgt.BuildPackageAndExportToGitHub('SALE',
+                                   'BASE-SALE',
+                                   'Sale Basis',
+                                   'Microsoft',
+                                   'NA',
+                                   '13.0.0.0',
+                                   '311');
+                    // Purchase
+                    PackageMgt.BuildPackageAndExportToGitHub('PURCHASE',
+                                   'BASE-PURCHASE',
+                                   'Sale Basis',
+                                   'Microsoft',
+                                   'NA',
+                                   '13.0.0.0',
+                                   '312');
+
                 end;
             }
         }

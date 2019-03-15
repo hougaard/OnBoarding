@@ -1,55 +1,22 @@
-page 92108 "OnBoarding Step 3"
+page 92109 "OnBoarding Step 3"
 {
-    PageType = List;
-    Caption = 'OnBoarding';
-    SourceTable = "OnBoarding Selected Tag";
-    SourceTableView = where ("Tag Type" = const ("G/L Account"));
-    InsertAllowed = false;
-    DeleteAllowed = false;
-    ModifyAllowed = true;
-    Editable = true;
+    PageType = Card;
+    // How do you want your Chart of Accounts
     layout
     {
         area(Content)
         {
-            group(Title)
+            group(g1)
             {
-                Caption = 'Define your chart of accounts';
-                repeater(Rep)
+                Caption = 'How do you want your Chart Of Accounts';
+                field(How; Method)
                 {
-                    field(TagValue; TagValue)
-                    {
-                        ApplicationArea = All;
-                        Editable = true;
-                    }
-                    field(Description; Description)
-                    {
-                        ApplicationArea = All;
-                        Editable = false;
-                    }
+                    ApplicationArea = All;
                 }
             }
         }
     }
-    actions
-    {
-        area(Processing)
-        {
-            action(GenerateCOA)
-            {
-                Caption = 'Build Chart of Account';
-                ApplicationArea = All;
-                Promoted = true;
-                PromotedCategory = New;
-                PromotedOnly = true;
-                PromotedIsBig = true;
-                trigger OnAction()
-                var
-                    OnMgt: Codeunit "OnBoarding Management";
-                begin
-                    OnMgt.GenerateCOA();
-                end;
-            }
-        }
-    }
+    var
+        Method: Option "Generate one for me","I'll upload one","Use the existing";
+
 }

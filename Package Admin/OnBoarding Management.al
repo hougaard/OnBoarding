@@ -1,5 +1,189 @@
 codeunit 92101 "OnBoarding Management"
 {
+    procedure BuildChartOfAccountFromTags()
+    var
+        STag: Record "OnBoarding Selected Tag";
+        Tag: Record "Package Tag";
+        Packages: Record "OnBoarding Package";
+        NextIncomeNo: Integer;
+        NextBalanceNo: Integer;
+        Totals: List of [Text];
+        Total: Text;
+        StagTest: Record "OnBoarding Selected Tag";
+        AfterIndex: Integer;
+        BeforeIndex: Integer;
+        i: Integer;
+        ParentTotalEnd: Integer;
+        ParentIndention: Integer;
+        BeginIndex: Integer;
+    begin
+        NextIncomeNo := 0;
+        NextBalanceNo := 10000000;
+        Packages.SetRange(Select, true);
+        if Packages.FINDSET then
+            repeat
+                Tag.setrange("Package ID", Packages.ID);
+                Tag.Setrange("Tag Type", Tag."Tag Type"::"G/L Account");
+                if tag.findset then
+                    repeat
+                        Totals := tag.Groups.Split(',');
+                        if Totals.Count() > 0 then
+                            Totals.Get(1, Total)
+                        else
+                            Total := '';
+                        Stag.setrange(Tag, Tag.Tag);
+                        if not stag.findfirst then begin
+                            // A tag we haven't see before,
+                            // First we'll check if the totals
+                            // group this account is part of is
+                            // already known
+                            if Total <> '' then begin
+                                //Message('%1 has groups: %2', tag.Description, tag.Groups);
+                                StagTest.RESET;
+                                StagTest.setrange("Totals Group", Total);
+                                StagTest.setrange("Total Begin/End", StagTest."Total Begin/End"::"End");
+                                if StagTest.findfirst then begin
+                                    // This group is know, lets add the account in that
+                                    AfterIndex := StagTest.SortIndex;
+                                    StagTest.Setrange("Totals Group"); // Reset so we can step back to 
+                                    StagTest.Setrange("Total Begin/End"); // find the prevoius Index
+                                    if StagTest.next(-1) = -1 then
+                                        BeforeIndex := StagTest.SortIndex
+                                    else
+                                        error('This should never happen, a total-end account without a total-begin account');
+                                    Stag.INIT;
+                                    Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
+                                    Stag.Tag := Tag.Tag;
+                                    Stag.Description := Tag.Description;
+                                    Stag."Indention Level" := StagTest."Indention Level" + 1;
+                                    stag.INSERT;
+                                    case Stag."Income/Balance" of
+                                        Stag."Income/Balance"::"Balance Sheet":
+                                            if Stag.SortIndex > NextBalanceNo then
+                                                NextBalanceNo := Stag.SortIndex;
+                                        Stag."Income/Balance"::"Income Statement":
+                                            if Stag.SortIndex > NextIncomeNo then
+                                                NextIncomeNo := Stag.SortIndex;
+                                    end;
+                                    //Message('Insert %1 as %2 (%3)', stag.Description, Stag.SortIndex, stag."Total Begin/End");
+                                end else begin
+                                    // The totals group is unknown, let's
+                                    // add the groups and then the account.
+                                    // Start with the last (outmost) group
+                                    ParentTotalEnd := 0;
+                                    for i := Totals.Count() downto 1 do begin
+                                        Totals.get(i, Total);
+                                        StagTest.RESET;
+                                        StagTest.setrange("Totals Group", Total);
+                                        StagTest.setrange("Total Begin/End", StagTest."Total Begin/End"::"End");
+                                        if not StagTest.findfirst then begin
+                                            // This group does not exists, let's figure out where to create it
+                                            // in the number range
+                                            stagTest.reset;
+                                            if ParentTotalEnd <> 0 then begin
+                                                stagTest.get(ParentTotalEnd);
+                                                ParentIndention := stagTest."Indention Level";
+                                                AfterIndex := ParentTotalEnd;
+                                                if stagtest.next(-1) = -1 then
+                                                    BeforeIndex := stagtest.SortIndex
+                                                else
+                                                    BeforeIndex := 0;
+                                            end else begin
+                                                ParentIndention := 0; // -1 ??
+                                                if Stag."Income/Balance" = Stag."Income/Balance"::"Income Statement" then
+                                                    ParentTotalEnd := NextIncomeNo
+                                                else
+                                                    ParentTotalEnd := NextBalanceNo;
+                                                AfterIndex := ParentTotalEnd + 10000000;
+                                                BeforeIndex := ParentTotalEnd;
+                                            end;
+                                            StagTest.INIT; // Create Total-Begin
+                                            StagTest.SortIndex := BeforeIndex + 10000;
+                                            StagTest.Description := Total;
+                                            StagTest."Income/Balance" := stag."Income/Balance";
+                                            stagtest."Indention Level" := ParentIndention + 1;
+                                            StagTest."Total Begin/End" := StagTest."Total Begin/End"::"Begin";
+                                            stagTest."Totals Group" := Total;
+                                            StagTest.INSERT;
+                                            BeginIndex := StagTest.SortIndex;
+                                            case StagTest."Income/Balance" of
+                                                StagTest."Income/Balance"::"Balance Sheet":
+                                                    if StagTest.SortIndex > NextBalanceNo then
+                                                        NextBalanceNo := StagTest.SortIndex;
+                                                StagTest."Income/Balance"::"Income Statement":
+                                                    if StagTest.SortIndex > NextIncomeNo then
+                                                        NextIncomeNo := StagTest.SortIndex;
+                                            end;
+                                            //Message('Insert %1 as %2 (%3)', stagTest.Description, StagTest.SortIndex, stagTest."Total Begin/End");
+
+                                            StagTest.INIT; // Create Total-End
+                                            StagTest.SortIndex := ROUND((AfterIndex - BeginIndex) / 2 + BeginIndex, 1);
+                                            ;
+                                            StagTest.Description := Total;
+                                            StagTest."Income/Balance" := stag."Income/Balance";
+                                            stagtest."Indention Level" := ParentIndention + 1;
+                                            StagTest."Total Begin/End" := StagTest."Total Begin/End"::"End";
+                                            stagTest."Totals Group" := Total;
+                                            StagTest.INSERT;
+                                            case StagTest."Income/Balance" of
+                                                StagTest."Income/Balance"::"Balance Sheet":
+                                                    if StagTest.SortIndex > NextBalanceNo then
+                                                        NextBalanceNo := StagTest.SortIndex;
+                                                StagTest."Income/Balance"::"Income Statement":
+                                                    if StagTest.SortIndex > NextIncomeNo then
+                                                        NextIncomeNo := StagTest.SortIndex;
+                                            end;
+                                            //Message('Insert %1 as %2 (%3)', stagTest.Description, StagTest.SortIndex, stagTest."Total Begin/End");
+
+                                            ParentTotalEnd := stagTest.SortIndex;
+
+                                        end else begin
+                                            ParentTotalEnd := StagTest.SortIndex;
+                                        end;
+                                    end;
+                                    // So At this point, all totals will be there, 
+                                    // let's find the End of the inner total and
+                                    // place the account just before that.
+                                    StagTest.reset;
+                                    Totals.get(1, Total);
+                                    stagtest.setrange("Totals Group", total);
+                                    stagtest.Setrange("Total Begin/End", stagtest."Total Begin/End"::"End");
+                                    if stagtest.findfirst then begin
+                                        AfterIndex := StagTest.SortIndex;
+                                        StagTest.Setrange("Totals Group"); // Reset so we can step back to 
+                                        StagTest.Setrange("Total Begin/End"); // find the prevoius Index
+                                        if StagTest.next(-1) = -1 then
+                                            BeforeIndex := StagTest.SortIndex
+                                        else
+                                            error('This should never happen, a total-end account without a total-begin account');
+                                        Stag.INIT;
+                                        Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
+                                        Stag.Tag := Tag.Tag;
+                                        Stag.Description := Tag.Description;
+                                        Stag."Indention Level" := StagTest."Indention Level" + 1;
+                                        stag."Income/Balance" := Tag."Income/Balance";
+                                        stag.INsert;
+                                        case Stag."Income/Balance" of
+                                            Stag."Income/Balance"::"Balance Sheet":
+                                                if Stag.SortIndex > NextBalanceNo then
+                                                    NextBalanceNo := Stag.SortIndex;
+                                            Stag."Income/Balance"::"Income Statement":
+                                                if Stag.SortIndex > NextIncomeNo then
+                                                    NextIncomeNo := Stag.SortIndex;
+                                        end;
+
+                                        //Message('Insert %1 as %2 (%3)', stag.Description, Stag.SortIndex, stag."Total Begin/End");
+                                    end else
+                                        error('Cannot find the total we just created');
+                                end;
+                            end;
+                        end else begin
+                            // Ignore this tag for now...
+                        end;
+                    until tag.next = 0;
+            until Packages.NEXT = 0;
+    end;
+
     procedure GetPackages()
     var
         http: HttpClient;
@@ -12,7 +196,14 @@ codeunit 92101 "OnBoarding Management"
         filename: Text;
         value: JsonToken;
         Headers: HttpHeaders;
+        Package: Record "OnBoarding Package";
+        pTable: Record "OnBoarding Table";
+        pField: Record "OnBoarding Field";
     begin
+        Package.DELETEALL;
+        pTable.DELETEALL;
+        pField.DELETEALL;
+
         request.SetRequestUri('https://api.github.com/repos/hougaard/OnBoardingPackages/contents/');
         request.GetHeaders(Headers);
         Headers.Add('User-Agent', 'Dynamics 365 Business Central');
@@ -57,13 +248,11 @@ codeunit 92101 "OnBoarding Management"
         TableNo: Integer;
         jRecords: JsonArray;
     begin
-        Package.DELETEALL;
-        pTable.DELETEALL;
-        pField.DELETEALL;
         if jPackage.ReadFrom(JsonTxt) then begin
             if jPackage.Get('Info', jInfoToken) then begin
                 Package.INIT;
                 Package.ID := GetTextFromToken(JInfoToken, 'ID');
+                Package.Module := GetTextFromToken(jInfoToken, 'Module');
                 Package.Description := GetTextFromToken(jInfoToken, 'Description');
                 Package."Minimum Version" := GetTextFromToken(jInfoToken, 'Version');
                 Package.Author := GetTextFromToken(jInfoToken, 'Author');
@@ -195,13 +384,18 @@ codeunit 92101 "OnBoarding Management"
 
     procedure RunTheProcess()
     var
-        Step1: Page "OnBoarding Step 1";
-        Step2: Page "OnBoarding Step 2";
-        Step3: Page "OnBoarding Step 3";
+        Step1: Page "OnBoarding Step 1"; // Select Modules
+        Step2: Page "OnBoarding Step 2"; // Select Packages
+        Step3: Page "OnBoarding Step 3"; // Select how to Chart of Account
+        Step4: Page "OnBoarding Step 4"; // Upload
+        Step5: Page "OnBoarding Step 5"; // Present and edit COA
         Modules: Record "OnBoarding Modules";
         Packages: Record "OnBoarding Package";
         PF: Record "OnBoarding Field";
+        sTag: Record "Analysis Selected Dimension";
+
     begin
+        sTag.DeleteAll();
         RefreshModules();
         GetPackages();
         COMMIT;
@@ -213,7 +407,8 @@ codeunit 92101 "OnBoarding Management"
             if Modules.FINDFIRST then
                 repeat
                     Packages.Setrange(Module, Modules."Module ID");
-                    Step2.SetRecord(Packages);
+                    clear(Step2);
+                    Step2.SetTableView(Packages);
                     Step2.Editable(true);
                     Step2.SetCaption(Modules.Description);
                     Step2.RunModal();
@@ -226,9 +421,11 @@ codeunit 92101 "OnBoarding Management"
         if not packages.IsEmpty() then begin
             SelectTagsFromSelectedPackages();
             COMMIT;
-            Step3.Editable(true);
-            Step3.RunModal();
-
+            //Step3.Editable(true);
+            //Step3.RunModal();
+            BuildChartOfAccountFromTags();
+            COMMIT;
+            Step5.RunModal();
         end else
             error('No packages selected, aborting');
     end;
