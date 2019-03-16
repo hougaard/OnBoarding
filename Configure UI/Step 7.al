@@ -1,9 +1,9 @@
-page 92108 "OnBoarding Step 5"
+page 92112 "OnBoarding Step 7"
 {
     PageType = NavigatePage;
-    Caption = 'OnBoarding, Define your chart of accounts';
+    Caption = 'OnBoarding, Number Series';
     SourceTable = "OnBoarding Selected Tag";
-    SourceTableView = sorting (SortIndex) where ("Tag Type" = const ("G/L Account"));
+    SourceTableView = sorting (SortIndex) where ("Tag Type" = const ("No. Series"));
     InsertAllowed = false;
     DeleteAllowed = false;
     ModifyAllowed = true;
@@ -14,31 +14,18 @@ page 92108 "OnBoarding Step 5"
         {
             repeater(Rep)
             {
-                IndentationColumn = "Indention Level";
-                IndentationControls = Description;
                 field(TagValue; TagValue)
                 {
-                    Caption = 'Account Number';
+                    Caption = 'Start Number';
                     ApplicationArea = All;
                     Editable = true;
                 }
                 field(Description; Description)
                 {
-                    Caption = 'Description';
+                    Caption = 'Number Series';
                     ApplicationArea = All;
                     Editable = false;
                     Style = Strong;
-                    StyleExpr = NameEmphasize;
-                }
-                field("Total Begin/End"; "Total Begin/End")
-                {
-                    Caption = 'Account Type';
-                    ApplicationArea = All;
-                    Editable = false;
-                }
-                field("Indention Level"; "Indention Level")
-                {
-                    Visible = false;
                 }
             }
         }
@@ -56,24 +43,28 @@ page 92108 "OnBoarding Step 5"
                     CurrPage.Close();
                 end;
             }
+            // action(GenerateCOA)
+            // {
+            //     Caption = 'Verify Assignments';
+            //     ApplicationArea = All;
+            //     InFooterBar = true;
+            //     trigger OnAction()
+            //     var
+            //         OnMgt: Codeunit "OnBoarding Management";
+            //     begin
+            //         OnMgt.VerifyAccountAssignment();
+            //     end;
+            // }
             action(Continue)
             {
-                Caption = 'Continue to next step';
-                ApplicationArea = All;
+                Caption = 'Continue';
                 InFooterBar = true;
                 trigger OnAction()
-                var
                 begin
                     CurrPage.Close();
                 end;
             }
         }
     }
-    trigger OnAfterGetRecord()
-    begin
-        NameEmphasize := "Total Begin/End" > 0;
-    end;
 
-    var
-        NameEmphasize: Boolean;
 }

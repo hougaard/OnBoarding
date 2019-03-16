@@ -1,6 +1,175 @@
 codeunit 92101 "OnBoarding Management"
 {
-    procedure BuildChartOfAccountFromTags()
+    procedure CreateEverything()
+    begin
+        // Create Number Series
+        CreateNumberSeries();
+
+        // Create Chart Of Accounts
+        CreateChartOfAccounts();
+
+        // Create all the data from the selected packages
+        CreateDataFromPackages();
+    end;
+
+    procedure CreateDataFromPackages()
+    var
+        Package: Record "OnBoarding Package";
+        T: Record "OnBoarding Table";
+        F: Record "OnBoarding Field";
+        R: RecordRef;
+        Fr: FieldRef;
+        stag: Record "OnBoarding Selected Tag";
+        NewRec: Boolean;
+        CurrentRec: Integer;
+        _decimal: Decimal;
+        _date: Date;
+        _datetime: DateTime;
+        _time: Time;
+        _integer: Integer;
+        _boolean: Boolean;
+    begin
+        Package.Setrange(Select, true);
+        if Package.FINDSET then
+            repeat
+                T.Setrange("Package ID", Package.ID);
+                if T.Findset then
+                    repeat
+                        R.OPEN(T."Table No.");
+                        NewRec := true;
+                        F.SETRANGE("Package ID", Package.ID);
+                        F.SETRANGE("Table No.", T."Table No.");
+                        if F.FINDSET THEN begin
+                            CurrentRec := F."Record No.";
+                            R.INIT;
+                            repeat
+                                if CurrentRec <> F."Record No." then begin
+                                    // New Rec, time to insert
+                                    R.INSERT;
+                                    R.INIT;
+                                    CurrentRec := F."Record No.";
+                                end;
+                                Fr := R.Field(F."Field No.");
+                                case Fr.Relation() of
+                                    15:
+                                        begin
+                                            stag.get(F."Field Value");
+                                            Fr.value := stag.TagValue;
+                                        end;
+                                    308:
+                                        begin
+                                            stag.get(F."Field Value");
+                                            Fr.Value := stag.TagValue;
+                                        end;
+                                    else
+                                        case lowercase(format(Fr.Type())) of
+                                            'code',
+                                            'guid',
+                                            'text':
+                                                fr.value := F."Field Value";
+                                            'decimal':
+                                                begin
+                                                    evaluate(_decimal, F."Field Value", 9);
+                                                    fr.value := _decimal;
+                                                end;
+                                            'boolean':
+                                                begin
+                                                    evaluate(_boolean, F."Field Value", 9);
+                                                    fr.value := _boolean;
+                                                end;
+                                            'integer',
+                                            'option':
+                                                begin
+                                                    evaluate(_integer, F."Field Value", 9);
+                                                    fr.value := _integer;
+                                                end;
+                                            'date':
+                                                begin
+                                                    evaluate(_date, f."Field Value", 9);
+                                                    fr.value := _date;
+                                                end;
+                                            'datetime':
+                                                begin
+                                                    evaluate(_datetime, f."Field Value", 9);
+                                                    fr.value := _datetime;
+                                                end;
+                                            'time':
+                                                begin
+                                                    evaluate(_time, f."Field Value", 9);
+                                                    fr.value := _time;
+                                                end;
+                                        end;
+                                end;
+                            until F.NEXT = 0;
+                            R.INSERT;
+                        end;
+                        R.CLOSE;
+                    until T.NEXT = 0;
+            until Package.NEXT = 0;
+    end;
+
+    procedure CreateChartOfAccounts()
+    var
+        stag: Record "OnBoarding Selected Tag";
+        GL: Record "G/L Account";
+        Indent: Codeunit "G/L Account-Indent";
+    begin
+        stag.setrange("Tag Type", stag."Tag Type"::"G/L Account");
+        if stag.findset then
+            repeat
+                if not GL.GET(stag.TagValue) then begin
+                    // We're missing this G/L Account, create it!
+                    GL.INIT;
+                    GL.VALIDATE("No.", stag.TagValue);
+                    GL.INSERT(TRUE);
+                    GL.VALIDATE(Name, stag.Description);
+                    GL.VALIDATE("Income/Balance", stag."Income/Balance");
+                    case stag."Total Begin/End" of
+                        stag."Total Begin/End"::"Begin":
+                            GL.VALIDATE("Account Type", Gl."Account Type"::"Begin-Total");
+                        stag."Total Begin/End"::"End":
+                            GL.VALIDATE("Account Type", Gl."Account Type"::"End-Total");
+                        else
+                            Gl.Validate("Account Type", gl."Account Type"::Posting);
+                    end;
+                    GL.MODIFY(true);
+                end;
+            until stag.next = 0;
+        Indent.Indent();
+    end;
+
+    procedure CreateNumberSeries()
+    var
+        stag: Record "OnBoarding Selected Tag";
+        ns: Record "No. Series";
+        nsl: Record "No. Series Line";
+    begin
+        stag.setrange("Tag Type", stag."Tag Type"::"No. Series");
+        if stag.findset then
+            repeat
+                ns.INIT;
+                ns.Validate(Code, stag.Tag);
+                ns.insert(true);
+                ns.validate(Description, stag.Description);
+                ns.validate("Default Nos.", true);
+                ns.Modify(true);
+                nsl.Init();
+                nsl.Validate("Series Code", ns.code);
+                nsl.insert(true);
+                nsl.validate("Starting No.", stag.TagValue);
+                nsl.Modify(true);
+            until stag.next = 0;
+    end;
+
+    procedure VerifyAccountAssignment()
+    begin
+
+    end;
+
+    procedure BuildChartOfAccountFromTags(var FirstAccount: Integer;
+                                          var AccountIncre: Integer;
+                                          var CreateTotals: Boolean;
+                                          var TotalIncre: Integer)
     var
         STag: Record "OnBoarding Selected Tag";
         Tag: Record "Package Tag";
@@ -16,7 +185,9 @@ codeunit 92101 "OnBoarding Management"
         ParentTotalEnd: Integer;
         ParentIndention: Integer;
         BeginIndex: Integer;
+        NotFirst: Boolean;
     begin
+        sTag.DeleteAll();
         NextIncomeNo := 0;
         NextBalanceNo := 10000000;
         Packages.SetRange(Select, true);
@@ -55,7 +226,7 @@ codeunit 92101 "OnBoarding Management"
                                     Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
                                     Stag.Tag := Tag.Tag;
                                     Stag.Description := Tag.Description;
-                                    Stag."Indention Level" := StagTest."Indention Level" + 1;
+                                    Stag."Indention Level" := StagTest."Indention Level";
                                     stag.INSERT;
                                     case Stag."Income/Balance" of
                                         Stag."Income/Balance"::"Balance Sheet":
@@ -162,7 +333,7 @@ codeunit 92101 "OnBoarding Management"
                                         Stag.Description := Tag.Description;
                                         Stag."Indention Level" := StagTest."Indention Level" + 1;
                                         stag."Income/Balance" := Tag."Income/Balance";
-                                        stag.INsert;
+                                        stag.Insert;
                                         case Stag."Income/Balance" of
                                             Stag."Income/Balance"::"Balance Sheet":
                                                 if Stag.SortIndex > NextBalanceNo then
@@ -176,12 +347,36 @@ codeunit 92101 "OnBoarding Management"
                                     end else
                                         error('Cannot find the total we just created');
                                 end;
+                            end else begin
+                                // tag not part of any totals....
+                                error('TODO: Account outside total');
                             end;
                         end else begin
                             // Ignore this tag for now...
                         end;
                     until tag.next = 0;
             until Packages.NEXT = 0;
+        // Now assign account numbers to the account we have just created
+        stag.reset;
+        stag.SetCurrentKey(SortIndex);
+        if stag.findset then
+            repeat
+                if NotFirst then
+                    if stag."Total Begin/End" = stag."Total Begin/End"::" " then
+                        FirstAccount += AccountIncre
+                    else
+                        FirstAccount += TotalIncre;
+
+                stag.TagValue := Format(FirstAccount, 0, 9);
+                stag.Modify();
+                NotFirst := true;
+            until stag.next = 0;
+        if not CreateTotals then Begin
+            // We'll just remove the totals again
+            stag.reset;
+            stag.setrange("Total Begin/End", 1, 2);
+            stag.deleteall;
+        end;
     end;
 
     procedure GetPackages()
@@ -389,10 +584,20 @@ codeunit 92101 "OnBoarding Management"
         Step3: Page "OnBoarding Step 3"; // Select how to Chart of Account
         Step4: Page "OnBoarding Step 4"; // Upload
         Step5: Page "OnBoarding Step 5"; // Present and edit COA
+        Step6: Page "OnBoarding Step 6"; // Map to existing COA
+        Step7: Page "OnBoarding Step 7"; // Assign number to numberseries
+
         Modules: Record "OnBoarding Modules";
         Packages: Record "OnBoarding Package";
         PF: Record "OnBoarding Field";
         sTag: Record "Analysis Selected Dimension";
+        Method: Option " ","Generate one for me","I'll upload one","Use the existing";
+
+        // Auto Gen Parameters
+        FirstAccountNumber: Integer;
+        AccountIncrement: Integer;
+        AccountIncrementTotals: Integer;
+        CreateCOATotals: Boolean;
 
     begin
         sTag.DeleteAll();
@@ -421,11 +626,37 @@ codeunit 92101 "OnBoarding Management"
         if not packages.IsEmpty() then begin
             SelectTagsFromSelectedPackages();
             COMMIT;
-            //Step3.Editable(true);
-            //Step3.RunModal();
-            BuildChartOfAccountFromTags();
-            COMMIT;
-            Step5.RunModal();
+            Step3.Editable(true);
+            Step3.RunModal();
+            case Step3.GetMethod() of
+                Method::"Generate one for me":
+                    begin
+                        Step3.GetAutoGenParameters(FirstAccountNumber,
+                                                   AccountIncrement,
+                                                   CreateCOATotals,
+                                                   AccountIncrementTotals);
+                        BuildChartOfAccountFromTags(FirstAccountNumber,
+                                                   AccountIncrement,
+                                                   CreateCOATotals,
+                                                   AccountIncrementTotals);
+                        COMMIT;
+                        Step5.RunModal();
+                    end;
+                Method::"I'll upload one":
+                    begin
+                        COMMIT;
+                        Step4.RunModal();
+                        // Import ...
+                        COMMIT;
+                        Step5.RunModal();
+                    end;
+                Method::"Use the existing":
+                    begin
+                        // Map our tags to existing G/L
+                        COMMIT;
+                        Step6.RunModal();
+                    end;
+            end;
         end else
             error('No packages selected, aborting');
     end;

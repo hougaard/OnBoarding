@@ -1,6 +1,6 @@
 page 92104 "OnBoarding Step 1"
 {
-    PageType = List;
+    PageType = NavigatePage;
     Caption = 'OnBoarding';
     Editable = true;
     SourceTable = "OnBoarding Modules";
@@ -35,11 +35,18 @@ page 92104 "OnBoarding Step 1"
     {
         area(Processing)
         {
+            action(Back)
+            {
+                Caption = 'Back';
+                InFooterBar = true;
+                trigger OnAction()
+                begin
+                    CurrPage.Close();
+                end;
+            }
             action(Continue)
             {
-                Promoted = true;
-                PromotedIsBig = true;
-                PromotedCategory = Process;
+                InFooterBar = true;
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 begin

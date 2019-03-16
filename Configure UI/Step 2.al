@@ -1,6 +1,6 @@
 page 92106 "OnBoarding Step 2"
 {
-    PageType = List;
+    PageType = NavigatePage;
     Caption = 'OnBoarding';
     SourceTable = "OnBoarding Package";
     InsertAllowed = false;
@@ -13,17 +13,17 @@ page 92106 "OnBoarding Step 2"
         {
             group(Title)
             {
-                Caption = 'Module';
+                Caption = 'Select packages for module';
                 field(PackageCaption; DescTxt)
                 {
-                    Caption = 'Select packages for module';
+                    Caption = 'Module';
                     ApplicationArea = All;
                     Editable = false;
                     Style = Attention;
                 }
-            }
-            group(SelectPackages)
-            {
+                // }
+                // group(SelectPackages)
+                // {
                 repeater(Rep)
                 {
                     field(Select; Select)
@@ -44,11 +44,18 @@ page 92106 "OnBoarding Step 2"
     {
         area(Processing)
         {
+            action(Back)
+            {
+                Caption = 'Back';
+                InFooterBar = true;
+                trigger OnAction()
+                begin
+                    CurrPage.Close();
+                end;
+            }
             action(Continue)
             {
-                Promoted = true;
-                PromotedIsBig = true;
-                PromotedCategory = Process;
+                InFooterBar = true;
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 begin

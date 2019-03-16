@@ -182,10 +182,10 @@ codeunit 92100 "Onboarding Package Export"
                                         error('Unknown Number Series %1 in table %2', f.Value, R.Caption());
                             end;
                         else
-                            J.Add('f' + format(f.Number()), format(f.Value));
+                            J.Add('f' + format(f.Number()), format(f.Value, 0, 9));
                     end;
                 end else
-                    J.Add('f' + format(f.Number()), format(f.Value));
+                    J.Add('f' + format(f.Number()), format(f.Value, 0, 9));
             end;
         end;
         exit(J);
@@ -215,7 +215,7 @@ codeunit 92100 "Onboarding Package Export"
         for i := 1 to R.FieldCount() do begin
             f := R.FieldIndex(i);
             if f.Class() = FieldClass::Normal then begin
-                J.Add('f' + format(f.Number()), format(f.Value));
+                J.Add('f' + format(f.Number()), format(f.Value, 0, 9));
             end;
         end;
         R.SetTable(GL);
