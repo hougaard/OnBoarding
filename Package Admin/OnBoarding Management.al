@@ -60,7 +60,7 @@ codeunit 92101 "OnBoarding Management"
                                         end;
                                     308:
                                         begin
-                                            stag.setrange(tag, f."Field Value");
+                                            stag.setrange(tag, copystr(f."Field Value", 2));
                                             stag.findfirst();
                                             Fr.Value := stag.Tag;
                                         end;
@@ -152,7 +152,7 @@ codeunit 92101 "OnBoarding Management"
         if stag.findset then
             repeat
                 ns.INIT;
-                ns.Validate(Code, stag.Tag);
+                ns.Validate(Code, copystr(stag.Tag, 2));
                 ns.insert(true);
                 ns.validate(Description, stag.Description);
                 ns.validate("Default Nos.", true);
