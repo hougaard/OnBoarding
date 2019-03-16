@@ -56,7 +56,7 @@ page 92100 "Package List"
                     // Finance
                     PackageMgt.BuildPackageAndExportToGitHub('FIN',
                                    'BASE-FIN',
-                                   'Finance',
+                                   'Finance Management Setup',
                                    'Microsoft',
                                    'NA',
                                    '13.0.0.0',
@@ -66,10 +66,19 @@ page 92100 "Package List"
                                                            'NA',
                                                            '13.0.0.0');
 
+                    // Sales Tax
+                    PackageMgt.BuildPackageAndExportToGitHub('SALE',
+                                   'SALES_TAX',
+                                   'Canadian Sales Tax',
+                                   'Microsoft',
+                                   'NA',
+                                   '13.0.0.0',
+                                   '318|319|320|321|322|326|327');
+
                     // Sale
                     PackageMgt.BuildPackageAndExportToGitHub('SALE',
                                    'BASE-SALE',
-                                   'Sale Basis',
+                                   'Sale Basis Setup',
                                    'Microsoft',
                                    'NA',
                                    '13.0.0.0',
@@ -77,7 +86,7 @@ page 92100 "Package List"
                     // Purchase
                     PackageMgt.BuildPackageAndExportToGitHub('PURCHASE',
                                    'BASE-PURCHASE',
-                                   'Sale Basis',
+                                   'Purchase Basis Setup',
                                    'Microsoft',
                                    'NA',
                                    '13.0.0.0',

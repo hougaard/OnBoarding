@@ -19,7 +19,7 @@ page 92106 "OnBoarding Step 2"
                     Caption = 'Module';
                     ApplicationArea = All;
                     Editable = false;
-                    Style = Attention;
+                    Style = Strong;
                 }
                 // }
                 // group(SelectPackages)
