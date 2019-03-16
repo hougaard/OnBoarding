@@ -43,7 +43,7 @@ page 92113 "OnBoarding Step 8"
         {
             action(Back)
             {
-                Caption = 'Back';
+                Caption = 'Abort';
                 InFooterBar = true;
                 trigger OnAction()
                 begin
@@ -59,6 +59,7 @@ page 92113 "OnBoarding Step 8"
                     OnMgt: Codeunit "OnBoarding Management";
                 begin
                     OnMgt.CreateEverything();
+                    Message('Congratulations, your system is now configured with the packages you selected');
                     CurrPage.Close();
                 end;
             }

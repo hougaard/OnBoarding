@@ -46,7 +46,7 @@ page 92106 "OnBoarding Step 2"
         {
             action(Back)
             {
-                Caption = 'Back';
+                Caption = 'Abort';
                 InFooterBar = true;
                 trigger OnAction()
                 begin

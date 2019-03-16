@@ -36,25 +36,13 @@ page 92112 "OnBoarding Step 7"
         {
             action(Back)
             {
-                Caption = 'Back';
+                Caption = 'Abort';
                 InFooterBar = true;
                 trigger OnAction()
                 begin
                     CurrPage.Close();
                 end;
             }
-            // action(GenerateCOA)
-            // {
-            //     Caption = 'Verify Assignments';
-            //     ApplicationArea = All;
-            //     InFooterBar = true;
-            //     trigger OnAction()
-            //     var
-            //         OnMgt: Codeunit "OnBoarding Management";
-            //     begin
-            //         OnMgt.VerifyAccountAssignment();
-            //     end;
-            // }
             action(Continue)
             {
                 Caption = 'Continue';
@@ -66,5 +54,4 @@ page 92112 "OnBoarding Step 7"
             }
         }
     }
-
 }

@@ -45,7 +45,8 @@ codeunit 92101 "OnBoarding Management"
                             repeat
                                 if CurrentRec <> F."Record No." then begin
                                     // New Rec, time to insert
-                                    R.INSERT;
+                                    if not R.INSERT then
+                                        r.Modify;
                                     R.INIT;
                                     CurrentRec := F."Record No.";
                                 end;
@@ -53,13 +54,15 @@ codeunit 92101 "OnBoarding Management"
                                 case Fr.Relation() of
                                     15:
                                         begin
-                                            stag.get(F."Field Value");
+                                            stag.setrange(tag, f."Field Value");
+                                            stag.findfirst();
                                             Fr.value := stag.TagValue;
                                         end;
                                     308:
                                         begin
-                                            stag.get(F."Field Value");
-                                            Fr.Value := stag.TagValue;
+                                            stag.setrange(tag, f."Field Value");
+                                            stag.findfirst();
+                                            Fr.Value := stag.Tag;
                                         end;
                                     else
                                         case lowercase(format(Fr.Type())) of
@@ -101,7 +104,8 @@ codeunit 92101 "OnBoarding Management"
                                         end;
                                 end;
                             until F.NEXT = 0;
-                            R.INSERT;
+                            if not R.INSERT then
+                                R.Modify();
                         end;
                         R.CLOSE;
                     until T.NEXT = 0;
@@ -187,7 +191,6 @@ codeunit 92101 "OnBoarding Management"
         BeginIndex: Integer;
         NotFirst: Boolean;
     begin
-        sTag.DeleteAll();
         NextIncomeNo := 0;
         NextBalanceNo := 10000000;
         Packages.SetRange(Select, true);
@@ -358,6 +361,7 @@ codeunit 92101 "OnBoarding Management"
             until Packages.NEXT = 0;
         // Now assign account numbers to the account we have just created
         stag.reset;
+        stag.setrange("Tag Type", stag."Tag Type"::"G/L Account");
         stag.SetCurrentKey(SortIndex);
         if stag.findset then
             repeat
@@ -374,6 +378,7 @@ codeunit 92101 "OnBoarding Management"
         if not CreateTotals then Begin
             // We'll just remove the totals again
             stag.reset;
+            stag.setrange("Tag Type", stag."Tag Type"::"G/L Account");
             stag.setrange("Total Begin/End", 1, 2);
             stag.deleteall;
         end;
@@ -512,10 +517,12 @@ codeunit 92101 "OnBoarding Management"
                     'G':
                         begin
                             FieldRec."Field Value" := CreateTag(PackageID, 'G', jField);
+                            FieldRec."Special Action" := FieldRec."Special Action"::Account;
                         END;
                     'N':
                         begin
                             FieldRec."Field Value" := CreateTag(PackageID, 'N', jField);
+                            FieldRec."Special Action" := FieldRec."Special Action"::"Number Series";
                         end;
                 end;
                 FieldRec.INSERT;
@@ -546,7 +553,7 @@ codeunit 92101 "OnBoarding Management"
                     */
                     Tag.INIT;
                     Tag."Package ID" := PackageID;
-                    Tag.Tag := '@' + TagType + GetTextFromToken(jField, 'f1');
+                    Tag.Tag := TagType + GetTextFromToken(jField, 'f1');
                     Tag."Tag Type" := Tag."Tag Type"::"G/L Account";
                     Tag.Description := GetTextFromToken(jField, 'f2');
                     Tag.Groups := GetTextFromToken(jField, 'Totals');
@@ -556,13 +563,14 @@ codeunit 92101 "OnBoarding Management"
                 begin
                     Tag.INIT;
                     Tag."Package ID" := PackageID;
-                    Tag.Tag := '@' + TagType + GetTextFromToken(jField, 'f1');
+                    Tag.Tag := TagType + GetTextFromToken(jField, 'f1');
                     Tag."Tag Type" := Tag."Tag Type"::"No. Series";
                     Tag.Description := GetTextFromToken(jField, 'f2');
                     if Tag.INSERT then;
 
                 end;
         end;
+        exit(Tag.Tag);
     end;
 
     procedure GetTextFromToken(T: JsonToken; Member: Text): Text
@@ -586,6 +594,7 @@ codeunit 92101 "OnBoarding Management"
         Step5: Page "OnBoarding Step 5"; // Present and edit COA
         Step6: Page "OnBoarding Step 6"; // Map to existing COA
         Step7: Page "OnBoarding Step 7"; // Assign number to numberseries
+        Step8: Page "OnBoarding Step 8"; // Review and Confirm
 
         Modules: Record "OnBoarding Modules";
         Packages: Record "OnBoarding Package";
@@ -624,7 +633,6 @@ codeunit 92101 "OnBoarding Management"
         Packages.reset;
         packages.Setrange(Select, true);
         if not packages.IsEmpty() then begin
-            SelectTagsFromSelectedPackages();
             COMMIT;
             Step3.Editable(true);
             Step3.RunModal();
@@ -644,6 +652,7 @@ codeunit 92101 "OnBoarding Management"
                     end;
                 Method::"I'll upload one":
                     begin
+                        SelectTagsFromSelectedPackages();
                         COMMIT;
                         Step4.RunModal();
                         // Import ...
@@ -653,10 +662,16 @@ codeunit 92101 "OnBoarding Management"
                 Method::"Use the existing":
                     begin
                         // Map our tags to existing G/L
+                        SelectTagsFromSelectedPackages();
                         COMMIT;
                         Step6.RunModal();
                     end;
             end;
+            SelectTagsFromSelectedPackages();
+            COMMIT;
+            Step7.RunModal(); // Number Series
+            COMMIT;
+            Step8.RunModal(); // Corfirm
         end else
             error('No packages selected, aborting');
     end;
@@ -666,6 +681,7 @@ codeunit 92101 "OnBoarding Management"
         STag: Record "OnBoarding Selected Tag";
         Tag: Record "Package Tag";
         Package: Record "OnBoarding Package";
+        Sort: Integer;
     begin
         Package.SetRange(Select, true);
         if Package.FINDSET then
@@ -677,16 +693,13 @@ codeunit 92101 "OnBoarding Management"
                         STag.Tag := Tag.Tag;
                         Stag.Description := Tag.Description;
                         Stag."Tag Type" := Tag."Tag Type";
+                        Sort -= 1;
+                        Stag.SortIndex := Sort;
                         if STag.Insert() then; // We allow getting
-                                               // the same tag from
-                                               // multiple packages
+                        // the same tag from
+                        // multiple packages
                     until tag.next = 0;
             until Package.next = 0;
-    end;
-
-    procedure GenerateCOA()
-    begin
-
     end;
 
     procedure RefreshModules()
@@ -718,6 +731,5 @@ codeunit 92101 "OnBoarding Management"
         Modules."Select" := false;
         Modules.Description := 'Inventory';
         Modules.INSERT;
-
     end;
 }

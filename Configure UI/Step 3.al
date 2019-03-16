@@ -70,7 +70,7 @@ page 92109 "OnBoarding Step 3"
         {
             action(Back)
             {
-                Caption = 'Back';
+                Caption = 'Abort';
                 InFooterBar = true;
                 trigger OnAction()
                 begin
@@ -83,7 +83,10 @@ page 92109 "OnBoarding Step 3"
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 begin
-                    CurrPage.Close();
+                    if Method <> Method::" " then
+                        CurrPage.Close()
+                    else
+                        error('Select a Chart of Account Method first.');
                 end;
             }
         }

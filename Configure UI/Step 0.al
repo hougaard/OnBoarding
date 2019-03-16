@@ -18,7 +18,7 @@ page 92107 "OnBoarding Step 0"
                 label(What)
                 {
                     ApplicationArea = All;
-                    Caption = 'You can get a minimal chart of account with everything needed for the chosen setup. Number series for every is also generated.';
+                    Caption = 'You can get a minimal chart of account with everything needed for the chosen setup. Number series for everything is also generated.';
                 }
                 label(Info)
                 {
@@ -47,6 +47,7 @@ page 92107 "OnBoarding Step 0"
                     OnMgt: Codeunit "OnBoarding Management";
                 begin
                     OnMgt.RunTheProcess();
+                    CurrPage.Close();
                 end;
             }
         }
