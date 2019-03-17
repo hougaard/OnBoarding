@@ -49,30 +49,35 @@ page 92100 "Package List"
             {
                 Caption = 'Create Packages from CRONUS';
                 ApplicationArea = All;
+
                 trigger OnAction()
                 var
                     PackageMgt: Codeunit "Onboarding Package Export";
+                    Appl: Codeunit "Application System Constants";
                 begin
+                    PackageMgt.BuildPackageAndExportToGitHub('BASE',
+                                    'BASE-SETUP',
+                                    'Base Setup',
+                                    'Microsoft',
+                                    Appl.ApplicationVersion(),
+                                    '8|9|11');
                     // Finance
                     PackageMgt.BuildPackageAndExportToGitHub('FIN',
                                    'BASE-FIN',
                                    'Finance Management Setup',
                                    'Microsoft',
-                                   'NA',
-                                   '13.0.0.0',
+                                   Appl.ApplicationVersion(),
                                    '3|5|98|247|250|251|252');
                     PackageMgt.BuildAccountSchedulePackges('FIN',
                                                            'Microsoft',
-                                                           'NA',
-                                                           '13.0.0.0');
+                                                           Appl.ApplicationVersion());
 
                     // Sales Tax
                     PackageMgt.BuildPackageAndExportToGitHub('SALE',
                                    'SALES_TAX',
                                    'Canadian Sales Tax',
                                    'Microsoft',
-                                   'NA',
-                                   '13.0.0.0',
+                                   Appl.ApplicationVersion(),
                                    '318|319|320|321|322|326|327');
 
                     // Sale
@@ -80,17 +85,22 @@ page 92100 "Package List"
                                    'BASE-SALE',
                                    'Sale Basis Setup',
                                    'Microsoft',
-                                   'NA',
-                                   '13.0.0.0',
-                                   '311');
+                                   Appl.ApplicationVersion(),
+                                   '311|92');
                     // Purchase
                     PackageMgt.BuildPackageAndExportToGitHub('PURCHASE',
                                    'BASE-PURCHASE',
                                    'Purchase Basis Setup',
                                    'Microsoft',
-                                   'NA',
-                                   '13.0.0.0',
-                                   '312');
+                                   Appl.ApplicationVersion(),
+                                   '312|93');
+                    // Iventory
+                    PackageMgt.BuildPackageAndExportToGitHub('INVENTORY',
+                                   'BASE-INVENTORY',
+                                   'Inventory Basis Setup',
+                                   'Microsoft',
+                                   Appl.ApplicationVersion(),
+                                   '313|94');
 
                 end;
             }

@@ -8,9 +8,12 @@ table 92104 "OnBoarding Modules"
         { }
         field(10; "Select"; Boolean)
         { }
+        field(20; "Sorting Order"; Integer)
+        { }
     }
     keys
     {
         key(PK; "Module ID") { }
+        key(Sort; "Sorting Order") { }
     }
 }

@@ -4,6 +4,7 @@ page 92104 "OnBoarding Step 1"
     Caption = 'OnBoarding';
     Editable = true;
     SourceTable = "OnBoarding Modules";
+    SourceTableView = SORTING ("Sorting Order");
     InsertAllowed = false;
     DeleteAllowed = false;
     ModifyAllowed = true;

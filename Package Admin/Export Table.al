@@ -2,7 +2,6 @@ codeunit 92100 "Onboarding Package Export"
 {
     procedure BuildAccountSchedulePackges(Module: Text;
                                           Author: Text;
-                                          Country: Text;
                                           VersionTxt: Text)
     var
         AS: Record "Acc. Schedule Name";
@@ -14,50 +13,59 @@ codeunit 92100 "Onboarding Package Export"
         F: FieldRef;
         i: Integer;
         PackageTxt: Text;
+        Companies: Record Company;
+        CI: Record "Company Information";
     begin
-        if AS.FINDSET then
+        Companies.setfilter(Name, 'CRONUS*');
+        if Companies.findset then
             repeat
-                i := 0;
-                CLEAR(TJA);
-                CLEAR(J);
-                Clear(Info);
+                CI.ChangeCompany(Companies.Name);
+                CI.GET;
+                AS.ChangeCompany(Companies.Name);
+                if AS.FINDSET then
+                    repeat
+                        i := 0;
+                        CLEAR(TJA);
+                        CLEAR(J);
+                        Clear(Info);
 
-                // Account Schedule
-                T.OPEN(84);
-                F := T.Field(1);
-                F.SetRange(AS.Name);
-                TJA.Insert(i, TableRefToJson(T));
-                i += 1;
-                T.CLOSE();
+                        // Account Schedule
+                        T.OPEN(84, false, Companies.Name);
+                        F := T.Field(1);
+                        F.SetRange(AS.Name);
+                        TJA.Insert(i, TableRefToJson(T));
+                        i += 1;
+                        T.CLOSE();
 
-                // Schedule Line
-                T.OPEN(85);
-                F := T.Field(1);
-                F.SetRange(AS.Name);
-                TJA.Insert(i, TableRefToJson(T));
-                i += 1;
-                T.CLOSE();
+                        // Schedule Line
+                        T.OPEN(85, false, Companies.Name);
+                        F := T.Field(1);
+                        F.SetRange(AS.Name);
+                        TJA.Insert(i, TableRefToJson(T));
+                        i += 1;
+                        T.CLOSE();
 
-                T.OPEN(334); //Column Layout
-                F := T.Field(1);
-                F.SetRange(AS."Default Column Layout");
-                TJA.Insert(i, TableRefToJson(T));
-                i += 1;
-                T.CLOSE();
+                        T.OPEN(334, false, Companies.Name); //Column Layout
+                        F := T.Field(1);
+                        F.SetRange(AS."Default Column Layout");
+                        TJA.Insert(i, TableRefToJson(T));
+                        i += 1;
+                        T.CLOSE();
 
-                J.Add('Tables', TJA);
-                Info.Add('ID', AS.Name);
-                Info.Add('Module', Module);
-                Info.Add('Description', 'Account Schedule: ' + AS.Description);
-                Info.Add('Author', Author);
-                Info.Add('Country', Country);
-                Info.Add('Version', VersionTxt);
-                J.Add('Info', Info);
-                J.AsToken().WriteTo(PackageTxt);
+                        J.Add('Tables', TJA);
+                        Info.Add('ID', AS.Name);
+                        Info.Add('Module', Module);
+                        Info.Add('Description', 'Account Schedule: ' + AS.Description);
+                        Info.Add('Author', Author);
+                        Info.Add('Country', CI."Country/Region Code");
+                        Info.Add('Version', VersionTxt);
+                        J.Add('Info', Info);
+                        J.AsToken().WriteTo(PackageTxt);
 
-                SendToPackageReceiver(PackageTxt, AS.Name, Country, VersionTxt);
+                        SendToPackageReceiver(PackageTxt, AS.Name, CI."Country/Region Code", VersionTxt);
 
-            until AS.NEXT = 0;
+                    until AS.NEXT = 0;
+            until Companies.NEXT = 0;
     end;
 
     procedure SendToPackageReceiver(PackageTxt: Text; PackageID: Text; Country: Text; VersionTxt: Text)
@@ -80,7 +88,6 @@ codeunit 92100 "Onboarding Package Export"
                  PackageID: Text;
                  Description: Text;
                  Author: Text;
-                 Country: Text;
                  VersionTxt: Text;
                  TableFilter: Text)
     var
@@ -94,32 +101,44 @@ codeunit 92100 "Onboarding Package Export"
         http: HttpClient;
         Content: HttpContent;
         response: HttpResponseMessage;
+        Companies: Record Company;
+        CI: Record "Company Information";
     begin
-        T.SETRANGE("Object Type", T."Object Type"::Table);
-        T.SETFILTER("Object ID", TableFilter);
-        if T.FINDSET THEN
+        Companies.setfilter(Name, 'CRONUS*');
+        if Companies.findset then
             repeat
-                TJA.Insert(i, TableToJson(T."Object ID"));
-                i += 1;
-            until T.NEXT = 0;
-        J.Add('Tables', TJA);
-        Info.Add('ID', PackageID);
-        Info.Add('Module', Module);
-        Info.Add('Description', Description);
-        Info.Add('Author', Author);
-        Info.Add('Country', Country);
-        Info.Add('Version', VersionTxt);
-        J.Add('Info', Info);
-        J.AsToken().WriteTo(PackageTxt);
+                CLEAR(TJA);
+                CLEAR(Info);
+                CLEAR(J);
+                i := 0;
+                CI.ChangeCompany(Companies.Name);
+                CI.GET;
+                T.SETRANGE("Object Type", T."Object Type"::Table);
+                T.SETFILTER("Object ID", TableFilter);
+                if T.FINDSET THEN
+                    repeat
+                        TJA.Insert(i, TableToJson(T."Object ID", Companies.Name));
+                        i += 1;
+                    until T.NEXT = 0;
+                J.Add('Tables', TJA);
+                Info.Add('ID', PackageID);
+                Info.Add('Module', Module);
+                Info.Add('Description', Description);
+                Info.Add('Author', Author);
+                Info.Add('Country', CI."Country/Region Code");
+                Info.Add('Version', VersionTxt);
+                J.Add('Info', Info);
+                J.AsToken().WriteTo(PackageTxt);
 
-        SendToPackageReceiver(PackageTxt, PackageID, Country, VersionTxt);
+                SendToPackageReceiver(PackageTxt, PackageID, CI."Country/Region Code", VersionTxt);
+            until Companies.next = 0;
     end;
 
-    procedure TableToJson(TableNo: Integer): JsonObject
+    procedure TableToJson(TableNo: Integer; Company: Text): JsonObject
     var
         T: RecordRef;
     begin
-        T.OPEN(TableNo);
+        T.OPEN(TableNo, false, Company);
         exit(TableRefToJSon(T));
     end;
 
@@ -164,6 +183,7 @@ codeunit 92100 "Onboarding Package Export"
                                    (strpos(FilterTest, '?') <> 0) then begin
                                     // This is a filter value
                                 end else begin
+                                    GL.ChangeCompany(R.CurrentCompany());
                                     if GL.GET(f.Value) then begin
                                         RecRef.GetTable(GL);
                                         J.Add('G' + format(f.Number()), GLTagToJson(RecRef));
@@ -175,6 +195,7 @@ codeunit 92100 "Onboarding Package Export"
                             END;
                         308:
                             begin
+                                NS.ChangeCompany(R.CurrentCompany());
                                 if NS.Get(f.Value) then begin
                                     J.Add('N' + format(f.Number), NSTagToJson(NS));
                                 end else

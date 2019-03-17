@@ -60,9 +60,9 @@ codeunit 92101 "OnBoarding Management"
                                         end;
                                     308:
                                         begin
-                                            stag.setrange(tag, copystr(f."Field Value", 2));
+                                            stag.setrange(tag, f."Field Value");
                                             stag.findfirst();
-                                            Fr.Value := stag.Tag;
+                                            Fr.Value := copystr(stag.Tag, 2);
                                         end;
                                     else
                                         case lowercase(format(Fr.Type())) of
@@ -136,6 +136,7 @@ codeunit 92101 "OnBoarding Management"
                         else
                             Gl.Validate("Account Type", gl."Account Type"::Posting);
                     end;
+                    GL.TransferFields(stag);
                     GL.MODIFY(true);
                 end;
             until stag.next = 0;
@@ -226,6 +227,7 @@ codeunit 92101 "OnBoarding Management"
                                     else
                                         error('This should never happen, a total-end account without a total-begin account');
                                     Stag.INIT;
+                                    sTag.TransferFields(tag);
                                     Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
                                     Stag.Tag := Tag.Tag;
                                     Stag.Description := Tag.Description;
@@ -331,6 +333,7 @@ codeunit 92101 "OnBoarding Management"
                                         else
                                             error('This should never happen, a total-end account without a total-begin account');
                                         Stag.INIT;
+                                        sTag.TransferFields(tag);
                                         Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
                                         Stag.Tag := Tag.Tag;
                                         Stag.Description := Tag.Description;
@@ -457,6 +460,7 @@ codeunit 92101 "OnBoarding Management"
                 Package."Minimum Version" := GetTextFromToken(jInfoToken, 'Version');
                 Package.Author := GetTextFromToken(jInfoToken, 'Author');
                 Package.Country := GetTextFromToken(jInfoToken, 'Country');
+                Package.ID += Package.Country;
                 Package.INSERT;
 
                 if jPackage.Get('Tables', jTablesToken) then begin
@@ -557,6 +561,19 @@ codeunit 92101 "OnBoarding Management"
                     Tag."Tag Type" := Tag."Tag Type"::"G/L Account";
                     Tag.Description := GetTextFromToken(jField, 'f2');
                     Tag.Groups := GetTextFromToken(jField, 'Totals');
+
+                    Tag."Account Category" := GetOptionFromToken(jField, 'f8');
+                    Tag."Income/Balance" := GetOptionFromToken(jField, 'f9');
+                    Tag."Direct Posting" := GetBooleanFromToken(jField, 'f14');
+                    Tag."Reconciliation Account" := GetBooleanFromToken(jField, 'f16');
+                    Tag."Gen. Posting Type" := GetOptionFromToken(jField, 'f43');
+                    Tag."Gen. Bus. Posting Group" := GetTextFromToken(jField, 'f44');
+                    Tag."Gen. Prod. Posting Group" := GetTextFromToken(jField, 'f45');
+                    Tag."Tax Area Code" := GetTextFromToken(jField, 'f54');
+                    Tag."Tax Liable" := GetBooleanFromToken(jField, 'f55');
+                    tag."Tax Group Code" := GetTextFromToken(jField, 'f56');
+                    tag."VAT Bus. Posting Group" := GetTextFromToken(jField, 'f57');
+                    tag."VAT Prod. Posting Group" := GetTextFromToken(jField, 'f58');
                     if Tag.INSERT then;
                 end;
             'N':
@@ -585,6 +602,34 @@ codeunit 92101 "OnBoarding Management"
         EXIT(copystr(Data, 2, strlen(Data) - 2));
     end;
 
+    procedure GetOptionFromToken(T: JsonToken; Member: Text): Integer
+    var
+        O: JsonObject;
+        V: JsonToken;
+        Data: Text;
+        Op: Integer;
+    begin
+        O := T.AsObject();
+        O.Get(Member, V);
+        V.WriteTo(Data);
+        evaluate(Op, copystr(Data, 2, strlen(Data) - 2), 9);
+        EXIT(Op);
+    end;
+
+    procedure GetBooleanFromToken(T: JsonToken; Member: Text): Boolean
+    var
+        O: JsonObject;
+        V: JsonToken;
+        Data: Text;
+        Op: Boolean;
+    begin
+        O := T.AsObject();
+        O.Get(Member, V);
+        V.WriteTo(Data);
+        evaluate(Op, copystr(Data, 2, strlen(Data) - 2), 9);
+        EXIT(Op);
+    end;
+
     procedure RunTheProcess()
     var
         Step1: Page "OnBoarding Step 1"; // Select Modules
@@ -607,6 +652,7 @@ codeunit 92101 "OnBoarding Management"
         AccountIncrement: Integer;
         AccountIncrementTotals: Integer;
         CreateCOATotals: Boolean;
+        CountryCode: Code[10];
 
     begin
         sTag.DeleteAll();
@@ -617,16 +663,25 @@ codeunit 92101 "OnBoarding Management"
         Step1.Editable(true);
         Step1.RunModal();
         Modules.SETRANGE(Select, true);
+        Modules.SetCurrentKey("Sorting Order");
         if not Modules.IsEmpty() THEN BEGIN
             if Modules.FINDFIRST then
                 repeat
                     Packages.Setrange(Module, Modules."Module ID");
+                    if Modules."Sorting Order" > 0 then
+                        Packages.setrange(Country, CountryCode);
                     clear(Step2);
                     Step2.SetTableView(Packages);
                     Step2.Editable(true);
-                    Step2.SetCaption(Modules.Description);
+                    Step2.PreparePage(Modules.Description, '', Modules."Sorting Order" > 0);
                     Step2.RunModal();
                     COMMIT;
+                    if Modules."Sorting Order" = 0 then begin
+                        Packages.SetRange(Select, true);
+                        packages.findfirst;
+                        CountryCode := Packages.Country;
+                        Packages.Setrange(Select);
+                    end;
                 until Modules.NEXT = 0;
         END else
             Error('No modules selected, aborting');
@@ -709,27 +764,39 @@ codeunit 92101 "OnBoarding Management"
         Modules.DELETEALL;
 
         Modules.INIT;
+        Modules."Module ID" := 'BASE';
+        Modules."Select" := true;
+        Modules.Description := 'Base Setup';
+        Modules."Sorting Order" := 0;
+        Modules.INSERT;
+
+
+        Modules.INIT;
         Modules."Module ID" := 'FIN';
         Modules."Select" := false;
         Modules.Description := 'Financial Management';
+        Modules."Sorting Order" := 1;
         Modules.INSERT;
 
         Modules.INIT;
         Modules."Module ID" := 'SALE';
         Modules."Select" := false;
         Modules.Description := 'Sales and Account Receivables';
+        Modules."Sorting Order" := 2;
         Modules.INSERT;
 
         Modules.INIT;
         Modules."Module ID" := 'PURCHASE';
         Modules."Select" := false;
         Modules.Description := 'Purchase and Account Payables';
+        Modules."Sorting Order" := 3;
         Modules.INSERT;
 
         Modules.INIT;
         Modules."Module ID" := 'INVENTORY';
         Modules."Select" := false;
         Modules.Description := 'Inventory';
+        Modules."Sorting Order" := 4;
         Modules.INSERT;
     end;
 }

@@ -36,6 +36,12 @@ page 92106 "OnBoarding Step 2"
                         Editable = false;
                         ApplicationArea = All;
                     }
+                    field(Country; Country)
+                    {
+                        Editable = false;
+                        ApplicationArea = All;
+                        Visible = not AllowMultiple;
+                    }
                 }
             }
         }
@@ -58,18 +64,30 @@ page 92106 "OnBoarding Step 2"
                 InFooterBar = true;
                 Caption = 'Continue to next step';
                 trigger OnAction()
+                var
+                    PTest: Record "OnBoarding Package";
                 begin
+                    PTest.Setrange(Module, Rec.Module);
+                    PTest.setrange(Select, true);
+                    if not AllowMultiple then
+                        if Ptest.Count() <> 1 then
+                            error('You must select one package to continue');
                     CurrPage.Close();
                 end;
             }
         }
     }
-    procedure SetCaption(Cap: Text)
+    procedure PreparePage(Cap: Text; CountryFilter: Text; _AllowMultiple: Boolean)
     begin
         DescTxt := Cap;
+        if CountryFilter <> '' then
+            Setfilter(Country, CountryFilter);
+        AllowMultiple := _AllowMultiple;
     end;
 
     var
         DescTxt: Text;
+        AllowMultiple: Boolean;
+
 
 }
