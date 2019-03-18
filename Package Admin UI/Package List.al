@@ -199,6 +199,25 @@ page 92103 "Table Fields"
         }
     }
 }
+page 92115 "Selected Tags"
+{
+    SourceTable = "OnBoarding Selected Tag";
+    PageType = List;
+    layout
+    {
+        area(Content)
+        {
+            repeater(Rep)
+            {
+                field(SortIndex;SortIndex) { ApplicationArea = All;}
+                field(Tag; Tag) { ApplicationArea = All; }
+                field("Tag Type"; "Tag Type") { ApplicationArea = all; }
+                field(TagValue; TagValue) { ApplicationArea = All; }
+                field(Description; Description) { ApplicationArea = All; }
+            }
+        }
+    }
+}
 
 page 92105 "Package Tags"
 {

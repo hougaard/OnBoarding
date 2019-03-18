@@ -1,6 +1,6 @@
 codeunit 92101 "OnBoarding Management"
 {
-    procedure SuggestStartingNumbers(StartNumber: Integer)
+    procedure SuggestStartingNumbers(StartNumber: Code[20])
     var
         sTag: Record "OnBoarding Selected Tag";
     begin
@@ -61,6 +61,8 @@ codeunit 92101 "OnBoarding Management"
         _time: Time;
         _integer: Integer;
         _boolean: Boolean;
+        tt: Record "OnBoarding Selected Tag";
+
     begin
         Package.Setrange(Select, true);
         if Package.FINDSET then
@@ -87,8 +89,6 @@ codeunit 92101 "OnBoarding Management"
                                 case Fr.Relation() of
                                     15:
                                         begin
-                                            if (r.number = 320) then
-                                                _boolean := true;
                                             stag.setrange(tag, f."Field Value");
                                             stag.findfirst();
                                             Fr.value := stag.TagValue;
@@ -171,17 +171,17 @@ codeunit 92101 "OnBoarding Management"
                         else
                             Gl.Validate("Account Type", gl."Account Type"::Posting);
                     end;
-                    Gl."Account Category" := stag."Account Category";
+                    GL."Account Category" := stag."Account Category";
                     GL."Gen. Bus. Posting Group" := stag."Gen. Bus. Posting Group";
                     GL."Gen. Posting Type" := stag."Gen. Posting Type";
                     GL."Gen. Prod. Posting Group" := stag."Gen. Prod. Posting Group";
                     GL."Direct Posting" := stag."Direct Posting";
                     GL."Tax Area Code" := stag."Tax Area Code";
-                    gl."Tax Group Code" := stag."Tax Group Code";
-                    gl."Tax Liable" := stag."Tax Liable";
-                    gl."Reconciliation Account" := stag."Reconciliation Account";
-                    gl."VAT Bus. Posting Group" := stag."VAT Bus. Posting Group";
-                    gl."VAT Prod. Posting Group" := stag."VAT Prod. Posting Group";
+                    GL."Tax Group Code" := stag."Tax Group Code";
+                    GL."Tax Liable" := stag."Tax Liable";
+                    GL."Reconciliation Account" := stag."Reconciliation Account";
+                    GL."VAT Bus. Posting Group" := stag."VAT Bus. Posting Group";
+                    GL."VAT Prod. Posting Group" := stag."VAT Prod. Posting Group";
                     GL.MODIFY(true);
                 end;
             until stag.next = 0;
@@ -237,6 +237,7 @@ codeunit 92101 "OnBoarding Management"
         BeginIndex: Integer;
         NotFirst: Boolean;
     begin
+        sTag.DELETEALL;
         NextIncomeNo := 0;
         NextBalanceNo := 10000000;
         Packages.SetRange(Select, true);
@@ -520,6 +521,8 @@ codeunit 92101 "OnBoarding Management"
                 Package.Author := GetTextFromToken(jInfoToken, 'Author');
                 Package.Country := GetTextFromToken(jInfoToken, 'Country');
                 Package.ID += Package.Country;
+                if strpos(Package.ID, 'BASE') <> 0 then
+                    Package.SortIndex := -1; // Make sure base packages are shown first.
                 Package.INSERT;
 
                 if jPackage.Get('Tables', jTablesToken) then begin
@@ -783,8 +786,9 @@ codeunit 92101 "OnBoarding Management"
                                         end;
                                     end;
                                 until ModulesDone;
-                            if ModulesContinue then
+                            if ModulesContinue then begin
                                 State := State::"Chart of Accounts action";
+                            end;
                         END else
                             Error('No modules selected, aborting');
                     end;
@@ -825,7 +829,7 @@ codeunit 92101 "OnBoarding Management"
                     end;
                 State::"Upload COA":
                     begin
-                        SelectTagsFromSelectedPackages();
+                        SelectTagsFromSelectedPackages(false);
                         COMMIT;
                         Clear(Step4);
                         Step4.RunModal();
@@ -836,6 +840,7 @@ codeunit 92101 "OnBoarding Management"
                     end;
                 State::"Edit COA":
                     begin
+                        SelectTagsFromSelectedPackages(true);
                         COMMIT;
                         Clear(Step5);
                         Step5.RunModal();
@@ -846,7 +851,7 @@ codeunit 92101 "OnBoarding Management"
                     end;
                 State::"Map to existing COA":
                     begin
-                        SelectTagsFromSelectedPackages();
+                        SelectTagsFromSelectedPackages(false);
                         COMMIT;
                         Clear(Step6);
                         Step6.RunModal();
@@ -857,8 +862,6 @@ codeunit 92101 "OnBoarding Management"
                     end;
                 State::"Number Series Action":
                     begin
-                        SelectTagsFromSelectedPackages();
-                        COMMIT;
                         clear(Step7);
                         Step7.RunModal(); // Define number series
                         if Step7.Continue() then begin
@@ -891,7 +894,7 @@ codeunit 92101 "OnBoarding Management"
         until Done;
     end;
 
-    procedure SelectTagsFromSelectedPackages()
+    procedure SelectTagsFromSelectedPackages(OnlyNumberSeries: Boolean)
     var
         STag: Record "OnBoarding Selected Tag";
         Tag: Record "Package Tag";
@@ -902,6 +905,8 @@ codeunit 92101 "OnBoarding Management"
         if Package.FINDSET then
             repeat
                 Tag.setrange("Package ID", Package.ID);
+                if OnlyNumberSeries then
+                    tag.Setrange("Tag Type", Tag."Tag Type"::"No. Series");
                 if Tag.findset then
                     repeat
                         Stag.INIT;

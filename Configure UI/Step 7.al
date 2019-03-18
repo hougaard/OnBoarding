@@ -82,20 +82,20 @@ page 92114 "OnBoarding Step 7"
         exit(Method);
     end;
 
-    procedure GetStartNumber(): Integer
+    procedure GetStartNumber(): Code[20]
     begin
         exit(FirstNumber);
     end;
 
     trigger OnOpenPage()
     begin
-        FirstNumber := 1000;
+        FirstNumber := '1000';
         ContinuePressed := false;
     end;
 
     var
         Method: Option " ","Generate them for me","I will do this myself";
-        FirstNumber: Integer;
+        FirstNumber: Code[20];
         AutoBuildVisible: Boolean;
         ContinuePressed: Boolean;
 }

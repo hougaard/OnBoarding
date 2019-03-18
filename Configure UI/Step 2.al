@@ -3,6 +3,7 @@ page 92106 "OnBoarding Step 2"
     PageType = NavigatePage;
     Caption = 'OnBoarding';
     SourceTable = "OnBoarding Package";
+    SourceTableView = sorting (SortIndex);
     InsertAllowed = false;
     DeleteAllowed = false;
     ModifyAllowed = true;
