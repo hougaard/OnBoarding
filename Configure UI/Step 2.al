@@ -52,14 +52,14 @@ page 92106 "OnBoarding Step 2"
         {
             action(Back)
             {
-                Caption = 'Abort';
+                Caption = 'Back';
                 InFooterBar = true;
                 trigger OnAction()
                 begin
                     CurrPage.Close();
                 end;
             }
-            action(Continue)
+            action(ContinueAction)
             {
                 InFooterBar = true;
                 Caption = 'Continue to next step';
@@ -72,11 +72,22 @@ page 92106 "OnBoarding Step 2"
                     if not AllowMultiple then
                         if Ptest.Count() <> 1 then
                             error('You must select one package to continue');
+                    ContinuePressed := true;
                     CurrPage.Close();
                 end;
             }
         }
     }
+    trigger OnOpenPage()
+    begin
+        ContinuePressed := false;
+    end;
+
+    procedure Continue(): Boolean
+    begin
+        exit(ContinuePressed);
+    end;
+
     procedure PreparePage(Cap: Text; CountryFilter: Text; _AllowMultiple: Boolean)
     begin
         DescTxt := Cap;
@@ -88,6 +99,7 @@ page 92106 "OnBoarding Step 2"
     var
         DescTxt: Text;
         AllowMultiple: Boolean;
+        ContinuePressed: Boolean;
 
 
 }

@@ -75,7 +75,7 @@ codeunit 92100 "Onboarding Package Export"
         response: HttpResponseMessage;
     begin
         Content.WriteFrom(PackageTxt);
-        if http.Post('http://10.3.1.13:9999/' +
+        if http.Post('http://10.20.3.130:9999/' +
                         PackageID + '_' +
                         Country + '_' +
                         VersionTxt, Content, response) then begin
@@ -123,7 +123,7 @@ codeunit 92100 "Onboarding Package Export"
                 J.Add('Tables', TJA);
                 Info.Add('ID', PackageID);
                 Info.Add('Module', Module);
-                Info.Add('Description', Description);
+                Info.Add('Description', StrSubstNo(Description, CI."Country/Region Code"));
                 Info.Add('Author', Author);
                 Info.Add('Country', CI."Country/Region Code");
                 Info.Add('Version', VersionTxt);
@@ -239,12 +239,13 @@ codeunit 92100 "Onboarding Package Export"
                 J.Add('f' + format(f.Number()), format(f.Value, 0, 9));
             end;
         end;
+        GL.ChangeCompany(R.CurrentCompany());
         R.SetTable(GL);
-        J.Add('Totals', GetGLAccountGroups(GL));
+        J.Add('Totals', GetGLAccountGroups(GL, R.CurrentCompany()));
         exit(J);
     end;
 
-    procedure GetGLAccountGroups(GL: Record "G/L Account"): Text
+    procedure GetGLAccountGroups(GL: Record "G/L Account"; CompanyName: Text): Text
     // Build a string of all the Total this account is part of
     var
         Before: Record "G/L Account";
@@ -253,6 +254,7 @@ codeunit 92100 "Onboarding Package Export"
         Count: Integer;
         i: Integer;
     begin
+        Before.ChangeCompany(CompanyName);
         Before.SETFILTER("No.", '..' + GL."No.");
         Before.SETFILTER("Account Type", '%1|%2',
                         Before."Account Type"::"Begin-Total",

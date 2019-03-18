@@ -1,5 +1,36 @@
 codeunit 92101 "OnBoarding Management"
 {
+    procedure SuggestStartingNumbers(StartNumber: Integer)
+    var
+        sTag: Record "OnBoarding Selected Tag";
+    begin
+        sTag.SetRange("Tag Type", Stag."Tag Type"::"No. Series");
+        sTag.SetFilter(TagValue, '=%1', '');
+        if stag.findset then
+            repeat
+                Stag.TagValue := GetCamel(stag.Description) + format(StartNumber);
+                Stag.Modify();
+            until stag.next = 0;
+    end;
+
+    procedure GetCamel(t: Text): Text
+    var
+        i: Integer;
+        O: Text;
+    begin
+        for i := 1 to StrLen(t) do begin
+            if t[i] > '9' then
+                if (UpperCase(t[i]) = t[i]) then
+                    if i > 1 then begin
+                        if (UpperCase(t[i - 1]) <> t[i - 1]) or
+                           (t[i - 1] < '9') then
+                            o += t[i];
+                    end else
+                        o += t[i];
+        end;
+        exit(O);
+    end;
+
     procedure CreateEverything()
     begin
         // Create Number Series
@@ -10,6 +41,8 @@ codeunit 92101 "OnBoarding Management"
 
         // Create all the data from the selected packages
         CreateDataFromPackages();
+        if not Confirm('Do you want to Commit the changes?\(Debug message)') then
+            ERROR('Aborting');
     end;
 
     procedure CreateDataFromPackages()
@@ -54,6 +87,8 @@ codeunit 92101 "OnBoarding Management"
                                 case Fr.Relation() of
                                     15:
                                         begin
+                                            if (r.number = 320) then
+                                                _boolean := true;
                                             stag.setrange(tag, f."Field Value");
                                             stag.findfirst();
                                             Fr.value := stag.TagValue;
@@ -136,7 +171,17 @@ codeunit 92101 "OnBoarding Management"
                         else
                             Gl.Validate("Account Type", gl."Account Type"::Posting);
                     end;
-                    GL.TransferFields(stag);
+                    Gl."Account Category" := stag."Account Category";
+                    GL."Gen. Bus. Posting Group" := stag."Gen. Bus. Posting Group";
+                    GL."Gen. Posting Type" := stag."Gen. Posting Type";
+                    GL."Gen. Prod. Posting Group" := stag."Gen. Prod. Posting Group";
+                    GL."Direct Posting" := stag."Direct Posting";
+                    GL."Tax Area Code" := stag."Tax Area Code";
+                    gl."Tax Group Code" := stag."Tax Group Code";
+                    gl."Tax Liable" := stag."Tax Liable";
+                    gl."Reconciliation Account" := stag."Reconciliation Account";
+                    gl."VAT Bus. Posting Group" := stag."VAT Bus. Posting Group";
+                    gl."VAT Prod. Posting Group" := stag."VAT Prod. Posting Group";
                     GL.MODIFY(true);
                 end;
             until stag.next = 0;
@@ -227,7 +272,7 @@ codeunit 92101 "OnBoarding Management"
                                     else
                                         error('This should never happen, a total-end account without a total-begin account');
                                     Stag.INIT;
-                                    sTag.TransferFields(tag);
+                                    Stag.TransferFrom(tag);
                                     Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
                                     Stag.Tag := Tag.Tag;
                                     Stag.Description := Tag.Description;
@@ -333,7 +378,7 @@ codeunit 92101 "OnBoarding Management"
                                         else
                                             error('This should never happen, a total-end account without a total-begin account');
                                         Stag.INIT;
-                                        sTag.TransferFields(tag);
+                                        sTag.TransferFrom(tag);
                                         Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
                                         Stag.Tag := Tag.Tag;
                                         Stag.Description := Tag.Description;
@@ -387,7 +432,7 @@ codeunit 92101 "OnBoarding Management"
         end;
     end;
 
-    procedure GetPackages()
+    procedure GetPackages(NameFilter: Text)
     var
         http: HttpClient;
         jsonTxt: Text;
@@ -402,7 +447,11 @@ codeunit 92101 "OnBoarding Management"
         Package: Record "OnBoarding Package";
         pTable: Record "OnBoarding Table";
         pField: Record "OnBoarding Field";
+        D: Dialog;
+        FC: Integer;
     begin
+        if GuiAllowed() then
+            D.Open('Reading package list from Github #1## of #2##');
         Package.DELETEALL;
         pTable.DELETEALL;
         pField.DELETEALL;
@@ -415,18 +464,28 @@ codeunit 92101 "OnBoarding Management"
             if response.HttpStatusCode() = 200 then begin
                 response.Content().ReadAs(jsonTxt);
                 files.ReadFrom(jsonTxt);
+                if GuiAllowed() then
+                    D.Update(2, Files.Count());
                 foreach fileToken in files do begin
                     JO := fileToken.AsObject();
                     JO.Get('download_url', value);
                     value.WriteTo(filename);
-                    if strpos(filename, '.json') <> 0 then begin
-                        filename := copystr(filename, 2, strlen(filename) - 2);
-                        if http.Get(filename, response) then begin
-                            response.Content().ReadAs(jsonTxt);
-                            ImportPackage(jsonTxt);
+                    if (NameFilter = '') or
+                       (strpos(filename, NameFilter) <> 0) then begin
+                        FC += 1;
+                        if GuiAllowed() then
+                            D.Update(1, FC);
+                        if strpos(filename, '.json') <> 0 then begin
+                            filename := copystr(filename, 2, strlen(filename) - 2);
+                            if http.Get(filename, response) then begin
+                                response.Content().ReadAs(jsonTxt);
+                                ImportPackage(jsonTxt);
+                            end;
                         end;
                     end;
                 end;
+                if GuiAllowed() then
+                    D.Close();
             end else
                 Error('Cannot read package list, error %1', response.HttpStatusCode());
         end else
@@ -638,14 +697,21 @@ codeunit 92101 "OnBoarding Management"
         Step4: Page "OnBoarding Step 4"; // Upload
         Step5: Page "OnBoarding Step 5"; // Present and edit COA
         Step6: Page "OnBoarding Step 6"; // Map to existing COA
-        Step7: Page "OnBoarding Step 7"; // Assign number to numberseries
-        Step8: Page "OnBoarding Step 8"; // Review and Confirm
+        Step7: Page "OnBoarding Step 7"; // Select how to number series
+        Step8: Page "OnBoarding Step 8"; // Edit number for numberseries
+        Step9: Page "OnBoarding Step 9"; // Review and Confirm
+
+        // State machine
+        State: Option "Start","Select Modules","Select Packages","Chart of Accounts action","Upload COA","Edit COA","Map to existing COA","Number Series Action","Edit Number Series","Review and Confirm";
+        Done: Boolean;
 
         Modules: Record "OnBoarding Modules";
         Packages: Record "OnBoarding Package";
         PF: Record "OnBoarding Field";
         sTag: Record "Analysis Selected Dimension";
         Method: Option " ","Generate one for me","I'll upload one","Use the existing";
+        NS_Method: Option " ","Generate them for me","I will do this myself";
+
 
         // Auto Gen Parameters
         FirstAccountNumber: Integer;
@@ -654,81 +720,175 @@ codeunit 92101 "OnBoarding Management"
         CreateCOATotals: Boolean;
         CountryCode: Code[10];
 
-    begin
-        sTag.DeleteAll();
-        RefreshModules();
-        GetPackages();
-        COMMIT;
+        ModulesDone: Boolean;
+        ModulesContinue: Boolean;
 
-        Step1.Editable(true);
-        Step1.RunModal();
-        Modules.SETRANGE(Select, true);
-        Modules.SetCurrentKey("Sorting Order");
-        if not Modules.IsEmpty() THEN BEGIN
-            if Modules.FINDFIRST then
-                repeat
-                    Packages.Setrange(Module, Modules."Module ID");
-                    if Modules."Sorting Order" > 0 then
-                        Packages.setrange(Country, CountryCode);
-                    clear(Step2);
-                    Step2.SetTableView(Packages);
-                    Step2.Editable(true);
-                    Step2.PreparePage(Modules.Description, '', Modules."Sorting Order" > 0);
-                    Step2.RunModal();
-                    COMMIT;
-                    if Modules."Sorting Order" = 0 then begin
-                        Packages.SetRange(Select, true);
-                        packages.findfirst;
-                        CountryCode := Packages.Country;
-                        Packages.Setrange(Select);
-                    end;
-                until Modules.NEXT = 0;
-        END else
-            Error('No modules selected, aborting');
-        Packages.reset;
-        packages.Setrange(Select, true);
-        if not packages.IsEmpty() then begin
-            COMMIT;
-            Step3.Editable(true);
-            Step3.RunModal();
-            case Step3.GetMethod() of
-                Method::"Generate one for me":
+    begin
+        State := 0; // We start at zero
+        Done := false; // We're not done
+
+        repeat // State machine loop
+            case State of // This case statement defines where we're
+                          // in the process, keeps looking until we're 
+                          // done.
+                State::Start:
                     begin
-                        Step3.GetAutoGenParameters(FirstAccountNumber,
-                                                   AccountIncrement,
-                                                   CreateCOATotals,
-                                                   AccountIncrementTotals);
-                        BuildChartOfAccountFromTags(FirstAccountNumber,
-                                                   AccountIncrement,
-                                                   CreateCOATotals,
-                                                   AccountIncrementTotals);
-                        COMMIT;
-                        Step5.RunModal();
+                        sTag.DeleteAll();
+                        RefreshModules();
+                        GetPackages('BASE-SETUP_');
+                        State := State::"Select Modules";
                     end;
-                Method::"I'll upload one":
+                State::"Select Modules":
+                    begin
+                        clear(Step1);
+                        Step1.Editable(true);
+                        Step1.RunModal();
+                        if Step1.Continue() then
+                            State := State::"Select Packages"
+                        else
+                            exit; // No reason to go back to 0
+                    end;
+                State::"Select Packages":
+                    begin
+                        Modules.SETRANGE(Select, true);
+                        Modules.SetCurrentKey("Sorting Order");
+                        if not Modules.IsEmpty() THEN BEGIN
+                            if Modules.FINDFIRST then
+                                repeat
+                                    Packages.RESET;
+                                    Packages.Setrange(Module, Modules."Module ID");
+                                    if Modules."Sorting Order" > 0 then
+                                        Packages.setrange(Country, CountryCode);
+                                    COMMIT;
+                                    clear(Step2);
+                                    Step2.SetTableView(Packages);
+                                    Step2.Editable(true);
+                                    Step2.PreparePage(Modules.Description, '', Modules."Sorting Order" > 0);
+                                    Step2.RunModal();
+                                    if Step2.Continue() then begin
+                                        if Modules."Sorting Order" = 0 then begin
+                                            Packages.SetRange(Select, true);
+                                            packages.findfirst;
+                                            CountryCode := Packages.Country;
+                                            Packages.Setrange(Select);
+                                            GetPackages('_' + CountryCode + '_');
+                                        end;
+                                        ModulesDone := Modules.NEXT = 0;
+                                        ModulesContinue := true;
+                                    end else begin
+                                        if Modules.NEXT(-2) <> 2 then begin
+                                            State := State::"Select Modules";
+                                            ModulesDone := true;
+                                            ModulesContinue := false;
+                                        end;
+                                    end;
+                                until ModulesDone;
+                            if ModulesContinue then
+                                State := State::"Chart of Accounts action";
+                        END else
+                            Error('No modules selected, aborting');
+                    end;
+                State::"Chart of Accounts action":
+                    begin
+                        Packages.reset;
+                        packages.Setrange(Select, true);
+                        if not packages.IsEmpty() then begin
+                            clear(Step3);
+                            Step3.Editable(true);
+                            Step3.RunModal();
+                            if Step3.Continue() then begin
+                                case Step3.GetMethod() of
+                                    Method::"Generate one for me":
+                                        begin
+                                            Step3.GetAutoGenParameters(FirstAccountNumber,
+                                                                    AccountIncrement,
+                                                                    CreateCOATotals,
+                                                                    AccountIncrementTotals);
+                                            BuildChartOfAccountFromTags(FirstAccountNumber,
+                                                                    AccountIncrement,
+                                                                    CreateCOATotals,
+                                                                    AccountIncrementTotals);
+                                            State := State::"Edit COA";
+                                        end;
+                                    Method::"I'll upload one":
+                                        begin
+                                            State := State::"Upload COA";
+                                        end;
+                                    Method::"Use the existing":
+                                        begin
+                                            State := State::"Map to existing COA";
+                                        end;
+                                end;
+                            end else
+                                State := State::"Select Packages";
+                        end;
+                    end;
+                State::"Upload COA":
                     begin
                         SelectTagsFromSelectedPackages();
                         COMMIT;
+                        Clear(Step4);
                         Step4.RunModal();
-                        // Import ...
-                        COMMIT;
-                        Step5.RunModal();
+                        if Step4.Continue() then
+                            State := State::"Map to existing COA"
+                        else
+                            State := State::"Chart of Accounts action";
                     end;
-                Method::"Use the existing":
+                State::"Edit COA":
                     begin
-                        // Map our tags to existing G/L
+                        COMMIT;
+                        Clear(Step5);
+                        Step5.RunModal();
+                        if Step5.Continue() then
+                            State := State::"Number Series Action"
+                        else
+                            State := State::"Chart of Accounts action";
+                    end;
+                State::"Map to existing COA":
+                    begin
                         SelectTagsFromSelectedPackages();
                         COMMIT;
+                        Clear(Step6);
                         Step6.RunModal();
+                        if Step6.Continue() then
+                            State := State::"Number Series Action"
+                        else
+                            State := State::"Chart of Accounts action";
                     end;
+                State::"Number Series Action":
+                    begin
+                        SelectTagsFromSelectedPackages();
+                        COMMIT;
+                        clear(Step7);
+                        Step7.RunModal(); // Define number series
+                        if Step7.Continue() then begin
+                            if Step7.GetMethod() = NS_Method::"Generate them for me" then
+                                SuggestStartingNumbers(Step7.GetStartNumber());
+                            State := State::"Edit Number Series";
+                        end else
+                            State := State::"Chart of Accounts action";
+                    end;
+                State::"Edit Number Series":
+                    begin
+                        Clear(Step8);
+                        step8.RunModal();
+                        if Step8.Continue() then
+                            State := State::"Review and Confirm"
+                        else
+                            State := State::"Number Series Action";
+                    end;
+                State::"Review and Confirm":
+                    begin
+                        Clear(Step9);
+                        Step9.RunModal();
+                        if Step9.Continue() then
+                            Done := true // Yeah, done!
+                        else
+                            State := State::"Edit Number Series";
+                    End;
             end;
-            SelectTagsFromSelectedPackages();
             COMMIT;
-            Step7.RunModal(); // Number Series
-            COMMIT;
-            Step8.RunModal(); // Corfirm
-        end else
-            error('No packages selected, aborting');
+        until Done;
     end;
 
     procedure SelectTagsFromSelectedPackages()

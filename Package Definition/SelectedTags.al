@@ -65,4 +65,18 @@ table 92105 "OnBoarding Selected Tag"
     {
         key(PK; SortIndex) { }
     }
+    procedure TransferFrom(Tag: REcord "Package Tag")
+    begin
+        "Account Category" := tag."Account Category";
+        "Gen. Bus. Posting Group" := tag."Gen. Bus. Posting Group";
+        "Gen. Posting Type" := tag."Gen. Posting Type";
+        "Gen. Prod. Posting Group" := tag."Gen. Prod. Posting Group";
+        "Direct Posting" := tag."Direct Posting";
+        "Tax Area Code" := tag."Tax Area Code";
+        "Tax Group Code" := tag."Tax Group Code";
+        "Tax Liable" := tag."Tax Liable";
+        "Reconciliation Account" := tag."Reconciliation Account";
+        "VAT Bus. Posting Group" := tag."VAT Bus. Posting Group";
+        "VAT Prod. Posting Group" := tag."VAT Prod. Posting Group";
+    end;
 }

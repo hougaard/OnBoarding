@@ -70,27 +70,33 @@ page 92109 "OnBoarding Step 3"
         {
             action(Back)
             {
-                Caption = 'Abort';
+                Caption = 'Back';
                 InFooterBar = true;
                 trigger OnAction()
                 begin
                     CurrPage.Close();
                 end;
             }
-            action(Continue)
+            action(ContinueAction)
             {
                 InFooterBar = true;
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 begin
-                    if Method <> Method::" " then
+                    if Method <> Method::" " then begin
+                        ContinuePressed := true;
                         CurrPage.Close()
-                    else
+                    end else
                         error('Select a Chart of Account Method first.');
                 end;
             }
         }
     }
+    procedure Continue(): Boolean
+    begin
+        exit(ContinuePressed);
+    end;
+
     procedure GetMethod(): Option "","Generate one for me","I'll upload one","Use the existing";
     begin
         exit(Method);
@@ -113,6 +119,7 @@ page 92109 "OnBoarding Step 3"
         AccountIncrement := 10;
         AccountIncrementTotals := 100;
         CreateCOATotals := true;
+        ContinuePressed := false;
     end;
 
     var
@@ -122,4 +129,5 @@ page 92109 "OnBoarding Step 3"
         AccountIncrementTotals: Integer;
         CreateCOATotals: Boolean;
         AutoBuildVisible: Boolean;
+        ContinuePressed: Boolean;
 }

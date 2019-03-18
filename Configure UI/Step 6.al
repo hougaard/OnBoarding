@@ -39,7 +39,7 @@ page 92111 "OnBoarding Step 6"
         {
             action(Back)
             {
-                Caption = 'Abort';
+                Caption = 'Back';
                 InFooterBar = true;
                 trigger OnAction()
                 begin
@@ -58,15 +58,27 @@ page 92111 "OnBoarding Step 6"
                     OnMgt.VerifyAccountAssignment();
                 end;
             }
-            action(Continue)
+            action(ContinueAction)
             {
                 Caption = 'Continue';
                 InFooterBar = true;
                 trigger OnAction()
                 begin
+                    ContinuePressed := true;
                     CurrPage.Close();
                 end;
             }
         }
     }
+    trigger OnOpenPage()
+    begin
+        ContinuePressed := false;
+    end;
+    procedure Continue(): Boolean
+    begin
+        exit(ContinuePressed);
+    end;
+
+    var
+        ContinuePressed: Boolean;
 }

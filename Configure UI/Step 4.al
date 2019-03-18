@@ -35,7 +35,7 @@ page 92110 "OnBoarding Step 4"
         {
             action(Back)
             {
-                Caption = 'Abort';
+                Caption = 'Back';
                 InFooterBar = true;
                 trigger OnAction()
                 begin
@@ -53,15 +53,27 @@ page 92110 "OnBoarding Step 4"
                     ImportExcel.Run();
                 end;
             }
-            action(Continue)
+            action(ContinueActin)
             {
                 Caption = 'Continue';
                 InFooterBar = true;
                 trigger OnAction()
                 begin
+                    ContinuePressed := true;
                     CurrPage.Close();
                 end;
             }
         }
     }
+    trigger OnOpenPage()
+    begin
+        ContinuePressed := false;
+    end;
+    procedure Continue(): Boolean
+    begin
+        exit(ContinuePressed);
+    end;
+
+    Var
+        ContinuePressed: Boolean;
 }

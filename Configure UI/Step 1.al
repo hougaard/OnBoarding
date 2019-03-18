@@ -38,22 +38,33 @@ page 92104 "OnBoarding Step 1"
         {
             action(Back)
             {
-                Caption = 'Abort';
+                Caption = 'Back';
                 InFooterBar = true;
                 trigger OnAction()
                 begin
                     CurrPage.Close();
                 end;
             }
-            action(Continue)
+            action(ContinueAction)
             {
                 InFooterBar = true;
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 begin
+                    ContinuePressed := true;
                     CurrPage.Close();
                 end;
             }
         }
     }
+    procedure Continue(): Boolean
+    begin
+        exit(ContinuePressed);
+    end;
+    trigger OnOpenPage()
+    begin
+        ContinuePressed := false;
+    end;
+    Var
+        ContinuePressed: Boolean;
 }

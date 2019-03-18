@@ -42,7 +42,7 @@ page 92100 "Package List"
                 var
                     OnMgt: Codeunit "OnBoarding Management";
                 begin
-                    OnMgt.GetPackages();
+                    OnMgt.GetPackages('');
                 end;
             }
             action(CreatePackage)
@@ -57,14 +57,14 @@ page 92100 "Package List"
                 begin
                     PackageMgt.BuildPackageAndExportToGitHub('BASE',
                                     'BASE-SETUP',
-                                    'Base Setup',
+                                    'Base Setup %1',
                                     'Microsoft',
                                     Appl.ApplicationVersion(),
                                     '8|9|11');
                     // Finance
                     PackageMgt.BuildPackageAndExportToGitHub('FIN',
                                    'BASE-FIN',
-                                   'Finance Management Setup',
+                                   'Finance Management Setup %1',
                                    'Microsoft',
                                    Appl.ApplicationVersion(),
                                    '3|5|98|247|250|251|252');
@@ -75,29 +75,29 @@ page 92100 "Package List"
                     // Sales Tax
                     PackageMgt.BuildPackageAndExportToGitHub('SALE',
                                    'SALES_TAX',
-                                   'Canadian Sales Tax',
+                                   'Sales Tax %1',
                                    'Microsoft',
                                    Appl.ApplicationVersion(),
-                                   '318|319|320|321|322|326|327');
+                                   '318|319|320|321|322|325|323|324|326|327');
 
                     // Sale
                     PackageMgt.BuildPackageAndExportToGitHub('SALE',
                                    'BASE-SALE',
-                                   'Sale Basis Setup',
+                                   'Sale Basis Setup %1',
                                    'Microsoft',
                                    Appl.ApplicationVersion(),
                                    '311|92');
                     // Purchase
                     PackageMgt.BuildPackageAndExportToGitHub('PURCHASE',
                                    'BASE-PURCHASE',
-                                   'Purchase Basis Setup',
+                                   'Purchase Basis Setup %1',
                                    'Microsoft',
                                    Appl.ApplicationVersion(),
                                    '312|93');
                     // Iventory
                     PackageMgt.BuildPackageAndExportToGitHub('INVENTORY',
                                    'BASE-INVENTORY',
-                                   'Inventory Basis Setup',
+                                   'Inventory Basis Setup %1',
                                    'Microsoft',
                                    Appl.ApplicationVersion(),
                                    '313|94');

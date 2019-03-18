@@ -1,31 +1,45 @@
-page 92112 "OnBoarding Step 7"
+page 92114 "OnBoarding Step 7"
 {
     PageType = NavigatePage;
-    Caption = 'OnBoarding, Number Series';
-    SourceTable = "OnBoarding Selected Tag";
-    SourceTableView = sorting (SortIndex) where ("Tag Type" = const ("No. Series"));
-    InsertAllowed = false;
-    DeleteAllowed = false;
-    ModifyAllowed = true;
-    Editable = true;
+    // How do you want your Chart of Accounts
     layout
     {
         area(Content)
         {
-            repeater(Rep)
+            group(g1)
             {
-                field(TagValue; TagValue)
+                Caption = 'How do you want your Number Series';
+                field(How; Method)
                 {
-                    Caption = 'Start Number';
+                    Caption = 'Number Series Action';
                     ApplicationArea = All;
-                    Editable = true;
+                    trigger OnValidate()
+                    begin
+                        case Method of
+                            Method::"Generate them for me":
+                                begin
+                                    AutoBuildVisible := true;
+                                end;
+                            Method::" ":
+                                begin
+                                    AutoBuildVisible := false;
+                                End;
+                            Method::"I will do this myself":
+                                begin
+                                    AutoBuildVisible := false;
+                                end;
+                        end;
+                    end;
                 }
-                field(Description; Description)
+                group(AutoBuild)
                 {
-                    Caption = 'Number Series';
-                    ApplicationArea = All;
-                    Editable = false;
-                    Style = Strong;
+                    Caption = 'Autogeneration Parameters';
+                    Visible = AutoBuildVisible;
+                    field(FirstAccountNumber; FirstNumber)
+                    {
+                        Caption = 'First Number';
+                        ApplicationArea = All;
+                    }
                 }
             }
         }
@@ -36,22 +50,52 @@ page 92112 "OnBoarding Step 7"
         {
             action(Back)
             {
-                Caption = 'Abort';
+                Caption = 'Back';
                 InFooterBar = true;
                 trigger OnAction()
                 begin
                     CurrPage.Close();
                 end;
             }
-            action(Continue)
+            action(ContinueAction)
             {
-                Caption = 'Continue';
                 InFooterBar = true;
+                Caption = 'Continue to next step';
                 trigger OnAction()
                 begin
-                    CurrPage.Close();
+                    if Method <> Method::" " then begin
+                        ContinuePressed := true;
+                        CurrPage.Close();
+                    end else
+                        error('Select a Number Series Method first.');
                 end;
             }
         }
     }
+    procedure Continue(): Boolean
+    begin
+        exit(ContinuePressed);
+    end;
+
+    procedure GetMethod(): Option "","Generate","I'll do it myself";
+    begin
+        exit(Method);
+    end;
+
+    procedure GetStartNumber(): Integer
+    begin
+        exit(FirstNumber);
+    end;
+
+    trigger OnOpenPage()
+    begin
+        FirstNumber := 1000;
+        ContinuePressed := false;
+    end;
+
+    var
+        Method: Option " ","Generate them for me","I will do this myself";
+        FirstNumber: Integer;
+        AutoBuildVisible: Boolean;
+        ContinuePressed: Boolean;
 }

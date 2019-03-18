@@ -49,14 +49,14 @@ page 92108 "OnBoarding Step 5"
         {
             action(Back)
             {
-                Caption = 'Abort';
+                Caption = 'Back';
                 InFooterBar = true;
                 trigger OnAction()
                 begin
                     CurrPage.Close();
                 end;
             }
-            action(Continue)
+            action(ContinueAction)
             {
                 Caption = 'Continue to next step';
                 ApplicationArea = All;
@@ -64,16 +64,27 @@ page 92108 "OnBoarding Step 5"
                 trigger OnAction()
                 var
                 begin
+                    ContinuePressed := true;
                     CurrPage.Close();
                 end;
             }
         }
     }
+    trigger OnOpenPage()
+    begin
+        ContinuePressed := false;
+    end;
     trigger OnAfterGetRecord()
     begin
         NameEmphasize := "Total Begin/End" > 0;
     end;
 
+    procedure Continue(): Boolean
+    begin
+        exit(ContinuePressed);
+    end;
+
     var
         NameEmphasize: Boolean;
+        ContinuePressed: Boolean;
 }
