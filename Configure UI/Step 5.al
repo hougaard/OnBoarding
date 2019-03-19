@@ -40,6 +40,10 @@ page 92108 "OnBoarding Step 5"
                 {
                     Visible = false;
                 }
+                field("Income/Balance"; "Income/Balance")
+                {
+                    ApplicationArea = All;
+                }
             }
         }
     }
@@ -74,6 +78,7 @@ page 92108 "OnBoarding Step 5"
     begin
         ContinuePressed := false;
     end;
+
     trigger OnAfterGetRecord()
     begin
         NameEmphasize := "Total Begin/End" > 0;

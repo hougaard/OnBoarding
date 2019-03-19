@@ -65,6 +65,6 @@ table 92103 "Package Tag"
         field(126; "Help Text 2"; Text[250]) { }
         field(127; "Help Text 3"; Text[250]) { }
         field(128; "Help Text 4"; Text[250]) { }
-        field(200; "Package ID"; Code[20]) { }
+        field(200; "Package ID"; Code[30]) { }
     }
 }

@@ -52,56 +52,21 @@ page 92100 "Package List"
 
                 trigger OnAction()
                 var
-                    PackageMgt: Codeunit "Onboarding Package Export";
-                    Appl: Codeunit "Application System Constants";
+                    OnMgt: Codeunit "OnBoarding Management";
                 begin
-                    PackageMgt.BuildPackageAndExportToGitHub('BASE',
-                                    'BASE-SETUP',
-                                    'Base Setup %1',
-                                    'Microsoft',
-                                    Appl.ApplicationVersion(),
-                                    '8|9|11');
-                    // Finance
-                    PackageMgt.BuildPackageAndExportToGitHub('FIN',
-                                   'BASE-FIN',
-                                   'Finance Management Setup %1',
-                                   'Microsoft',
-                                   Appl.ApplicationVersion(),
-                                   '3|5|98|247|250|251|252');
-                    PackageMgt.BuildAccountSchedulePackges('FIN',
-                                                           'Microsoft',
-                                                           Appl.ApplicationVersion());
+                    OnMgt.ExportFromCompanies('CRONUS*');
+                end;
+            }
+            action(CreatePackageCurrentCompany)
+            {
+                Caption = 'Create Packages from Curent Company';
+                ApplicationArea = All;
 
-                    // Sales Tax
-                    PackageMgt.BuildPackageAndExportToGitHub('SALE',
-                                   'SALES_TAX',
-                                   'Sales Tax %1',
-                                   'Microsoft',
-                                   Appl.ApplicationVersion(),
-                                   '318|319|320|321|322|325|323|324|326|327');
-
-                    // Sale
-                    PackageMgt.BuildPackageAndExportToGitHub('SALE',
-                                   'BASE-SALE',
-                                   'Sale Basis Setup %1',
-                                   'Microsoft',
-                                   Appl.ApplicationVersion(),
-                                   '311|92');
-                    // Purchase
-                    PackageMgt.BuildPackageAndExportToGitHub('PURCHASE',
-                                   'BASE-PURCHASE',
-                                   'Purchase Basis Setup %1',
-                                   'Microsoft',
-                                   Appl.ApplicationVersion(),
-                                   '312|93');
-                    // Iventory
-                    PackageMgt.BuildPackageAndExportToGitHub('INVENTORY',
-                                   'BASE-INVENTORY',
-                                   'Inventory Basis Setup %1',
-                                   'Microsoft',
-                                   Appl.ApplicationVersion(),
-                                   '313|94');
-
+                trigger OnAction()
+                var
+                    OnMgt: Codeunit "OnBoarding Management";
+                begin
+                    OnMgt.ExportSimplified('Simplified Canada Setup');
                 end;
             }
         }
@@ -209,11 +174,15 @@ page 92115 "Selected Tags"
         {
             repeater(Rep)
             {
-                field(SortIndex;SortIndex) { ApplicationArea = All;}
+                field(SortIndex; SortIndex) { ApplicationArea = All; }
                 field(Tag; Tag) { ApplicationArea = All; }
                 field("Tag Type"; "Tag Type") { ApplicationArea = all; }
                 field(TagValue; TagValue) { ApplicationArea = All; }
                 field(Description; Description) { ApplicationArea = All; }
+                field("Income/Balance"; "Income/Balance") { ApplicationArea = All; }
+                field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group") { ApplicationArea = All; }
+                field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group") { ApplicationArea = All; }
+                field("Gen. Posting Type"; "Gen. Posting Type") { ApplicationArea = All; }
             }
         }
     }
@@ -236,6 +205,10 @@ page 92105 "Package Tags"
                     field("Tag Type"; "Tag Type") { ApplicationArea = All; }
                     field(Description; Description) { ApplicationArea = All; }
                     field(Groups; Groups) { ApplicationArea = All; }
+                    field("Income/Balance"; "Income/Balance") { ApplicationArea = All; }
+                    field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group") { ApplicationArea = All; }
+                    field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group") { ApplicationArea = All; }
+                    field("Gen. Posting Type"; "Gen. Posting Type") { ApplicationArea = All; }
                 }
             }
         }

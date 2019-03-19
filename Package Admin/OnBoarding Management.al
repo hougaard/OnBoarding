@@ -322,7 +322,7 @@ codeunit 92101 "OnBoarding Management"
                                             StagTest.INIT; // Create Total-Begin
                                             StagTest.SortIndex := BeforeIndex + 10000;
                                             StagTest.Description := Total;
-                                            StagTest."Income/Balance" := stag."Income/Balance";
+                                            StagTest."Income/Balance" := tag."Income/Balance";
                                             stagtest."Indention Level" := ParentIndention + 1;
                                             StagTest."Total Begin/End" := StagTest."Total Begin/End"::"Begin";
                                             stagTest."Totals Group" := Total;
@@ -341,8 +341,8 @@ codeunit 92101 "OnBoarding Management"
                                             StagTest.INIT; // Create Total-End
                                             StagTest.SortIndex := ROUND((AfterIndex - BeginIndex) / 2 + BeginIndex, 1);
                                             ;
-                                            StagTest.Description := Total;
-                                            StagTest."Income/Balance" := stag."Income/Balance";
+                                            StagTest.Description := 'Total ' + Total;
+                                            StagTest."Income/Balance" := tag."Income/Balance";
                                             stagtest."Indention Level" := ParentIndention + 1;
                                             StagTest."Total Begin/End" := StagTest."Total Begin/End"::"End";
                                             stagTest."Totals Group" := Total;
@@ -448,6 +448,7 @@ codeunit 92101 "OnBoarding Management"
         Package: Record "OnBoarding Package";
         pTable: Record "OnBoarding Table";
         pField: Record "OnBoarding Field";
+        Tag: Record "Package Tag";
         D: Dialog;
         FC: Integer;
     begin
@@ -456,6 +457,7 @@ codeunit 92101 "OnBoarding Management"
         Package.DELETEALL;
         pTable.DELETEALL;
         pField.DELETEALL;
+        Tag.DELETEALL;
 
         request.SetRequestUri('https://api.github.com/repos/hougaard/OnBoardingPackages/contents/');
         request.GetHeaders(Headers);
@@ -963,5 +965,106 @@ codeunit 92101 "OnBoarding Management"
         Modules.Description := 'Inventory';
         Modules."Sorting Order" := 4;
         Modules.INSERT;
+    end;
+
+    procedure ExportFromCompanies(CompanyFilter: Text)
+    var
+        PackageMgt: Codeunit "Onboarding Package Export";
+        Appl: Codeunit "Application System Constants";
+    begin
+        PackageMgt.BuildPackageAndExportToGitHub('BASE',
+                        'BASE-SETUP',
+                        'Base Setup %1',
+                        'Microsoft',
+                        copystr(Appl.ApplicationVersion(), 1, 2),
+                        CompanyFilter,
+                        '8|9|11');
+        // Finance
+        PackageMgt.BuildPackageAndExportToGitHub('FIN',
+                       'BASE-FIN',
+                       'Finance Management Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                       '3|5|98|247|250|251|252');
+        PackageMgt.BuildAccountSchedulePackges('FIN',
+                                               'Microsoft',
+                                               CompanyFilter,
+                                                copystr(Appl.ApplicationVersion(), 1, 2));
+
+        // Sales Tax
+        PackageMgt.BuildPackageAndExportToGitHub('SALE',
+                       'SALES_TAX',
+                       'Sales Tax %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                       '318|319|320|321|322|325|323|324|326|327');
+
+        // Sale
+        PackageMgt.BuildPackageAndExportToGitHub('SALE',
+                       'BASE-SALE',
+                       'Sale Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '311|92');
+        // Purchase
+        PackageMgt.BuildPackageAndExportToGitHub('PURCHASE',
+                       'BASE-PURCHASE',
+                       'Purchase Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '312|93');
+        // Iventory
+        PackageMgt.BuildPackageAndExportToGitHub('INVENTORY',
+                       'BASE-INVENTORY',
+                       'Inventory Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '313|94');
+
+    end;
+
+    procedure ExportSimplified(CompanyFilter: Text)
+    var
+        PackageMgt: Codeunit "Onboarding Package Export";
+        Appl: Codeunit "Application System Constants";
+    begin
+        // Finance
+        PackageMgt.BuildPackageAndExportToGitHub('FIN',
+                       'BASE-FIN-SIMPLE',
+                       'Simplified Finance Management Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                       '3|5|98|247|250|251|252');
+        // Sale
+        PackageMgt.BuildPackageAndExportToGitHub('SALE',
+                       'BASE-SALE-SIMPLE',
+                       'Simplified Sale Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '311|92');
+        // Purchase
+        PackageMgt.BuildPackageAndExportToGitHub('PURCHASE',
+                       'BASE-PURCHASE-SIMPLE',
+                       'Simplified Purchase Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '312|93');
+        // Iventory
+        PackageMgt.BuildPackageAndExportToGitHub('INVENTORY',
+                       'BASE-INVENTORY-SIMPLE',
+                       'Simplified Inventory Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '313|94');
+
     end;
 }

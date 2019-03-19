@@ -67,6 +67,7 @@ table 92105 "OnBoarding Selected Tag"
     }
     procedure TransferFrom(Tag: REcord "Package Tag")
     begin
+        "Income/Balance" := tag."Income/Balance";
         "Account Category" := tag."Account Category";
         "Gen. Bus. Posting Group" := tag."Gen. Bus. Posting Group";
         "Gen. Posting Type" := tag."Gen. Posting Type";

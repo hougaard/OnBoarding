@@ -2,6 +2,7 @@ codeunit 92100 "Onboarding Package Export"
 {
     procedure BuildAccountSchedulePackges(Module: Text;
                                           Author: Text;
+                                          CompanyFilter: Text;
                                           VersionTxt: Text)
     var
         AS: Record "Acc. Schedule Name";
@@ -16,7 +17,8 @@ codeunit 92100 "Onboarding Package Export"
         Companies: Record Company;
         CI: Record "Company Information";
     begin
-        Companies.setfilter(Name, 'CRONUS*');
+        if CompanyFilter <> '' then
+            Companies.setfilter(Name, CompanyFilter);
         if Companies.findset then
             repeat
                 CI.ChangeCompany(Companies.Name);
@@ -75,7 +77,7 @@ codeunit 92100 "Onboarding Package Export"
         response: HttpResponseMessage;
     begin
         Content.WriteFrom(PackageTxt);
-        if http.Post('http://10.20.3.130:9999/' +
+        if http.Post('http://10.106.113.250:9999/' +
                         PackageID + '_' +
                         Country + '_' +
                         VersionTxt, Content, response) then begin
@@ -89,6 +91,7 @@ codeunit 92100 "Onboarding Package Export"
                  Description: Text;
                  Author: Text;
                  VersionTxt: Text;
+                 CompanyFilter: Text;
                  TableFilter: Text)
     var
         J: JsonObject;
@@ -104,7 +107,8 @@ codeunit 92100 "Onboarding Package Export"
         Companies: Record Company;
         CI: Record "Company Information";
     begin
-        Companies.setfilter(Name, 'CRONUS*');
+        if CompanyFilter <> '' then
+            Companies.setfilter(Name, CompanyFilter);
         if Companies.findset then
             repeat
                 CLEAR(TJA);

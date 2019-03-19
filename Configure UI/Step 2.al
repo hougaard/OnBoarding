@@ -72,7 +72,7 @@ page 92106 "OnBoarding Step 2"
                     PTest.setrange(Select, true);
                     if not AllowMultiple then
                         if Ptest.Count() <> 1 then
-                            error('You must select one package to continue');
+                            error('You can only select one package from this screen');
                     ContinuePressed := true;
                     CurrPage.Close();
                 end;
