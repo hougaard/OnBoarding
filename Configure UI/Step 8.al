@@ -1,7 +1,7 @@
 page 92112 "OnBoarding Step 8"
 {
     PageType = NavigatePage;
-    Caption = 'OnBoarding, Number Series';
+    Caption = 'OnBoarding, Document numbers';
     SourceTable = "OnBoarding Selected Tag";
     SourceTableView = sorting (SortIndex) where ("Tag Type" = const ("No. Series"));
     InsertAllowed = false;
@@ -22,7 +22,7 @@ page 92112 "OnBoarding Step 8"
                 }
                 field(Description; Description)
                 {
-                    Caption = 'Number Series';
+                    Caption = 'Document Type';
                     ApplicationArea = All;
                     Editable = false;
                     Style = Strong;
@@ -59,6 +59,7 @@ page 92112 "OnBoarding Step 8"
     begin
         ContinuePressed := false;
     end;
+
     procedure Continue(): Boolean
     begin
         exit(ContinuePressed);

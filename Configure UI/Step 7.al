@@ -8,10 +8,10 @@ page 92114 "OnBoarding Step 7"
         {
             group(g1)
             {
-                Caption = 'How do you want your Number Series';
+                Caption = 'How do you want your documents numbered';
                 field(How; Method)
                 {
-                    Caption = 'Number Series Action';
+                    Caption = 'Document numbering action';
                     ApplicationArea = All;
                     trigger OnValidate()
                     begin
@@ -67,7 +67,7 @@ page 92114 "OnBoarding Step 7"
                         ContinuePressed := true;
                         CurrPage.Close();
                     end else
-                        error('Select a Number Series Method first.');
+                        error('Select a document number method first.');
                 end;
             }
         }

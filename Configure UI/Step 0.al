@@ -18,7 +18,7 @@ page 92107 "OnBoarding Step 0"
                 label(What)
                 {
                     ApplicationArea = All;
-                    Caption = 'You can get a minimal chart of account with everything needed for the chosen setup. Number series for everything is also generated.';
+                    Caption = 'You can get a minimal chart of account with everything needed for the chosen setup. Document numbers for everything are also generated.';
                 }
                 label(Info)
                 {
