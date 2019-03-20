@@ -50,7 +50,7 @@ codeunit 92100 "Onboarding Package Export"
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
                         '312|93');
-        // Iventory
+        // Inventory
         PackageMgt.BuildPackageAndExportToGitHub('INVENTORY',
                        'BASE-INVENTORY',
                        'Inventory Basis Setup %1',
@@ -58,6 +58,62 @@ codeunit 92100 "Onboarding Package Export"
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
                         '313|94');
+        // Job
+        PackageMgt.BuildPackageAndExportToGitHub('JOB',
+                       'BASE-JOB',
+                       'Jobs Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '314|315');
+        // Fixed Assets
+        PackageMgt.BuildPackageAndExportToGitHub('FA',
+                       'BASE-FA',
+                       'Fixed Assets Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '5603|5604|5605|5606|5607|5608');
+        // Warehouse
+        PackageMgt.BuildPackageAndExportToGitHub('WAREHOUSE',
+                       'BASE-WAREHOUSE',
+                       'Warehousing Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '5769|5719');
+        // Service
+        PackageMgt.BuildPackageAndExportToGitHub('SERVICE',
+                       'BASE-SERVICE',
+                       'Service Management Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '5911');
+        // Service
+        PackageMgt.BuildPackageAndExportToGitHub('MARKETING',
+                       'BASE-MARKETING',
+                       'Relationship Management Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '5911');
+        // Hr
+        PackageMgt.BuildPackageAndExportToGitHub('HR',
+                       'BASE-HR',
+                       'Human Resources Management Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '5218');
+        // Production
+        PackageMgt.BuildPackageAndExportToGitHub('PRODUCTION',
+                       'BASE-PRODUCTION',
+                       'Production and Planning Basis Setup %1',
+                       'Microsoft',
+                       copystr(Appl.ApplicationVersion(), 1, 2),
+                       CompanyFilter,
+                        '99000765');
 
     end;
 
@@ -178,7 +234,7 @@ codeunit 92100 "Onboarding Package Export"
         response: HttpResponseMessage;
     begin
         Content.WriteFrom(PackageTxt);
-        if http.Post('http://10.106.113.250:9999/' +
+        if http.Post('http://10.105.75.85:9999/' +
                         PackageID + '_' +
                         Country + '_' +
                         VersionTxt, Content, response) then begin

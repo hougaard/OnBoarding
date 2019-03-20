@@ -965,5 +965,54 @@ codeunit 92101 "OnBoarding Management"
         Modules.Description := 'Inventory';
         Modules."Sorting Order" := 4;
         Modules.INSERT;
+
+        Modules.INIT;
+        Modules."Module ID" := 'JOB';
+        Modules."Select" := false;
+        Modules.Description := 'Jobs';
+        Modules."Sorting Order" := 5;
+        Modules.INSERT;
+
+        Modules.INIT;
+        Modules."Module ID" := 'FA';
+        Modules."Select" := false;
+        Modules.Description := 'Fixed Assets';
+        Modules."Sorting Order" := 6;
+        Modules.INSERT;
+
+        Modules.INIT;
+        Modules."Module ID" := 'WAREHOUSE';
+        Modules."Select" := false;
+        Modules.Description := 'Warehouse';
+        Modules."Sorting Order" := 7;
+        Modules.INSERT;
+
+        Modules.INIT;
+        Modules."Module ID" := 'SERVICE';
+        Modules."Select" := false;
+        Modules.Description := 'Service Management';
+        Modules."Sorting Order" := 8;
+        Modules.INSERT;
+
+        Modules.INIT;
+        Modules."Module ID" := 'MARKETING';
+        Modules."Select" := false;
+        Modules.Description := 'Relationship Management';
+        Modules."Sorting Order" := 9;
+        Modules.INSERT;
+
+        Modules.INIT;
+        Modules."Module ID" := 'HR';
+        Modules."Select" := false;
+        Modules.Description := 'Human Resources';
+        Modules."Sorting Order" := 10;
+        Modules.INSERT;
+
+        Modules.INIT;
+        Modules."Module ID" := 'PRODUCTION';
+        Modules."Select" := false;
+        Modules.Description := 'Production and Planning';
+        Modules."Sorting Order" := 11;
+        Modules.INSERT;
     end;
 }
