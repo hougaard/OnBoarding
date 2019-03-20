@@ -47,24 +47,24 @@ page 92100 "Package List"
             }
             action(CreatePackage)
             {
-                Caption = 'Create Packages from CRONUS';
+                Caption = 'Create CRONUS Packages';
                 ApplicationArea = All;
 
                 trigger OnAction()
                 var
-                    OnMgt: Codeunit "OnBoarding Management";
+                    OnMgt: Codeunit "Onboarding Package Export";
                 begin
                     OnMgt.ExportFromCompanies('CRONUS*');
                 end;
             }
             action(CreatePackageCurrentCompany)
             {
-                Caption = 'Create Packages from Curent Company';
+                Caption = 'Create Simplified Package';
                 ApplicationArea = All;
 
                 trigger OnAction()
                 var
-                    OnMgt: Codeunit "OnBoarding Management";
+                    OnMgt: Codeunit "OnBoarding Package Export";
                 begin
                     OnMgt.ExportSimplified('Simplified Canada Setup');
                 end;
