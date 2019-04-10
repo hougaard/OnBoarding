@@ -343,7 +343,7 @@ codeunit 92101 "OnBoarding Management"
                                         sTag.TransferFrom(tag);
                                         Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
                                         Stag.Tag := Tag.Tag;
-                                        Stag.Description := Tag.Description + '*';
+                                        Stag.Description := Tag.Description;
                                         Stag."Indention Level" := StagTest."Indention Level" + 1;
                                         stag."Income/Balance" := Tag."Income/Balance";
                                         if not Stag.INSERT then begin
@@ -734,7 +734,7 @@ codeunit 92101 "OnBoarding Management"
         ModulesContinue: Boolean;
 
     begin
-        State := State::"Chart of Accounts action"; // We start at zero
+        State := 0; //State::"Chart of Accounts action"; // We start at zero
         Done := false; // We're not done
 
         repeat // State machine loop

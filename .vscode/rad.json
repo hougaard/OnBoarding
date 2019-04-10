@@ -1,1 +1,1 @@
-﻿{"Added":[],"Modified":[{"Id":92108,"Kind":12,"Name":"OnBoarding Step 5","PackagePath":"/src/Configure%20UI/Step%205.al"}],"Removed":[]}
+﻿{"Added":[],"Modified":[{"Id":92101,"Kind":11,"Name":"OnBoarding Management","PackagePath":"/src/Package%20Admin/OnBoarding%20Management.al"},{"Id":92103,"Kind":11,"Name":"OnBoarding Assisted Setup","PackagePath":"/src/Assisted%20Setup.al"}],"Removed":[]}
