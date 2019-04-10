@@ -20,6 +20,13 @@ page 92107 "OnBoarding Step 0"
                     ApplicationArea = All;
                     Caption = 'You can get a minimal chart of account with everything needed for the chosen setup. Document numbers for everything are also generated.';
                 }
+                field(CompanyInformation; CompanyInformation)
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    ShowCaption = false;
+                    MultiLine = true;
+                }
                 label(Info)
                 {
                     ApplicationArea = All;
@@ -52,4 +59,13 @@ page 92107 "OnBoarding Step 0"
             }
         }
     }
+    trigger OnOpenPage()
+    begin
+        CompanyInformation := 'All the setup will go into ' +
+                              CompanyName() +
+                              ' make sure you''re in the right company before continue';
+    end;
+
+    var
+        CompanyInformation: Text;
 }

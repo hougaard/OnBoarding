@@ -1,7 +1,6 @@
 page 92114 "OnBoarding Step 7"
 {
     PageType = NavigatePage;
-    // How do you want your Chart of Accounts
     layout
     {
         area(Content)

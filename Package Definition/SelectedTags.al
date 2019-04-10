@@ -63,7 +63,7 @@ table 92105 "OnBoarding Selected Tag"
     }
     keys
     {
-        key(PK; SortIndex) { }
+        key(PK; "Income/Balance", SortIndex) { }
     }
     procedure TransferFrom(Tag: REcord "Package Tag")
     begin

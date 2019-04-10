@@ -3,7 +3,7 @@ page 92108 "OnBoarding Step 5"
     PageType = NavigatePage;
     Caption = 'OnBoarding, Define your chart of accounts';
     SourceTable = "OnBoarding Selected Tag";
-    SourceTableView = sorting (SortIndex) where ("Tag Type" = const ("G/L Account"));
+    SourceTableView = where ("Tag Type" = const ("G/L Account"));
     InsertAllowed = false;
     DeleteAllowed = false;
     ModifyAllowed = true;
