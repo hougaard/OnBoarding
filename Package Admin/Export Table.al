@@ -234,7 +234,7 @@ codeunit 92100 "Onboarding Package Export"
         response: HttpResponseMessage;
     begin
         Content.WriteFrom(PackageTxt);
-        if http.Post('http://10.105.74.176:9999/' +
+        if http.Post('http://10.93.18.181:9999/' +
                         PackageID + '_' +
                         Country + '_' +
                         VersionTxt, Content, response) then begin
@@ -327,6 +327,8 @@ codeunit 92100 "Onboarding Package Export"
         NS: Record "No. Series";
         RecRef: RecordRef;
         FilterTest: Text;
+        FilterOutput: Text;
+        p: Integer;
     begin
         for i := 1 to R.FieldCount() do begin
             f := R.FieldIndex(i);
@@ -343,6 +345,20 @@ codeunit 92100 "Onboarding Package Export"
                                    (strpos(FilterTest, '*') <> 0) or
                                    (strpos(FilterTest, '?') <> 0) then begin
                                     // This is a filter value
+                                    for p := 1 to strlen(FilterTest) do begin
+                                        if p = 1 then begin
+                                            if IsDigit(FilterTest[p]) then begin
+                                                FilterOutput += 'G';
+                                            end;
+                                        end else begin
+                                            if (IsDigit(FilterTest[p])) and
+                                            (not IsDigit(FilterTest[p - 1])) then
+                                                FilterOutput += 'G';
+                                        end;
+                                        FilterOutput += copystr(FilterTest, p, 1);
+                                    end;
+
+                                    //J.Add('X' + FilterOutput, GLTagToJson(RecRef));
                                 end else begin
                                     GL.ChangeCompany(R.CurrentCompany());
                                     if GL.GET(f.Value) then begin
@@ -371,6 +387,12 @@ codeunit 92100 "Onboarding Package Export"
             end;
         end;
         exit(J);
+    end;
+
+    procedure IsDigit(c: Char): boolean
+    begin
+        exit((c >= '0') and
+             (c <= '9'));
     end;
 
     procedure NSTagToJson(NS: Record "No. Series"): JsonObject

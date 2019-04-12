@@ -42,7 +42,7 @@ page 92100 "Package List"
                 var
                     OnMgt: Codeunit "OnBoarding Management";
                 begin
-                    OnMgt.GetPackages('');
+                    OnMgt.GetPackages('_CA_');
                 end;
             }
             action(CreatePackage)

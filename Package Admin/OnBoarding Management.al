@@ -597,6 +597,12 @@ codeunit 92101 "OnBoarding Management"
                             FieldRec."Field Value" := CreateTag(PackageID, 'N', jField);
                             FieldRec."Special Action" := FieldRec."Special Action"::"Number Series";
                         end;
+                    'X':
+                        begin
+                            FieldRec."Field Value" := CreateTag(PackageID, 'X', jField);
+                            FieldRec."Special Action" := FieldRec."Special Action"::"Account Filter";
+                        end;
+
                 end;
                 FieldRec.INSERT;
             end;
@@ -653,7 +659,6 @@ codeunit 92101 "OnBoarding Management"
                     Tag."Tag Type" := Tag."Tag Type"::"No. Series";
                     Tag.Description := GetTextFromToken(jField, 'f2');
                     if Tag.INSERT then;
-
                 end;
         end;
         exit(Tag.Tag);

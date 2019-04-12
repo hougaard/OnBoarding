@@ -67,4 +67,8 @@ table 92103 "Package Tag"
         field(128; "Help Text 4"; Text[250]) { }
         field(200; "Package ID"; Code[30]) { }
     }
+    keys
+    {
+        key(PK; "Package ID", Tag) { }
+    }
 }

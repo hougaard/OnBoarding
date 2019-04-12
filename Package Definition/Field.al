@@ -18,7 +18,7 @@ table 92102 "OnBoarding Field"
         }
         field(5; "Special Action"; Option)
         {
-            OptionMembers = " ","Account","Number Series";
+            OptionMembers = " ","Account","Number Series","Account Filter";
         }
         field(100; "Field Value"; Text[250])
         {
