@@ -39,12 +39,14 @@ page 92107 "OnBoarding Step 0"
     {
         area(Processing)
         {
+            /* Moved to test app
             action(Setup)
             {
                 ApplicationArea = All;
                 InFooterBar = true;
                 RunObject = Page "Package List";
             }
+            */
             action(Start)
             {
                 ApplicationArea = All;

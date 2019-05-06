@@ -628,50 +628,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 - Action Back - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 103044884 - Action 4115780952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Review</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 - Action ReviewAction - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 103044884 - Action 152052329 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Everything</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 - Action ContinueAction - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4138769196 - Action 184624603 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Read Packages from GitHub</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Package List - Action UpdatePackageList - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4138769196 - Action 1334494122 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create CRONUS Packages</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Package List - Action CreatePackage - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4138769196 - Action 1643267292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Simplified Package</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Package List - Action CreatePackageCurrentCompany - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4138769196 - Action 4053427877 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tables</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Package List - Action TablesAction - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4138769196 - Action 2522674873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tags</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Package List - Action TagsAction - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3444511769 - Action 1047802313 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fields</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Package Tables - Action FieldsAction - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2079075237 - Control 548838851 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tags</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Package Tags - Control Tags - Property Caption</note>
         </trans-unit>
       </group>
     </body>

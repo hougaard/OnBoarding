@@ -50,6 +50,7 @@ page 92113 "OnBoarding Step 9"
                     CurrPage.Close();
                 end;
             }
+            /*
             action(ReviewAction)
             {
                 Caption = 'Review';
@@ -59,6 +60,7 @@ page 92113 "OnBoarding Step 9"
                     Page.RunModal(92115);
                 end;
             }
+            */
             action(ContinueAction)
             {
                 Caption = 'Create Everything';

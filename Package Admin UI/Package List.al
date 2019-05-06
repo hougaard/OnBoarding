@@ -1,3 +1,5 @@
+/* Moved to test app
+
 page 92100 "Package List"
 {
     PageType = List;
@@ -214,3 +216,5 @@ page 92105 "Package Tags"
         }
     }
 }
+
+*/
