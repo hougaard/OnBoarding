@@ -22,7 +22,7 @@ codeunit 92102 "Onboarding Import COA"
             repeat
                 row += 1; // First time, skip over headings row
 
-                GL.INIT;
+                GL.Init();
                 GL.VALIDATE("No.", GetTextCell(ExcelBuffer, row, 1));
                 GL.INSERT(TRUE);
                 GL.VALIDATE(Name, GetTextCell(ExcelBuffer, row, 2));

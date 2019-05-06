@@ -58,6 +58,7 @@ page 92109 "OnBoarding Step 3"
                     {
                         Caption = 'Total Accounts Increment';
                         Enabled = CreateCOATotals;
+                        ApplicationArea = All;
                     }
 
                 }

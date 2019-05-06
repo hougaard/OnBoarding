@@ -76,13 +76,13 @@ codeunit 92101 "OnBoarding Management"
                         F.SETRANGE("Table No.", T."Table No.");
                         if F.FINDSET THEN begin
                             CurrentRec := F."Record No.";
-                            R.INIT;
+                            R.Init();
                             repeat
                                 if CurrentRec <> F."Record No." then begin
                                     // New Rec, time to insert
                                     if not R.INSERT then
                                         r.Modify;
-                                    R.INIT;
+                                    R.Init();
                                     CurrentRec := F."Record No.";
                                 end;
                                 Fr := R.Field(F."Field No.");
@@ -158,7 +158,7 @@ codeunit 92101 "OnBoarding Management"
             repeat
                 if not GL.GET(stag.TagValue) then begin
                     // We're missing this G/L Account, create it!
-                    GL.INIT;
+                    GL.Init();
                     GL.VALIDATE("No.", stag.TagValue);
                     GL.INSERT(TRUE);
                     GL.VALIDATE(Name, stag.Description);
@@ -197,7 +197,7 @@ codeunit 92101 "OnBoarding Management"
         stag.setrange("Tag Type", stag."Tag Type"::"No. Series");
         if stag.findset then
             repeat
-                ns.INIT;
+                ns.Init();
                 ns.Validate(Code, copystr(stag.Tag, 2));
                 ns.insert(true);
                 ns.validate(Description, stag.Description);
@@ -273,7 +273,7 @@ codeunit 92101 "OnBoarding Management"
                                         BeforeIndex := StagTest.SortIndex
                                     else
                                         error('This should never happen, a total-end account without a total-begin account');
-                                    Stag.INIT;
+                                    Stag.Init();
                                     Stag.TransferFrom(tag);
                                     Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
                                     Stag.Tag := Tag.Tag;
@@ -339,7 +339,7 @@ codeunit 92101 "OnBoarding Management"
                                             BeforeIndex := StagTest.SortIndex
                                         else
                                             error('This should never happen, a total-end account without a total-begin account');
-                                        Stag.INIT;
+                                        Stag.Init();
                                         sTag.TransferFrom(tag);
                                         Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
                                         Stag.Tag := Tag.Tag;
@@ -412,7 +412,7 @@ codeunit 92101 "OnBoarding Management"
         NewTotal: Record "OnBoarding Selected Tag";
         stagtest2: Record "OnBoarding Selected Tag";
     begin
-        NewTotal.INIT;
+        NewTotal.Init();
         stagtest2.setrange("Income/Balance", tag."Income/Balance");
         if stagtest2.get(Tag."Income/Balance", BeforeIndex) then begin
             if stagtest2.next = 1 then begin
@@ -520,7 +520,7 @@ codeunit 92101 "OnBoarding Management"
     begin
         if jPackage.ReadFrom(JsonTxt) then begin
             if jPackage.Get('Info', jInfoToken) then begin
-                Package.INIT;
+                Package.Init();
                 Package.ID := GetTextFromToken(JInfoToken, 'ID');
                 Package.Module := GetTextFromToken(jInfoToken, 'Module');
                 Package.Description := GetTextFromToken(jInfoToken, 'Description');
@@ -530,7 +530,7 @@ codeunit 92101 "OnBoarding Management"
                 Package.ID += Package.Country;
                 if strpos(Package.ID, 'BASE') <> 0 then
                     Package.SortIndex := -1; // Make sure base packages are shown first.
-                Package.INSERT;
+                Package.Insert();
 
                 if jPackage.Get('Tables', jTablesToken) then begin
                     jTables := jTablesToken.AsArray();
@@ -564,19 +564,19 @@ codeunit 92101 "OnBoarding Management"
         Values: List of [JsonToken];
         i: Integer;
     begin
-        TableRec.INIT;
+        TableRec.Init();
         TableRec."Package ID" := PackageID;
         TableRec."Table No." := TableNo;
         R.OPEN(TableNo);
         TableRec.Desciption := R.Caption();
-        TableRec.INSERT;
+        TableRec.Insert();
         foreach jRecordToken in jRecords do begin
             RecNo += 1;
             jRecord := jRecordToken.AsObject();
             Keys := jRecord.Keys();
             Values := jRecord.Values();
             for i := 1 to Keys.Count do begin
-                FieldRec.INIT;
+                FieldRec.Init();
                 FieldRec."Package ID" := PackageID;
                 FieldRec."Table No." := TableNo;
                 FieldRec."Record No." := RecNo;
@@ -604,7 +604,7 @@ codeunit 92101 "OnBoarding Management"
                         end;
 
                 end;
-                FieldRec.INSERT;
+                FieldRec.Insert();
             end;
         end;
     end;
@@ -630,7 +630,7 @@ codeunit 92101 "OnBoarding Management"
                     Yes	57	VAT Bus. Posting Group	Code	20	
                     Yes	58	VAT Prod. Posting Group	Code	20	
                     */
-                    Tag.INIT;
+                    Tag.Init();
                     Tag."Package ID" := PackageID;
                     Tag.Tag := TagType + GetTextFromToken(jField, 'f1');
                     Tag."Tag Type" := Tag."Tag Type"::"G/L Account";
@@ -653,7 +653,7 @@ codeunit 92101 "OnBoarding Management"
                 end;
             'N':
                 begin
-                    Tag.INIT;
+                    Tag.Init();
                     Tag."Package ID" := PackageID;
                     Tag.Tag := TagType + GetTextFromToken(jField, 'f1');
                     Tag."Tag Type" := Tag."Tag Type"::"No. Series";
@@ -921,7 +921,7 @@ codeunit 92101 "OnBoarding Management"
                     tag.Setrange("Tag Type", Tag."Tag Type"::"No. Series");
                 if Tag.findset then
                     repeat
-                        Stag.INIT;
+                        Stag.Init();
                         STag.Tag := Tag.Tag;
                         Stag.Description := Tag.Description;
                         Stag."Tag Type" := Tag."Tag Type";
@@ -940,89 +940,89 @@ codeunit 92101 "OnBoarding Management"
     begin
         Modules.DELETEALL;
 
-        Modules.INIT;
+        Modules.Init();
         Modules."Module ID" := 'BASE';
         Modules."Select" := true;
         Modules.Description := 'Base Setup';
         Modules."Sorting Order" := 0;
-        Modules.INSERT;
+        Modules.Insert();
 
 
-        Modules.INIT;
+        Modules.Init();
         Modules."Module ID" := 'FIN';
         Modules."Select" := false;
         Modules.Description := 'Financial Management';
         Modules."Sorting Order" := 1;
-        Modules.INSERT;
+        Modules.Insert();
 
-        Modules.INIT;
+        Modules.Init();
         Modules."Module ID" := 'SALE';
         Modules."Select" := false;
         Modules.Description := 'Sales and Account Receivables';
         Modules."Sorting Order" := 2;
-        Modules.INSERT;
+        Modules.Insert();
 
-        Modules.INIT;
+        Modules.Init();
         Modules."Module ID" := 'PURCHASE';
         Modules."Select" := false;
         Modules.Description := 'Purchase and Account Payables';
         Modules."Sorting Order" := 3;
-        Modules.INSERT;
+        Modules.Insert();
 
-        Modules.INIT;
+        Modules.Init();
         Modules."Module ID" := 'INVENTORY';
         Modules."Select" := false;
         Modules.Description := 'Inventory';
         Modules."Sorting Order" := 4;
-        Modules.INSERT;
+        Modules.Insert();
 
-        Modules.INIT;
+        Modules.Init();
         Modules."Module ID" := 'JOB';
         Modules."Select" := false;
         Modules.Description := 'Jobs';
         Modules."Sorting Order" := 5;
-        Modules.INSERT;
+        Modules.Insert();
 
-        Modules.INIT;
+        Modules.Init();
         Modules."Module ID" := 'FA';
         Modules."Select" := false;
         Modules.Description := 'Fixed Assets';
         Modules."Sorting Order" := 6;
-        Modules.INSERT;
+        Modules.Insert();
 
-        Modules.INIT;
+        Modules.Init();
         Modules."Module ID" := 'WAREHOUSE';
         Modules."Select" := false;
         Modules.Description := 'Warehouse';
         Modules."Sorting Order" := 7;
-        Modules.INSERT;
+        Modules.Insert();
 
-        Modules.INIT;
+        Modules.Init();
         Modules."Module ID" := 'SERVICE';
         Modules."Select" := false;
         Modules.Description := 'Service Management';
         Modules."Sorting Order" := 8;
-        Modules.INSERT;
+        Modules.Insert();
 
-        Modules.INIT;
+        Modules.Init();
         Modules."Module ID" := 'MARKETING';
         Modules."Select" := false;
         Modules.Description := 'Relationship Management';
         Modules."Sorting Order" := 9;
-        Modules.INSERT;
+        Modules.Insert();
 
-        Modules.INIT;
+        Modules.Init();
         Modules."Module ID" := 'HR';
         Modules."Select" := false;
         Modules.Description := 'Human Resources';
         Modules."Sorting Order" := 10;
-        Modules.INSERT;
+        Modules.Insert();
 
-        Modules.INIT;
+        Modules.Init();
         Modules."Module ID" := 'PRODUCTION';
         Modules."Select" := false;
         Modules.Description := 'Production and Planning';
         Modules."Sorting Order" := 11;
-        Modules.INSERT;
+        Modules.Insert();
     end;
 }

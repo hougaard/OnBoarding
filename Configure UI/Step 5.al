@@ -39,6 +39,7 @@ page 92108 "OnBoarding Step 5"
                 field("Indention Level"; "Indention Level")
                 {
                     Visible = false;
+                    ApplicationArea = All;
                 }
                 field("Income/Balance"; "Income/Balance")
                 {

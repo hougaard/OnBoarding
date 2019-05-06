@@ -234,7 +234,7 @@ codeunit 92100 "Onboarding Package Export"
         response: HttpResponseMessage;
     begin
         Content.WriteFrom(PackageTxt);
-        if http.Post('http://10.93.18.181:9999/' +
+        if http.Post('http://100.78.93.194:9999/' +
                         PackageID + '_' +
                         Country + '_' +
                         VersionTxt, Content, response) then begin

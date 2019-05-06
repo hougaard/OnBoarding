@@ -6,9 +6,16 @@ table 92101 "OnBoarding Table"
         field(1; "Package ID"; Code[30])
         {
             TableRelation = "OnBoarding Package";
+            DataClassification = SystemMetadata;
         }
-        field(2; "Table No."; Integer) { }
-        field(3; "Desciption"; Text[250]) { }
+        field(2; "Table No."; Integer)
+        {
+            DataClassification = SystemMetadata;
+        }
+        field(3; "Desciption"; Text[250])
+        {
+            DataClassification = SystemMetadata;
+        }
 
     }
     keys

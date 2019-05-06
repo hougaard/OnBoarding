@@ -6,5 +6,9 @@
         "markdown",
         "latex",
         "plaintext"
-    ]
+    ],
+    "al.enableCodeAnalysis": true,
+    "al.codeAnalyzers": [
+        "${AppSourceCop}"
+    ]   
 }

@@ -6,7 +6,7 @@ codeunit 92103 "OnBoarding Assisted Setup"
         RecID: RecordId;
     begin
         TempAggregatedAssistedSetup.AddExtensionAssistedSetup(page::"OnBoarding Step 0",
-                                                              'OnBoarding a complete setup, up and running in no time',
+                                                              'OnBoarding a complete setup',
                                                               true,
                                                               RecID,
                                                               0,
