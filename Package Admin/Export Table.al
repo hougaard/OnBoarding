@@ -1,6 +1,6 @@
 codeunit 92100 "Onboarding Package Export"
 {
-    procedure ExportFromCompanies(CompanyFilter: Text)
+    procedure ExportFromCompanies(URL: Text; CompanyFilter: Text)
     var
         PackageMgt: Codeunit "Onboarding Package Export";
         Appl: Codeunit "Application System Constants";
@@ -11,7 +11,7 @@ codeunit 92100 "Onboarding Package Export"
                         'Microsoft',
                         copystr(Appl.ApplicationVersion(), 1, 2),
                         CompanyFilter,
-                        '8|9|11');
+                        '8|9|11', URL);
         // Finance
         PackageMgt.BuildPackageAndExportToGitHub('FIN',
                        'BASE-FIN',
@@ -19,11 +19,11 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                       '3|5|98|247|250|251|252');
+                       '3|5|98|247|250|251|252', URL);
         PackageMgt.BuildAccountSchedulePackges('FIN',
                                                'Microsoft',
                                                CompanyFilter,
-                                                copystr(Appl.ApplicationVersion(), 1, 2));
+                                                copystr(Appl.ApplicationVersion(), 1, 2), URL);
 
         // Sales Tax
         PackageMgt.BuildPackageAndExportToGitHub('SALE',
@@ -32,7 +32,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                       '318|319|320|321|322|325|323|324|326|327');
+                       '318|319|320|321|322|325|323|324|326|327', URL);
 
         // Sale
         PackageMgt.BuildPackageAndExportToGitHub('SALE',
@@ -41,7 +41,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '311|92');
+                        '311|92', URL);
         // Purchase
         PackageMgt.BuildPackageAndExportToGitHub('PURCHASE',
                        'BASE-PURCHASE',
@@ -49,7 +49,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '312|93');
+                        '312|93', URL);
         // Inventory
         PackageMgt.BuildPackageAndExportToGitHub('INVENTORY',
                        'BASE-INVENTORY',
@@ -57,7 +57,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '313|94');
+                        '313|94', URL);
         // Job
         PackageMgt.BuildPackageAndExportToGitHub('JOB',
                        'BASE-JOB',
@@ -65,7 +65,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '314|315');
+                        '314|315', URL);
         // Fixed Assets
         PackageMgt.BuildPackageAndExportToGitHub('FA',
                        'BASE-FA',
@@ -73,7 +73,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '5603|5604|5605|5606|5607|5608');
+                        '5603|5604|5605|5606|5607|5608', URL);
         // Warehouse
         PackageMgt.BuildPackageAndExportToGitHub('WAREHOUSE',
                        'BASE-WAREHOUSE',
@@ -81,7 +81,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '5769|5719');
+                        '5769|5719', URL);
         // Service
         PackageMgt.BuildPackageAndExportToGitHub('SERVICE',
                        'BASE-SERVICE',
@@ -89,7 +89,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '5911');
+                        '5911', URL);
         // Service
         PackageMgt.BuildPackageAndExportToGitHub('MARKETING',
                        'BASE-MARKETING',
@@ -97,7 +97,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '5911');
+                        '5911', URL);
         // Hr
         PackageMgt.BuildPackageAndExportToGitHub('HR',
                        'BASE-HR',
@@ -105,7 +105,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '5218');
+                        '5218', URL);
         // Production
         PackageMgt.BuildPackageAndExportToGitHub('PRODUCTION',
                        'BASE-PRODUCTION',
@@ -113,11 +113,11 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '99000765');
+                        '99000765', URL);
 
     end;
 
-    procedure ExportSimplified(CompanyFilter: Text)
+    procedure ExportSimplified(URL: Text; CompanyFilter: Text)
     var
         PackageMgt: Codeunit "Onboarding Package Export";
         Appl: Codeunit "Application System Constants";
@@ -129,7 +129,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                       '3|5|98|247|250|251|252');
+                       '3|5|98|247|250|251|252', URL);
         // Sale
         PackageMgt.BuildPackageAndExportToGitHub('SALE',
                        'BASE-SALE-SIMPLE',
@@ -137,7 +137,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '311|92');
+                        '311|92', URL);
         // Purchase
         PackageMgt.BuildPackageAndExportToGitHub('PURCHASE',
                        'BASE-PURCHASE-SIMPLE',
@@ -145,7 +145,7 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '312|93');
+                        '312|93', URL);
         // Iventory
         PackageMgt.BuildPackageAndExportToGitHub('INVENTORY',
                        'BASE-INVENTORY-SIMPLE',
@@ -153,14 +153,15 @@ codeunit 92100 "Onboarding Package Export"
                        'Microsoft',
                        copystr(Appl.ApplicationVersion(), 1, 2),
                        CompanyFilter,
-                        '313|94');
+                        '313|94', URL);
 
     end;
 
     procedure BuildAccountSchedulePackges(Module: Text;
                                           Author: Text;
                                           CompanyFilter: Text;
-                                          VersionTxt: Text)
+                                          VersionTxt: Text;
+                                          URL: Text)
     var
         AS: Record "Acc. Schedule Name";
         J: JsonObject;
@@ -221,20 +222,20 @@ codeunit 92100 "Onboarding Package Export"
                         J.Add('Info', Info);
                         J.AsToken().WriteTo(PackageTxt);
 
-                        SendToPackageReceiver(PackageTxt, AS.Name, CI."Country/Region Code", VersionTxt);
+                        SendToPackageReceiver(URL, PackageTxt, AS.Name, CI."Country/Region Code", VersionTxt);
 
                     until AS.NEXT = 0;
             until Companies.NEXT = 0;
     end;
 
-    procedure SendToPackageReceiver(PackageTxt: Text; PackageID: Text; Country: Text; VersionTxt: Text)
+    procedure SendToPackageReceiver(URL: Text; PackageTxt: Text; PackageID: Text; Country: Text; VersionTxt: Text)
     var
         http: HttpClient;
         content: HttpContent;
         response: HttpResponseMessage;
     begin
         Content.WriteFrom(PackageTxt);
-        if http.Post('http://100.78.93.194:9999/' +
+        if http.Post(URL + '/' +
                         PackageID + '_' +
                         Country + '_' +
                         VersionTxt, Content, response) then begin
@@ -249,7 +250,8 @@ codeunit 92100 "Onboarding Package Export"
                  Author: Text;
                  VersionTxt: Text;
                  CompanyFilter: Text;
-                 TableFilter: Text)
+                 TableFilter: Text;
+                 URL: Text)
     var
         J: JsonObject;
         Token: JsonToken;
@@ -291,7 +293,7 @@ codeunit 92100 "Onboarding Package Export"
                 J.Add('Info', Info);
                 J.AsToken().WriteTo(PackageTxt);
 
-                SendToPackageReceiver(PackageTxt, PackageID, CI."Country/Region Code", VersionTxt);
+                SendToPackageReceiver(URL, PackageTxt, PackageID, CI."Country/Region Code", VersionTxt);
             until Companies.next = 0;
     end;
 

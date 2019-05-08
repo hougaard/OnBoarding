@@ -34,6 +34,11 @@ page 92113 "OnBoarding Step 9"
                     ApplicationArea = All;
                     Caption = '4. Create the numbers as specified and reference them in the setup.';
                 }
+                field(CreateRapidStart; CreateRapidStart)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Create a Configuration Package';
+                }
             }
         }
     }
@@ -71,6 +76,8 @@ page 92113 "OnBoarding Step 9"
                 begin
                     ContinuePressed := true;
                     OnMgt.CreateEverything();
+                    if CreateRapidStart then
+                        OnMgt.CreateRapidStartPackage();
                     Message('Congratulations, your system is now configured with the packages you selected');
                     CurrPage.Close();
                 end;
@@ -80,6 +87,7 @@ page 92113 "OnBoarding Step 9"
     trigger OnOpenPage()
     begin
         ContinuePressed := false;
+        CreateRapidStart := true;
     end;
 
     procedure Continue(): Boolean
@@ -89,4 +97,5 @@ page 92113 "OnBoarding Step 9"
 
     Var
         ContinuePressed: Boolean;
+        CreateRapidStart: Boolean;
 }

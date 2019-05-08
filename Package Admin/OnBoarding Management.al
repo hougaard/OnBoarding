@@ -1,5 +1,48 @@
 codeunit 92101 "OnBoarding Management"
 {
+    procedure CreateRapidStartPackage()
+    var
+        ConfigPackage: Record "Config. Package";
+        ConfigMgt: Codeunit "Config. Package Management";
+        Packages: Record "OnBoarding Package";
+        Tables: Record "OnBoarding Table";
+    begin
+
+        ConfigPackage.INIT;
+        ConfigPackage.validate(Code, 'ONBOARDING');
+        if not ConfigPackage.INSERT(TRUE) then
+            ConfigPackage.MODIFY(TRUE);
+        ConfigPackage.validate("Package Name", 'OnBoarding Data');
+        ConfigPackage.MODIFY(TRUE);
+
+        Packages.Setrange(Select, true);
+        if packages.findset then
+            repeat
+                Tables.Setrange("Package ID", Packages.ID);
+                if tables.findset then
+                    repeat
+                        AddTableToConfigPackage(ConfigPackage, Tables."Table No.");
+                    until tables.next = 0;
+            until packages.next = 0;
+        AddTableToConfigPackage(ConfigPackage, DATABASE::"G/L Account");
+        AddTableToConfigPackage(ConfigPackage, DATABASE::"No. Series");
+        AddTableToConfigPackage(ConfigPackage, DATABASE::"No. Series Line");
+    end;
+
+    procedure AddTableToConfigPackage(ConfigPackage: Record "Config. Package";
+                                      TableNo: Integer)
+    var
+        ConfigTable: Record "Config. Package Table";
+    begin
+        ConfigTable.INIT;
+        ConfigTable."Package Code" := ConfigPackage.Code;
+        COnfigTable.validate("Table ID", TableNo);
+        if Configtable.INSERT(TRUE) then begin
+            Configtable.validate("Skip Table Triggers", false);
+            ConfigTable.MODIFY(TRUE);
+        end;
+    end;
+
     procedure SuggestStartingNumbers(StartNumber: Code[20])
     var
         sTag: Record "OnBoarding Selected Tag";

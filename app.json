@@ -20,5 +20,8 @@
     "to": 92149
   },
   "features": ["TranslationFile"],
-  "runtime": "2.3"
+  "showMyCode": false,
+  "target": "Extension",
+  "runtime": "3.0",
+  "contextSensitiveHelpUrl" : "https://www.hougaard.com/onboarding/"
 }

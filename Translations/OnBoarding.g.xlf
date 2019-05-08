@@ -623,6 +623,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 - Control Step4 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 103044884 - Control 1852137694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create a Configuration Package</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 - Control CreateRapidStart - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 103044884 - Action 742034285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Back</source>
           <note from="Developer" annotates="general" priority="2"></note>
