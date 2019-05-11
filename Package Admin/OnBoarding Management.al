@@ -240,17 +240,19 @@ codeunit 92101 "OnBoarding Management"
         stag.setrange("Tag Type", stag."Tag Type"::"No. Series");
         if stag.findset then
             repeat
-                ns.Init();
-                ns.Validate(Code, copystr(stag.Tag, 2));
-                ns.insert(true);
-                ns.validate(Description, stag.Description);
-                ns.validate("Default Nos.", true);
-                ns.Modify(true);
-                nsl.Init();
-                nsl.Validate("Series Code", ns.code);
-                nsl.insert(true);
-                nsl.validate("Starting No.", stag.TagValue);
-                nsl.Modify(true);
+                if not NS.GET(copystr(stag.Tag, 2)) then begin // Only create NS if not exist
+                    ns.Init();
+                    ns.Validate(Code, copystr(stag.Tag, 2));
+                    ns.insert(true);
+                    ns.validate(Description, stag.Description);
+                    ns.validate("Default Nos.", true);
+                    ns.Modify(true);
+                    nsl.Init();
+                    nsl.Validate("Series Code", ns.code);
+                    nsl.insert(true);
+                    nsl.validate("Starting No.", stag.TagValue);
+                    nsl.Modify(true);
+                end;
             until stag.next = 0;
     end;
 
@@ -716,8 +718,7 @@ codeunit 92101 "OnBoarding Management"
         O := T.AsObject();
         O.Get(Member, V);
         V.WriteTo(Data);
-        exit(Data);
-        //EXIT(copystr(Data, 2, strlen(Data) - 2));
+        EXIT(copystr(Data, 2, strlen(Data) - 2));
     end;
 
     procedure GetOptionFromToken(T: JsonToken; Member: Text): Integer
@@ -730,7 +731,7 @@ codeunit 92101 "OnBoarding Management"
         O := T.AsObject();
         O.Get(Member, V);
         V.WriteTo(Data);
-        evaluate(Op, Data /*copystr(Data, 2, strlen(Data) - 2)*/, 9);
+        evaluate(Op, Data /*copystr(Data, 2, strlen(Data) - 2) */, 9);
         EXIT(Op);
     end;
 
@@ -744,7 +745,7 @@ codeunit 92101 "OnBoarding Management"
         O := T.AsObject();
         O.Get(Member, V);
         V.WriteTo(Data);
-        evaluate(Op, Data /*copystr(Data, 2, strlen(Data) - 2)*/, 9);
+        evaluate(Op, copystr(Data, 2, strlen(Data) - 2));
         EXIT(Op);
     end;
 
