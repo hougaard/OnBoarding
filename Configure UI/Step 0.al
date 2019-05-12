@@ -63,9 +63,9 @@ page 92107 "OnBoarding Step 0"
     }
     trigger OnOpenPage()
     begin
-        CompanyInformation := 'All the setup will go into ' +
+        CompanyInformation := 'All the setup will go into company "' +
                               CompanyName() +
-                              ' make sure you''re in the right company before continue';
+                              '", make sure you''re in the right company before continue.';
     end;
 
     var
