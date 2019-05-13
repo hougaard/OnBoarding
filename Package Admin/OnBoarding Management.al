@@ -13,6 +13,7 @@ codeunit 92101 "OnBoarding Management"
         if not ConfigPackage.INSERT(TRUE) then
             ConfigPackage.MODIFY(TRUE);
         ConfigPackage.validate("Package Name", 'OnBoarding Data');
+        ConfigPackage.validate("Exclude Config. Tables", true);
         ConfigPackage.MODIFY(TRUE);
 
         Packages.Setrange(Select, true);
@@ -110,6 +111,7 @@ codeunit 92101 "OnBoarding Management"
         Package.Setrange(Select, true);
         if Package.FINDSET then
             repeat
+                Message('Applying %1', Package.Description);
                 T.Setrange("Package ID", Package.ID);
                 if T.Findset then
                     repeat
@@ -782,6 +784,7 @@ codeunit 92101 "OnBoarding Management"
 
         ModulesDone: Boolean;
         ModulesContinue: Boolean;
+        BaseID: Text;
 
     begin
         State := 0; //State::"Chart of Accounts action"; // We start at zero
@@ -829,9 +832,13 @@ codeunit 92101 "OnBoarding Management"
                                         if Modules."Sorting Order" = 0 then begin
                                             Packages.SetRange(Select, true);
                                             packages.findfirst;
+                                            BaseID := Packages.ID;
                                             CountryCode := Packages.Country;
                                             Packages.Setrange(Select);
-                                            GetPackages('_' + CountryCode + '_');
+                                            GetPackages('_' + CountryCode + '_' + Packages."Minimum Version");
+                                            Packages.Get(BaseID);
+                                            Packages.Select := true; // Reselect base package
+                                            Packages.MODIFY;
                                         end;
                                         ModulesDone := Modules.NEXT = 0;
                                         ModulesContinue := true;
