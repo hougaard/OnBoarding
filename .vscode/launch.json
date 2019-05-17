@@ -8,7 +8,7 @@
             "server": "http://bcca",
             "serverInstance": "nav",
             "authentication": "UserPassword",
-            "startupObjectId": 92107,
+            "startupObjectId": 70310075,
             "startupObjectType": "Page",
             "breakOnError": true,
             "schemaUpdateMode": "Recreate"
