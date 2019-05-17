@@ -1,4 +1,4 @@
-page 92108 "OnBoarding Step 5"
+page 70310080 "OnBoarding Step 5"
 {
     PageType = NavigatePage;
     Caption = 'OnBoarding, Define your chart of accounts';

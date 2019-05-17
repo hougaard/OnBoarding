@@ -193,6 +193,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag - Field Total Begin/End - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1947073284 - Field 3740542262 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter Tag Template</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag - Field Filter Tag Template - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1947073284 - Field 1018417860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter Tag List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag - Field Filter Tag List - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2133690879 - Field 2996397865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -317,6 +327,16 @@
           <source>Package ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag - Field Package ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4060700100 - Field 3740542262 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter Tag Template</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag - Field Filter Tag Template - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4060700100 - Field 1018417860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter Tag List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag - Field Filter Tag List - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2953709923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>OnBoarding</source>
@@ -624,7 +644,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 - Control Step4 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 103044884 - Control 1852137694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create a Configuration Package</source>
+          <source>5. Create a Configuration Package for easy export of generated setup</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 - Control CreateRapidStart - Property Caption</note>
         </trans-unit>

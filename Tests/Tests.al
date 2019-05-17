@@ -1,6 +1,6 @@
 // Testing Codenit
 
-codeunit 92104 "OnBoarding Test"
+codeunit 70310077 "OnBoarding Test"
 {
     trigger OnRun()
     begin

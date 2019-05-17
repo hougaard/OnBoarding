@@ -1,4 +1,4 @@
-page 92113 "OnBoarding Step 9"
+page 70310084 "OnBoarding Step 9"
 {
     PageType = NavigatePage;
     Caption = 'OnBoarding - Review and Finish';
@@ -37,7 +37,7 @@ page 92113 "OnBoarding Step 9"
                 field(CreateRapidStart; CreateRapidStart)
                 {
                     ApplicationArea = All;
-                    Caption = 'Create a Configuration Package';
+                    Caption = '5. Create a Configuration Package for easy export of generated setup';
                 }
             }
         }

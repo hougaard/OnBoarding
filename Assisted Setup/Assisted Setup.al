@@ -1,4 +1,4 @@
-codeunit 92103 "OnBoarding Assisted Setup"
+codeunit 70310078 "OnBoarding Assisted Setup"
 {
     [EventSubscriber(ObjectType::Table, Database::"Aggregated Assisted Setup", 'OnRegisterAssistedSetup', '', true, true)]
     local procedure OnRegister(var TempAggregatedAssistedSetup: Record "Aggregated Assisted Setup")

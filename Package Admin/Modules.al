@@ -1,4 +1,4 @@
-table 92104 "OnBoarding Modules"
+table 70310080 "OnBoarding Modules"
 {
     fields
     {

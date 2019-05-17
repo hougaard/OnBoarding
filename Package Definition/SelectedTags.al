@@ -1,4 +1,4 @@
-table 92105 "OnBoarding Selected Tag"
+table 70310079 "OnBoarding Selected Tag"
 {
     fields
     {
@@ -80,6 +80,14 @@ table 92105 "OnBoarding Selected Tag"
             OptionMembers = " ","Begin","End";
             DataClassification = SystemMetadata;
         }
+        field(300; "Filter Tag Template"; Text[250])
+        {
+            DataClassification = SystemMetadata;
+        }
+        field(301; "Filter Tag List"; Text[250])
+        {
+            DataClassification = SystemMetadata;
+        }
     }
     keys
     {
@@ -99,5 +107,7 @@ table 92105 "OnBoarding Selected Tag"
         "Reconciliation Account" := tag."Reconciliation Account";
         "VAT Bus. Posting Group" := tag."VAT Bus. Posting Group";
         "VAT Prod. Posting Group" := tag."VAT Prod. Posting Group";
+        "Filter Tag List" := tag."Filter Tag List";
+        "Filter Tag Template" := tag."Filter Tag Template";
     end;
 }

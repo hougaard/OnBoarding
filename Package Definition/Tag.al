@@ -1,4 +1,4 @@
-table 92103 "Package Tag"
+table 70310078 "Package Tag"
 {
     fields
     {
@@ -8,7 +8,7 @@ table 92103 "Package Tag"
         }
         field(2; "Tag Type"; Option)
         {
-            OptionMembers = "G/L Account","No. Series";
+            OptionMembers = "G/L Account","No. Series","Account Filter";
             DataClassification = SystemMetadata;
         }
         field(4; "Account Type"; Option)
@@ -96,6 +96,14 @@ table 92103 "Package Tag"
             DataClassification = SystemMetadata;
         }
         field(200; "Package ID"; Code[30])
+        {
+            DataClassification = SystemMetadata;
+        }
+        field(300; "Filter Tag Template"; Text[250])
+        {
+            DataClassification = SystemMetadata;
+        }
+        field(301; "Filter Tag List"; Text[250])
         {
             DataClassification = SystemMetadata;
         }

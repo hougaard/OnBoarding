@@ -1,4 +1,4 @@
-table 92101 "OnBoarding Table"
+table 70310076 "OnBoarding Table"
 {
     DataPerCompany = false;
     fields

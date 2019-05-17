@@ -1,4 +1,4 @@
-table 92100 "OnBoarding Package"
+table 70310075 "OnBoarding Package"
 {
     fields
     {

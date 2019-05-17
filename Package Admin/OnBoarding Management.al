@@ -1,4 +1,4 @@
-codeunit 92101 "OnBoarding Management"
+codeunit 70310075 "OnBoarding Management"
 {
     procedure CreateRapidStartPackage()
     var
@@ -106,6 +106,13 @@ codeunit 92101 "OnBoarding Management"
         _integer: Integer;
         _boolean: Boolean;
         tt: Record "OnBoarding Selected Tag";
+        FilterStr: Text;
+        FilterList: List Of [Text];
+        v1: Text;
+        v2: Text;
+        v3: Text;
+        v4: Text;
+        v5: Text;
 
     begin
         Package.Setrange(Select, true);
@@ -131,57 +138,75 @@ codeunit 92101 "OnBoarding Management"
                                     CurrentRec := F."Record No.";
                                 end;
                                 Fr := R.Field(F."Field No.");
-                                case Fr.Relation() of
-                                    15:
-                                        begin
-                                            stag.setrange(tag, f."Field Value");
-                                            stag.findfirst();
-                                            Fr.value := stag.TagValue;
-                                        end;
-                                    308:
-                                        begin
-                                            stag.setrange(tag, f."Field Value");
-                                            stag.findfirst();
-                                            Fr.Value := copystr(stag.Tag, 2);
-                                        end;
-                                    else
-                                        case lowercase(format(Fr.Type())) of
-                                            'code',
-                                            'guid',
-                                            'text':
-                                                fr.value := F."Field Value";
-                                            'decimal':
-                                                begin
-                                                    evaluate(_decimal, F."Field Value", 9);
-                                                    fr.value := _decimal;
-                                                end;
-                                            'boolean':
-                                                begin
-                                                    evaluate(_boolean, F."Field Value", 9);
-                                                    fr.value := _boolean;
-                                                end;
-                                            'integer',
-                                            'option':
-                                                begin
-                                                    evaluate(_integer, F."Field Value", 9);
-                                                    fr.value := _integer;
-                                                end;
-                                            'date':
-                                                begin
-                                                    evaluate(_date, f."Field Value", 9);
-                                                    fr.value := _date;
-                                                end;
-                                            'datetime':
-                                                begin
-                                                    evaluate(_datetime, f."Field Value", 9);
-                                                    fr.value := _datetime;
-                                                end;
-                                            'time':
-                                                begin
-                                                    evaluate(_time, f."Field Value", 9);
-                                                    fr.value := _time;
-                                                end;
-                                        end;
+                                if ((F."Table No." = 85) and (F."Field No." = 5) or
+                                    (F."Table No." = 841) and (F."Field No." = 37)) then begin
+                                    stag.setrange(tag, f."Field Value");
+                                    stag.findfirst();
+                                    FilterList := stag."Filter Tag List".Split(',');
+                                    if FilterList.Get(1, v1) then;
+                                    if FilterList.Get(2, v2) then;
+                                    if FilterList.Get(3, v3) then;
+                                    if FilterList.Get(4, v4) then;
+                                    if FilterList.Get(5, v5) then;
+                                    FilterStr := StrSubstNo(stag."Filter Tag Template", v1, v2, v3, v4, v5);
+                                    Fr.Value := FilterStr;
+                                end else begin
+                                    case Fr.Relation() of
+                                        15:
+                                            begin
+                                                stag.setrange(tag, f."Field Value");
+                                                stag.findfirst();
+                                                Fr.value := stag.TagValue;
+                                            end;
+                                        308:
+                                            begin
+                                                stag.setrange(tag, f."Field Value");
+                                                stag.findfirst();
+                                                Fr.Value := copystr(stag.Tag, 2);
+                                            end;
+                                        else
+                                            case lowercase(format(Fr.Type())) of
+                                                'code',
+                                                'guid',
+                                                'text':
+                                                    fr.value := F."Field Value";
+                                                'decimal':
+                                                    begin
+                                                        evaluate(_decimal, F."Field Value", 9);
+                                                        fr.value := _decimal;
+                                                    end;
+                                                'boolean':
+                                                    begin
+                                                        evaluate(_boolean, F."Field Value", 9);
+                                                        fr.value := _boolean;
+                                                    end;
+                                                'integer',
+                                                'option':
+                                                    begin
+                                                        if F."Field Value" = '' then
+                                                            fr.value := 0
+                                                        else begin
+                                                            evaluate(_integer, F."Field Value", 9);
+                                                            fr.value := _integer;
+                                                        end;
+                                                    end;
+                                                'date':
+                                                    begin
+                                                        evaluate(_date, f."Field Value", 9);
+                                                        fr.value := _date;
+                                                    end;
+                                                'datetime':
+                                                    begin
+                                                        evaluate(_datetime, f."Field Value", 9);
+                                                        fr.value := _datetime;
+                                                    end;
+                                                'time':
+                                                    begin
+                                                        evaluate(_time, f."Field Value", 9);
+                                                        fr.value := _time;
+                                                    end;
+                                            end;
+                                    end;
                                 end;
                             until F.NEXT = 0;
                             if not R.INSERT then
@@ -217,6 +242,7 @@ codeunit 92101 "OnBoarding Management"
                             Gl.Validate("Account Type", gl."Account Type"::Posting);
                     end;
                     GL."Account Category" := stag."Account Category";
+
                     GL."Gen. Bus. Posting Group" := stag."Gen. Bus. Posting Group";
                     GL."Gen. Posting Type" := stag."Gen. Posting Type";
                     GL."Gen. Prod. Posting Group" := stag."Gen. Prod. Posting Group";
@@ -230,7 +256,7 @@ codeunit 92101 "OnBoarding Management"
                     GL.MODIFY(true);
                 end;
             until stag.next = 0;
-        Indent.Indent();
+        //Indent.Indent();
     end;
 
     procedure CreateNumberSeries()
@@ -407,7 +433,7 @@ codeunit 92101 "OnBoarding Management"
                                 end;
                             end else begin
                                 // tag not part of any totals....
-                                error('TODO: Account outside total');
+                                error('TODO: Account outside total %1', format(tag));
                             end;
                         end else begin
                             // Ignore this tag for now...
@@ -504,7 +530,7 @@ codeunit 92101 "OnBoarding Management"
         FC: Integer;
     begin
         if GuiAllowed() then
-            D.Open('Reading package list from Github #1## of #2##');
+            D.Open('Reading package list #1## of #2##');
 
         Package.DELETEALL;
         pTable.DELETEALL;
@@ -544,7 +570,7 @@ codeunit 92101 "OnBoarding Management"
             end else
                 Error('Cannot read package list, error %1', response.HttpStatusCode());
         end else
-            Error('Cannot contact Github');
+            Error('Cannot contact Package Server');
     end;
 
     procedure ImportPackage(JsonTxt: Text)
@@ -574,7 +600,7 @@ codeunit 92101 "OnBoarding Management"
                 Package."Minimum Version" := GetTextFromToken(jInfoToken, 'Version');
                 Package.Author := GetTextFromToken(jInfoToken, 'Author');
                 Package.Country := GetTextFromToken(jInfoToken, 'Country');
-                Package.ID += Package.Country;
+                //Package.ID += Package.Country;
                 if strpos(Package.ID, 'BASE') <> 0 then
                     Package.SortIndex := -1; // Make sure base packages are shown first.
                 Package.Insert();
@@ -659,24 +685,54 @@ codeunit 92101 "OnBoarding Management"
     procedure CreateTag(PackageID: Text; TagType: Text; jField: JsonToken): Text;
     var
         Tag: Record "Package Tag";
+        Tag2: Record "Package Tag";
+        A: JsonArray;
+        T: JsonToken;
     begin
         case TagType of
+            'X':
+                begin
+                    Tag.Init();
+                    Tag."Package ID" := PackageID;
+                    FilterTagCounter += 1;
+                    Tag.Tag := TagType + format(FilterTagCounter, 0, 9);
+                    Tag."Tag Type" := Tag."Tag Type"::"Account Filter";
+                    Tag.Description := 'Filter Tag';
+                    Tag."Filter Tag Template" := GetTextFromToken(jField, 'Filter');
+
+                    A := GetArrayFromToken(jField, 'Accounts');
+                    if A.Count > 0 then
+                        foreach T in A do begin
+                            if Tag."Filter Tag List" <> '' then
+                                Tag."Filter Tag List" += ',';
+                            Tag."Filter Tag List" += GetTextFromToken(T, 'f1');
+                            if Tag."Filter Tag List" <> '' then begin
+                                Tag2.Init();
+                                Tag2."Package ID" := PackageID;
+                                Tag2.Tag := TagType + GetTextFromToken(T, 'f1');
+                                Tag2."Tag Type" := Tag."Tag Type"::"G/L Account";
+                                Tag2.Description := GetTextFromToken(T, 'f2');
+                                Tag2.Groups := GetTextFromToken(T, 'Totals');
+
+                                Tag2."Account Category" := GetOptionFromToken(T, 'f8');
+                                Tag2."Income/Balance" := GetOptionFromToken(T, 'f9');
+                                Tag2."Direct Posting" := GetBooleanFromToken(T, 'f14');
+                                Tag2."Reconciliation Account" := GetBooleanFromToken(T, 'f16');
+                                Tag2."Gen. Posting Type" := GetOptionFromToken(T, 'f43');
+                                Tag2."Gen. Bus. Posting Group" := GetTextFromToken(T, 'f44');
+                                Tag2."Gen. Prod. Posting Group" := GetTextFromToken(T, 'f45');
+                                Tag2."Tax Area Code" := GetTextFromToken(T, 'f54');
+                                Tag2."Tax Liable" := GetBooleanFromToken(T, 'f55');
+                                tag2."Tax Group Code" := GetTextFromToken(T, 'f56');
+                                tag2."VAT Bus. Posting Group" := GetTextFromToken(T, 'f57');
+                                tag2."VAT Prod. Posting Group" := GetTextFromToken(T, 'f58');
+                                if Tag2.INSERT then; // Ignore since we can get sam tag from two packages
+                            end;
+                        end;
+                    if Tag.INSERT then;
+                end;
             'G':
                 begin
-                    /*
-                    Yes	8	Account Category	Option		
-                    Yes	9	Income/Balance	Option		
-                    Yes	14	Direct Posting	Boolean		
-                    Yes	16	Reconciliation Account	Boolean		
-                    Yes	43	Gen. Posting Type	Option		
-                    Yes	44	Gen. Bus. Posting Group	Code	20	
-                    Yes	45	Gen. Prod. Posting Group	Code	20	
-                    Yes	54	Tax Area Code	Code	20	
-                    Yes	55	Tax Liable	Boolean		
-                    Yes	56	Tax Group Code	Code	20	
-                    Yes	57	VAT Bus. Posting Group	Code	20	
-                    Yes	58	VAT Prod. Posting Group	Code	20	
-                    */
                     Tag.Init();
                     Tag."Package ID" := PackageID;
                     Tag.Tag := TagType + GetTextFromToken(jField, 'f1');
@@ -711,6 +767,17 @@ codeunit 92101 "OnBoarding Management"
         exit(Tag.Tag);
     end;
 
+    procedure GetArrayFromToken(T: JsonToken; Member: Text): JsonArray
+    var
+        O: JsonObject;
+        V: JsonToken;
+        Data: Text;
+    begin
+        O := T.AsObject();
+        if O.Get(Member, V) then
+            EXIT(V.AsArray());
+    end;
+
     procedure GetTextFromToken(T: JsonToken; Member: Text): Text
     var
         O: JsonObject;
@@ -718,9 +785,10 @@ codeunit 92101 "OnBoarding Management"
         Data: Text;
     begin
         O := T.AsObject();
-        O.Get(Member, V);
-        V.WriteTo(Data);
-        EXIT(copystr(Data, 2, strlen(Data) - 2));
+        if O.Get(Member, V) then begin
+            V.WriteTo(Data);
+            EXIT(copystr(Data, 2, strlen(Data) - 2));
+        end;
     end;
 
     procedure GetOptionFromToken(T: JsonToken; Member: Text): Integer
@@ -731,10 +799,11 @@ codeunit 92101 "OnBoarding Management"
         Op: Integer;
     begin
         O := T.AsObject();
-        O.Get(Member, V);
-        V.WriteTo(Data);
-        evaluate(Op, Data /*copystr(Data, 2, strlen(Data) - 2) */, 9);
-        EXIT(Op);
+        if O.Get(Member, V) then begin
+            V.WriteTo(Data);
+            evaluate(Op, copystr(Data, 2, strlen(Data) - 2), 9);
+            EXIT(Op);
+        end;
     end;
 
     procedure GetBooleanFromToken(T: JsonToken; Member: Text): Boolean
@@ -745,10 +814,11 @@ codeunit 92101 "OnBoarding Management"
         Op: Boolean;
     begin
         O := T.AsObject();
-        O.Get(Member, V);
-        V.WriteTo(Data);
-        evaluate(Op, copystr(Data, 2, strlen(Data) - 2));
-        EXIT(Op);
+        if O.Get(Member, V) then begin
+            V.WriteTo(Data);
+            evaluate(Op, copystr(Data, 2, strlen(Data) - 2));
+            EXIT(Op);
+        end;
     end;
 
     procedure RunTheProcess()
@@ -798,7 +868,7 @@ codeunit 92101 "OnBoarding Management"
                     begin
                         sTag.DeleteAll();
                         RefreshModules();
-                        GetPackages('BASE-SETUP_');
+                        GetPackages('BASE-SETUP-');
                         State := State::"Select Modules";
                     end;
                 State::"Select Modules":
@@ -834,8 +904,8 @@ codeunit 92101 "OnBoarding Management"
                                             packages.findfirst;
                                             BaseID := Packages.ID;
                                             CountryCode := Packages.Country;
-                                            Packages.Setrange(Select);
                                             GetPackages('_' + CountryCode + '_' + Packages."Minimum Version");
+                                            Packages.Reset;
                                             Packages.Get(BaseID);
                                             Packages.Select := true; // Reselect base package
                                             Packages.MODIFY;
@@ -1077,4 +1147,7 @@ codeunit 92101 "OnBoarding Management"
         Modules."Sorting Order" := 11;
         Modules.Insert();
     end;
+
+    var
+        FilterTagCounter: Integer;
 }

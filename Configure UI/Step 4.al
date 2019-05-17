@@ -1,4 +1,4 @@
-page 92110 "OnBoarding Step 4"
+page 70310079 "OnBoarding Step 4"
 {
     // Upload a chart of account Excel
     PageType = NavigatePage;
@@ -69,6 +69,7 @@ page 92110 "OnBoarding Step 4"
     begin
         ContinuePressed := false;
     end;
+
     procedure Continue(): Boolean
     begin
         exit(ContinuePressed);

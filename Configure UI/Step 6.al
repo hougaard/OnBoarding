@@ -1,4 +1,4 @@
-page 92111 "OnBoarding Step 6"
+page 70310081 "OnBoarding Step 6"
 {
     PageType = NavigatePage;
     Caption = 'OnBoarding, Assign Accounts to Setup';
@@ -74,6 +74,7 @@ page 92111 "OnBoarding Step 6"
     begin
         ContinuePressed := false;
     end;
+
     procedure Continue(): Boolean
     begin
         exit(ContinuePressed);

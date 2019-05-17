@@ -1,4 +1,4 @@
-page 92104 "OnBoarding Step 1"
+page 70310076 "OnBoarding Step 1"
 {
     PageType = NavigatePage;
     Caption = 'OnBoarding';
@@ -61,10 +61,12 @@ page 92104 "OnBoarding Step 1"
     begin
         exit(ContinuePressed);
     end;
+
     trigger OnOpenPage()
     begin
         ContinuePressed := false;
     end;
+
     Var
         ContinuePressed: Boolean;
 }

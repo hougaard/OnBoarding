@@ -1,4 +1,4 @@
-page 92112 "OnBoarding Step 8"
+page 70310083 "OnBoarding Step 8"
 {
     PageType = NavigatePage;
     Caption = 'OnBoarding, Document numbers';

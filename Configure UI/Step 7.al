@@ -1,4 +1,4 @@
-page 92114 "OnBoarding Step 7"
+page 70310082 "OnBoarding Step 7"
 {
     PageType = NavigatePage;
     layout
