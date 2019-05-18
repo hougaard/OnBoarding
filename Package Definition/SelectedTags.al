@@ -28,6 +28,10 @@ table 70310079 "OnBoarding Selected Tag"
             OptionMembers = " ",Assets,Liabilities,Equity,Income,"Cost of Goods Sold",Expense;
             DataClassification = SystemMetadata;
         }
+        field(11; "Account Subcategory Entry No."; Integer)
+        {
+            DataClassification = SystemMetadata;
+        }
         field(14; "Direct Posting"; Boolean)
         {
             DataClassification = SystemMetadata;
@@ -93,10 +97,11 @@ table 70310079 "OnBoarding Selected Tag"
     {
         key(PK; "Income/Balance", SortIndex) { }
     }
-    procedure TransferFrom(Tag: REcord "Package Tag")
+    procedure TransferFrom(Tag: Record "Package Tag")
     begin
         "Income/Balance" := tag."Income/Balance";
         "Account Category" := tag."Account Category";
+        "Account Subcategory Entry No." := tag."Account Subcategory Entry No.";
         "Gen. Bus. Posting Group" := tag."Gen. Bus. Posting Group";
         "Gen. Posting Type" := tag."Gen. Posting Type";
         "Gen. Prod. Posting Group" := tag."Gen. Prod. Posting Group";

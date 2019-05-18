@@ -26,6 +26,10 @@ table 70310078 "Package Tag"
             OptionMembers = "Income Statement","Balance Sheet";
             DataClassification = SystemMetadata;
         }
+        field(11; "Account Subcategory Entry No."; Integer)
+        {
+            DataClassification = SystemMetadata;
+        }
         field(14; "Direct Posting"; Boolean)
         {
             DataClassification = SystemMetadata;

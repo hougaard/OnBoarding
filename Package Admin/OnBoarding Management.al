@@ -248,7 +248,7 @@ codeunit 70310075 "OnBoarding Management"
                             Gl.Validate("Account Type", gl."Account Type"::Posting);
                     end;
                     GL."Account Category" := stag."Account Category";
-
+                    GL."Account Subcategory Entry No." := stag."Account Subcategory Entry No.";
                     GL."Gen. Bus. Posting Group" := stag."Gen. Bus. Posting Group";
                     GL."Gen. Posting Type" := stag."Gen. Posting Type";
                     GL."Gen. Prod. Posting Group" := stag."Gen. Prod. Posting Group";

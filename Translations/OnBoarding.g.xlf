@@ -123,6 +123,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag - Field Account Category - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1947073284 - Field 3855426514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account Subcategory Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag - Field Account Subcategory Entry No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1947073284 - Field 1526897239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Direct Posting</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -242,6 +247,11 @@
           <source>Income/Balance</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag - Field Income/Balance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4060700100 - Field 3855426514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account Subcategory Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag - Field Account Subcategory Entry No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4060700100 - Field 1526897239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Direct Posting</source>
