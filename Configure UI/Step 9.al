@@ -55,17 +55,6 @@ page 70310084 "OnBoarding Step 9"
                     CurrPage.Close();
                 end;
             }
-            /*
-            action(ReviewAction)
-            {
-                Caption = 'Review';
-                InFooterBar = true;
-                trigger OnAction()
-                begin
-                    Page.RunModal(92115);
-                end;
-            }
-            */
             action(ContinueAction)
             {
                 Caption = 'Create Everything';

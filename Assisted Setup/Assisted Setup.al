@@ -13,6 +13,16 @@ codeunit 70310078 "OnBoarding Assisted Setup"
                                                               '');
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Company-Initialize", 'OnCompanyInitialize', '', true, true)]
+    local procedure Init()
+    var
+        GL: Record "G/L Account";
+    begin
+        if GL.IsEmpty then
+            if confirm('This seems to be clean new company, do you want to start the onboarding process?') then
+                page.run(Page::"OnBoarding Step 0");
+    end;
+
     local procedure IsCompleted(AAS: Record "Aggregated Assisted Setup"): Integer
     var
         stag: Record "OnBoarding Selected Tag";

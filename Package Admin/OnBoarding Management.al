@@ -96,6 +96,7 @@ codeunit 70310075 "OnBoarding Management"
         F: Record "OnBoarding Field";
         R: RecordRef;
         Fr: FieldRef;
+        tag: Record "Package Tag";
         stag: Record "OnBoarding Selected Tag";
         NewRec: Boolean;
         CurrentRec: Integer;
@@ -108,17 +109,13 @@ codeunit 70310075 "OnBoarding Management"
         tt: Record "OnBoarding Selected Tag";
         FilterStr: Text;
         FilterList: List Of [Text];
-        v1: Text;
-        v2: Text;
-        v3: Text;
-        v4: Text;
-        v5: Text;
-
+        FilterArray: array[10] of Text;
+        i: Integer;
     begin
         Package.Setrange(Select, true);
         if Package.FINDSET then
             repeat
-                Message('Applying %1', Package.Description);
+                //Message('Applying %1', Package.Description);
                 T.Setrange("Package ID", Package.ID);
                 if T.Findset then
                     repeat
@@ -138,75 +135,84 @@ codeunit 70310075 "OnBoarding Management"
                                     CurrentRec := F."Record No.";
                                 end;
                                 Fr := R.Field(F."Field No.");
-                                if ((F."Table No." = 85) and (F."Field No." = 5) or
-                                    (F."Table No." = 841) and (F."Field No." = 37)) then begin
-                                    stag.setrange(tag, f."Field Value");
-                                    stag.findfirst();
-                                    FilterList := stag."Filter Tag List".Split(',');
-                                    if FilterList.Get(1, v1) then;
-                                    if FilterList.Get(2, v2) then;
-                                    if FilterList.Get(3, v3) then;
-                                    if FilterList.Get(4, v4) then;
-                                    if FilterList.Get(5, v5) then;
-                                    FilterStr := StrSubstNo(stag."Filter Tag Template", v1, v2, v3, v4, v5);
-                                    Fr.Value := FilterStr;
-                                end else begin
-                                    case Fr.Relation() of
-                                        15:
-                                            begin
-                                                stag.setrange(tag, f."Field Value");
-                                                stag.findfirst();
-                                                Fr.value := stag.TagValue;
+
+                                case Fr.Relation() of
+                                    15:
+                                        begin
+                                            if format(f."Field Value") <> '' then begin
+                                                tag.GET(Package.ID, F."Field Value");
+                                                FilterList := tag."Filter Tag List".Split(',');
+                                                for i := 1 to FilterList.Count do begin
+                                                    FilterList.Get(i, FilterArray[i]);
+                                                    stag.setrange(tag, FilterArray[i]);
+                                                    stag.FindFirst();
+                                                    FilterArray[i] := stag.TagValue;
+                                                end;
+                                                FilterStr := StrSubstNo(tag."Filter Tag Template",
+                                                                        FilterArray[1],
+                                                                        FilterArray[2],
+                                                                        FilterArray[3],
+                                                                        FilterArray[4],
+                                                                        FilterArray[5],
+                                                                        FilterArray[6],
+                                                                        FilterArray[7],
+                                                                        FilterArray[8],
+                                                                        FilterArray[9],
+                                                                        FilterArray[10]);
+                                                if FilterStr = '' then
+                                                    error('Table %1, Field %2, Filter=%3, List=%4',
+                                                    R.Number, Fr.Number, tag."Filter Tag Template", tag."Filter Tag List");
+                                                Fr.Value := FilterStr;
                                             end;
-                                        308:
-                                            begin
-                                                stag.setrange(tag, f."Field Value");
-                                                stag.findfirst();
-                                                Fr.Value := copystr(stag.Tag, 2);
-                                            end;
-                                        else
-                                            case lowercase(format(Fr.Type())) of
-                                                'code',
-                                                'guid',
-                                                'text':
-                                                    fr.value := F."Field Value";
-                                                'decimal':
-                                                    begin
-                                                        evaluate(_decimal, F."Field Value", 9);
-                                                        fr.value := _decimal;
+                                        end;
+                                    308:
+                                        begin
+                                            stag.setrange(tag, f."Field Value");
+                                            stag.findfirst();
+                                            Fr.Value := copystr(stag.Tag, 2);
+                                        end;
+                                    else
+                                        case lowercase(format(Fr.Type())) of
+                                            'code',
+                                            'guid',
+                                            'text':
+                                                fr.value := F."Field Value";
+                                            'decimal':
+                                                begin
+                                                    evaluate(_decimal, F."Field Value", 9);
+                                                    fr.value := _decimal;
+                                                end;
+                                            'boolean':
+                                                begin
+                                                    evaluate(_boolean, F."Field Value", 9);
+                                                    fr.value := _boolean;
+                                                end;
+                                            'integer',
+                                            'option':
+                                                begin
+                                                    if F."Field Value" = '' then
+                                                        fr.value := 0
+                                                    else begin
+                                                        evaluate(_integer, F."Field Value", 9);
+                                                        fr.value := _integer;
                                                     end;
-                                                'boolean':
-                                                    begin
-                                                        evaluate(_boolean, F."Field Value", 9);
-                                                        fr.value := _boolean;
-                                                    end;
-                                                'integer',
-                                                'option':
-                                                    begin
-                                                        if F."Field Value" = '' then
-                                                            fr.value := 0
-                                                        else begin
-                                                            evaluate(_integer, F."Field Value", 9);
-                                                            fr.value := _integer;
-                                                        end;
-                                                    end;
-                                                'date':
-                                                    begin
-                                                        evaluate(_date, f."Field Value", 9);
-                                                        fr.value := _date;
-                                                    end;
-                                                'datetime':
-                                                    begin
-                                                        evaluate(_datetime, f."Field Value", 9);
-                                                        fr.value := _datetime;
-                                                    end;
-                                                'time':
-                                                    begin
-                                                        evaluate(_time, f."Field Value", 9);
-                                                        fr.value := _time;
-                                                    end;
-                                            end;
-                                    end;
+                                                end;
+                                            'date':
+                                                begin
+                                                    evaluate(_date, f."Field Value", 9);
+                                                    fr.value := _date;
+                                                end;
+                                            'datetime':
+                                                begin
+                                                    evaluate(_datetime, f."Field Value", 9);
+                                                    fr.value := _datetime;
+                                                end;
+                                            'time':
+                                                begin
+                                                    evaluate(_time, f."Field Value", 9);
+                                                    fr.value := _time;
+                                                end;
+                                        end;
                                 end;
                             until F.NEXT = 0;
                             if not R.INSERT then
@@ -670,11 +676,11 @@ codeunit 70310075 "OnBoarding Management"
                             FieldRec."Field Value" := CreateTag(PackageID, 'N', jField);
                             FieldRec."Special Action" := FieldRec."Special Action"::"Number Series";
                         end;
-                    'X':
-                        begin
-                            FieldRec."Field Value" := CreateTag(PackageID, 'X', jField);
-                            FieldRec."Special Action" := FieldRec."Special Action"::"Account Filter";
-                        end;
+                        // 'X':
+                        //     begin
+                        //         FieldRec."Field Value" := CreateTag(PackageID, 'X', jField);
+                        //         FieldRec."Special Action" := FieldRec."Special Action"::"Account Filter";
+                        //     end;
 
                 end;
                 FieldRec.Insert();
@@ -690,7 +696,7 @@ codeunit 70310075 "OnBoarding Management"
         T: JsonToken;
     begin
         case TagType of
-            'X':
+            'G':
                 begin
                     Tag.Init();
                     Tag."Package ID" := PackageID;
@@ -709,7 +715,7 @@ codeunit 70310075 "OnBoarding Management"
                             if Tag."Filter Tag List" <> '' then begin
                                 Tag2.Init();
                                 Tag2."Package ID" := PackageID;
-                                Tag2.Tag := TagType + GetTextFromToken(T, 'f1');
+                                Tag2.Tag := GetTextFromToken(T, 'f1');
                                 Tag2."Tag Type" := Tag."Tag Type"::"G/L Account";
                                 Tag2.Description := GetTextFromToken(T, 'f2');
                                 Tag2.Groups := GetTextFromToken(T, 'Totals');
@@ -731,29 +737,29 @@ codeunit 70310075 "OnBoarding Management"
                         end;
                     if Tag.INSERT then;
                 end;
-            'G':
-                begin
-                    Tag.Init();
-                    Tag."Package ID" := PackageID;
-                    Tag.Tag := TagType + GetTextFromToken(jField, 'f1');
-                    Tag."Tag Type" := Tag."Tag Type"::"G/L Account";
-                    Tag.Description := GetTextFromToken(jField, 'f2');
-                    Tag.Groups := GetTextFromToken(jField, 'Totals');
+            // 'G':
+            //     begin
+            //         Tag.Init();
+            //         Tag."Package ID" := PackageID;
+            //         Tag.Tag := TagType + GetTextFromToken(jField, 'f1');
+            //         Tag."Tag Type" := Tag."Tag Type"::"G/L Account";
+            //         Tag.Description := GetTextFromToken(jField, 'f2');
+            //         Tag.Groups := GetTextFromToken(jField, 'Totals');
 
-                    Tag."Account Category" := GetOptionFromToken(jField, 'f8');
-                    Tag."Income/Balance" := GetOptionFromToken(jField, 'f9');
-                    Tag."Direct Posting" := GetBooleanFromToken(jField, 'f14');
-                    Tag."Reconciliation Account" := GetBooleanFromToken(jField, 'f16');
-                    Tag."Gen. Posting Type" := GetOptionFromToken(jField, 'f43');
-                    Tag."Gen. Bus. Posting Group" := GetTextFromToken(jField, 'f44');
-                    Tag."Gen. Prod. Posting Group" := GetTextFromToken(jField, 'f45');
-                    Tag."Tax Area Code" := GetTextFromToken(jField, 'f54');
-                    Tag."Tax Liable" := GetBooleanFromToken(jField, 'f55');
-                    tag."Tax Group Code" := GetTextFromToken(jField, 'f56');
-                    tag."VAT Bus. Posting Group" := GetTextFromToken(jField, 'f57');
-                    tag."VAT Prod. Posting Group" := GetTextFromToken(jField, 'f58');
-                    if Tag.INSERT then;
-                end;
+            //         Tag."Account Category" := GetOptionFromToken(jField, 'f8');
+            //         Tag."Income/Balance" := GetOptionFromToken(jField, 'f9');
+            //         Tag."Direct Posting" := GetBooleanFromToken(jField, 'f14');
+            //         Tag."Reconciliation Account" := GetBooleanFromToken(jField, 'f16');
+            //         Tag."Gen. Posting Type" := GetOptionFromToken(jField, 'f43');
+            //         Tag."Gen. Bus. Posting Group" := GetTextFromToken(jField, 'f44');
+            //         Tag."Gen. Prod. Posting Group" := GetTextFromToken(jField, 'f45');
+            //         Tag."Tax Area Code" := GetTextFromToken(jField, 'f54');
+            //         Tag."Tax Liable" := GetBooleanFromToken(jField, 'f55');
+            //         tag."Tax Group Code" := GetTextFromToken(jField, 'f56');
+            //         tag."VAT Bus. Posting Group" := GetTextFromToken(jField, 'f57');
+            //         tag."VAT Prod. Posting Group" := GetTextFromToken(jField, 'f58');
+            //         if Tag.INSERT then;
+            //     end;
             'N':
                 begin
                     Tag.Init();
