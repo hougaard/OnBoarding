@@ -145,8 +145,27 @@ codeunit 70310075 "OnBoarding Management"
                                                 for i := 1 to FilterList.Count do begin
                                                     FilterList.Get(i, FilterArray[i]);
                                                     stag.setrange(tag, FilterArray[i]);
-                                                    stag.FindFirst();
-                                                    FilterArray[i] := stag.TagValue;
+                                                    if stag.FindFirst() then begin
+                                                        FilterArray[i] := stag.TagValue;
+                                                    end else begin
+                                                        if tag.get(FilterArray[i]) then begin
+                                                            // Now to check if the account needed is actually a End-Total
+                                                            // That we have created
+                                                            if tag."Account Type" = tag."Account Type"::"End-Total" then begin
+                                                                stag.reset;
+                                                                stag.setrange(Description, tag.Description);
+                                                                if stag.FindFirst() then begin
+                                                                    FilterArray[i] := stag.TagValue;
+                                                                end else begin
+                                                                    message('Data in package %1 required a account not present in your chart of account, please check the setup.', package.Description);
+                                                                    FilterArray[i] := 'MISSING';
+                                                                end;
+                                                            end;
+                                                        end else begin
+                                                            message('Data in package %1 have created an incomplete setup, please check the setup.', package.Description);
+                                                            FilterArray[i] := 'MISSING';
+                                                        end;
+                                                    end;
                                                 end;
                                                 FilterStr := StrSubstNo(tag."Filter Tag Template",
                                                                         FilterArray[1],
