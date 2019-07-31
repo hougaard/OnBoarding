@@ -1,4 +1,4 @@
-codeunit 70310076 "Onboarding Import COA"
+codeunit 70310076 "Onboarding Import COA Hgd"
 {
     var
         TotalColumns: Integer;
@@ -12,8 +12,10 @@ codeunit 70310076 "Onboarding Import COA"
         row: Integer;
         col: Integer;
         GL: Record "G/L Account";
+        L: Label 'Chart Of Accounts Excel File';
+        L2: Label 'income';
     begin
-        if UploadIntoStream('Chart Of Accounts Excel File', '', '', FileName, InS) then begin
+        if UploadIntoStream(L, '', '', FileName, InS) then begin
             ExcelBuffer.OpenBookStream(InS, 'Sheet1');
             ExcelBuffer.ReadSheet();
             GetLastRowandColumn(ExcelBuffer);
@@ -26,7 +28,7 @@ codeunit 70310076 "Onboarding Import COA"
                 GL.VALIDATE("No.", GetTextCell(ExcelBuffer, row, 1));
                 GL.INSERT(TRUE);
                 GL.VALIDATE(Name, GetTextCell(ExcelBuffer, row, 2));
-                if strpos(lowercase(GetTextCell(ExcelBuffer, row, 3)), 'income') <> 0 then
+                if strpos(lowercase(GetTextCell(ExcelBuffer, row, 3)), L2) <> 0 then
                     Gl.VALIDATE("Income/Balance", GL."Income/Balance"::"Income Statement")
                 else
                     GL.VALIDATE("Income/Balance", GL."Income/Balance"::"Balance Sheet");

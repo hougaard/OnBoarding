@@ -1,4 +1,4 @@
-page 70310078 "OnBoarding Step 3"
+page 70310078 "OnBoarding Step 3 Hgd"
 {
     PageType = NavigatePage;
     // How do you want your Chart of Accounts
@@ -37,7 +37,7 @@ page 70310078 "OnBoarding Step 3"
                 }
                 group(AutoBuild)
                 {
-                    Caption = 'Autogeneration Parameters';
+                    Caption = 'Auto-generation Parameters';
                     Visible = AutoBuildVisible;
                     field(FirstAccountNumber; FirstAccountNumber)
                     {
@@ -83,12 +83,14 @@ page 70310078 "OnBoarding Step 3"
                 InFooterBar = true;
                 Caption = 'Continue to next step';
                 trigger OnAction()
+                var
+                    L: Label 'Select a Chart of Account Method first.';
                 begin
                     if Method <> Method::" " then begin
                         ContinuePressed := true;
                         CurrPage.Close()
                     end else
-                        error('Select a Chart of Account Method first.');
+                        error(L);
                 end;
             }
         }

@@ -11,7 +11,7 @@
             "startupObjectId": 70310075,
             "startupObjectType": "Page",
             "breakOnError": true,
-            "schemaUpdateMode": "Recreate"
+            "schemaUpdateMode": "Synchronize"
         }
     ]
 }

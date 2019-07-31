@@ -1,11 +1,11 @@
-codeunit 70310075 "OnBoarding Management"
+codeunit 70310075 "OnBoarding Management Hgd"
 {
     procedure CreateRapidStartPackage()
     var
         ConfigPackage: Record "Config. Package";
         ConfigMgt: Codeunit "Config. Package Management";
-        Packages: Record "OnBoarding Package";
-        Tables: Record "OnBoarding Table";
+        Packages: Record "OnBoarding Package Hgd";
+        Tables: Record "OnBoarding Table Hgd";
     begin
 
         ConfigPackage.INIT;
@@ -46,7 +46,7 @@ codeunit 70310075 "OnBoarding Management"
 
     procedure SuggestStartingNumbers(StartNumber: Code[20])
     var
-        sTag: Record "OnBoarding Selected Tag";
+        sTag: Record "OnBoarding Selected Tag Hgd";
     begin
         sTag.SetRange("Tag Type", Stag."Tag Type"::"No. Series");
         sTag.SetFilter(TagValue, '=%1', '');
@@ -85,19 +85,17 @@ codeunit 70310075 "OnBoarding Management"
 
         // Create all the data from the selected packages
         CreateDataFromPackages();
-        if not Confirm('Do you want to Commit the changes?\(Debug message)') then
-            ERROR('Aborting');
     end;
 
     procedure CreateDataFromPackages()
     var
-        Package: Record "OnBoarding Package";
-        T: Record "OnBoarding Table";
-        F: Record "OnBoarding Field";
+        Package: Record "OnBoarding Package Hgd";
+        T: Record "OnBoarding Table Hgd";
+        F: Record "OnBoarding Field Hgd";
         R: RecordRef;
         Fr: FieldRef;
-        tag: Record "Package Tag";
-        stag: Record "OnBoarding Selected Tag";
+        tag: Record "Package Tag Hgd";
+        stag: Record "OnBoarding Selected Tag Hgd";
         NewRec: Boolean;
         CurrentRec: Integer;
         _decimal: Decimal;
@@ -106,11 +104,13 @@ codeunit 70310075 "OnBoarding Management"
         _time: Time;
         _integer: Integer;
         _boolean: Boolean;
-        tt: Record "OnBoarding Selected Tag";
+        tt: Record "OnBoarding Selected Tag Hgd";
         FilterStr: Text;
         FilterList: List Of [Text];
         FilterArray: array[10] of Text;
         i: Integer;
+        L1: Label 'Data in package %1 required a account not present in your chart of account, please check the setup.';
+        L2: Label 'Data in package %1 have created an incomplete setup, please check the setup.';
     begin
         Package.Setrange(Select, true);
         if Package.FINDSET then
@@ -157,12 +157,12 @@ codeunit 70310075 "OnBoarding Management"
                                                                 if stag.FindFirst() then begin
                                                                     FilterArray[i] := stag.TagValue;
                                                                 end else begin
-                                                                    message('Data in package %1 required a account not present in your chart of account, please check the setup.', package.Description);
+                                                                    message(L1, package.Description);
                                                                     FilterArray[i] := 'MISSING';
                                                                 end;
                                                             end;
                                                         end else begin
-                                                            message('Data in package %1 have created an incomplete setup, please check the setup.', package.Description);
+                                                            message(L2, package.Description);
                                                             FilterArray[i] := 'MISSING';
                                                         end;
                                                     end;
@@ -244,7 +244,7 @@ codeunit 70310075 "OnBoarding Management"
 
     procedure CreateChartOfAccounts()
     var
-        stag: Record "OnBoarding Selected Tag";
+        stag: Record "OnBoarding Selected Tag Hgd";
         GL: Record "G/L Account";
         Indent: Codeunit "G/L Account-Indent";
     begin
@@ -281,12 +281,12 @@ codeunit 70310075 "OnBoarding Management"
                     GL.MODIFY(true);
                 end;
             until stag.next = 0;
-        //Indent.Indent();
+        Indent.Indent();
     end;
 
     procedure CreateNumberSeries()
     var
-        stag: Record "OnBoarding Selected Tag";
+        stag: Record "OnBoarding Selected Tag Hgd";
         ns: Record "No. Series";
         nsl: Record "No. Series Line";
     begin
@@ -319,13 +319,13 @@ codeunit 70310075 "OnBoarding Management"
                                           var CreateTotals: Boolean;
                                           var TotalIncre: Integer)
     var
-        STag: Record "OnBoarding Selected Tag";
-        Tag: Record "Package Tag";
-        Packages: Record "OnBoarding Package";
+        STag: Record "OnBoarding Selected Tag Hgd";
+        Tag: Record "Package Tag Hgd";
+        Packages: Record "OnBoarding Package Hgd";
         Totals: List of [Text];
         Total: Text;
-        StagTest: Record "OnBoarding Selected Tag";
-        StagTest2: Record "OnBoarding Selected Tag";
+        StagTest: Record "OnBoarding Selected Tag Hgd";
+        StagTest2: Record "OnBoarding Selected Tag Hgd";
         AfterIndex: Integer;
         BeforeIndex: Integer;
         i: Integer;
@@ -334,6 +334,8 @@ codeunit 70310075 "OnBoarding Management"
         ParentIndention: Integer;
         NotFirst: Boolean;
         TotalsCount: Integer;
+        L1: Label 'This should never happen, a total-end account without a total-begin account';
+        L2: Label 'Error 1: Cannot insert %1 as sort %2 because %3 is already there';
     begin
         sTag.DELETEALL;
         Packages.SetRange(Select, true);
@@ -370,7 +372,7 @@ codeunit 70310075 "OnBoarding Management"
                                     if StagTest.next(-1) = -1 then
                                         BeforeIndex := StagTest.SortIndex
                                     else
-                                        error('This should never happen, a total-end account without a total-begin account');
+                                        error(L1);
                                     Stag.Init();
                                     Stag.TransferFrom(tag);
                                     Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
@@ -380,12 +382,11 @@ codeunit 70310075 "OnBoarding Management"
                                     if not Stag.INSERT then begin
                                         stagtest2.reset;
                                         stagtest2.get(Stag.SortIndex);
-                                        error('Error 1: Cannot insert %1 as sort %2 because %3 is already there',
+                                        error(L2,
                                                 Stag.Description,
                                                 Stag.SortIndex,
                                                 StagTest2.Description);
                                     end;
-                                    //Message('Insert %1 as %2 (%3)', stag.Description, Stag.SortIndex, stag."Total Begin/End");
                                 end else begin
                                     // The totals group is unknown, let's
                                     // add the groups and then the account.
@@ -397,7 +398,6 @@ codeunit 70310075 "OnBoarding Management"
                                         StagTest.RESET;
                                         StagTest.SetRange("Income/Balance", tag."Income/Balance");
                                         StagTest.setrange("Totals Group", Total);
-                                        //StagTest.setrange("Total Begin/End", StagTest."Total Begin/End"::"End");
                                         if not StagTest.findfirst then begin
                                             // This group does not exists, let's figure out where to create it
                                             // in the number range
@@ -436,7 +436,7 @@ codeunit 70310075 "OnBoarding Management"
                                         if StagTest.next(-1) = -1 then
                                             BeforeIndex := StagTest.SortIndex
                                         else
-                                            error('This should never happen, a total-end account without a total-begin account');
+                                            error(L1);
                                         Stag.Init();
                                         sTag.TransferFrom(tag);
                                         Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
@@ -447,7 +447,7 @@ codeunit 70310075 "OnBoarding Management"
                                         if not Stag.INSERT then begin
                                             stagtest2.reset;
                                             stagtest2.get(Tag."Income/Balance", Stag.SortIndex);
-                                            error('Error 4: Cannot insert %1 as sort %2 because %3 is already there',
+                                            error(L2,
                                                 Stag.Description,
                                                 Stag.SortIndex,
                                                 StagTest2.Description);
@@ -490,9 +490,9 @@ codeunit 70310075 "OnBoarding Management"
         end;
     end;
 
-    procedure GetMax(Tag: Record "Package Tag"): Integer;
+    procedure GetMax(Tag: Record "Package Tag Hgd"): Integer;
     var
-        st: Record "OnBoarding Selected Tag";
+        st: Record "OnBoarding Selected Tag Hgd";
     begin
         st.Setrange("Income/Balance", Tag."Income/Balance");
         if st.findlast then
@@ -501,14 +501,15 @@ codeunit 70310075 "OnBoarding Management"
             exit(0);
     end;
 
-    procedure CreateTotal(Tag: Record "Package Tag";
+    procedure CreateTotal(Tag: Record "Package Tag Hgd";
                           BeforeIndex: Integer;
                           Total: Text;
                           BeginEnd: Option " ","Begin","End";
                           ParentIndention: Integer): Integer
     var
-        NewTotal: Record "OnBoarding Selected Tag";
-        stagtest2: Record "OnBoarding Selected Tag";
+        NewTotal: Record "OnBoarding Selected Tag Hgd";
+        stagtest2: Record "OnBoarding Selected Tag Hgd";
+        L1: Label 'Error 2: Cannot insert %1 as sort %2 because %3 is already there';
     begin
         NewTotal.Init();
         stagtest2.setrange("Income/Balance", tag."Income/Balance");
@@ -527,7 +528,7 @@ codeunit 70310075 "OnBoarding Management"
         if not NewTotal.INSERT then begin
             stagtest2.reset;
             stagtest2.get(Tag."Income/Balance", NewTotal.SortIndex);
-            error('Error 2: Cannot insert %1 as sort %2 because %3 is already there',
+            error(L1,
                     NewTotal.Description,
                     NewTotal.SortIndex,
                     StagTest2.Description);
@@ -547,15 +548,19 @@ codeunit 70310075 "OnBoarding Management"
         filename: Text;
         value: JsonToken;
         Headers: HttpHeaders;
-        Package: Record "OnBoarding Package";
-        pTable: Record "OnBoarding Table";
-        pField: Record "OnBoarding Field";
-        Tag: Record "Package Tag";
+        Package: Record "OnBoarding Package Hgd";
+        pTable: Record "OnBoarding Table Hgd";
+        pField: Record "OnBoarding Field Hgd";
+        Tag: Record "Package Tag Hgd";
         D: Dialog;
         FC: Integer;
+        L1: Label 'Reading package list #1## of #2##';
+        L2: Label 'Cannot read package list, error %1';
+        L3: Label 'Cannot contact Package Server';
+        ExternalCallNotAllowed: Label 'Call to package server blocked by your environment';
     begin
         if GuiAllowed() then
-            D.Open('Reading package list #1## of #2##');
+            D.Open(L1);
 
         Package.DELETEALL;
         pTable.DELETEALL;
@@ -567,6 +572,8 @@ codeunit 70310075 "OnBoarding Management"
         Headers.Add('User-Agent', 'Dynamics 365 Business Central');
         request.Method('GET');
         if http.Send(request, response) then begin
+            if response.IsBlockedByEnvironment then
+                error(ExternalCallNotAllowed);
             if response.HttpStatusCode() = 200 then begin
                 response.Content().ReadAs(jsonTxt);
                 files.ReadFrom(jsonTxt);
@@ -584,8 +591,12 @@ codeunit 70310075 "OnBoarding Management"
                         if strpos(filename, '.json') <> 0 then begin
                             filename := copystr(filename, 2, strlen(filename) - 2);
                             if http.Get(filename, response) then begin
-                                response.Content().ReadAs(jsonTxt);
-                                ImportPackage(jsonTxt);
+                                if response.IsBlockedByEnvironment then
+                                    error(ExternalCallNotAllowed);
+                                if response.HttpStatusCode() = 200 then begin
+                                    response.Content().ReadAs(jsonTxt);
+                                    ImportPackage(jsonTxt);
+                                end;
                             end;
                         end;
                     end;
@@ -593,9 +604,9 @@ codeunit 70310075 "OnBoarding Management"
                 if GuiAllowed() then
                     D.Close();
             end else
-                Error('Cannot read package list, error %1', response.HttpStatusCode());
+                Error(L2, response.HttpStatusCode());
         end else
-            Error('Cannot contact Package Server');
+            Error(L3);
     end;
 
     procedure ImportPackage(JsonTxt: Text)
@@ -607,9 +618,9 @@ codeunit 70310075 "OnBoarding Management"
         jTablesToken: JsonToken;
         jTableToken: JsonToken;
         jTable: JsonObject;
-        Package: Record "OnBoarding Package";
-        pTable: Record "OnBoarding Table";
-        pField: Record "OnBoarding Field";
+        Package: Record "OnBoarding Package Hgd";
+        pTable: Record "OnBoarding Table Hgd";
+        pField: Record "OnBoarding Field Hgd";
         Keys: List of [Text];
         Values: List of [JsonToken];
         TableTxt: Text;
@@ -620,7 +631,7 @@ codeunit 70310075 "OnBoarding Management"
             if jPackage.Get('Info', jInfoToken) then begin
                 Package.Init();
                 Package.ID := GetTextFromToken(JInfoToken, 'ID');
-                Package.Module := GetTextFromToken(jInfoToken, 'Module');
+                Package."Module" := GetTextFromToken(jInfoToken, 'Module');
                 Package.Description := GetTextFromToken(jInfoToken, 'Description');
                 Package."Minimum Version" := GetTextFromToken(jInfoToken, 'Version');
                 Package.Author := GetTextFromToken(jInfoToken, 'Author');
@@ -648,14 +659,14 @@ codeunit 70310075 "OnBoarding Management"
 
     procedure ImportRecords(PackageID: Text; TableNo: Integer; jRecords: JsonArray)
     var
-        TableRec: Record "OnBoarding Table";
+        TableRec: Record "OnBoarding Table Hgd";
         R: RecordRef;
         jRecordToken: JsonToken;
         jRecord: JsonObject;
         jFieldToken: JsonToken;
         jField: JsonToken;
         RecNo: Integer;
-        FieldRec: Record "OnBoarding Field";
+        FieldRec: Record "OnBoarding Field Hgd";
         FieldNoTxt: Text;
         FieldNo: Integer;
         Keys: List of [Text];
@@ -695,12 +706,6 @@ codeunit 70310075 "OnBoarding Management"
                             FieldRec."Field Value" := CreateTag(PackageID, 'N', jField);
                             FieldRec."Special Action" := FieldRec."Special Action"::"Number Series";
                         end;
-                        // 'X':
-                        //     begin
-                        //         FieldRec."Field Value" := CreateTag(PackageID, 'X', jField);
-                        //         FieldRec."Special Action" := FieldRec."Special Action"::"Account Filter";
-                        //     end;
-
                 end;
                 FieldRec.Insert();
             end;
@@ -709,8 +714,8 @@ codeunit 70310075 "OnBoarding Management"
 
     procedure CreateTag(PackageID: Text; TagType: Text; jField: JsonToken): Text;
     var
-        Tag: Record "Package Tag";
-        Tag2: Record "Package Tag";
+        Tag: Record "Package Tag Hgd";
+        Tag2: Record "Package Tag Hgd";
         A: JsonArray;
         T: JsonToken;
     begin
@@ -756,29 +761,6 @@ codeunit 70310075 "OnBoarding Management"
                         end;
                     if Tag.INSERT then;
                 end;
-            // 'G':
-            //     begin
-            //         Tag.Init();
-            //         Tag."Package ID" := PackageID;
-            //         Tag.Tag := TagType + GetTextFromToken(jField, 'f1');
-            //         Tag."Tag Type" := Tag."Tag Type"::"G/L Account";
-            //         Tag.Description := GetTextFromToken(jField, 'f2');
-            //         Tag.Groups := GetTextFromToken(jField, 'Totals');
-
-            //         Tag."Account Category" := GetOptionFromToken(jField, 'f8');
-            //         Tag."Income/Balance" := GetOptionFromToken(jField, 'f9');
-            //         Tag."Direct Posting" := GetBooleanFromToken(jField, 'f14');
-            //         Tag."Reconciliation Account" := GetBooleanFromToken(jField, 'f16');
-            //         Tag."Gen. Posting Type" := GetOptionFromToken(jField, 'f43');
-            //         Tag."Gen. Bus. Posting Group" := GetTextFromToken(jField, 'f44');
-            //         Tag."Gen. Prod. Posting Group" := GetTextFromToken(jField, 'f45');
-            //         Tag."Tax Area Code" := GetTextFromToken(jField, 'f54');
-            //         Tag."Tax Liable" := GetBooleanFromToken(jField, 'f55');
-            //         tag."Tax Group Code" := GetTextFromToken(jField, 'f56');
-            //         tag."VAT Bus. Posting Group" := GetTextFromToken(jField, 'f57');
-            //         tag."VAT Prod. Posting Group" := GetTextFromToken(jField, 'f58');
-            //         if Tag.INSERT then;
-            //     end;
             'N':
                 begin
                     Tag.Init();
@@ -848,27 +830,26 @@ codeunit 70310075 "OnBoarding Management"
 
     procedure RunTheProcess()
     var
-        Step1: Page "OnBoarding Step 1"; // Select Modules
-        Step2: Page "OnBoarding Step 2"; // Select Packages
-        Step3: Page "OnBoarding Step 3"; // Select how to Chart of Account
-        Step4: Page "OnBoarding Step 4"; // Upload
-        Step5: Page "OnBoarding Step 5"; // Present and edit COA
-        Step6: Page "OnBoarding Step 6"; // Map to existing COA
-        Step7: Page "OnBoarding Step 7"; // Select how to number series
-        Step8: Page "OnBoarding Step 8"; // Edit number for numberseries
-        Step9: Page "OnBoarding Step 9"; // Review and Confirm
+        Step1: Page "OnBoarding Step 1 Hgd"; // Select Modules
+        Step2: Page "OnBoarding Step 2 Hgd"; // Select Packages
+        Step3: Page "OnBoarding Step 3 Hgd"; // Select how to Chart of Account
+        Step4: Page "OnBoarding Step 4 Hgd"; // Upload
+        Step5: Page "OnBoarding Step 5 Hgd"; // Present and edit COA
+        Step6: Page "OnBoarding Step 6 Hgd"; // Map to existing COA
+        Step7: Page "OnBoarding Step 7 Hgd"; // Select how to number series
+        Step8: Page "OnBoarding Step 8 Hgd"; // Edit number for numberseries
+        Step9: Page "OnBoarding Step 9 Hgd"; // Review and Confirm
 
         // State machine
         State: Option "Start","Select Modules","Select Packages","Chart of Accounts action","Upload COA","Edit COA","Map to existing COA","Number Series Action","Edit Number Series","Review and Confirm";
         Done: Boolean;
 
-        Modules: Record "OnBoarding Modules";
-        Packages: Record "OnBoarding Package";
-        PF: Record "OnBoarding Field";
+        Modules: Record "OnBoarding Modules Hgd";
+        Packages: Record "OnBoarding Package Hgd";
+        PF: Record "OnBoarding Field Hgd";
         sTag: Record "Analysis Selected Dimension";
         Method: Option " ","Generate one for me","I'll upload one","Use the existing";
         NS_Method: Option " ","Generate them for me","I will do this myself";
-
 
         // Auto Gen Parameters
         FirstAccountNumber: Integer;
@@ -880,6 +861,8 @@ codeunit 70310075 "OnBoarding Management"
         ModulesDone: Boolean;
         ModulesContinue: Boolean;
         BaseID: Text;
+        Appl: Codeunit "Application System Constants";
+        L1: Label 'No modules selected, aborting';
 
     begin
         State := 0; //State::"Chart of Accounts action"; // We start at zero
@@ -893,11 +876,12 @@ codeunit 70310075 "OnBoarding Management"
                     begin
                         sTag.DeleteAll();
                         RefreshModules();
-                        GetPackages('BASE-SETUP-');
                         State := State::"Select Modules";
                     end;
                 State::"Select Modules":
                     begin
+                        GetPackages('BASE-SETUP-');
+                        COMMIT;
                         clear(Step1);
                         Step1.Editable(true);
                         Step1.RunModal();
@@ -914,7 +898,7 @@ codeunit 70310075 "OnBoarding Management"
                             if Modules.FINDFIRST then
                                 repeat
                                     Packages.RESET;
-                                    Packages.Setrange(Module, Modules."Module ID");
+                                    Packages.Setrange("Module", Modules."Module ID");
                                     if Modules."Sorting Order" > 0 then
                                         Packages.setrange(Country, CountryCode);
                                     COMMIT;
@@ -949,7 +933,7 @@ codeunit 70310075 "OnBoarding Management"
                                 State := State::"Chart of Accounts action";
                             end;
                         END else
-                            Error('No modules selected, aborting');
+                            Error(L1);
                     end;
                 State::"Chart of Accounts action":
                     begin
@@ -1055,9 +1039,9 @@ codeunit 70310075 "OnBoarding Management"
 
     procedure SelectTagsFromSelectedPackages(OnlyNumberSeries: Boolean)
     var
-        STag: Record "OnBoarding Selected Tag";
-        Tag: Record "Package Tag";
-        Package: Record "OnBoarding Package";
+        STag: Record "OnBoarding Selected Tag Hgd";
+        Tag: Record "Package Tag Hgd";
+        Package: Record "OnBoarding Package Hgd";
         Sort: Integer;
     begin
         Package.SetRange(Select, true);
@@ -1083,14 +1067,26 @@ codeunit 70310075 "OnBoarding Management"
 
     procedure RefreshModules()
     var
-        Modules: Record "OnBoarding Modules";
+        Modules: Record "OnBoarding Modules Hgd";
+        L1: Label 'Base Setup';
+        L2: Label 'Financial Management';
+        L3: Label 'Sales and Account Receivables';
+        L4: Label 'Purchase and Account Payables';
+        L5: Label 'Inventory';
+        L6: Label 'Jobs';
+        L7: Label 'Fixed Assets';
+        L8: Label 'Warehouse';
+        L9: Label 'Service Management';
+        L10: Label 'Relationship Management';
+        L11: Label 'Human Resources';
+        L12: Label 'Production and Planning';
     begin
         Modules.DELETEALL;
 
         Modules.Init();
         Modules."Module ID" := 'BASE';
         Modules."Select" := true;
-        Modules.Description := 'Base Setup';
+        Modules.Description := L1;
         Modules."Sorting Order" := 0;
         Modules.Insert();
 
@@ -1098,77 +1094,77 @@ codeunit 70310075 "OnBoarding Management"
         Modules.Init();
         Modules."Module ID" := 'FIN';
         Modules."Select" := false;
-        Modules.Description := 'Financial Management';
+        Modules.Description := L2;
         Modules."Sorting Order" := 1;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'SALE';
         Modules."Select" := false;
-        Modules.Description := 'Sales and Account Receivables';
+        Modules.Description := L3;
         Modules."Sorting Order" := 2;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'PURCHASE';
         Modules."Select" := false;
-        Modules.Description := 'Purchase and Account Payables';
+        Modules.Description := L4;
         Modules."Sorting Order" := 3;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'INVENTORY';
         Modules."Select" := false;
-        Modules.Description := 'Inventory';
+        Modules.Description := L5;
         Modules."Sorting Order" := 4;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'JOB';
         Modules."Select" := false;
-        Modules.Description := 'Jobs';
+        Modules.Description := L6;
         Modules."Sorting Order" := 5;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'FA';
         Modules."Select" := false;
-        Modules.Description := 'Fixed Assets';
+        Modules.Description := L7;
         Modules."Sorting Order" := 6;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'WAREHOUSE';
         Modules."Select" := false;
-        Modules.Description := 'Warehouse';
+        Modules.Description := L8;
         Modules."Sorting Order" := 7;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'SERVICE';
         Modules."Select" := false;
-        Modules.Description := 'Service Management';
+        Modules.Description := L9;
         Modules."Sorting Order" := 8;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'MARKETING';
         Modules."Select" := false;
-        Modules.Description := 'Relationship Management';
+        Modules.Description := L10;
         Modules."Sorting Order" := 9;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'HR';
         Modules."Select" := false;
-        Modules.Description := 'Human Resources';
+        Modules.Description := L11;
         Modules."Sorting Order" := 10;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'PRODUCTION';
         Modules."Select" := false;
-        Modules.Description := 'Production and Planning';
+        Modules.Description := L12;
         Modules."Sorting Order" := 11;
         Modules.Insert();
     end;

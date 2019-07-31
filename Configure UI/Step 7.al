@@ -1,4 +1,4 @@
-page 70310082 "OnBoarding Step 7"
+page 70310082 "OnBoarding Step 7 Hgd"
 {
     PageType = NavigatePage;
     layout
@@ -32,7 +32,7 @@ page 70310082 "OnBoarding Step 7"
                 }
                 group(AutoBuild)
                 {
-                    Caption = 'Autogeneration Parameters';
+                    Caption = 'Auto-generation Parameters';
                     Visible = AutoBuildVisible;
                     field(FirstAccountNumber; FirstNumber)
                     {
@@ -61,12 +61,14 @@ page 70310082 "OnBoarding Step 7"
                 InFooterBar = true;
                 Caption = 'Continue to next step';
                 trigger OnAction()
+                var
+                    L: Label 'Select a document number method first.';
                 begin
                     if Method <> Method::" " then begin
                         ContinuePressed := true;
                         CurrPage.Close();
                     end else
-                        error('Select a document number method first.');
+                        error(L);
                 end;
             }
         }

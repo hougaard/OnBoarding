@@ -1,8 +1,8 @@
-page 70310080 "OnBoarding Step 5"
+page 70310080 "OnBoarding Step 5 Hgd"
 {
     PageType = NavigatePage;
     Caption = 'OnBoarding, Define your chart of accounts';
-    SourceTable = "OnBoarding Selected Tag";
+    SourceTable = "OnBoarding Selected Tag Hgd";
     SourceTableView = where ("Tag Type" = const ("G/L Account"));
     InsertAllowed = false;
     DeleteAllowed = false;

@@ -1,4 +1,4 @@
-page 70310084 "OnBoarding Step 9"
+page 70310084 "OnBoarding Step 9 Hgd"
 {
     PageType = NavigatePage;
     Caption = 'OnBoarding - Review and Finish';
@@ -61,13 +61,14 @@ page 70310084 "OnBoarding Step 9"
                 InFooterBar = true;
                 trigger OnAction()
                 var
-                    OnMgt: Codeunit "OnBoarding Management";
+                    OnMgt: Codeunit "OnBoarding Management Hgd";
+                    L: Label 'All done, all the packages you have select have been applied, please verify the setup before you start posting.';
                 begin
-                    ContinuePressed := true;
                     OnMgt.CreateEverything();
                     if CreateRapidStart then
                         OnMgt.CreateRapidStartPackage();
-                    Message('Congratulations, your system is now configured with the packages you selected');
+                    Message(L);
+                    ContinuePressed := true;
                     CurrPage.Close();
                 end;
             }

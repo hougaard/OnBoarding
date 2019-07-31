@@ -1,8 +1,8 @@
-page 70310081 "OnBoarding Step 6"
+page 70310081 "OnBoarding Step 6 Hgd"
 {
     PageType = NavigatePage;
     Caption = 'OnBoarding, Assign Accounts to Setup';
-    SourceTable = "OnBoarding Selected Tag";
+    SourceTable = "OnBoarding Selected Tag Hgd";
     SourceTableView = sorting (SortIndex) where ("Tag Type" = const ("G/L Account"),
                                                  "Total Begin/End" = const (" "));
     InsertAllowed = false;
@@ -53,7 +53,7 @@ page 70310081 "OnBoarding Step 6"
                 InFooterBar = true;
                 trigger OnAction()
                 var
-                    OnMgt: Codeunit "OnBoarding Management";
+                    OnMgt: Codeunit "OnBoarding Management Hgd";
                 begin
                     OnMgt.VerifyAccountAssignment();
                 end;

@@ -1,8 +1,8 @@
-page 70310077 "OnBoarding Step 2"
+page 70310077 "OnBoarding Step 2 Hgd"
 {
     PageType = NavigatePage;
     Caption = 'OnBoarding';
-    SourceTable = "OnBoarding Package";
+    SourceTable = "OnBoarding Package Hgd";
     SourceTableView = sorting (SortIndex);
     InsertAllowed = false;
     DeleteAllowed = false;
@@ -66,13 +66,14 @@ page 70310077 "OnBoarding Step 2"
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 var
-                    PTest: Record "OnBoarding Package";
+                    PTest: Record "OnBoarding Package Hgd";
+                    L: Label 'You can only select one package from this screen';
                 begin
-                    PTest.Setrange(Module, Rec.Module);
+                    PTest.Setrange("Module", Rec."Module");
                     PTest.setrange(Select, true);
                     if not AllowMultiple then
                         if Ptest.Count() <> 1 then
-                            error('You can only select one package from this screen');
+                            error(L);
                     ContinuePressed := true;
                     CurrPage.Close();
                 end;

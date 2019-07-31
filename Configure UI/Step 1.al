@@ -1,9 +1,9 @@
-page 70310076 "OnBoarding Step 1"
+page 70310076 "OnBoarding Step 1 Hgd"
 {
     PageType = NavigatePage;
     Caption = 'OnBoarding';
     Editable = true;
-    SourceTable = "OnBoarding Modules";
+    SourceTable = "OnBoarding Modules Hgd";
     SourceTableView = SORTING ("Sorting Order");
     InsertAllowed = false;
     DeleteAllowed = false;

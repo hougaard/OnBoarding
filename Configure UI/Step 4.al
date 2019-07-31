@@ -1,4 +1,4 @@
-page 70310079 "OnBoarding Step 4"
+page 70310079 "OnBoarding Step 4 Hgd"
 {
     // Upload a chart of account Excel
     PageType = NavigatePage;
@@ -48,7 +48,7 @@ page 70310079 "OnBoarding Step 4"
                 InFooterBar = true;
                 trigger OnAction()
                 var
-                    ImportExcel: Codeunit "Onboarding Import COA";
+                    ImportExcel: Codeunit "Onboarding Import COA Hgd";
                 begin
                     ImportExcel.Run();
                 end;

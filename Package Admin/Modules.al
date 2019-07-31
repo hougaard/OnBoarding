@@ -1,15 +1,27 @@
-table 70310080 "OnBoarding Modules"
+table 70310080 "OnBoarding Modules Hgd"
 {
     fields
     {
         field(1; "Module ID"; Code[20])
-        { DataClassification = SystemMetadata; }
+        {
+            Caption = 'Module ID';
+            DataClassification = SystemMetadata;
+        }
         field(2; Description; Text[250])
-        { DataClassification = SystemMetadata; }
+        {
+            Caption = 'Description';
+            DataClassification = SystemMetadata;
+        }
         field(10; "Select"; Boolean)
-        { DataClassification = SystemMetadata; }
+        {
+            Caption = 'Select';
+            DataClassification = SystemMetadata;
+        }
         field(20; "Sorting Order"; Integer)
-        { DataClassification = SystemMetadata; }
+        {
+            Caption = 'Sorting Order';
+            DataClassification = SystemMetadata;
+        }
     }
     keys
     {

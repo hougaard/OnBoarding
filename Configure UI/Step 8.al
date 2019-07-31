@@ -1,8 +1,8 @@
-page 70310083 "OnBoarding Step 8"
+page 70310083 "OnBoarding Step 8 Hgd"
 {
     PageType = NavigatePage;
     Caption = 'OnBoarding, Document numbers';
-    SourceTable = "OnBoarding Selected Tag";
+    SourceTable = "OnBoarding Selected Tag Hgd";
     SourceTableView = sorting (SortIndex) where ("Tag Type" = const ("No. Series"));
     InsertAllowed = false;
     DeleteAllowed = false;
