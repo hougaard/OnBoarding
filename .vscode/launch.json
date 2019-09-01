@@ -4,14 +4,14 @@
         {
             "type": "al",
             "request": "launch",
-            "name": "Your own server",
-            "server": "http://bcca",
+            "name": "ONB",
+            "server": "http://onb",
             "serverInstance": "nav",
             "authentication": "UserPassword",
             "startupObjectId": 70310075,
             "startupObjectType": "Page",
             "breakOnError": true,
-            "schemaUpdateMode": "Synchronize"
+            "schemaUpdateMode": "ForceSync"
         }
     ]
 }

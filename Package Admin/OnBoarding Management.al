@@ -536,7 +536,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
         exit(NewTotal.SortIndex);
     end;
 
-    procedure GetPackages(NameFilter: Text)
+    procedure GetPackages(NameFilter: Text; ApplSupportOnly: Boolean)
     var
         http: HttpClient;
         jsonTxt: Text;
@@ -554,6 +554,10 @@ codeunit 70310075 "OnBoarding Management Hgd"
         Tag: Record "Package Tag Hgd";
         D: Dialog;
         FC: Integer;
+        Appl: Codeunit "Application System Constants";
+        CountryFilter: Text;
+        VersionFilter: Text;
+        Download: Boolean;
         L1: Label 'Reading package list #1## of #2##';
         L2: Label 'Cannot read package list, error %1';
         L3: Label 'Cannot contact Package Server';
@@ -566,6 +570,9 @@ codeunit 70310075 "OnBoarding Management Hgd"
         pTable.DELETEALL;
         pField.DELETEALL;
         Tag.DELETEALL;
+
+        CountryFilter := copystr(Appl.OriginalApplicationVersion(), 1, 2);
+        VersionFilter := copystr(Appl.PlatformProductVersion(), 1, 2);
 
         request.SetRequestUri('https://api.github.com/repos/hougaard/OnBoardingPackages/contents/');
         request.GetHeaders(Headers);
@@ -589,13 +596,25 @@ codeunit 70310075 "OnBoarding Management Hgd"
                         if GuiAllowed() then
                             D.Update(1, FC);
                         if strpos(filename, '.json') <> 0 then begin
-                            filename := copystr(filename, 2, strlen(filename) - 2);
-                            if http.Get(filename, response) then begin
-                                if response.IsBlockedByEnvironment then
-                                    error(ExternalCallNotAllowed);
-                                if response.HttpStatusCode() = 200 then begin
-                                    response.Content().ReadAs(jsonTxt);
-                                    ImportPackage(jsonTxt);
+                            if ApplSupportOnly then begin
+                                if CountryFilter <> 'US' then
+                                    Download := strpos(filename, '_' + CountryFilter + '_' + VersionFilter) <> 0
+                                else begin
+                                    Download := (strpos(filename, '_US_' + VersionFilter) <> 0) or
+                                                (strpos(filename, '_CA_' + VersionFilter) <> 0) or
+                                                (strpos(filename, '_MX_' + VersionFilter) <> 0);
+                                end;
+                            end else
+                                Download := true;
+                            if Download then begin
+                                filename := copystr(filename, 2, strlen(filename) - 2);
+                                if http.Get(filename, response) then begin
+                                    if response.IsBlockedByEnvironment then
+                                        error(ExternalCallNotAllowed);
+                                    if response.HttpStatusCode() = 200 then begin
+                                        response.Content().ReadAs(jsonTxt);
+                                        ImportPackage(jsonTxt);
+                                    end;
                                 end;
                             end;
                         end;
@@ -808,7 +827,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
         O := T.AsObject();
         if O.Get(Member, V) then begin
             V.WriteTo(Data);
-            evaluate(Op, copystr(Data, 2, strlen(Data) - 2), 9);
+            evaluate(Op, Data); // copystr(Data, 2, strlen(Data) - 2), 9);
             EXIT(Op);
         end;
     end;
@@ -823,8 +842,9 @@ codeunit 70310075 "OnBoarding Management Hgd"
         O := T.AsObject();
         if O.Get(Member, V) then begin
             V.WriteTo(Data);
-            evaluate(Op, copystr(Data, 2, strlen(Data) - 2));
-            EXIT(Op);
+            //evaluate(Op, copystr(Data, 2, strlen(Data) - 2));
+            //EXIT(Op);
+            exit(Data = '1');
         end;
     end;
 
@@ -880,7 +900,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
                     end;
                 State::"Select Modules":
                     begin
-                        GetPackages('BASE-SETUP-');
+                        GetPackages('BASE-SETUP-', true);
                         COMMIT;
                         clear(Step1);
                         Step1.Editable(true);
@@ -913,7 +933,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
                                             packages.findfirst;
                                             BaseID := Packages.ID;
                                             CountryCode := Packages.Country;
-                                            GetPackages('_' + CountryCode + '_' + Packages."Minimum Version");
+                                            GetPackages('_' + CountryCode + '_' + Packages."Minimum Version", false);
                                             Packages.Reset;
                                             Packages.Get(BaseID);
                                             Packages.Select := true; // Reselect base package

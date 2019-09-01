@@ -61,7 +61,7 @@ codeunit 70310077 "OnBoarding Test Hgd"
                 modules.modify;
             until Modules.next = 0;
 
-        MGt.GetPackages('BASE-SETUP-');
+        MGt.GetPackages('BASE-SETUP-', true);
         Packages.Setrange(Description, '*CA*');
         A.IsTrue(Packages.count <> 1, 'Not just one base package with CA');
         A.IsTrue(Packages.findfirst, 'Not found Canada base package');
@@ -69,7 +69,7 @@ codeunit 70310077 "OnBoarding Test Hgd"
         A.IsTrue(Packages.Modify, 'Could not save base package');
         BaseID := Packages.ID;
         CountryCode := Packages.Country;
-        Mgt.GetPackages('_' + CountryCode + '_' + Packages."Minimum Version");
+        Mgt.GetPackages('_' + CountryCode + '_' + Packages."Minimum Version", false);
         Packages.Reset;
         Packages.ModifyAll(Select, true);
         FirstAccountNumber := 1000;
