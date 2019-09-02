@@ -484,7 +484,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 0 Hgd - Control What - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 45914334 - Control 3123527090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Click start to intiate the onboarding process.</source>
+          <source>Click start to initiate the onboarding process.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 0 Hgd - Control Info - Property Caption</note>
         </trans-unit>

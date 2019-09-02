@@ -342,32 +342,32 @@
       </trans-unit>
       <trans-unit id="Codeunit 557355547 - Method 232785309 - NamedType 2833377072">
         <source>This seems to be clean new company, do you want to start the onboarding process?</source>
-        <target>这似乎是干净的新公司,你想开始入职过程吗？</target>
+        <target>这似乎是干净的新公司，你想开始入职过程吗？</target>
         <note />
       </trans-unit>
       <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 3132997375">
         <source>Data in package %1 required a account not present in your chart of account, please check the setup.</source>
-        <target>包 %1 中的数据需要会计科目表中不存在的科目,请检查设置。</target>
+        <target>包 %1 中的数据需要会计科目表中不存在的科目，请检查设置。</target>
         <note />
       </trans-unit>
       <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 751119930">
         <source>Data in package %1 have created an incomplete setup, please check the setup.</source>
-        <target>包 %1 中的数据已创建不完整的设置,请检查设置。</target>
+        <target>包 %1 中的数据已创建不完整的设置，请检查设置。</target>
         <note />
       </trans-unit>
       <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 3132997375">
         <source>This should never happen, a total-end account without a total-begin account</source>
-        <target>这不应该发生,一个总结束帐户没有一个总开始帐户</target>
+        <target>这不应该发生，一个总结束帐户没有一个总开始帐户</target>
         <note />
       </trans-unit>
       <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 751119930">
         <source>Error 1: Cannot insert %1 as sort %2 because %3 is already there</source>
-        <target>错误 1: 无法将 %1 插入为排序 %2,因为 %3 已存在</target>
+        <target>错误 1： 无法将 %1 插入为排序 %2，因为 %3 已存在</target>
         <note />
       </trans-unit>
       <trans-unit id="Codeunit 3750340733 - Method 470793674 - NamedType 3132997375">
         <source>Error 2: Cannot insert %1 as sort %2 because %3 is already there</source>
-        <target>错误 2: 无法将 %1 插入为排序 %2,因为 %3 已存在</target>
+        <target>错误 2： 无法将 %1 插入为排序 %2，因为 %3 已存在</target>
         <note />
       </trans-unit>
       <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 3132997375">
@@ -377,7 +377,7 @@
       </trans-unit>
       <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 751119930">
         <source>Cannot read package list, error %1</source>
-        <target>无法读取包列表,错误 %1</target>
+        <target>无法读取包列表，错误 %1</target>
         <note />
       </trans-unit>
       <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 113423313">
@@ -392,7 +392,7 @@
       </trans-unit>
       <trans-unit id="Codeunit 3750340733 - Method 4267410125 - NamedType 3132997375">
         <source>No modules selected, aborting</source>
-        <target>未选择模块,中止</target>
+        <target>未选择模块，中止</target>
         <note />
       </trans-unit>
       <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3132997375">
@@ -477,17 +477,17 @@
       </trans-unit>
       <trans-unit id="Page 45914334 - Control 3800514526 - Property 2879900210">
         <source>OnBoarding is a tool that will let you select setup for the entire system in one easy operation.</source>
-        <target>OnBoarding 是一种工具,可让您在一次简单的操作中为整个系统选择设置。</target>
+        <target>OnBoarding 是一种工具，可让您在一次简单的操作中为整个系统选择设置。</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 45914334 - Control 463896926 - Property 2879900210">
         <source>You can get a minimal chart of account with everything needed for the chosen setup. Document numbers for everything are also generated.</source>
-        <target>您可以获得一个最小的科目表,其中提供了所选设置所需的一切。还会生成所有内容的文档编号。</target>
+        <target>您可以获得一个最小的科目表，其中提供了所选设置所需的一切。还会生成所有内容的文档编号。</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 45914334 - Control 3123527090 - Property 2879900210">
-        <source>Click start to intiate the onboarding process.</source>
-        <target>单击"开始"可启动入职流程。</target>
+        <source>Click start to initiate the onboarding process.</source>
+        <target>单击"开始"以启动载入过程。</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 45914334 - Method 716454850 - NamedType 3132997375">
@@ -497,7 +497,7 @@
       </trans-unit>
       <trans-unit id="Page 45914334 - Method 716454850 - NamedType 751119930">
         <source>", make sure you're in the right company before continue.</source>
-        <target>",在继续之前,请确保您在正确的公司。</target>
+        <target>"，在继续之前，请确保您在正确的公司。</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 673191301 - Property 2879900210">
@@ -561,7 +561,7 @@
         <note />
       </trans-unit>
       <trans-unit id="Page 4180736083 - Control 2914529955 - Property 2879900210">
-        <source>Autogeneration Parameters</source>
+        <source>Auto-generation Parameters</source>
         <target>自动生成参数</target>
         <note />
       </trans-unit>
@@ -607,72 +607,72 @@
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 1088699231 - Property 2879900210">
         <source>Upload an XLSX Excel spreadsheet file. The first sheet in the file should have the following layout with a header row and be called "sheet1".</source>
-        <target>上传 XLSX Excel 电子表格文件。文件中的第一个工作表应具有以下具有标题行的布局,并称为"工作表1"。</target>
+        <target>上传 XLSX Excel 电子表格文件。文件中的第一个工作表应具有以下具有标题行的布局，并称为"工作表1"。</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 2623828734 - Property 2879900210">
         <source>A Column: Account Number</source>
-        <target>A Column: Account Number</target>
+        <target>列：帐号</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 710738883 - Property 2879900210">
         <source>B Column: Account Name</source>
-        <target>B Column: Account Name</target>
+        <target>B 列：帐户名称</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 1348435500 - Property 2879900210">
         <source>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</source>
-        <target>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</target>
+        <target>C 列：收入/余额（指定此科目是否为损益表或资产负债表的一部分）</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Action 742034285 - Property 2879900210">
         <source>Back</source>
-        <target>Back</target>
+        <target>返回</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Action 3201496503 - Property 2879900210">
         <source>Import Excel File</source>
-        <target>Import Excel File</target>
+        <target>导入 Excel 文件</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Action 2980616220 - Property 2879900210">
         <source>Continue</source>
-        <target>Continue</target>
+        <target>继续</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Property 2879900210">
         <source>OnBoarding, Define your chart of accounts</source>
-        <target>OnBoarding, Define your chart of accounts</target>
+        <target>上船，定义您的会计科目表</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Control 3195781979 - Property 2879900210">
         <source>Account Number</source>
-        <target>Account Number</target>
+        <target>帐号</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Control 3461834954 - Property 2879900210">
         <source>Description</source>
-        <target>Description</target>
+        <target>描述</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Control 3463728519 - Property 2879900210">
         <source>Account Type</source>
-        <target>Account Type</target>
+        <target>帐户类型</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Action 742034285 - Property 2879900210">
         <source>Back</source>
-        <target>Back</target>
+        <target>返回</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Action 152052329 - Property 2879900210">
         <source>Continue to next step</source>
-        <target>Continue to next step</target>
+        <target>继续下一步</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 1364873160 - Property 2879900210">
         <source>OnBoarding, Assign Accounts to Setup</source>
-        <target>OnBoarding, Assign Accounts to Setup</target>
+        <target>载入，将帐户分配给设置</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 1364873160 - Control 3195781979 - Property 2879900210">
@@ -711,7 +711,7 @@
         <note />
       </trans-unit>
       <trans-unit id="Page 2622837743 - Control 2914529955 - Property 2879900210">
-        <source>Autogeneration Parameters</source>
+        <source>Auto-generation Parameters</source>
         <target>自动生成参数</target>
         <note />
       </trans-unit>
@@ -737,7 +737,7 @@
       </trans-unit>
       <trans-unit id="Page 1813651286 - Property 2879900210">
         <source>OnBoarding, Document numbers</source>
-        <target>载入,文档编号</target>
+        <target>载入，文档编号</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 1813651286 - Control 3195781979 - Property 2879900210">
@@ -772,7 +772,7 @@
       </trans-unit>
       <trans-unit id="Page 489421437 - Control 156978454 - Property 2879900210">
         <source>Now we're ready to finish this, the following will happened:</source>
-        <target>现在,我们准备完成此,将发生以下:</target>
+        <target>现在，我们准备完成此，将发生以下：</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 489421437 - Control 2916936581 - Property 2879900210">
@@ -782,7 +782,7 @@
       </trans-unit>
       <trans-unit id="Page 489421437 - Control 2279239964 - Property 2879900210">
         <source>2. The Chart Of Account will be created if chosen</source>
-        <target>2. 如果选择,将创建会计科目表</target>
+        <target>2. 如果选择，将创建会计科目表</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 489421437 - Control 1641543347 - Property 2879900210">
@@ -797,7 +797,7 @@
       </trans-unit>
       <trans-unit id="Page 489421437 - Control 1852137694 - Property 2879900210">
         <source>5. Create a Configuration Package for easy export of generated setup</source>
-        <target>5. 创建配置包,轻松导出生成的设置</target>
+        <target>5. 创建配置包，轻松导出生成的设置</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 489421437 - Action 742034285 - Property 2879900210">
@@ -812,7 +812,7 @@
       </trans-unit>
       <trans-unit id="Page 489421437 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
         <source>All done, all the packages you have select have been applied, please verify the setup before you start posting.</source>
-        <target>所有完成,您选择的所有包都已应用,请在开始过帐之前验证设置。</target>
+        <target>所有完成，您选择的所有包都已应用，请在开始过帐之前验证设置。</target>
         <note />
       </trans-unit>
     </body>

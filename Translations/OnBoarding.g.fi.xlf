@@ -486,7 +486,7 @@
         <note />
       </trans-unit>
       <trans-unit id="Page 45914334 - Control 3123527090 - Property 2879900210">
-        <source>Click start to intiate the onboarding process.</source>
+        <source>Click start to initiate the onboarding process.</source>
         <target>Aloita perehdytys prosessi valitsemalla Start.</target>
         <note />
       </trans-unit>
@@ -561,7 +561,7 @@
         <note />
       </trans-unit>
       <trans-unit id="Page 4180736083 - Control 2914529955 - Property 2879900210">
-        <source>Autogeneration Parameters</source>
+        <source>Auto-generation Parameters</source>
         <target>Automaattisen luonnin parametrit</target>
         <note />
       </trans-unit>
@@ -612,67 +612,67 @@
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 2623828734 - Property 2879900210">
         <source>A Column: Account Number</source>
-        <target>A Column: Account Number</target>
+        <target>Sarake: tili numero</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 710738883 - Property 2879900210">
         <source>B Column: Account Name</source>
-        <target>B Column: Account Name</target>
+        <target>B-sarake: tilin nimi</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 1348435500 - Property 2879900210">
         <source>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</source>
-        <target>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</target>
+        <target>C sarake: tulot/saldo (Määritä, onko tämä tili osa tulos laskelmaa vai taseesta)</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Action 742034285 - Property 2879900210">
         <source>Back</source>
-        <target>Back</target>
+        <target>Bck</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Action 3201496503 - Property 2879900210">
         <source>Import Excel File</source>
-        <target>Import Excel File</target>
+        <target>Tuo Excel-tiedosto</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Action 2980616220 - Property 2879900210">
         <source>Continue</source>
-        <target>Continue</target>
+        <target>Jatkaa</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Property 2879900210">
         <source>OnBoarding, Define your chart of accounts</source>
-        <target>OnBoarding, Define your chart of accounts</target>
+        <target>Perehdytys, Määritä tili kartta</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Control 3195781979 - Property 2879900210">
         <source>Account Number</source>
-        <target>Account Number</target>
+        <target>Tili numero</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Control 3461834954 - Property 2879900210">
         <source>Description</source>
-        <target>Description</target>
+        <target>Kuvaus</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Control 3463728519 - Property 2879900210">
         <source>Account Type</source>
-        <target>Account Type</target>
+        <target>Tilin tyyppi</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Action 742034285 - Property 2879900210">
         <source>Back</source>
-        <target>Back</target>
+        <target>Bck</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Action 152052329 - Property 2879900210">
         <source>Continue to next step</source>
-        <target>Continue to next step</target>
+        <target>Jatka seuraavaan vaiheeseen</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 1364873160 - Property 2879900210">
         <source>OnBoarding, Assign Accounts to Setup</source>
-        <target>OnBoarding, Assign Accounts to Setup</target>
+        <target>Perehdytys, määritä tilit asennukseen</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 1364873160 - Control 3195781979 - Property 2879900210">
@@ -711,7 +711,7 @@
         <note />
       </trans-unit>
       <trans-unit id="Page 2622837743 - Control 2914529955 - Property 2879900210">
-        <source>Autogeneration Parameters</source>
+        <source>Auto-generation Parameters</source>
         <target>Automaattisen luonnin parametrit</target>
         <note />
       </trans-unit>

@@ -486,8 +486,8 @@
         <note />
       </trans-unit>
       <trans-unit id="Page 45914334 - Control 3123527090 - Property 2879900210">
-        <source>Click start to intiate the onboarding process.</source>
-        <target>Нажмите начать, чтобы истегнуть процесс посадки.</target>
+        <source>Click start to initiate the onboarding process.</source>
+        <target>Нажмите начать, чтобы инициировать процесс посадки.</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 45914334 - Method 716454850 - NamedType 3132997375">
@@ -561,8 +561,8 @@
         <note />
       </trans-unit>
       <trans-unit id="Page 4180736083 - Control 2914529955 - Property 2879900210">
-        <source>Autogeneration Parameters</source>
-        <target>Параметры автоматической генерации</target>
+        <source>Auto-generation Parameters</source>
+        <target>Параметры автоматического поколения</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 4180736083 - Control 767275308 - Property 2879900210">
@@ -612,67 +612,67 @@
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 2623828734 - Property 2879900210">
         <source>A Column: Account Number</source>
-        <target>A Column: Account Number</target>
+        <target>Колонка: Номер счета</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 710738883 - Property 2879900210">
         <source>B Column: Account Name</source>
-        <target>B Column: Account Name</target>
+        <target>Колонка B: Имя учетной записи</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 1348435500 - Property 2879900210">
         <source>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</source>
-        <target>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</target>
+        <target>C Колонка: доход/баланс (укажите, является ли этот счет частью отчета о доходах или баланса)</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Action 742034285 - Property 2879900210">
         <source>Back</source>
-        <target>Back</target>
+        <target>Назад</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Action 3201496503 - Property 2879900210">
         <source>Import Excel File</source>
-        <target>Import Excel File</target>
+        <target>Импорт Excel файл</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Action 2980616220 - Property 2879900210">
         <source>Continue</source>
-        <target>Continue</target>
+        <target>Продолжить</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Property 2879900210">
         <source>OnBoarding, Define your chart of accounts</source>
-        <target>OnBoarding, Define your chart of accounts</target>
+        <target>OnBoarding, Определите свою диаграмму счетов</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Control 3195781979 - Property 2879900210">
         <source>Account Number</source>
-        <target>Account Number</target>
+        <target>Номер счета</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Control 3461834954 - Property 2879900210">
         <source>Description</source>
-        <target>Description</target>
+        <target>Описание</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Control 3463728519 - Property 2879900210">
         <source>Account Type</source>
-        <target>Account Type</target>
+        <target>Тип учетной записи</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Action 742034285 - Property 2879900210">
         <source>Back</source>
-        <target>Back</target>
+        <target>Назад</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Action 152052329 - Property 2879900210">
         <source>Continue to next step</source>
-        <target>Continue to next step</target>
+        <target>Продолжайте делать следующий шаг</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 1364873160 - Property 2879900210">
         <source>OnBoarding, Assign Accounts to Setup</source>
-        <target>OnBoarding, Assign Accounts to Setup</target>
+        <target>OnBoarding, присваивать учетные записи для настройки</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 1364873160 - Control 3195781979 - Property 2879900210">
@@ -711,8 +711,8 @@
         <note />
       </trans-unit>
       <trans-unit id="Page 2622837743 - Control 2914529955 - Property 2879900210">
-        <source>Autogeneration Parameters</source>
-        <target>Параметры автоматической генерации</target>
+        <source>Auto-generation Parameters</source>
+        <target>Параметры автоматического поколения</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 2622837743 - Control 767275308 - Property 2879900210">

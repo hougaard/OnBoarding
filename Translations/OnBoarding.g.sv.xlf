@@ -486,8 +486,8 @@
         <note />
       </trans-unit>
       <trans-unit id="Page 45914334 - Control 3123527090 - Property 2879900210">
-        <source>Click start to intiate the onboarding process.</source>
-        <target>Klicka på Start för att inleda onboarding-processen.</target>
+        <source>Click start to initiate the onboarding process.</source>
+        <target>Klicka på Start för att initiera onboarding-processen.</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 45914334 - Method 716454850 - NamedType 3132997375">
@@ -561,8 +561,8 @@
         <note />
       </trans-unit>
       <trans-unit id="Page 4180736083 - Control 2914529955 - Property 2879900210">
-        <source>Autogeneration Parameters</source>
-        <target>Parametrar för autogenerering</target>
+        <source>Auto-generation Parameters</source>
+        <target>Parametrar för automatisk generering</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 4180736083 - Control 767275308 - Property 2879900210">
@@ -612,67 +612,67 @@
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 2623828734 - Property 2879900210">
         <source>A Column: Account Number</source>
-        <target>A Column: Account Number</target>
+        <target>En kolumn: kontonummer</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 710738883 - Property 2879900210">
         <source>B Column: Account Name</source>
-        <target>B Column: Account Name</target>
+        <target>B kolumn: kontonamn</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Control 1348435500 - Property 2879900210">
         <source>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</source>
-        <target>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</target>
+        <target>C kolumn: inkomst/saldo (ange om detta konto är en del av resultaträkningen eller balansräkningen)</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Action 742034285 - Property 2879900210">
         <source>Back</source>
-        <target>Back</target>
+        <target>Tillbaka</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Action 3201496503 - Property 2879900210">
         <source>Import Excel File</source>
-        <target>Import Excel File</target>
+        <target>Importera Excel-fil</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 709981178 - Action 2980616220 - Property 2879900210">
         <source>Continue</source>
-        <target>Continue</target>
+        <target>Fortsätta</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Property 2879900210">
         <source>OnBoarding, Define your chart of accounts</source>
-        <target>OnBoarding, Define your chart of accounts</target>
+        <target>OnBoarding, definiera din kontoplan</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Control 3195781979 - Property 2879900210">
         <source>Account Number</source>
-        <target>Account Number</target>
+        <target>Kontonummer</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Control 3461834954 - Property 2879900210">
         <source>Description</source>
-        <target>Description</target>
+        <target>Beskrivning</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Control 3463728519 - Property 2879900210">
         <source>Account Type</source>
-        <target>Account Type</target>
+        <target>Kontotyp</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Action 742034285 - Property 2879900210">
         <source>Back</source>
-        <target>Back</target>
+        <target>Tillbaka</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 3410260257 - Action 152052329 - Property 2879900210">
         <source>Continue to next step</source>
-        <target>Continue to next step</target>
+        <target>Fortsätt till nästa steg</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 1364873160 - Property 2879900210">
         <source>OnBoarding, Assign Accounts to Setup</source>
-        <target>OnBoarding, Assign Accounts to Setup</target>
+        <target>OnBoarding, tilldela konton till installationsprogrammet</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 1364873160 - Control 3195781979 - Property 2879900210">
@@ -711,8 +711,8 @@
         <note />
       </trans-unit>
       <trans-unit id="Page 2622837743 - Control 2914529955 - Property 2879900210">
-        <source>Autogeneration Parameters</source>
-        <target>Parametrar för autogenerering</target>
+        <source>Auto-generation Parameters</source>
+        <target>Parametrar för automatisk generering</target>
         <note />
       </trans-unit>
       <trans-unit id="Page 2622837743 - Control 767275308 - Property 2879900210">

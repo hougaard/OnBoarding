@@ -30,7 +30,7 @@ page 70310075 "OnBoarding Step 0 Hgd"
                 label(Info)
                 {
                     ApplicationArea = All;
-                    Caption = 'Click start to intiate the onboarding process.';
+                    Caption = 'Click start to initiate the onboarding process.';
                 }
             }
         }
