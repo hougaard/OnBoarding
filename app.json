@@ -1,7 +1,7 @@
 {
   "id": "7afe78e7-5bc0-4652-814f-348be24ed6ba",
   "name": "OnBoarding",
-  "publisher": "hougaard.com",
+  "publisher": "Hougaard",
   "brief": "OnBoarding a new company quickly",
   "description": "Generate setup to get a new company running quickly. Get ready to invoice in 5 minutes.",
   "version": "1.0.0.1",
@@ -10,7 +10,6 @@
   "help": "https://www.hougaard.com/onboarding/",
   "url": "https://www.hougaard.com/onboarding/",
   "logo": "Logo4.png",
-  "capabilities": [],
   "dependencies": [],
   "screenshots": [],
   "platform": "14.0.0.0",

@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="xml" source-language="en-US" target-language="ru-RU" tool-id="hougaard.com">
+    <header>
+      <tool tool-id="hougaard.com" tool-name="Erik Hougaard" tool-company="hougaard.com" />
+    </header>
+    <body>
+      <trans-unit id="Table 3934504163 - Field 1748380401 - Property 2879900210">
+        <source>Module ID</source>
+        <target>Идентификатор модуля</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Описание</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3117446396 - Property 2879900210">
+        <source>Select</source>
+        <target>Выберите</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3182860744 - Property 2879900210">
+        <source>Sorting Order</source>
+        <target>Порядок сортировки</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>Идентификатор пакета</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 3017471043 - Property 2879900210">
+        <source>Table No.</source>
+        <target>Номер таблицы</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 485252710 - Property 2879900210">
+        <source>Record No.</source>
+        <target>Номер записи</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 3531868071 - Property 2879900210">
+        <source>Field No.</source>
+        <target>Поле Но.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 1520667081 - Property 2879900210">
+        <source>Special Action</source>
+        <target>Специальные действия</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 958223187 - Property 2879900210">
+        <source>Field Value</source>
+        <target>Значение поля</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3641927271 - Property 2879900210">
+        <source>ID</source>
+        <target>Id</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Описание</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 2842729223 - Property 2879900210">
+        <source>Author</source>
+        <target>Автор</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1856816140 - Property 2879900210">
+        <source>Country</source>
+        <target>Страны</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1188986640 - Property 2879900210">
+        <source>Minumum Version</source>
+        <target>Минум Версия</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 520258886 - Property 2879900210">
+        <source>Module</source>
+        <target>Модуль</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3117446396 - Property 2879900210">
+        <source>Select</source>
+        <target>Выберите</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1241781896 - Property 2879900210">
+        <source>Sort Index</source>
+        <target>Сортировать индекс</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2801749846 - Property 2879900210">
+        <source>Tag</source>
+        <target>Тег</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Описание</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1617657750 - Property 2879900210">
+        <source>Tag Type</source>
+        <target>Тип тега</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2959099382 - Property 2879900210">
+        <source>Income/Balance</source>
+        <target>Доход/баланс</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1241781896 - Property 2879900210">
+        <source>Sort Index</source>
+        <target>Сортировать индекс</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1768692339 - Property 2879900210">
+        <source>Account Category</source>
+        <target>Категория счета</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3855426514 - Property 2879900210">
+        <source>Account Subcategory Entry No.</source>
+        <target>Номер входа в подкатегорию</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1526897239 - Property 2879900210">
+        <source>Direct Posting</source>
+        <target>Прямая публикация</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 4012257394 - Property 2879900210">
+        <source>Reconciliation Account</source>
+        <target>Счет примирения</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 59113118 - Property 2879900210">
+        <source>General Posting Type</source>
+        <target>Общий тип проводки</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 633819257 - Property 2879900210">
+        <source>General Business Posting Group</source>
+        <target>Группа «Общие деловые сообщения»</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2139693550 - Property 2879900210">
+        <source>General Product Posting Group</source>
+        <target>Общая группа размещения продуктов</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 305562489 - Property 2879900210">
+        <source>Tax Area Code</source>
+        <target>Кодекс налоговой зоны</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 53839102 - Property 2879900210">
+        <source>Tax Liable</source>
+        <target>Налоговая ответственность</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2552458873 - Property 2879900210">
+        <source>Tax Group Code</source>
+        <target>Код налоговой группы</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1844012642 - Property 2879900210">
+        <source>VAT Business Posting Group</source>
+        <target>Группа по размещению НДС</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 236064653 - Property 2879900210">
+        <source>VAT Product Posting Group</source>
+        <target>Группа размещения продуктов НДС</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3195781979 - Property 2879900210">
+        <source>Tag Value</source>
+        <target>Значение тега</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3851491086 - Property 2879900210">
+        <source>Indention Level</source>
+        <target>Уровень indention</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1654284642 - Property 2879900210">
+        <source>Totals Group</source>
+        <target>Группа итогов</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3463728519 - Property 2879900210">
+        <source>Total Begin/End</source>
+        <target>Всего начало /конец</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3740542262 - Property 2879900210">
+        <source>Filter Tag Template</source>
+        <target>Шаблон тега фильтра</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1018417860 - Property 2879900210">
+        <source>Filter Tag List</source>
+        <target>Список тегов фильтров</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>Идентификатор пакета</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 3017471043 - Property 2879900210">
+        <source>Table No.</source>
+        <target>Номер таблицы</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 3927818408 - Property 2879900210">
+        <source>Description</source>
+        <target>Описание</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2801749846 - Property 2879900210">
+        <source>Tag</source>
+        <target>Тег</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1617657750 - Property 2879900210">
+        <source>Tag Type</source>
+        <target>Тип тега</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3699788827 - Property 2879900210">
+        <source>Account Type</source>
+        <target>Тип учетной записи</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1768692339 - Property 2879900210">
+        <source>Account Category</source>
+        <target>Категория счета</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2959099382 - Property 2879900210">
+        <source>Income/Balance</source>
+        <target>Доход/баланс</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3855426514 - Property 2879900210">
+        <source>Account Subcategory Entry No.</source>
+        <target>Номер входа в подкатегорию</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1526897239 - Property 2879900210">
+        <source>Direct Posting</source>
+        <target>Прямая публикация</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 4012257394 - Property 2879900210">
+        <source>Reconciliation Account</source>
+        <target>Счет примирения</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 59113118 - Property 2879900210">
+        <source>General Posting Type</source>
+        <target>Общий тип проводки</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 633819257 - Property 2879900210">
+        <source>General Business Posting Group</source>
+        <target>Группа «Общие деловые сообщения»</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2139693550 - Property 2879900210">
+        <source>General Product Posting Group</source>
+        <target>Общая группа размещения продуктов</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 305562489 - Property 2879900210">
+        <source>Tax Area Code</source>
+        <target>Кодекс налоговой зоны</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 53839102 - Property 2879900210">
+        <source>Tax Liable</source>
+        <target>Налоговая ответственность</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2552458873 - Property 2879900210">
+        <source>Tax Group Code</source>
+        <target>Код налоговой группы</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1844012642 - Property 2879900210">
+        <source>VAT Business Posting Group</source>
+        <target>Группа по размещению НДС</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 236064653 - Property 2879900210">
+        <source>VAT Product Posting Group</source>
+        <target>Группа размещения продуктов НДС</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 28344312 - Property 2879900210">
+        <source>Groups</source>
+        <target>Группы</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Описание</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3597949816 - Property 2879900210">
+        <source>Help Text</source>
+        <target>Справка Текст</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>Идентификатор пакета</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3740542262 - Property 2879900210">
+        <source>Filter Tag Template</source>
+        <target>Шаблон тега фильтра</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1018417860 - Property 2879900210">
+        <source>Filter Tag List</source>
+        <target>Список тегов фильтров</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 557355547 - Method 1633076348 - NamedType 2833377072">
+        <source>Accelerate your deployment with onboarding packages</source>
+        <target>Ускорить развертывание с помощью пакетов на борту</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 557355547 - Method 232785309 - NamedType 2833377072">
+        <source>This seems to be clean new company, do you want to start the onboarding process?</source>
+        <target>Это, кажется, чистая новая компания, вы хотите, чтобы начать процесс посадки?</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 3132997375">
+        <source>Data in package %1 required a account not present in your chart of account, please check the setup.</source>
+        <target>Данные в пакете %1 требуется учетная запись не присутствует в диаграмме счета, пожалуйста, проверьте установки.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 751119930">
+        <source>Data in package %1 have created an incomplete setup, please check the setup.</source>
+        <target>Данные в пакете %1 создали неполную настройку, пожалуйста, проверьте настройки.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 3132997375">
+        <source>This should never happen, a total-end account without a total-begin account</source>
+        <target>Этого никогда не должно произойти, общая учетная запись без общей учетной записи</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 751119930">
+        <source>Error 1: Cannot insert %1 as sort %2 because %3 is already there</source>
+        <target>Ошибка 1: Не может вставить %1 как сортировать %2 потому что %3 уже там</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 470793674 - NamedType 3132997375">
+        <source>Error 2: Cannot insert %1 as sort %2 because %3 is already there</source>
+        <target>Ошибка 2: Не может вставить %1 как сортировать %2 потому что %3 уже там</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 3132997375">
+        <source>Reading package list #1## of #2##</source>
+        <target>Чтение списка пакетов #1» #2 ##</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 751119930">
+        <source>Cannot read package list, error %1</source>
+        <target>Не удается прочитать список пакетов, ошибка %1</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 113423313">
+        <source>Cannot contact Package Server</source>
+        <target>Не удается связаться с package Server</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 2101264222">
+        <source>Call to package server blocked by your environment</source>
+        <target>Вызов на сервер пакетов, заблокированный вашей средой</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 4267410125 - NamedType 3132997375">
+        <source>No modules selected, aborting</source>
+        <target>Модули не выбраны, прерывание</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3132997375">
+        <source>Base Setup</source>
+        <target>Настройка базы</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 751119930">
+        <source>Financial Management</source>
+        <target>Управление финансами</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 113423313">
+        <source>Sales and Account Receivables</source>
+        <target>Продажи и дебиторская задолженность</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2026513164">
+        <source>Purchase and Account Payables</source>
+        <target>Покупка и оплата счета</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 1388816547">
+        <source>Inventory</source>
+        <target>Инвентаризация</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3301906398">
+        <source>Jobs</source>
+        <target>Рабочих мест</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2664209781">
+        <source>Fixed Assets</source>
+        <target>Фиксированные активы</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 282332336">
+        <source>Warehouse</source>
+        <target>Склад</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3939603015">
+        <source>Service Management</source>
+        <target>Управление обслуживанием</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2739948207">
+        <source>Relationship Management</source>
+        <target>Управление отношениями</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3377644824">
+        <source>Human Resources</source>
+        <target>Человеческие ресурсы</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 4015341441">
+        <source>Production and Planning</source>
+        <target>Производство и планирование</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 2833377072">
+        <source>Chart Of Accounts Excel File</source>
+        <target>Диаграмма счетов Excel Файл</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 751119930">
+        <source>income</source>
+        <target>Доход</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>Онбординг</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 1830295791 - Property 2879900210">
+        <source>OnBoarding - Get Started</source>
+        <target>Onboarding - Начало работы</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 3800514526 - Property 2879900210">
+        <source>OnBoarding is a tool that will let you select setup for the entire system in one easy operation.</source>
+        <target>OnBoarding это инструмент, который позволит вам выбрать настройки для всей системы в одной простой операции.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 463896926 - Property 2879900210">
+        <source>You can get a minimal chart of account with everything needed for the chosen setup. Document numbers for everything are also generated.</source>
+        <target>Вы можете получить минимальную диаграмму счета со всем необходимым для выбранной установки. Номера документов для всего также генерируются.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 3123527090 - Property 2879900210">
+        <source>Click start to initiate the onboarding process.</source>
+        <target>Нажмите начать, чтобы инициировать процесс посадки.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Method 716454850 - NamedType 3132997375">
+        <source>All the setup will go into company "</source>
+        <target>Все установки будут идти в компании "</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Method 716454850 - NamedType 751119930">
+        <source>", make sure you're in the right company before continue.</source>
+        <target>", убедитесь, что вы находитесь в правильной компании, прежде чем продолжить.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>Онбординг</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Control 1697855195 - Property 2879900210">
+        <source>Select the Modules you want setup for</source>
+        <target>Выберите модули, которые требуется настроить для</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Назад</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Продолжайте делать следующий шаг</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>Онбординг</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Control 329424276 - Property 2879900210">
+        <source>Select packages for module</source>
+        <target>Выберите пакеты для модуля</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Control 1391831288 - Property 2879900210">
+        <source>Module</source>
+        <target>Модуль</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Назад</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Продолжайте делать следующий шаг</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>You can only select one package from this screen</source>
+        <target>Вы можете выбрать только один пакет с этого экрана</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>Онбординг</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 3675577466 - Property 2879900210">
+        <source>How do you want your Chart Of Accounts</source>
+        <target>Как вы хотите, чтобы ваша диаграмма учетных записей</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 1776184068 - Property 2879900210">
+        <source>Chart Of Account Action</source>
+        <target>Диаграмма действий счета</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 2914529955 - Property 2879900210">
+        <source>Auto-generation Parameters</source>
+        <target>Параметры автоматического поколения</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 767275308 - Property 2879900210">
+        <source>First Account Number</source>
+        <target>Номер первого счета</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 464900788 - Property 2879900210">
+        <source>Account Number Increment</source>
+        <target>Приращение номера учетной записи</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 1816656908 - Property 2879900210">
+        <source>Create Chart Of Account Totals</source>
+        <target>Создание диаграммы итогов счетов</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 2207307435 - Property 2879900210">
+        <source>Total Accounts Increment</source>
+        <target>Общий прирост счетов</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Назад</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Продолжайте делать следующий шаг</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>Select a Chart of Account Method first.</source>
+        <target>Сначала выберите диаграмму метода учетной записи.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>Онбординг</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 2710443733 - Property 2879900210">
+        <source>Instructions</source>
+        <target>Инструкции</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 1088699231 - Property 2879900210">
+        <source>Upload an XLSX Excel spreadsheet file. The first sheet in the file should have the following layout with a header row and be called "sheet1".</source>
+        <target>Загрузите файл электронной таблицы XLSX Excel. Первый лист в файле должен иметь следующую компоновку со строкой заголовка и называться "лист1".</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 2623828734 - Property 2879900210">
+        <source>A Column: Account Number</source>
+        <target>Колонка: Номер счета</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 710738883 - Property 2879900210">
+        <source>B Column: Account Name</source>
+        <target>Колонка B: Имя учетной записи</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 1348435500 - Property 2879900210">
+        <source>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</source>
+        <target>C Колонка: доход/баланс (укажите, является ли этот счет частью отчета о доходах или баланса)</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Назад</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 3201496503 - Property 2879900210">
+        <source>Import Excel File</source>
+        <target>Импорт Excel файл</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 2980616220 - Property 2879900210">
+        <source>Continue</source>
+        <target>Продолжить</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Property 2879900210">
+        <source>OnBoarding, Define your chart of accounts</source>
+        <target>OnBoarding, Определите свою диаграмму счетов</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3195781979 - Property 2879900210">
+        <source>Account Number</source>
+        <target>Номер счета</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Описание</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3463728519 - Property 2879900210">
+        <source>Account Type</source>
+        <target>Тип учетной записи</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Назад</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Продолжайте делать следующий шаг</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Property 2879900210">
+        <source>OnBoarding, Assign Accounts to Setup</source>
+        <target>OnBoarding, присваивать учетные записи для настройки</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Control 3195781979 - Property 2879900210">
+        <source>G/L Account No.</source>
+        <target>Номер счета G/L</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Control 3461834954 - Property 2879900210">
+        <source>Account Name</source>
+        <target>Имя учетной записи</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Назад</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 1841379954 - Property 2879900210">
+        <source>Verify Assignments</source>
+        <target>Проверка назначений</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 152052329 - Property 2879900210">
+        <source>Continue</source>
+        <target>Продолжить</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>Онбординг</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 3675577466 - Property 2879900210">
+        <source>How do you want your documents numbered</source>
+        <target>Как вы хотите, чтобы ваши документы пронумерованы</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 1776184068 - Property 2879900210">
+        <source>Document numbering action</source>
+        <target>Действия по нумерованию документов</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 2914529955 - Property 2879900210">
+        <source>Auto-generation Parameters</source>
+        <target>Параметры автоматического поколения</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 767275308 - Property 2879900210">
+        <source>First Number</source>
+        <target>Первый номер</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Назад</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Продолжайте делать следующий шаг</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>Select a document number method first.</source>
+        <target>Сначала выберите метод номера документа.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Property 2879900210">
+        <source>OnBoarding, Document numbers</source>
+        <target>Борт, номера документов</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Control 3195781979 - Property 2879900210">
+        <source>Start Number</source>
+        <target>Стартовый номер</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Control 3461834954 - Property 2879900210">
+        <source>Document Type</source>
+        <target>Тип документа</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Назад</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Action 152052329 - Property 2879900210">
+        <source>Continue</source>
+        <target>Продолжить</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Property 2879900210">
+        <source>OnBoarding - Review and Finish</source>
+        <target>OnBoarding - Обзор и отделка</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1830295791 - Property 2879900210">
+        <source>Review and Finish</source>
+        <target>Обзор и отделка</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 156978454 - Property 2879900210">
+        <source>Now we're ready to finish this, the following will happened:</source>
+        <target>Теперь мы готовы закончить это, следующее произойдет:</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 2916936581 - Property 2879900210">
+        <source>1. All the Setup in packages chosen will be generated</source>
+        <target>1. Все настройки в выбранных пакетах будут сгенерированы</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 2279239964 - Property 2879900210">
+        <source>2. The Chart Of Account will be created if chosen</source>
+        <target>2. Диаграмма счета будет создана при выборе</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1641543347 - Property 2879900210">
+        <source>3. The Setup in all packages will use the new Account Numbers.</source>
+        <target>3. Настройка во всех пакетах будет использовать новые номера счетов.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1003846730 - Property 2879900210">
+        <source>4. Create the numbers as specified and reference them in the setup.</source>
+        <target>4. Создайте указанные номера и ссылки на них в настройке.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1852137694 - Property 2879900210">
+        <source>5. Create a Configuration Package for easy export of generated setup</source>
+        <target>5. Создание пакета конфигураций для легкого экспорта генерируемой установки</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Назад</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 152052329 - Property 2879900210">
+        <source>Create Everything</source>
+        <target>Создайте все</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>All done, all the packages you have select have been applied, please verify the setup before you start posting.</source>
+        <target>Все сделано, все пакеты, которые вы выбрали были применены, пожалуйста, проверьте установку, прежде чем начать размещение.</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

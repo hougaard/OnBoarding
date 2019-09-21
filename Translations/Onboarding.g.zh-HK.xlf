@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="xml" source-language="en-US" target-language="zh-HK" tool-id="hougaard.com">
+    <header>
+      <tool tool-id="hougaard.com" tool-name="Erik Hougaard" tool-company="hougaard.com" />
+    </header>
+    <body>
+      <trans-unit id="Table 3934504163 - Field 1748380401 - Property 2879900210">
+        <source>Module ID</source>
+        <target>模块 ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>描述</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3117446396 - Property 2879900210">
+        <source>Select</source>
+        <target>选择</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3182860744 - Property 2879900210">
+        <source>Sorting Order</source>
+        <target>排序顺序</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>包裹 ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 3017471043 - Property 2879900210">
+        <source>Table No.</source>
+        <target>表号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 485252710 - Property 2879900210">
+        <source>Record No.</source>
+        <target>记录号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 3531868071 - Property 2879900210">
+        <source>Field No.</source>
+        <target>字段号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 1520667081 - Property 2879900210">
+        <source>Special Action</source>
+        <target>特别行动</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 958223187 - Property 2879900210">
+        <source>Field Value</source>
+        <target>字段值</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3641927271 - Property 2879900210">
+        <source>ID</source>
+        <target>Id</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>描述</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 2842729223 - Property 2879900210">
+        <source>Author</source>
+        <target>作者</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1856816140 - Property 2879900210">
+        <source>Country</source>
+        <target>国家</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1188986640 - Property 2879900210">
+        <source>Minumum Version</source>
+        <target>最小版本</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 520258886 - Property 2879900210">
+        <source>Module</source>
+        <target>模块</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3117446396 - Property 2879900210">
+        <source>Select</source>
+        <target>选择</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1241781896 - Property 2879900210">
+        <source>Sort Index</source>
+        <target>排序索引</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2801749846 - Property 2879900210">
+        <source>Tag</source>
+        <target>标记</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>描述</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1617657750 - Property 2879900210">
+        <source>Tag Type</source>
+        <target>标记类型</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2959099382 - Property 2879900210">
+        <source>Income/Balance</source>
+        <target>收入/余额</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1241781896 - Property 2879900210">
+        <source>Sort Index</source>
+        <target>排序索引</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1768692339 - Property 2879900210">
+        <source>Account Category</source>
+        <target>帐户类别</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3855426514 - Property 2879900210">
+        <source>Account Subcategory Entry No.</source>
+        <target>帐户子类别条目号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1526897239 - Property 2879900210">
+        <source>Direct Posting</source>
+        <target>直接发布</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 4012257394 - Property 2879900210">
+        <source>Reconciliation Account</source>
+        <target>对账帐户</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 59113118 - Property 2879900210">
+        <source>General Posting Type</source>
+        <target>一般过帐类型</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 633819257 - Property 2879900210">
+        <source>General Business Posting Group</source>
+        <target>一般业务过帐组</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2139693550 - Property 2879900210">
+        <source>General Product Posting Group</source>
+        <target>一般产品过帐组</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 305562489 - Property 2879900210">
+        <source>Tax Area Code</source>
+        <target>税区代码</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 53839102 - Property 2879900210">
+        <source>Tax Liable</source>
+        <target>应纳税额</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2552458873 - Property 2879900210">
+        <source>Tax Group Code</source>
+        <target>税组代码</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1844012642 - Property 2879900210">
+        <source>VAT Business Posting Group</source>
+        <target>增值税业务过帐组</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 236064653 - Property 2879900210">
+        <source>VAT Product Posting Group</source>
+        <target>增值税产品过帐组</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3195781979 - Property 2879900210">
+        <source>Tag Value</source>
+        <target>标记值</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3851491086 - Property 2879900210">
+        <source>Indention Level</source>
+        <target>内化级别</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1654284642 - Property 2879900210">
+        <source>Totals Group</source>
+        <target>总计组</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3463728519 - Property 2879900210">
+        <source>Total Begin/End</source>
+        <target>总开始/结束</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3740542262 - Property 2879900210">
+        <source>Filter Tag Template</source>
+        <target>筛选器标记模板</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1018417860 - Property 2879900210">
+        <source>Filter Tag List</source>
+        <target>筛选器标记列表</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>包裹 ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 3017471043 - Property 2879900210">
+        <source>Table No.</source>
+        <target>表号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 3927818408 - Property 2879900210">
+        <source>Description</source>
+        <target>描述</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2801749846 - Property 2879900210">
+        <source>Tag</source>
+        <target>标记</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1617657750 - Property 2879900210">
+        <source>Tag Type</source>
+        <target>标记类型</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3699788827 - Property 2879900210">
+        <source>Account Type</source>
+        <target>帐户类型</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1768692339 - Property 2879900210">
+        <source>Account Category</source>
+        <target>帐户类别</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2959099382 - Property 2879900210">
+        <source>Income/Balance</source>
+        <target>收入/余额</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3855426514 - Property 2879900210">
+        <source>Account Subcategory Entry No.</source>
+        <target>帐户子类别条目号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1526897239 - Property 2879900210">
+        <source>Direct Posting</source>
+        <target>直接发布</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 4012257394 - Property 2879900210">
+        <source>Reconciliation Account</source>
+        <target>对账帐户</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 59113118 - Property 2879900210">
+        <source>General Posting Type</source>
+        <target>一般过帐类型</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 633819257 - Property 2879900210">
+        <source>General Business Posting Group</source>
+        <target>一般业务过帐组</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2139693550 - Property 2879900210">
+        <source>General Product Posting Group</source>
+        <target>一般产品过帐组</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 305562489 - Property 2879900210">
+        <source>Tax Area Code</source>
+        <target>税区代码</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 53839102 - Property 2879900210">
+        <source>Tax Liable</source>
+        <target>应纳税额</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2552458873 - Property 2879900210">
+        <source>Tax Group Code</source>
+        <target>税组代码</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1844012642 - Property 2879900210">
+        <source>VAT Business Posting Group</source>
+        <target>增值税业务过帐组</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 236064653 - Property 2879900210">
+        <source>VAT Product Posting Group</source>
+        <target>增值税产品过帐组</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 28344312 - Property 2879900210">
+        <source>Groups</source>
+        <target>组</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>描述</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3597949816 - Property 2879900210">
+        <source>Help Text</source>
+        <target>帮助文本</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>包裹 ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3740542262 - Property 2879900210">
+        <source>Filter Tag Template</source>
+        <target>筛选器标记模板</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1018417860 - Property 2879900210">
+        <source>Filter Tag List</source>
+        <target>筛选器标记列表</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 557355547 - Method 1633076348 - NamedType 2833377072">
+        <source>Accelerate your deployment with onboarding packages</source>
+        <target>使用载入包加快部署</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 557355547 - Method 232785309 - NamedType 2833377072">
+        <source>This seems to be clean new company, do you want to start the onboarding process?</source>
+        <target>这似乎是干净的新公司，你想开始入职过程吗？</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 3132997375">
+        <source>Data in package %1 required a account not present in your chart of account, please check the setup.</source>
+        <target>包 %1 中的数据需要会计科目表中不存在的科目，请检查设置。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 751119930">
+        <source>Data in package %1 have created an incomplete setup, please check the setup.</source>
+        <target>包 %1 中的数据已创建不完整的设置，请检查设置。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 3132997375">
+        <source>This should never happen, a total-end account without a total-begin account</source>
+        <target>这不应该发生，一个总结束帐户没有一个总开始帐户</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 751119930">
+        <source>Error 1: Cannot insert %1 as sort %2 because %3 is already there</source>
+        <target>错误 1： 无法将 %1 插入为排序 %2，因为 %3 已存在</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 470793674 - NamedType 3132997375">
+        <source>Error 2: Cannot insert %1 as sort %2 because %3 is already there</source>
+        <target>错误 2： 无法将 %1 插入为排序 %2，因为 %3 已存在</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 3132997375">
+        <source>Reading package list #1## of #2##</source>
+        <target>读取包列表#1= #2##</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 751119930">
+        <source>Cannot read package list, error %1</source>
+        <target>无法读取包列表，错误 %1</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 113423313">
+        <source>Cannot contact Package Server</source>
+        <target>无法联系包服务器</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 2101264222">
+        <source>Call to package server blocked by your environment</source>
+        <target>调用被环境阻止的包服务器</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 4267410125 - NamedType 3132997375">
+        <source>No modules selected, aborting</source>
+        <target>未选择模块，中止</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3132997375">
+        <source>Base Setup</source>
+        <target>基本设置</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 751119930">
+        <source>Financial Management</source>
+        <target>财务管理</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 113423313">
+        <source>Sales and Account Receivables</source>
+        <target>销售和应收账款</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2026513164">
+        <source>Purchase and Account Payables</source>
+        <target>购买和应付账款</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 1388816547">
+        <source>Inventory</source>
+        <target>库存</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3301906398">
+        <source>Jobs</source>
+        <target>工作</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2664209781">
+        <source>Fixed Assets</source>
+        <target>固定资产</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 282332336">
+        <source>Warehouse</source>
+        <target>仓库</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3939603015">
+        <source>Service Management</source>
+        <target>服务管理</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2739948207">
+        <source>Relationship Management</source>
+        <target>关系管理</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3377644824">
+        <source>Human Resources</source>
+        <target>人力资源</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 4015341441">
+        <source>Production and Planning</source>
+        <target>生产和规划</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 2833377072">
+        <source>Chart Of Accounts Excel File</source>
+        <target>会计科目表 Excel 文件</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 751119930">
+        <source>income</source>
+        <target>收入</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>载入</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 1830295791 - Property 2879900210">
+        <source>OnBoarding - Get Started</source>
+        <target>载入 - 入门</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 3800514526 - Property 2879900210">
+        <source>OnBoarding is a tool that will let you select setup for the entire system in one easy operation.</source>
+        <target>OnBoarding 是一种工具，可让您在一次简单的操作中为整个系统选择设置。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 463896926 - Property 2879900210">
+        <source>You can get a minimal chart of account with everything needed for the chosen setup. Document numbers for everything are also generated.</source>
+        <target>您可以获得一个最小的科目表，其中提供了所选设置所需的一切。还会生成所有内容的文档编号。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 3123527090 - Property 2879900210">
+        <source>Click start to initiate the onboarding process.</source>
+        <target>单击"开始"以启动载入过程。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Method 716454850 - NamedType 3132997375">
+        <source>All the setup will go into company "</source>
+        <target>所有设置将进入公司"</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Method 716454850 - NamedType 751119930">
+        <source>", make sure you're in the right company before continue.</source>
+        <target>"，在继续之前，请确保您在正确的公司。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>载入</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Control 1697855195 - Property 2879900210">
+        <source>Select the Modules you want setup for</source>
+        <target>选择要为其设置的模块</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>返回</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>继续下一步</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>载入</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Control 329424276 - Property 2879900210">
+        <source>Select packages for module</source>
+        <target>为模块选择包</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Control 1391831288 - Property 2879900210">
+        <source>Module</source>
+        <target>模块</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>返回</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>继续下一步</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>You can only select one package from this screen</source>
+        <target>您只能从此屏幕中选择一个包</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>载入</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 3675577466 - Property 2879900210">
+        <source>How do you want your Chart Of Accounts</source>
+        <target>您希望如何查看会计科目表</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 1776184068 - Property 2879900210">
+        <source>Chart Of Account Action</source>
+        <target>帐户操作图表</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 2914529955 - Property 2879900210">
+        <source>Auto-generation Parameters</source>
+        <target>自动生成参数</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 767275308 - Property 2879900210">
+        <source>First Account Number</source>
+        <target>第一个帐号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 464900788 - Property 2879900210">
+        <source>Account Number Increment</source>
+        <target>帐号增量</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 1816656908 - Property 2879900210">
+        <source>Create Chart Of Account Totals</source>
+        <target>创建帐户总计图表</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 2207307435 - Property 2879900210">
+        <source>Total Accounts Increment</source>
+        <target>总帐户增量</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>返回</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>继续下一步</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>Select a Chart of Account Method first.</source>
+        <target>首先选择科目表方法。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>载入</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 2710443733 - Property 2879900210">
+        <source>Instructions</source>
+        <target>指示</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 1088699231 - Property 2879900210">
+        <source>Upload an XLSX Excel spreadsheet file. The first sheet in the file should have the following layout with a header row and be called "sheet1".</source>
+        <target>上传 XLSX Excel 电子表格文件。文件中的第一个工作表应具有以下具有标题行的布局，并称为"工作表1"。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 2623828734 - Property 2879900210">
+        <source>A Column: Account Number</source>
+        <target>列：帐号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 710738883 - Property 2879900210">
+        <source>B Column: Account Name</source>
+        <target>B 列：帐户名称</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 1348435500 - Property 2879900210">
+        <source>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</source>
+        <target>C 列：收入/余额（指定此科目是否为损益表或资产负债表的一部分）</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>返回</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 3201496503 - Property 2879900210">
+        <source>Import Excel File</source>
+        <target>导入 Excel 文件</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 2980616220 - Property 2879900210">
+        <source>Continue</source>
+        <target>继续</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Property 2879900210">
+        <source>OnBoarding, Define your chart of accounts</source>
+        <target>上船，定义您的会计科目表</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3195781979 - Property 2879900210">
+        <source>Account Number</source>
+        <target>帐号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>描述</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3463728519 - Property 2879900210">
+        <source>Account Type</source>
+        <target>帐户类型</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>返回</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>继续下一步</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Property 2879900210">
+        <source>OnBoarding, Assign Accounts to Setup</source>
+        <target>载入，将帐户分配给设置</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Control 3195781979 - Property 2879900210">
+        <source>G/L Account No.</source>
+        <target>账号/L 账户号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Control 3461834954 - Property 2879900210">
+        <source>Account Name</source>
+        <target>帐户名称</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>返回</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 1841379954 - Property 2879900210">
+        <source>Verify Assignments</source>
+        <target>验证分配</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 152052329 - Property 2879900210">
+        <source>Continue</source>
+        <target>继续</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>载入</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 3675577466 - Property 2879900210">
+        <source>How do you want your documents numbered</source>
+        <target>您希望如何对文档进行编号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 1776184068 - Property 2879900210">
+        <source>Document numbering action</source>
+        <target>文档编号操作</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 2914529955 - Property 2879900210">
+        <source>Auto-generation Parameters</source>
+        <target>自动生成参数</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 767275308 - Property 2879900210">
+        <source>First Number</source>
+        <target>第一个数字</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>返回</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>继续下一步</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>Select a document number method first.</source>
+        <target>首先选择文档编号方法。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Property 2879900210">
+        <source>OnBoarding, Document numbers</source>
+        <target>载入，文档编号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Control 3195781979 - Property 2879900210">
+        <source>Start Number</source>
+        <target>开始编号</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Control 3461834954 - Property 2879900210">
+        <source>Document Type</source>
+        <target>文档类型</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>返回</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Action 152052329 - Property 2879900210">
+        <source>Continue</source>
+        <target>继续</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Property 2879900210">
+        <source>OnBoarding - Review and Finish</source>
+        <target>载入 - 查看并完成</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1830295791 - Property 2879900210">
+        <source>Review and Finish</source>
+        <target>审阅和完成</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 156978454 - Property 2879900210">
+        <source>Now we're ready to finish this, the following will happened:</source>
+        <target>现在，我们准备完成此，将发生以下：</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 2916936581 - Property 2879900210">
+        <source>1. All the Setup in packages chosen will be generated</source>
+        <target>1. 将生成所选包中的所有设置</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 2279239964 - Property 2879900210">
+        <source>2. The Chart Of Account will be created if chosen</source>
+        <target>2. 如果选择，将创建会计科目表</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1641543347 - Property 2879900210">
+        <source>3. The Setup in all packages will use the new Account Numbers.</source>
+        <target>3. 所有软件包中的设置将使用新的帐号。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1003846730 - Property 2879900210">
+        <source>4. Create the numbers as specified and reference them in the setup.</source>
+        <target>4. 创建指定的数字并在设置中引用它们。</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1852137694 - Property 2879900210">
+        <source>5. Create a Configuration Package for easy export of generated setup</source>
+        <target>5. 创建配置包，轻松导出生成的设置</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>返回</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 152052329 - Property 2879900210">
+        <source>Create Everything</source>
+        <target>创建一切</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>All done, all the packages you have select have been applied, please verify the setup before you start posting.</source>
+        <target>所有完成，您选择的所有包都已应用，请在开始过帐之前验证设置。</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

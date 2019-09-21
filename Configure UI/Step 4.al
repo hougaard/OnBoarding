@@ -2,6 +2,7 @@ page 70310079 "OnBoarding Step 4 Hgd"
 {
     // Upload a chart of account Excel
     PageType = NavigatePage;
+    Caption = 'OnBoarding';
 
     layout
     {

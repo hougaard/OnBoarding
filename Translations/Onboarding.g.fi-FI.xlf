@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="xml" source-language="en-US" target-language="fi-FI" tool-id="hougaard.com">
+    <header>
+      <tool tool-id="hougaard.com" tool-name="Erik Hougaard" tool-company="hougaard.com" />
+    </header>
+    <body>
+      <trans-unit id="Table 3934504163 - Field 1748380401 - Property 2879900210">
+        <source>Module ID</source>
+        <target>Moduulin tunnus</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Kuvaus</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3117446396 - Property 2879900210">
+        <source>Select</source>
+        <target>Valitse</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3182860744 - Property 2879900210">
+        <source>Sorting Order</source>
+        <target>Lajittelujärjestyksen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>Paketin tunnus</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 3017471043 - Property 2879900210">
+        <source>Table No.</source>
+        <target>Taulukon nro</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 485252710 - Property 2879900210">
+        <source>Record No.</source>
+        <target>Tietueen nro</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 3531868071 - Property 2879900210">
+        <source>Field No.</source>
+        <target>Kentän nro</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 1520667081 - Property 2879900210">
+        <source>Special Action</source>
+        <target>Erityiset toimet</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 958223187 - Property 2879900210">
+        <source>Field Value</source>
+        <target>Kentän arvo</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3641927271 - Property 2879900210">
+        <source>ID</source>
+        <target>Id</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Kuvaus</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 2842729223 - Property 2879900210">
+        <source>Author</source>
+        <target>Kirjoittaja</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1856816140 - Property 2879900210">
+        <source>Country</source>
+        <target>Maa</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1188986640 - Property 2879900210">
+        <source>Minumum Version</source>
+        <target>Minumum-versio</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 520258886 - Property 2879900210">
+        <source>Module</source>
+        <target>Moduuli</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3117446396 - Property 2879900210">
+        <source>Select</source>
+        <target>Valitse</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1241781896 - Property 2879900210">
+        <source>Sort Index</source>
+        <target>Lajittele indeksi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2801749846 - Property 2879900210">
+        <source>Tag</source>
+        <target>Tag</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Kuvaus</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1617657750 - Property 2879900210">
+        <source>Tag Type</source>
+        <target>Tunnisteen tyyppi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2959099382 - Property 2879900210">
+        <source>Income/Balance</source>
+        <target>Tulos/tase</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1241781896 - Property 2879900210">
+        <source>Sort Index</source>
+        <target>Lajittele indeksi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1768692339 - Property 2879900210">
+        <source>Account Category</source>
+        <target>Tili luokka</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3855426514 - Property 2879900210">
+        <source>Account Subcategory Entry No.</source>
+        <target>Tilin alaluokka tapahtuman nro</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1526897239 - Property 2879900210">
+        <source>Direct Posting</source>
+        <target>Suora kirjaus</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 4012257394 - Property 2879900210">
+        <source>Reconciliation Account</source>
+        <target>Täsmäytys tili</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 59113118 - Property 2879900210">
+        <source>General Posting Type</source>
+        <target>Yleinen kirjaus tyyppi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 633819257 - Property 2879900210">
+        <source>General Business Posting Group</source>
+        <target>Yleinen liike toiminnan kirjaus ryhmä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2139693550 - Property 2879900210">
+        <source>General Product Posting Group</source>
+        <target>Yleinen tuotteen kirjaus ryhmä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 305562489 - Property 2879900210">
+        <source>Tax Area Code</source>
+        <target>Vero alue koodi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 53839102 - Property 2879900210">
+        <source>Tax Liable</source>
+        <target>Verovelvollinen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2552458873 - Property 2879900210">
+        <source>Tax Group Code</source>
+        <target>Vero ryhmän koodi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1844012642 - Property 2879900210">
+        <source>VAT Business Posting Group</source>
+        <target>Liike toiminnan ALV-kirjaus ryhmä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 236064653 - Property 2879900210">
+        <source>VAT Product Posting Group</source>
+        <target>Tuotteen ALV-kirjaus ryhmä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3195781979 - Property 2879900210">
+        <source>Tag Value</source>
+        <target>Tunnisteen arvo</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3851491086 - Property 2879900210">
+        <source>Indention Level</source>
+        <target>Sisennys taso</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1654284642 - Property 2879900210">
+        <source>Totals Group</source>
+        <target>Summa-ryhmä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3463728519 - Property 2879900210">
+        <source>Total Begin/End</source>
+        <target>Alku/loppu yhteensä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3740542262 - Property 2879900210">
+        <source>Filter Tag Template</source>
+        <target>Suodata tunniste-malli</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1018417860 - Property 2879900210">
+        <source>Filter Tag List</source>
+        <target>Suodattimen tunniste luettelo</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>Paketin tunnus</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 3017471043 - Property 2879900210">
+        <source>Table No.</source>
+        <target>Taulukon nro</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 3927818408 - Property 2879900210">
+        <source>Description</source>
+        <target>Kuvaus</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2801749846 - Property 2879900210">
+        <source>Tag</source>
+        <target>Tag</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1617657750 - Property 2879900210">
+        <source>Tag Type</source>
+        <target>Tunnisteen tyyppi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3699788827 - Property 2879900210">
+        <source>Account Type</source>
+        <target>Tilin tyyppi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1768692339 - Property 2879900210">
+        <source>Account Category</source>
+        <target>Tili luokka</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2959099382 - Property 2879900210">
+        <source>Income/Balance</source>
+        <target>Tulos/tase</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3855426514 - Property 2879900210">
+        <source>Account Subcategory Entry No.</source>
+        <target>Tilin alaluokka tapahtuman nro</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1526897239 - Property 2879900210">
+        <source>Direct Posting</source>
+        <target>Suora kirjaus</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 4012257394 - Property 2879900210">
+        <source>Reconciliation Account</source>
+        <target>Täsmäytys tili</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 59113118 - Property 2879900210">
+        <source>General Posting Type</source>
+        <target>Yleinen kirjaus tyyppi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 633819257 - Property 2879900210">
+        <source>General Business Posting Group</source>
+        <target>Yleinen liike toiminnan kirjaus ryhmä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2139693550 - Property 2879900210">
+        <source>General Product Posting Group</source>
+        <target>Yleinen tuotteen kirjaus ryhmä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 305562489 - Property 2879900210">
+        <source>Tax Area Code</source>
+        <target>Vero alue koodi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 53839102 - Property 2879900210">
+        <source>Tax Liable</source>
+        <target>Verovelvollinen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2552458873 - Property 2879900210">
+        <source>Tax Group Code</source>
+        <target>Vero ryhmän koodi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1844012642 - Property 2879900210">
+        <source>VAT Business Posting Group</source>
+        <target>Liike toiminnan ALV-kirjaus ryhmä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 236064653 - Property 2879900210">
+        <source>VAT Product Posting Group</source>
+        <target>Tuotteen ALV-kirjaus ryhmä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 28344312 - Property 2879900210">
+        <source>Groups</source>
+        <target>Ryhmien</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Kuvaus</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3597949816 - Property 2879900210">
+        <source>Help Text</source>
+        <target>Ohjeen teksti</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>Paketin tunnus</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3740542262 - Property 2879900210">
+        <source>Filter Tag Template</source>
+        <target>Suodata tunniste-malli</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1018417860 - Property 2879900210">
+        <source>Filter Tag List</source>
+        <target>Suodattimen tunniste luettelo</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 557355547 - Method 1633076348 - NamedType 2833377072">
+        <source>Accelerate your deployment with onboarding packages</source>
+        <target>Nopeuttaa käyttöönottoa perehdytys paketeilla</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 557355547 - Method 232785309 - NamedType 2833377072">
+        <source>This seems to be clean new company, do you want to start the onboarding process?</source>
+        <target>Tämä näyttää olevan puhdas uusi yritys, Haluatko aloittaa perehdytys prosessin?</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 3132997375">
+        <source>Data in package %1 required a account not present in your chart of account, please check the setup.</source>
+        <target>Pakka uksen% 1 tiedot edellytsi tiliä, jota ei ole tili kartassa, ja Tarkista asetukset.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 751119930">
+        <source>Data in package %1 have created an incomplete setup, please check the setup.</source>
+        <target>Pakka uksen% 1 tiedot ovat luoneet epätäydellisen asennuksen, Tarkista asetukset.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 3132997375">
+        <source>This should never happen, a total-end account without a total-begin account</source>
+        <target>Tämä ei saisi koskaan tapahtua, loppu summa tili ilman yhteensä-alku tili</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 751119930">
+        <source>Error 1: Cannot insert %1 as sort %2 because %3 is already there</source>
+        <target>Virhe 1: kohteen% 1 lisääminen lajitteluun% 2 ei onnistu, koska% 3 on jo olemassa</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 470793674 - NamedType 3132997375">
+        <source>Error 2: Cannot insert %1 as sort %2 because %3 is already there</source>
+        <target>Virhe 2: kohteen% 1 lisääminen lajitteluun% 2 ei onnistu, koska% 3 on jo olemassa</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 3132997375">
+        <source>Reading package list #1## of #2##</source>
+        <target>Luetaan paketti luetteloa #1 # #2 ##</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 751119930">
+        <source>Cannot read package list, error %1</source>
+        <target>Paketti luetteloa ei voi lukea, virhe% 1</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 113423313">
+        <source>Cannot contact Package Server</source>
+        <target>Ei voi ottaa yhteyttä paketti palvelimeen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 2101264222">
+        <source>Call to package server blocked by your environment</source>
+        <target>Ympäristön estämä paketti palvelimen kutsu</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 4267410125 - NamedType 3132997375">
+        <source>No modules selected, aborting</source>
+        <target>Yhtään moduulia ei ole valittu, keskeytäminen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3132997375">
+        <source>Base Setup</source>
+        <target>Perusasetukset</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 751119930">
+        <source>Financial Management</source>
+        <target>Varainhoidon</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 113423313">
+        <source>Sales and Account Receivables</source>
+        <target>Myynti-ja tili saamiset</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2026513164">
+        <source>Purchase and Account Payables</source>
+        <target>Oston ja tilin osto velat</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 1388816547">
+        <source>Inventory</source>
+        <target>Varaston</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3301906398">
+        <source>Jobs</source>
+        <target>Työpaikkoja</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2664209781">
+        <source>Fixed Assets</source>
+        <target>Käyttöomaisuuden</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 282332336">
+        <source>Warehouse</source>
+        <target>Varasto</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3939603015">
+        <source>Service Management</source>
+        <target>Service Management</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2739948207">
+        <source>Relationship Management</source>
+        <target>Relationship Management</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3377644824">
+        <source>Human Resources</source>
+        <target>Henkilöstöhallinnon</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 4015341441">
+        <source>Production and Planning</source>
+        <target>Tuotanto ja suunnittelu</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 2833377072">
+        <source>Chart Of Accounts Excel File</source>
+        <target>Tili kartta Excel-tiedosto</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 751119930">
+        <source>income</source>
+        <target>Tulot</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>Perehdytys</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 1830295791 - Property 2879900210">
+        <source>OnBoarding - Get Started</source>
+        <target>Perehdytys-Aloita</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 3800514526 - Property 2879900210">
+        <source>OnBoarding is a tool that will let you select setup for the entire system in one easy operation.</source>
+        <target>Perehdytys on työkalu, jonka avulla voit valita koko järjestelmän asetukset yhdellä helppokäyttöisellä toiminnolla.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 463896926 - Property 2879900210">
+        <source>You can get a minimal chart of account with everything needed for the chosen setup. Document numbers for everything are also generated.</source>
+        <target>Voit saada minimaalisen tili kartan kaikesta, mitä tarvitaan valitsemallesi asetukselle. Myös kaikki asia kirjan numerot luodaan.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 3123527090 - Property 2879900210">
+        <source>Click start to initiate the onboarding process.</source>
+        <target>Aloita perehdytys prosessi valitsemalla Start.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Method 716454850 - NamedType 3132997375">
+        <source>All the setup will go into company "</source>
+        <target>Kaikki asennus siirtyy yritykseen "</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Method 716454850 - NamedType 751119930">
+        <source>", make sure you're in the right company before continue.</source>
+        <target>", varmista, että olet oikeassa yrityksessä, ennen kuin jatkat.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>Perehdytys</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Control 1697855195 - Property 2879900210">
+        <source>Select the Modules you want setup for</source>
+        <target>Valitse moduulit, jotka haluat setup</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Bck</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Jatka seuraavaan vaiheeseen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>Perehdytys</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Control 329424276 - Property 2879900210">
+        <source>Select packages for module</source>
+        <target>Valitse moduulin paketit</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Control 1391831288 - Property 2879900210">
+        <source>Module</source>
+        <target>Moduuli</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Bck</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Jatka seuraavaan vaiheeseen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>You can only select one package from this screen</source>
+        <target>Voit valita vain yhden pakka uksen tästä näytöstä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>Perehdytys</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 3675577466 - Property 2879900210">
+        <source>How do you want your Chart Of Accounts</source>
+        <target>Miten haluat tili kartan</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 1776184068 - Property 2879900210">
+        <source>Chart Of Account Action</source>
+        <target>Tili kartan toiminto</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 2914529955 - Property 2879900210">
+        <source>Auto-generation Parameters</source>
+        <target>Automaattisen luonnin parametrit</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 767275308 - Property 2879900210">
+        <source>First Account Number</source>
+        <target>Ensimmäinen tili numero</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 464900788 - Property 2879900210">
+        <source>Account Number Increment</source>
+        <target>Tili numeron lisäys</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 1816656908 - Property 2879900210">
+        <source>Create Chart Of Account Totals</source>
+        <target>Luo tili kartta yhteensä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 2207307435 - Property 2879900210">
+        <source>Total Accounts Increment</source>
+        <target>Tilien lisäys yhteensä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Bck</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Jatka seuraavaan vaiheeseen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>Select a Chart of Account Method first.</source>
+        <target>Valitse ensin tili menetelmä.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>Perehdytys</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 2710443733 - Property 2879900210">
+        <source>Instructions</source>
+        <target>Ohjeet</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 1088699231 - Property 2879900210">
+        <source>Upload an XLSX Excel spreadsheet file. The first sheet in the file should have the following layout with a header row and be called "sheet1".</source>
+        <target>Lataa XLSX Excel-laskenta taulukko tiedosto. Tiedoston ensimmäisellä arkilla pitäisi olla seuraava asettelu otsikko rivillä ja sitä kutsutaan nimellä "Sheet1".</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 2623828734 - Property 2879900210">
+        <source>A Column: Account Number</source>
+        <target>Sarake: tili numero</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 710738883 - Property 2879900210">
+        <source>B Column: Account Name</source>
+        <target>B-sarake: tilin nimi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 1348435500 - Property 2879900210">
+        <source>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</source>
+        <target>C sarake: tulot/saldo (Määritä, onko tämä tili osa tulos laskelmaa vai taseesta)</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Bck</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 3201496503 - Property 2879900210">
+        <source>Import Excel File</source>
+        <target>Tuo Excel-tiedosto</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 2980616220 - Property 2879900210">
+        <source>Continue</source>
+        <target>Jatkaa</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Property 2879900210">
+        <source>OnBoarding, Define your chart of accounts</source>
+        <target>Perehdytys, Määritä tili kartta</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3195781979 - Property 2879900210">
+        <source>Account Number</source>
+        <target>Tili numero</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Kuvaus</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3463728519 - Property 2879900210">
+        <source>Account Type</source>
+        <target>Tilin tyyppi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Bck</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Jatka seuraavaan vaiheeseen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Property 2879900210">
+        <source>OnBoarding, Assign Accounts to Setup</source>
+        <target>Perehdytys, määritä tilit asennukseen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Control 3195781979 - Property 2879900210">
+        <source>G/L Account No.</source>
+        <target>KP-tilin nro</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Control 3461834954 - Property 2879900210">
+        <source>Account Name</source>
+        <target>Tilin nimi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Bck</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 1841379954 - Property 2879900210">
+        <source>Verify Assignments</source>
+        <target>Vahvista vara ukset</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 152052329 - Property 2879900210">
+        <source>Continue</source>
+        <target>Jatkaa</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>Perehdytys</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 3675577466 - Property 2879900210">
+        <source>How do you want your documents numbered</source>
+        <target>Miten haluat numeroida asia kirjasi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 1776184068 - Property 2879900210">
+        <source>Document numbering action</source>
+        <target>Asia kirjan numerointi toiminto</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 2914529955 - Property 2879900210">
+        <source>Auto-generation Parameters</source>
+        <target>Automaattisen luonnin parametrit</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 767275308 - Property 2879900210">
+        <source>First Number</source>
+        <target>Ensimmäinen numero</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Bck</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Jatka seuraavaan vaiheeseen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>Select a document number method first.</source>
+        <target>Valitse ensin asiakirja numero menetelmä.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Property 2879900210">
+        <source>OnBoarding, Document numbers</source>
+        <target>Perehdytys, asiakirja numerot</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Control 3195781979 - Property 2879900210">
+        <source>Start Number</source>
+        <target>Aloitus numero</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Control 3461834954 - Property 2879900210">
+        <source>Document Type</source>
+        <target>Asiakirja tyyppi</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Bck</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Action 152052329 - Property 2879900210">
+        <source>Continue</source>
+        <target>Jatkaa</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Property 2879900210">
+        <source>OnBoarding - Review and Finish</source>
+        <target>Perehdytys-tarkistus ja viimeistely</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1830295791 - Property 2879900210">
+        <source>Review and Finish</source>
+        <target>Tarkistaminen ja päättyminen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 156978454 - Property 2879900210">
+        <source>Now we're ready to finish this, the following will happened:</source>
+        <target>Nyt olemme valmiita lopettamaan tämän, seuraava tapahtuu:</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 2916936581 - Property 2879900210">
+        <source>1. All the Setup in packages chosen will be generated</source>
+        <target>1. kaikki valittujen pakettien asetukset luodaan</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 2279239964 - Property 2879900210">
+        <source>2. The Chart Of Account will be created if chosen</source>
+        <target>2. tili kartta luodaan, jos se valitaan</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1641543347 - Property 2879900210">
+        <source>3. The Setup in all packages will use the new Account Numbers.</source>
+        <target>3. kaikkien pakettien asetukset käyttävät uusia tili numeroita.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1003846730 - Property 2879900210">
+        <source>4. Create the numbers as specified and reference them in the setup.</source>
+        <target>4. Luo numerot määritetyllä tavalla ja viittaa ne asetuksiin.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1852137694 - Property 2879900210">
+        <source>5. Create a Configuration Package for easy export of generated setup</source>
+        <target>5. Luo kokoonpano paketti, joka helpottaa luotujen asetusten vientiä</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Bck</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 152052329 - Property 2879900210">
+        <source>Create Everything</source>
+        <target>Luo kaikki</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>All done, all the packages you have select have been applied, please verify the setup before you start posting.</source>
+        <target>Kaikki valmis, Kaikki valitsemasi paketit on otettu käyttöön, Tarkista asetukset ennen kuin aloitat kirja uksen.</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

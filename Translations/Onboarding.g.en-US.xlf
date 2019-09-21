@@ -1,0 +1,1660 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="xml" source-language="en-US" target-language="en-US" tool-id="hougaard.com">
+    <header>
+      <tool tool-id="hougaard.com" tool-name="Erik Hougaard" tool-company="hougaard.com" />
+    </header>
+    <body>
+      <trans-unit id="Table 3934504163 - Field 1748380401 - Property 2879900210">
+        <source>Module ID</source>
+        <target>Module ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 1748380401 - Property 2879900210">
+        <source>Module ID</source>
+        <target>Module ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Description</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Description</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3117446396 - Property 2879900210">
+        <source>Select</source>
+        <target>Select</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3117446396 - Property 2879900210">
+        <source>Select</source>
+        <target>Select</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3182860744 - Property 2879900210">
+        <source>Sorting Order</source>
+        <target>Sorting Order</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3934504163 - Field 3182860744 - Property 2879900210">
+        <source>Sorting Order</source>
+        <target>Sorting Order</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>Package ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>Package ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 3017471043 - Property 2879900210">
+        <source>Table No.</source>
+        <target>Table No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 3017471043 - Property 2879900210">
+        <source>Table No.</source>
+        <target>Table No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 485252710 - Property 2879900210">
+        <source>Record No.</source>
+        <target>Record No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 485252710 - Property 2879900210">
+        <source>Record No.</source>
+        <target>Record No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 3531868071 - Property 2879900210">
+        <source>Field No.</source>
+        <target>Field No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 3531868071 - Property 2879900210">
+        <source>Field No.</source>
+        <target>Field No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 1520667081 - Property 2879900210">
+        <source>Special Action</source>
+        <target>Special Action</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 1520667081 - Property 2879900210">
+        <source>Special Action</source>
+        <target>Special Action</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 958223187 - Property 2879900210">
+        <source>Field Value</source>
+        <target>Field Value</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 4181466806 - Field 958223187 - Property 2879900210">
+        <source>Field Value</source>
+        <target>Field Value</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3641927271 - Property 2879900210">
+        <source>ID</source>
+        <target>ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3641927271 - Property 2879900210">
+        <source>ID</source>
+        <target>ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Description</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Description</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 2842729223 - Property 2879900210">
+        <source>Author</source>
+        <target>Author</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 2842729223 - Property 2879900210">
+        <source>Author</source>
+        <target>Author</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1856816140 - Property 2879900210">
+        <source>Country</source>
+        <target>Country</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1856816140 - Property 2879900210">
+        <source>Country</source>
+        <target>Country</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1188986640 - Property 2879900210">
+        <source>Minumum Version</source>
+        <target>Minumum Version</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1188986640 - Property 2879900210">
+        <source>Minumum Version</source>
+        <target>Minumum Version</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 520258886 - Property 2879900210">
+        <source>Module</source>
+        <target>Module</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 520258886 - Property 2879900210">
+        <source>Module</source>
+        <target>Module</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3117446396 - Property 2879900210">
+        <source>Select</source>
+        <target>Select</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 3117446396 - Property 2879900210">
+        <source>Select</source>
+        <target>Select</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1241781896 - Property 2879900210">
+        <source>Sort Index</source>
+        <target>Sort Index</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 382100014 - Field 1241781896 - Property 2879900210">
+        <source>Sort Index</source>
+        <target>Sort Index</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2801749846 - Property 2879900210">
+        <source>Tag</source>
+        <target>Tag</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2801749846 - Property 2879900210">
+        <source>Tag</source>
+        <target>Tag</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Description</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Description</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1617657750 - Property 2879900210">
+        <source>Tag Type</source>
+        <target>Tag Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1617657750 - Property 2879900210">
+        <source>Tag Type</source>
+        <target>Tag Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2959099382 - Property 2879900210">
+        <source>Income/Balance</source>
+        <target>Income/Balance</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2959099382 - Property 2879900210">
+        <source>Income/Balance</source>
+        <target>Income/Balance</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1241781896 - Property 2879900210">
+        <source>Sort Index</source>
+        <target>Sort Index</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1241781896 - Property 2879900210">
+        <source>Sort Index</source>
+        <target>Sort Index</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1768692339 - Property 2879900210">
+        <source>Account Category</source>
+        <target>Account Category</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1768692339 - Property 2879900210">
+        <source>Account Category</source>
+        <target>Account Category</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3855426514 - Property 2879900210">
+        <source>Account Subcategory Entry No.</source>
+        <target>Account Subcategory Entry No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3855426514 - Property 2879900210">
+        <source>Account Subcategory Entry No.</source>
+        <target>Account Subcategory Entry No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1526897239 - Property 2879900210">
+        <source>Direct Posting</source>
+        <target>Direct Posting</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1526897239 - Property 2879900210">
+        <source>Direct Posting</source>
+        <target>Direct Posting</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 4012257394 - Property 2879900210">
+        <source>Reconciliation Account</source>
+        <target>Reconciliation Account</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 4012257394 - Property 2879900210">
+        <source>Reconciliation Account</source>
+        <target>Reconciliation Account</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 59113118 - Property 2879900210">
+        <source>General Posting Type</source>
+        <target>General Posting Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 59113118 - Property 2879900210">
+        <source>General Posting Type</source>
+        <target>General Posting Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 633819257 - Property 2879900210">
+        <source>General Business Posting Group</source>
+        <target>General Business Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 633819257 - Property 2879900210">
+        <source>General Business Posting Group</source>
+        <target>General Business Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2139693550 - Property 2879900210">
+        <source>General Product Posting Group</source>
+        <target>General Product Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2139693550 - Property 2879900210">
+        <source>General Product Posting Group</source>
+        <target>General Product Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 305562489 - Property 2879900210">
+        <source>Tax Area Code</source>
+        <target>Tax Area Code</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 305562489 - Property 2879900210">
+        <source>Tax Area Code</source>
+        <target>Tax Area Code</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 53839102 - Property 2879900210">
+        <source>Tax Liable</source>
+        <target>Tax Liable</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 53839102 - Property 2879900210">
+        <source>Tax Liable</source>
+        <target>Tax Liable</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2552458873 - Property 2879900210">
+        <source>Tax Group Code</source>
+        <target>Tax Group Code</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 2552458873 - Property 2879900210">
+        <source>Tax Group Code</source>
+        <target>Tax Group Code</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1844012642 - Property 2879900210">
+        <source>VAT Business Posting Group</source>
+        <target>VAT Business Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1844012642 - Property 2879900210">
+        <source>VAT Business Posting Group</source>
+        <target>VAT Business Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 236064653 - Property 2879900210">
+        <source>VAT Product Posting Group</source>
+        <target>VAT Product Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 236064653 - Property 2879900210">
+        <source>VAT Product Posting Group</source>
+        <target>VAT Product Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3195781979 - Property 2879900210">
+        <source>Tag Value</source>
+        <target>Tag Value</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3195781979 - Property 2879900210">
+        <source>Tag Value</source>
+        <target>Tag Value</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3851491086 - Property 2879900210">
+        <source>Indention Level</source>
+        <target>Indention Level</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3851491086 - Property 2879900210">
+        <source>Indention Level</source>
+        <target>Indention Level</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1654284642 - Property 2879900210">
+        <source>Totals Group</source>
+        <target>Totals Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1654284642 - Property 2879900210">
+        <source>Totals Group</source>
+        <target>Totals Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3463728519 - Property 2879900210">
+        <source>Total Begin/End</source>
+        <target>Total Begin/End</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3463728519 - Property 2879900210">
+        <source>Total Begin/End</source>
+        <target>Total Begin/End</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3740542262 - Property 2879900210">
+        <source>Filter Tag Template</source>
+        <target>Filter Tag Template</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 3740542262 - Property 2879900210">
+        <source>Filter Tag Template</source>
+        <target>Filter Tag Template</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1018417860 - Property 2879900210">
+        <source>Filter Tag List</source>
+        <target>Filter Tag List</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 3400451757 - Field 1018417860 - Property 2879900210">
+        <source>Filter Tag List</source>
+        <target>Filter Tag List</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>Package ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>Package ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 3017471043 - Property 2879900210">
+        <source>Table No.</source>
+        <target>Table No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 3017471043 - Property 2879900210">
+        <source>Table No.</source>
+        <target>Table No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 3927818408 - Property 2879900210">
+        <source>Description</source>
+        <target>Description</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 2536781498 - Field 3927818408 - Property 2879900210">
+        <source>Description</source>
+        <target>Description</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2801749846 - Property 2879900210">
+        <source>Tag</source>
+        <target>Tag</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2801749846 - Property 2879900210">
+        <source>Tag</source>
+        <target>Tag</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1617657750 - Property 2879900210">
+        <source>Tag Type</source>
+        <target>Tag Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1617657750 - Property 2879900210">
+        <source>Tag Type</source>
+        <target>Tag Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3699788827 - Property 2879900210">
+        <source>Account Type</source>
+        <target>Account Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3699788827 - Property 2879900210">
+        <source>Account Type</source>
+        <target>Account Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1768692339 - Property 2879900210">
+        <source>Account Category</source>
+        <target>Account Category</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1768692339 - Property 2879900210">
+        <source>Account Category</source>
+        <target>Account Category</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2959099382 - Property 2879900210">
+        <source>Income/Balance</source>
+        <target>Income/Balance</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2959099382 - Property 2879900210">
+        <source>Income/Balance</source>
+        <target>Income/Balance</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3855426514 - Property 2879900210">
+        <source>Account Subcategory Entry No.</source>
+        <target>Account Subcategory Entry No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3855426514 - Property 2879900210">
+        <source>Account Subcategory Entry No.</source>
+        <target>Account Subcategory Entry No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1526897239 - Property 2879900210">
+        <source>Direct Posting</source>
+        <target>Direct Posting</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1526897239 - Property 2879900210">
+        <source>Direct Posting</source>
+        <target>Direct Posting</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 4012257394 - Property 2879900210">
+        <source>Reconciliation Account</source>
+        <target>Reconciliation Account</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 4012257394 - Property 2879900210">
+        <source>Reconciliation Account</source>
+        <target>Reconciliation Account</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 59113118 - Property 2879900210">
+        <source>General Posting Type</source>
+        <target>General Posting Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 59113118 - Property 2879900210">
+        <source>General Posting Type</source>
+        <target>General Posting Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 633819257 - Property 2879900210">
+        <source>General Business Posting Group</source>
+        <target>General Business Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 633819257 - Property 2879900210">
+        <source>General Business Posting Group</source>
+        <target>General Business Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2139693550 - Property 2879900210">
+        <source>General Product Posting Group</source>
+        <target>General Product Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2139693550 - Property 2879900210">
+        <source>General Product Posting Group</source>
+        <target>General Product Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 305562489 - Property 2879900210">
+        <source>Tax Area Code</source>
+        <target>Tax Area Code</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 305562489 - Property 2879900210">
+        <source>Tax Area Code</source>
+        <target>Tax Area Code</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 53839102 - Property 2879900210">
+        <source>Tax Liable</source>
+        <target>Tax Liable</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 53839102 - Property 2879900210">
+        <source>Tax Liable</source>
+        <target>Tax Liable</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2552458873 - Property 2879900210">
+        <source>Tax Group Code</source>
+        <target>Tax Group Code</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2552458873 - Property 2879900210">
+        <source>Tax Group Code</source>
+        <target>Tax Group Code</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1844012642 - Property 2879900210">
+        <source>VAT Business Posting Group</source>
+        <target>VAT Business Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1844012642 - Property 2879900210">
+        <source>VAT Business Posting Group</source>
+        <target>VAT Business Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 236064653 - Property 2879900210">
+        <source>VAT Product Posting Group</source>
+        <target>VAT Product Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 236064653 - Property 2879900210">
+        <source>VAT Product Posting Group</source>
+        <target>VAT Product Posting Group</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 28344312 - Property 2879900210">
+        <source>Groups</source>
+        <target>Groups</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 28344312 - Property 2879900210">
+        <source>Groups</source>
+        <target>Groups</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Description</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Description</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3597949816 - Property 2879900210">
+        <source>Help Text</source>
+        <target>Help Text</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3597949816 - Property 2879900210">
+        <source>Help Text</source>
+        <target>Help Text</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>Package ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 2996397865 - Property 2879900210">
+        <source>Package ID</source>
+        <target>Package ID</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3740542262 - Property 2879900210">
+        <source>Filter Tag Template</source>
+        <target>Filter Tag Template</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 3740542262 - Property 2879900210">
+        <source>Filter Tag Template</source>
+        <target>Filter Tag Template</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1018417860 - Property 2879900210">
+        <source>Filter Tag List</source>
+        <target>Filter Tag List</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Table 1717704941 - Field 1018417860 - Property 2879900210">
+        <source>Filter Tag List</source>
+        <target>Filter Tag List</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 557355547 - Method 1633076348 - NamedType 2833377072">
+        <source>Accelerate your deployment with onboarding packages</source>
+        <target>Accelerate your deployment with onboarding packages</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 557355547 - Method 1633076348 - NamedType 2833377072">
+        <source>Accelerate your deployment with onboarding packages</source>
+        <target>Accelerate your deployment with onboarding packages</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 557355547 - Method 232785309 - NamedType 2833377072">
+        <source>This seems to be clean new company, do you want to start the onboarding process?</source>
+        <target>This seems to be clean new company, do you want to start the onboarding process?</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 557355547 - Method 232785309 - NamedType 2833377072">
+        <source>This seems to be clean new company, do you want to start the onboarding process?</source>
+        <target>This seems to be clean new company, do you want to start the onboarding process?</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 3132997375">
+        <source>Data in package %1 required a account not present in your chart of account, please check the setup.</source>
+        <target>Data in package %1 required a account not present in your chart of account, please check the setup.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 3132997375">
+        <source>Data in package %1 required a account not present in your chart of account, please check the setup.</source>
+        <target>Data in package %1 required a account not present in your chart of account, please check the setup.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 751119930">
+        <source>Data in package %1 have created an incomplete setup, please check the setup.</source>
+        <target>Data in package %1 have created an incomplete setup, please check the setup.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 751119930">
+        <source>Data in package %1 have created an incomplete setup, please check the setup.</source>
+        <target>Data in package %1 have created an incomplete setup, please check the setup.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 3132997375">
+        <source>This should never happen, a total-end account without a total-begin account</source>
+        <target>This should never happen, a total-end account without a total-begin account</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 3132997375">
+        <source>This should never happen, a total-end account without a total-begin account</source>
+        <target>This should never happen, a total-end account without a total-begin account</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 751119930">
+        <source>Error 1: Cannot insert %1 as sort %2 because %3 is already there</source>
+        <target>Error 1: Cannot insert %1 as sort %2 because %3 is already there</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 751119930">
+        <source>Error 1: Cannot insert %1 as sort %2 because %3 is already there</source>
+        <target>Error 1: Cannot insert %1 as sort %2 because %3 is already there</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 470793674 - NamedType 3132997375">
+        <source>Error 2: Cannot insert %1 as sort %2 because %3 is already there</source>
+        <target>Error 2: Cannot insert %1 as sort %2 because %3 is already there</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 470793674 - NamedType 3132997375">
+        <source>Error 2: Cannot insert %1 as sort %2 because %3 is already there</source>
+        <target>Error 2: Cannot insert %1 as sort %2 because %3 is already there</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 3132997375">
+        <source>Reading package list #1## of #2##</source>
+        <target>Reading package list #1## of #2 ##</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 3132997375">
+        <source>Reading package list #1## of #2##</source>
+        <target>Reading package list #1## of #2 ##</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 751119930">
+        <source>Cannot read package list, error %1</source>
+        <target>Cannot read package list, error %1</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 751119930">
+        <source>Cannot read package list, error %1</source>
+        <target>Cannot read package list, error %1</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 113423313">
+        <source>Cannot contact Package Server</source>
+        <target>Cannot contact Package Server</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 113423313">
+        <source>Cannot contact Package Server</source>
+        <target>Cannot contact Package Server</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 2101264222">
+        <source>Call to package server blocked by your environment</source>
+        <target>Call to package server blocked by your environment</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 2101264222">
+        <source>Call to package server blocked by your environment</source>
+        <target>Call to package server blocked by your environment</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 4267410125 - NamedType 3132997375">
+        <source>No modules selected, aborting</source>
+        <target>No modules selected, aborting</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 4267410125 - NamedType 3132997375">
+        <source>No modules selected, aborting</source>
+        <target>No modules selected, aborting</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3132997375">
+        <source>Base Setup</source>
+        <target>Base Setup</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3132997375">
+        <source>Base Setup</source>
+        <target>Base Setup</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 751119930">
+        <source>Financial Management</source>
+        <target>Financial Management</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 751119930">
+        <source>Financial Management</source>
+        <target>Financial Management</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 113423313">
+        <source>Sales and Account Receivables</source>
+        <target>Sales and Account Receivables</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 113423313">
+        <source>Sales and Account Receivables</source>
+        <target>Sales and Account Receivables</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2026513164">
+        <source>Purchase and Account Payables</source>
+        <target>Purchase and Account Payables</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2026513164">
+        <source>Purchase and Account Payables</source>
+        <target>Purchase and Account Payables</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 1388816547">
+        <source>Inventory</source>
+        <target>Inventory</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 1388816547">
+        <source>Inventory</source>
+        <target>Inventory</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3301906398">
+        <source>Jobs</source>
+        <target>Jobs</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3301906398">
+        <source>Jobs</source>
+        <target>Jobs</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2664209781">
+        <source>Fixed Assets</source>
+        <target>Fixed Assets</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2664209781">
+        <source>Fixed Assets</source>
+        <target>Fixed Assets</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 282332336">
+        <source>Warehouse</source>
+        <target>Warehouse</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 282332336">
+        <source>Warehouse</source>
+        <target>Warehouse</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3939603015">
+        <source>Service Management</source>
+        <target>Service Management</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3939603015">
+        <source>Service Management</source>
+        <target>Service Management</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2739948207">
+        <source>Relationship Management</source>
+        <target>Relationship Management</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2739948207">
+        <source>Relationship Management</source>
+        <target>Relationship Management</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3377644824">
+        <source>Human Resources</source>
+        <target>Human Resources</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3377644824">
+        <source>Human Resources</source>
+        <target>Human Resources</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 4015341441">
+        <source>Production and Planning</source>
+        <target>Production and Planning</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 4015341441">
+        <source>Production and Planning</source>
+        <target>Production and Planning</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 2833377072">
+        <source>Chart Of Accounts Excel File</source>
+        <target>Chart Of Accounts Excel File</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 2833377072">
+        <source>Chart Of Accounts Excel File</source>
+        <target>Chart Of Accounts Excel File</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 751119930">
+        <source>income</source>
+        <target>income</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 751119930">
+        <source>income</source>
+        <target>income</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>OnBoarding</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>OnBoarding</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 1830295791 - Property 2879900210">
+        <source>OnBoarding - Get Started</source>
+        <target>OnBoarding - Get Started</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 1830295791 - Property 2879900210">
+        <source>OnBoarding - Get Started</source>
+        <target>OnBoarding - Get Started</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 3800514526 - Property 2879900210">
+        <source>OnBoarding is a tool that will let you select setup for the entire system in one easy operation.</source>
+        <target>OnBoarding is a tool that will let you select setup for the entire system in one easy operation.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 3800514526 - Property 2879900210">
+        <source>OnBoarding is a tool that will let you select setup for the entire system in one easy operation.</source>
+        <target>OnBoarding is a tool that will let you select setup for the entire system in one easy operation.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 463896926 - Property 2879900210">
+        <source>You can get a minimal chart of account with everything needed for the chosen setup. Document numbers for everything are also generated.</source>
+        <target>You can get a minimal chart of account with everything needed for the chosen setup. Document numbers for everything are also generated.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 463896926 - Property 2879900210">
+        <source>You can get a minimal chart of account with everything needed for the chosen setup. Document numbers for everything are also generated.</source>
+        <target>You can get a minimal chart of account with everything needed for the chosen setup. Document numbers for everything are also generated.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 3123527090 - Property 2879900210">
+        <source>Click start to initiate the onboarding process.</source>
+        <target>Click start to initiate the onboarding process.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Control 3123527090 - Property 2879900210">
+        <source>Click start to initiate the onboarding process.</source>
+        <target>Click start to initiate the onboarding process.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Method 716454850 - NamedType 3132997375">
+        <source>All the setup will go into company "</source>
+        <target>All the setup will go into company "</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Method 716454850 - NamedType 3132997375">
+        <source>All the setup will go into company "</source>
+        <target>All the setup will go into company "</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Method 716454850 - NamedType 751119930">
+        <source>", make sure you're in the right company before continue.</source>
+        <target>", make sure you're in the right company before continue.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 45914334 - Method 716454850 - NamedType 751119930">
+        <source>", make sure you're in the right company before continue.</source>
+        <target>", make sure you're in the right company before continue.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>OnBoarding</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>OnBoarding</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Control 1697855195 - Property 2879900210">
+        <source>Select the Modules you want setup for</source>
+        <target>Select the Modules you want setup for</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Control 1697855195 - Property 2879900210">
+        <source>Select the Modules you want setup for</source>
+        <target>Select the Modules you want setup for</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Continue to next step</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 673191301 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Continue to next step</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>OnBoarding</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>OnBoarding</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Control 329424276 - Property 2879900210">
+        <source>Select packages for module</source>
+        <target>Select packages for module</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Control 329424276 - Property 2879900210">
+        <source>Select packages for module</source>
+        <target>Select packages for module</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Control 1391831288 - Property 2879900210">
+        <source>Module</source>
+        <target>Module</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Control 1391831288 - Property 2879900210">
+        <source>Module</source>
+        <target>Module</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Continue to next step</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Continue to next step</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>You can only select one package from this screen</source>
+        <target>You can only select one package from this screen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4253442988 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>You can only select one package from this screen</source>
+        <target>You can only select one package from this screen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>OnBoarding</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>OnBoarding</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 3675577466 - Property 2879900210">
+        <source>How do you want your Chart Of Accounts</source>
+        <target>How do you want your Chart Of Accounts</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 3675577466 - Property 2879900210">
+        <source>How do you want your Chart Of Accounts</source>
+        <target>How do you want your Chart Of Accounts</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 1776184068 - Property 2879900210">
+        <source>Chart Of Account Action</source>
+        <target>Chart Of Account Action</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 1776184068 - Property 2879900210">
+        <source>Chart Of Account Action</source>
+        <target>Chart Of Account Action</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 2914529955 - Property 2879900210">
+        <source>Auto-generation Parameters</source>
+        <target>Auto-generation Parameters</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 2914529955 - Property 2879900210">
+        <source>Auto-generation Parameters</source>
+        <target>Auto-generation Parameters</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 767275308 - Property 2879900210">
+        <source>First Account Number</source>
+        <target>First Account Number</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 767275308 - Property 2879900210">
+        <source>First Account Number</source>
+        <target>First Account Number</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 464900788 - Property 2879900210">
+        <source>Account Number Increment</source>
+        <target>Account Number Increment</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 464900788 - Property 2879900210">
+        <source>Account Number Increment</source>
+        <target>Account Number Increment</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 1816656908 - Property 2879900210">
+        <source>Create Chart Of Account Totals</source>
+        <target>Create Chart Of Account Totals</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 1816656908 - Property 2879900210">
+        <source>Create Chart Of Account Totals</source>
+        <target>Create Chart Of Account Totals</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 2207307435 - Property 2879900210">
+        <source>Total Accounts Increment</source>
+        <target>Total Accounts Increment</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Control 2207307435 - Property 2879900210">
+        <source>Total Accounts Increment</source>
+        <target>Total Accounts Increment</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Continue to next step</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Continue to next step</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>Select a Chart of Account Method first.</source>
+        <target>Select a Chart of Account Method first.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 4180736083 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>Select a Chart of Account Method first.</source>
+        <target>Select a Chart of Account Method first.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>OnBoarding</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>OnBoarding</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 2710443733 - Property 2879900210">
+        <source>Instructions</source>
+        <target>Instructions</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 2710443733 - Property 2879900210">
+        <source>Instructions</source>
+        <target>Instructions</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 1088699231 - Property 2879900210">
+        <source>Upload an XLSX Excel spreadsheet file. The first sheet in the file should have the following layout with a header row and be called "sheet1".</source>
+        <target>Upload an XLSX Excel spreadsheet file. The first sheet in the file should have the following layout with a header row and be called "sheet1".</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 1088699231 - Property 2879900210">
+        <source>Upload an XLSX Excel spreadsheet file. The first sheet in the file should have the following layout with a header row and be called "sheet1".</source>
+        <target>Upload an XLSX Excel spreadsheet file. The first sheet in the file should have the following layout with a header row and be called "sheet1".</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 2623828734 - Property 2879900210">
+        <source>A Column: Account Number</source>
+        <target>A Column: Account Number</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 2623828734 - Property 2879900210">
+        <source>A Column: Account Number</source>
+        <target>A Column: Account Number</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 710738883 - Property 2879900210">
+        <source>B Column: Account Name</source>
+        <target>B Column: Account Name</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 710738883 - Property 2879900210">
+        <source>B Column: Account Name</source>
+        <target>B Column: Account Name</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 1348435500 - Property 2879900210">
+        <source>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</source>
+        <target>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Control 1348435500 - Property 2879900210">
+        <source>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</source>
+        <target>C Column: income/balance (Specify if this account is part of the income statement or balance sheet)</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 3201496503 - Property 2879900210">
+        <source>Import Excel File</source>
+        <target>Import Excel File</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 3201496503 - Property 2879900210">
+        <source>Import Excel File</source>
+        <target>Import Excel File</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 2980616220 - Property 2879900210">
+        <source>Continue</source>
+        <target>Continue</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 709981178 - Action 2980616220 - Property 2879900210">
+        <source>Continue</source>
+        <target>Continue</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Property 2879900210">
+        <source>OnBoarding, Define your chart of accounts</source>
+        <target>OnBoarding, Define your chart of accounts</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Property 2879900210">
+        <source>OnBoarding, Define your chart of accounts</source>
+        <target>OnBoarding, Define your chart of accounts</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3195781979 - Property 2879900210">
+        <source>Account Number</source>
+        <target>Account Number</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3195781979 - Property 2879900210">
+        <source>Account Number</source>
+        <target>Account Number</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Description</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3461834954 - Property 2879900210">
+        <source>Description</source>
+        <target>Description</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3463728519 - Property 2879900210">
+        <source>Account Type</source>
+        <target>Account Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Control 3463728519 - Property 2879900210">
+        <source>Account Type</source>
+        <target>Account Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Continue to next step</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 3410260257 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Continue to next step</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Property 2879900210">
+        <source>OnBoarding, Assign Accounts to Setup</source>
+        <target>OnBoarding, Assign Accounts to Setup</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Property 2879900210">
+        <source>OnBoarding, Assign Accounts to Setup</source>
+        <target>OnBoarding, Assign Accounts to Setup</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Control 3195781979 - Property 2879900210">
+        <source>G/L Account No.</source>
+        <target>G/L Account No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Control 3195781979 - Property 2879900210">
+        <source>G/L Account No.</source>
+        <target>G/L Account No.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Control 3461834954 - Property 2879900210">
+        <source>Account Name</source>
+        <target>Account Name</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Control 3461834954 - Property 2879900210">
+        <source>Account Name</source>
+        <target>Account Name</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 1841379954 - Property 2879900210">
+        <source>Verify Assignments</source>
+        <target>Verify Assignments</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 1841379954 - Property 2879900210">
+        <source>Verify Assignments</source>
+        <target>Verify Assignments</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 152052329 - Property 2879900210">
+        <source>Continue</source>
+        <target>Continue</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1364873160 - Action 152052329 - Property 2879900210">
+        <source>Continue</source>
+        <target>Continue</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>OnBoarding</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Property 2879900210">
+        <source>OnBoarding</source>
+        <target>OnBoarding</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 3675577466 - Property 2879900210">
+        <source>How do you want your documents numbered</source>
+        <target>How do you want your documents numbered</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 3675577466 - Property 2879900210">
+        <source>How do you want your documents numbered</source>
+        <target>How do you want your documents numbered</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 1776184068 - Property 2879900210">
+        <source>Document numbering action</source>
+        <target>Document numbering action</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 1776184068 - Property 2879900210">
+        <source>Document numbering action</source>
+        <target>Document numbering action</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 2914529955 - Property 2879900210">
+        <source>Auto-generation Parameters</source>
+        <target>Auto-generation Parameters</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 2914529955 - Property 2879900210">
+        <source>Auto-generation Parameters</source>
+        <target>Auto-generation Parameters</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 767275308 - Property 2879900210">
+        <source>First Number</source>
+        <target>First Number</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Control 767275308 - Property 2879900210">
+        <source>First Number</source>
+        <target>First Number</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Continue to next step</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 152052329 - Property 2879900210">
+        <source>Continue to next step</source>
+        <target>Continue to next step</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>Select a document number method first.</source>
+        <target>Select a document number method first.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 2622837743 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>Select a document number method first.</source>
+        <target>Select a document number method first.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Property 2879900210">
+        <source>OnBoarding, Document numbers</source>
+        <target>OnBoarding, Document numbers</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Property 2879900210">
+        <source>OnBoarding, Document numbers</source>
+        <target>OnBoarding, Document numbers</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Control 3195781979 - Property 2879900210">
+        <source>Start Number</source>
+        <target>Start Number</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Control 3195781979 - Property 2879900210">
+        <source>Start Number</source>
+        <target>Start Number</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Control 3461834954 - Property 2879900210">
+        <source>Document Type</source>
+        <target>Document Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Control 3461834954 - Property 2879900210">
+        <source>Document Type</source>
+        <target>Document Type</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Action 152052329 - Property 2879900210">
+        <source>Continue</source>
+        <target>Continue</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 1813651286 - Action 152052329 - Property 2879900210">
+        <source>Continue</source>
+        <target>Continue</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Property 2879900210">
+        <source>OnBoarding - Review and Finish</source>
+        <target>OnBoarding - Review and Finish</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Property 2879900210">
+        <source>OnBoarding - Review and Finish</source>
+        <target>OnBoarding - Review and Finish</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1830295791 - Property 2879900210">
+        <source>Review and Finish</source>
+        <target>Review and Finish</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1830295791 - Property 2879900210">
+        <source>Review and Finish</source>
+        <target>Review and Finish</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 156978454 - Property 2879900210">
+        <source>Now we're ready to finish this, the following will happened:</source>
+        <target>Now we're ready to finish this, the following will happened:</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 156978454 - Property 2879900210">
+        <source>Now we're ready to finish this, the following will happened:</source>
+        <target>Now we're ready to finish this, the following will happened:</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 2916936581 - Property 2879900210">
+        <source>1. All the Setup in packages chosen will be generated</source>
+        <target>1. All the Setup in packages chosen will be generated</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 2916936581 - Property 2879900210">
+        <source>1. All the Setup in packages chosen will be generated</source>
+        <target>1. All the Setup in packages chosen will be generated</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 2279239964 - Property 2879900210">
+        <source>2. The Chart Of Account will be created if chosen</source>
+        <target>2. The Chart Of Account will be created if chosen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 2279239964 - Property 2879900210">
+        <source>2. The Chart Of Account will be created if chosen</source>
+        <target>2. The Chart Of Account will be created if chosen</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1641543347 - Property 2879900210">
+        <source>3. The Setup in all packages will use the new Account Numbers.</source>
+        <target>3. The Setup in all packages will use the new Account Numbers.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1641543347 - Property 2879900210">
+        <source>3. The Setup in all packages will use the new Account Numbers.</source>
+        <target>3. The Setup in all packages will use the new Account Numbers.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1003846730 - Property 2879900210">
+        <source>4. Create the numbers as specified and reference them in the setup.</source>
+        <target>4. Create the numbers as specified and reference them in the setup.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1003846730 - Property 2879900210">
+        <source>4. Create the numbers as specified and reference them in the setup.</source>
+        <target>4. Create the numbers as specified and reference them in the setup.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1852137694 - Property 2879900210">
+        <source>5. Create a Configuration Package for easy export of generated setup</source>
+        <target>5. Create a Configuration Package for easy export of generated setup</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Control 1852137694 - Property 2879900210">
+        <source>5. Create a Configuration Package for easy export of generated setup</source>
+        <target>5. Create a Configuration Package for easy export of generated setup</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 742034285 - Property 2879900210">
+        <source>Back</source>
+        <target>Back</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 152052329 - Property 2879900210">
+        <source>Create Everything</source>
+        <target>Create Everything</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 152052329 - Property 2879900210">
+        <source>Create Everything</source>
+        <target>Create Everything</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>All done, all the packages you have select have been applied, please verify the setup before you start posting.</source>
+        <target>All done, all the packages you have select have been applied, please verify the setup before you start posting.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="Page 489421437 - Action 152052329 - Method 1377591017 - NamedType 2833377072">
+        <source>All done, all the packages you have select have been applied, please verify the setup before you start posting.</source>
+        <target>All done, all the packages you have select have been applied, please verify the setup before you start posting.</target>
+        <note />
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,6 +1,7 @@
 page 70310078 "OnBoarding Step 3 Hgd"
 {
     PageType = NavigatePage;
+    Caption = 'OnBoarding';
     // How do you want your Chart of Accounts
     layout
     {

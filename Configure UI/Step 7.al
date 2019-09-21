@@ -1,6 +1,7 @@
 page 70310082 "OnBoarding Step 7 Hgd"
 {
     PageType = NavigatePage;
+    Caption = 'OnBoarding';
     layout
     {
         area(Content)
