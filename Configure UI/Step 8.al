@@ -3,7 +3,7 @@ page 70310083 "OnBoarding Step 8 Hgd"
     PageType = NavigatePage;
     Caption = 'OnBoarding, Document numbers';
     SourceTable = "OnBoarding Selected Tag Hgd";
-    SourceTableView = sorting (SortIndex) where ("Tag Type" = const ("No. Series"));
+    SourceTableView = sorting(SortIndex) where("Tag Type" = const("No. Series"));
     InsertAllowed = false;
     DeleteAllowed = false;
     ModifyAllowed = true;
@@ -37,6 +37,7 @@ page 70310083 "OnBoarding Step 8 Hgd"
             action(Back)
             {
                 Caption = 'Back';
+                ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
                 begin
@@ -46,6 +47,7 @@ page 70310083 "OnBoarding Step 8 Hgd"
             action(ContinueAction)
             {
                 Caption = 'Continue';
+                ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
                 begin

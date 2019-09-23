@@ -49,6 +49,7 @@ page 70310084 "OnBoarding Step 9 Hgd"
             action(Back)
             {
                 Caption = 'Back';
+                ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
                 begin
@@ -58,6 +59,7 @@ page 70310084 "OnBoarding Step 9 Hgd"
             action(ContinueAction)
             {
                 Caption = 'Create Everything';
+                ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
                 var

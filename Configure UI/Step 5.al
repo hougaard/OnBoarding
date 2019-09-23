@@ -3,7 +3,7 @@ page 70310080 "OnBoarding Step 5 Hgd"
     PageType = NavigatePage;
     Caption = 'OnBoarding, Define your chart of accounts';
     SourceTable = "OnBoarding Selected Tag Hgd";
-    SourceTableView = where ("Tag Type" = const ("G/L Account"));
+    SourceTableView = where("Tag Type" = const("G/L Account"));
     InsertAllowed = false;
     DeleteAllowed = false;
     ModifyAllowed = true;
@@ -55,6 +55,7 @@ page 70310080 "OnBoarding Step 5 Hgd"
             action(Back)
             {
                 Caption = 'Back';
+                ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
                 begin

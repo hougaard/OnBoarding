@@ -3,8 +3,8 @@ page 70310081 "OnBoarding Step 6 Hgd"
     PageType = NavigatePage;
     Caption = 'OnBoarding, Assign Accounts to Setup';
     SourceTable = "OnBoarding Selected Tag Hgd";
-    SourceTableView = sorting (SortIndex) where ("Tag Type" = const ("G/L Account"),
-                                                 "Total Begin/End" = const (" "));
+    SourceTableView = sorting(SortIndex) where("Tag Type" = const("G/L Account"),
+                                                 "Total Begin/End" = const(" "));
     InsertAllowed = false;
     DeleteAllowed = false;
     ModifyAllowed = true;
@@ -20,8 +20,8 @@ page 70310081 "OnBoarding Step 6 Hgd"
                     Caption = 'G/L Account No.';
                     ApplicationArea = All;
                     Editable = true;
-                    TableRelation = "G/L Account"."No." where ("Income/Balance" = field ("Income/Balance"),
-                                                              "Account Type" = const (Posting));
+                    TableRelation = "G/L Account"."No." where("Income/Balance" = field("Income/Balance"),
+                                                              "Account Type" = const(Posting));
                 }
                 field(Description; Description)
                 {
@@ -40,6 +40,7 @@ page 70310081 "OnBoarding Step 6 Hgd"
             action(Back)
             {
                 Caption = 'Back';
+                ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
                 begin
@@ -61,6 +62,7 @@ page 70310081 "OnBoarding Step 6 Hgd"
             action(ContinueAction)
             {
                 Caption = 'Continue';
+                ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
                 begin

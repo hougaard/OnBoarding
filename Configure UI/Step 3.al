@@ -74,6 +74,7 @@ page 70310078 "OnBoarding Step 3 Hgd"
             {
                 Caption = 'Back';
                 InFooterBar = true;
+                ApplicationArea = All;
                 trigger OnAction()
                 begin
                     CurrPage.Close();
@@ -82,6 +83,7 @@ page 70310078 "OnBoarding Step 3 Hgd"
             action(ContinueAction)
             {
                 InFooterBar = true;
+                ApplicationArea = All;
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 var

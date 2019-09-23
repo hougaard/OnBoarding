@@ -4,7 +4,7 @@ page 70310076 "OnBoarding Step 1 Hgd"
     Caption = 'OnBoarding';
     Editable = true;
     SourceTable = "OnBoarding Modules Hgd";
-    SourceTableView = SORTING ("Sorting Order");
+    SourceTableView = SORTING("Sorting Order");
     InsertAllowed = false;
     DeleteAllowed = false;
     ModifyAllowed = true;
@@ -39,6 +39,7 @@ page 70310076 "OnBoarding Step 1 Hgd"
             action(Back)
             {
                 Caption = 'Back';
+                ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
                 begin
@@ -48,6 +49,7 @@ page 70310076 "OnBoarding Step 1 Hgd"
             action(ContinueAction)
             {
                 InFooterBar = true;
+                ApplicationArea = All;
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 begin

@@ -3,7 +3,7 @@ page 70310077 "OnBoarding Step 2 Hgd"
     PageType = NavigatePage;
     Caption = 'OnBoarding';
     SourceTable = "OnBoarding Package Hgd";
-    SourceTableView = sorting (SortIndex);
+    SourceTableView = sorting(SortIndex);
     InsertAllowed = false;
     DeleteAllowed = false;
     ModifyAllowed = true;
@@ -55,6 +55,7 @@ page 70310077 "OnBoarding Step 2 Hgd"
             {
                 Caption = 'Back';
                 InFooterBar = true;
+                ApplicationArea = All;
                 trigger OnAction()
                 begin
                     CurrPage.Close();
@@ -63,6 +64,7 @@ page 70310077 "OnBoarding Step 2 Hgd"
             action(ContinueAction)
             {
                 InFooterBar = true;
+                ApplicationArea = All;
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 var

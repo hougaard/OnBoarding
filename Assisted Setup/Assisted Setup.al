@@ -1,5 +1,16 @@
 codeunit 70310078 "OnBoarding Assisted Setup Hgd"
 {
+    /*
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assisted Setup", 'OnRegister', '', true, true)]
+    local procedure OnRegister()
+    var
+        W: Codeunit "Assisted Setup Upgrade";
+    begin
+
+    end;
+    */
+
+
     [EventSubscriber(ObjectType::Table, Database::"Aggregated Assisted Setup", 'OnRegisterAssistedSetup', '', true, true)]
     local procedure OnRegister(var TempAggregatedAssistedSetup: Record "Aggregated Assisted Setup")
     var
@@ -13,6 +24,7 @@ codeunit 70310078 "OnBoarding Assisted Setup Hgd"
                                                               0,
                                                               '');
     end;
+
 
     //[EventSubscriber(ObjectType::Page, Page::"Order Processor Role Center", 'OnOpenPageEvent', '', true, true)]
 
@@ -38,6 +50,7 @@ codeunit 70310078 "OnBoarding Assisted Setup Hgd"
                 end;
     end;
 
+    /*
     local procedure IsCompleted(AAS: Record "Aggregated Assisted Setup"): Integer
     var
         stag: Record "OnBoarding Selected Tag Hgd";
@@ -51,4 +64,5 @@ codeunit 70310078 "OnBoarding Assisted Setup Hgd"
             else
                 exit(AAS.Status::"Not Started");
     end;
+    */
 }

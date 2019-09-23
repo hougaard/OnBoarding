@@ -4,21 +4,26 @@
   "publisher": "Hougaard",
   "brief": "OnBoarding a new company quickly",
   "description": "Generate setup to get a new company running quickly. Get ready to invoice in 5 minutes.",
-  "version": "1.0.0.1",
+  "version": "1.0.0.2",
   "privacyStatement": "https://www.hougaard.com/privacy-policy/",
   "EULA": "https://www.hougaard.com/onboarding/",
   "help": "https://www.hougaard.com/onboarding/",
   "url": "https://www.hougaard.com/onboarding/",
   "logo": "Logo4.png",
-  "dependencies": [],
+  "dependencies": [
+  ],
   "screenshots": [],
-  "platform": "14.0.0.0",
   "application": "14.0.0.0",
+  "platform": "14.0.0.0",
   "test": "14.0.0.0",
-  "idRange": {
+  "idRanges":
+     [
+       {
     "from": 70310075,
     "to": 70310174 
-  },
+       }
+     ]
+  ,
   "features": ["TranslationFile"],
   "target": "Extension",
   "runtime": "3.0",

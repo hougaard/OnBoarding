@@ -3,6 +3,7 @@ page 70310075 "OnBoarding Step 0 Hgd"
     PageType = NavigatePage;
     Caption = 'OnBoarding';
     UsageCategory = Administration;
+    ApplicationArea = All;
     layout
     {
         area(Content)

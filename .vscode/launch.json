@@ -2,6 +2,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "BC15",
+            "type": "al",
+            "request": "launch",
+            "server": "http://BC15",
+            "serverInstance": "BC",
+            "authentication": "UserPassword",
+            "startupObjectId": 70310075,
+            "breakOnError": true,
+            "breakOnRecordWrite": false,
+            "launchBrowser": true
+        },
+        {
             "type": "al",
             "request": "launch",
             "name": "ONB",

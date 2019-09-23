@@ -13,18 +13,25 @@ page 70310079 "OnBoarding Step 4 Hgd"
                 Caption = 'Instructions';
                 label(l1)
                 {
+                    ApplicationArea = All;
                     Caption = 'Upload an XLSX Excel spreadsheet file. The first sheet in the file should have the following layout with a header row and be called "sheet1".';
                 }
                 label(c1)
                 {
+                    ApplicationArea = All;
+
                     Caption = 'A Column: Account Number';
                 }
                 label(c2)
                 {
+                    ApplicationArea = All;
+
                     Caption = 'B Column: Account Name';
                 }
                 label(c3)
                 {
+                    ApplicationArea = All;
+
                     Caption = 'C Column: income/balance (Specify if this account is part of the income statement or balance sheet)';
                 }
             }
@@ -37,6 +44,7 @@ page 70310079 "OnBoarding Step 4 Hgd"
             action(Back)
             {
                 Caption = 'Back';
+                ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
                 begin
@@ -46,6 +54,7 @@ page 70310079 "OnBoarding Step 4 Hgd"
             action(Import)
             {
                 Caption = 'Import Excel File';
+                ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
                 var
@@ -57,6 +66,7 @@ page 70310079 "OnBoarding Step 4 Hgd"
             action(ContinueActin)
             {
                 Caption = 'Continue';
+                ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
                 begin
