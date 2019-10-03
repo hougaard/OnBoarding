@@ -333,11 +333,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Filter Tag List - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Codeunit 557355547 - Method 1633076348 - NamedType 2833377072" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Accelerate your deployment with onboarding packages</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Assisted Setup Hgd - Method OnRegister - NamedType L</note>
-        </trans-unit>
         <trans-unit id="Codeunit 557355547 - Method 232785309 - NamedType 2833377072" size-unit="char" translate="yes" xml:space="preserve">
           <source>This seems to be clean new company, do you want to start the onboarding process?</source>
           <note from="Developer" annotates="general" priority="2"></note>

@@ -1,6 +1,6 @@
 codeunit 70310078 "OnBoarding Assisted Setup Hgd"
 {
-    /*
+    
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assisted Setup", 'OnRegister', '', true, true)]
     local procedure OnRegister()
     var
@@ -8,22 +8,22 @@ codeunit 70310078 "OnBoarding Assisted Setup Hgd"
     begin
 
     end;
-    */
+    
 
 
-    [EventSubscriber(ObjectType::Table, Database::"Aggregated Assisted Setup", 'OnRegisterAssistedSetup', '', true, true)]
-    local procedure OnRegister(var TempAggregatedAssistedSetup: Record "Aggregated Assisted Setup")
-    var
-        RecID: RecordId;
-        L: Label 'Accelerate your deployment with onboarding packages';
-    begin
-        TempAggregatedAssistedSetup.AddExtensionAssistedSetup(page::"OnBoarding Step 0 Hgd",
-                                                              L,
-                                                              true,
-                                                              RecID,
-                                                              0,
-                                                              '');
-    end;
+    // [EventSubscriber(ObjectType::Table, Database::"Aggregated Assisted Setup", 'OnRegisterAssistedSetup', '', true, true)]
+    // local procedure OnRegister(var TempAggregatedAssistedSetup: Record "Aggregated Assisted Setup")
+    // var
+    //     RecID: RecordId;
+    //     L: Label 'Accelerate your deployment with onboarding packages';
+    // begin
+    //     TempAggregatedAssistedSetup.AddExtensionAssistedSetup(page::"OnBoarding Step 0 Hgd",
+    //                                                           L,
+    //                                                           true,
+    //                                                           RecID,
+    //                                                           0,
+    //                                                           '');
+    // end;
 
 
     //[EventSubscriber(ObjectType::Page, Page::"Order Processor Role Center", 'OnOpenPageEvent', '', true, true)]

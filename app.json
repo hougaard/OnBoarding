@@ -4,18 +4,28 @@
   "publisher": "Hougaard",
   "brief": "OnBoarding a new company quickly",
   "description": "Generate setup to get a new company running quickly. Get ready to invoice in 5 minutes.",
-  "version": "1.0.0.2",
+  "version": "1.0.0.3",
   "privacyStatement": "https://www.hougaard.com/privacy-policy/",
   "EULA": "https://www.hougaard.com/onboarding/",
   "help": "https://www.hougaard.com/onboarding/",
   "url": "https://www.hougaard.com/onboarding/",
   "logo": "Logo4.png",
   "dependencies": [
+    {
+      "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+      "publisher": "Microsoft",
+      "name": "System Application",
+      "version": "1.0.0.0"
+    },
+    {
+      "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+      "publisher": "Microsoft",
+      "name": "Base Application",
+      "version": "15.0.0.0"
+    }
   ],
   "screenshots": [],
-  "application": "14.0.0.0",
-  "platform": "14.0.0.0",
-  "test": "14.0.0.0",
+  "platform": "15.0.0.0",
   "idRanges":
      [
        {
@@ -25,7 +35,7 @@
      ]
   ,
   "features": ["TranslationFile"],
-  "target": "Extension",
-  "runtime": "3.0",
+  "target": "Cloud",
+  "runtime": "4.0",
   "contextSensitiveHelpUrl" : "https://www.hougaard.com/onboarding/"
 }
