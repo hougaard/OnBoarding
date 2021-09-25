@@ -1,14 +1,14 @@
 codeunit 70310078 "OnBoarding Assisted Setup Hgd"
 {
-    
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assisted Setup", 'OnRegister', '', true, true)]
-    local procedure OnRegister()
-    var
-        W: Codeunit "Assisted Setup Upgrade";
-    begin
 
-    end;
-    
+    // [EventSubscriber(ObjectType::Codeunit, Codeunit::"Assisted Setup", 'OnRegister', '', true, true)]
+    // local procedure OnRegister()
+    // var
+    // //W: Codeunit "Assisted Setup Upgrade";
+    // begin
+
+    // end;
+
 
 
     // [EventSubscriber(ObjectType::Table, Database::"Aggregated Assisted Setup", 'OnRegisterAssistedSetup', '', true, true)]
@@ -35,18 +35,18 @@ codeunit 70310078 "OnBoarding Assisted Setup Hgd"
     var
         GL: Record "G/L Account";
         Packages: Record "OnBoarding Modules Hgd";
-        L: Label 'This seems to be clean new company, do you want to start the onboarding process?';
+        NewCompanyLbl: Label 'This seems to be clean new company, do you want to start the onboarding process?';
     begin
         //if GuiAllowed then
-        if GL.IsEmpty then
-            if Packages.IsEmpty then
-                if confirm(L) then begin
-                    page.run(Page::"OnBoarding Step 0 Hgd");
-                end else begin
+        if GL.IsEmpty() then
+            if Packages.IsEmpty() then
+                if confirm(NewCompanyLbl) then
+                    page.run(Page::"OnBoarding Step 0 Hgd")
+                else begin
                     // To prevent asking again
-                    Packages.INIT;
+                    Packages.INIT();
                     Packages."Module ID" := '_';
-                    Packages.INSERT;
+                    Packages.INSERT();
                 end;
     end;
 
@@ -59,7 +59,7 @@ codeunit 70310078 "OnBoarding Assisted Setup Hgd"
         if stag.FindFirst() then
             exit(AAS.Status::Completed)
         else
-            if packages.findfirst then
+            if packages.findfirst() then
                 exit(AAS.Status::"Not Completed")
             else
                 exit(AAS.Status::"Not Started");

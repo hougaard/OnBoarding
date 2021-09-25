@@ -55,6 +55,7 @@ page 70310080 "OnBoarding Step 5 Hgd"
             action(Back)
             {
                 Caption = 'Back';
+                Image = Cancel;
                 ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
@@ -67,6 +68,7 @@ page 70310080 "OnBoarding Step 5 Hgd"
                 Caption = 'Continue to next step';
                 ApplicationArea = All;
                 InFooterBar = true;
+                Image = Continue;
                 trigger OnAction()
                 var
                 begin

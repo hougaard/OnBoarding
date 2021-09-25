@@ -18,21 +18,13 @@ page 70310078 "OnBoarding Step 3 Hgd"
                     begin
                         case Method of
                             Method::"Generate one for me":
-                                begin
-                                    AutoBuildVisible := true;
-                                end;
+                                AutoBuildVisible := true;
                             Method::" ":
-                                begin
-                                    AutoBuildVisible := false;
-                                End;
+                                AutoBuildVisible := false;
                             method::"I'll upload one":
-                                begin
-                                    AutoBuildVisible := false;
-                                end;
+                                AutoBuildVisible := false;
                             Method::"Use the existing":
-                                begin
-                                    AutoBuildVisible := false;
-                                end;
+                                AutoBuildVisible := false;
                         end;
                     end;
                 }
@@ -40,22 +32,22 @@ page 70310078 "OnBoarding Step 3 Hgd"
                 {
                     Caption = 'Auto-generation Parameters';
                     Visible = AutoBuildVisible;
-                    field(FirstAccountNumber; FirstAccountNumber)
+                    field(FirstAccountNumberCtl; FirstAccountNumber)
                     {
                         Caption = 'First Account Number';
                         ApplicationArea = All;
                     }
-                    field(AccountIncrement; AccountIncrement)
+                    field(AccountIncrementCtl; AccountIncrement)
                     {
                         Caption = 'Account Number Increment';
                         ApplicationArea = All;
                     }
-                    field(CreateCOATotals; CreateCOATotals)
+                    field(CreateCOATotalsCtl; CreateCOATotals)
                     {
                         Caption = 'Create Chart Of Account Totals';
                         ApplicationArea = All;
                     }
-                    field(AccountIncrementTotals; AccountIncrementTotals)
+                    field(AccountIncrementTotalsCtl; AccountIncrementTotals)
                     {
                         Caption = 'Total Accounts Increment';
                         Enabled = CreateCOATotals;
@@ -74,6 +66,7 @@ page 70310078 "OnBoarding Step 3 Hgd"
             {
                 Caption = 'Back';
                 InFooterBar = true;
+                Image = Cancel;
                 ApplicationArea = All;
                 trigger OnAction()
                 begin
@@ -83,17 +76,18 @@ page 70310078 "OnBoarding Step 3 Hgd"
             action(ContinueAction)
             {
                 InFooterBar = true;
+                Image = Continue;
                 ApplicationArea = All;
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 var
-                    L: Label 'Select a Chart of Account Method first.';
+                    SelectChartOfAccountErrorLbl: Label 'Select a Chart of Account Method first.';
                 begin
                     if Method <> Method::" " then begin
                         ContinuePressed := true;
                         CurrPage.Close()
                     end else
-                        error(L);
+                        error(SelectChartOfAccountErrorLbl);
                 end;
             }
         }

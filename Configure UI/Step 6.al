@@ -41,6 +41,7 @@ page 70310081 "OnBoarding Step 6 Hgd"
             {
                 Caption = 'Back';
                 ApplicationArea = All;
+                Image = Cancel;
                 InFooterBar = true;
                 trigger OnAction()
                 begin
@@ -52,6 +53,7 @@ page 70310081 "OnBoarding Step 6 Hgd"
                 Caption = 'Verify Assignments';
                 ApplicationArea = All;
                 InFooterBar = true;
+                Image = ChartOfAccounts;
                 trigger OnAction()
                 var
                     OnMgt: Codeunit "OnBoarding Management Hgd";
@@ -64,6 +66,7 @@ page 70310081 "OnBoarding Step 6 Hgd"
                 Caption = 'Continue';
                 ApplicationArea = All;
                 InFooterBar = true;
+                Image = Continue;
                 trigger OnAction()
                 begin
                     ContinuePressed := true;

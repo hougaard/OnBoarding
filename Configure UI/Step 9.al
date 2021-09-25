@@ -34,7 +34,7 @@ page 70310084 "OnBoarding Step 9 Hgd"
                     ApplicationArea = All;
                     Caption = '4. Create the numbers as specified and reference them in the setup.';
                 }
-                field(CreateRapidStart; CreateRapidStart)
+                field(CreateRapidStartCtl; CreateRapidStart)
                 {
                     ApplicationArea = All;
                     Caption = '5. Create a Configuration Package for easy export of generated setup';
@@ -49,6 +49,7 @@ page 70310084 "OnBoarding Step 9 Hgd"
             action(Back)
             {
                 Caption = 'Back';
+                Image = Cancel;
                 ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
@@ -61,15 +62,16 @@ page 70310084 "OnBoarding Step 9 Hgd"
                 Caption = 'Create Everything';
                 ApplicationArea = All;
                 InFooterBar = true;
+                Image = Continue;
                 trigger OnAction()
                 var
                     OnMgt: Codeunit "OnBoarding Management Hgd";
-                    L: Label 'All done, all the packages you have select have been applied, please verify the setup before you start posting.';
+                    AllDoneLbl: Label 'All done, all the packages you have select have been applied, please verify the setup before you start posting.';
                 begin
                     OnMgt.CreateEverything();
                     if CreateRapidStart then
                         OnMgt.CreateRapidStartPackage();
-                    Message(L);
+                    Message(AllDoneLbl);
                     ContinuePressed := true;
                     CurrPage.Close();
                 end;

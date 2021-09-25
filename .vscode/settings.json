@@ -9,6 +9,7 @@
     ],
     "al.enableCodeAnalysis": true,
     "al.codeAnalyzers": [
-        "${AppSourceCop}"
-    ]   
+        "${AppSourceCop}","${CodeCop}","${UICop}"
+    ],
+    "al.defaultLaunchConfigurationName": "ONB"
 }

@@ -37,6 +37,7 @@ page 70310083 "OnBoarding Step 8 Hgd"
             action(Back)
             {
                 Caption = 'Back';
+                Image = Cancel;
                 ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
@@ -48,6 +49,7 @@ page 70310083 "OnBoarding Step 8 Hgd"
             {
                 Caption = 'Continue';
                 ApplicationArea = All;
+                Image = Continue;
                 InFooterBar = true;
                 trigger OnAction()
                 begin

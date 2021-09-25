@@ -44,6 +44,7 @@ page 70310079 "OnBoarding Step 4 Hgd"
             action(Back)
             {
                 Caption = 'Back';
+                Image = Cancel;
                 ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
@@ -55,6 +56,7 @@ page 70310079 "OnBoarding Step 4 Hgd"
             {
                 Caption = 'Import Excel File';
                 ApplicationArea = All;
+                Image = Excel;
                 InFooterBar = true;
                 trigger OnAction()
                 var
@@ -67,6 +69,7 @@ page 70310079 "OnBoarding Step 4 Hgd"
             {
                 Caption = 'Continue';
                 ApplicationArea = All;
+                Image = Continue;
                 InFooterBar = true;
                 trigger OnAction()
                 begin

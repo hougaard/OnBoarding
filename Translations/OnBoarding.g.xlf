@@ -3,15 +3,45 @@
   <file datatype="xml" source-language="en-US" target-language="en-US" original="OnBoarding">
     <body>
       <group id="body">
-        <trans-unit id="Table 3934504163 - Field 1748380401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Module ID</source>
+        <trans-unit id="Table 4181466806 - Field 3531868071 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Modules Hgd - Field Module ID - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Field Hgd - Field Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4181466806 - Field 958223187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field Value</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Field Hgd - Field Field Value - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4181466806 - Field 2996397865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Field Hgd - Field Package ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4181466806 - Field 485252710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Record No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Field Hgd - Field Record No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4181466806 - Field 1520667081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Special Action</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Field Hgd - Field Special Action - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4181466806 - Field 3017471043 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Field Hgd - Field Table No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3934504163 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Modules Hgd - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3934504163 - Field 1748380401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Module ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Modules Hgd - Field Module ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3934504163 - Field 3117446396 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Select</source>
@@ -23,46 +53,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Modules Hgd - Field Sorting Order - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 4181466806 - Field 2996397865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Package ID</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Field Hgd - Field Package ID - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 4181466806 - Field 3017471043 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Table No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Field Hgd - Field Table No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 4181466806 - Field 485252710 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Record No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Field Hgd - Field Record No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 4181466806 - Field 3531868071 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Field No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Field Hgd - Field Field No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 4181466806 - Field 1520667081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Special Action</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Field Hgd - Field Special Action - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 4181466806 - Field 958223187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Field Value</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Field Hgd - Field Field Value - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 382100014 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>ID</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Package Hgd - Field ID - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 382100014 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Package Hgd - Field Description - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 382100014 - Field 2842729223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Author</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -72,6 +62,16 @@
           <source>Country</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Package Hgd - Field Country - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 382100014 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Package Hgd - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 382100014 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Package Hgd - Field ID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 382100014 - Field 1188986640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Minumum Version</source>
@@ -93,31 +93,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Package Hgd - Field SortIndex - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 2801749846 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tag</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Tag - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Description - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 1617657750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tag Type</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Tag Type - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 2959099382 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Income/Balance</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Income/Balance - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 1241781896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sort Index</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field SortIndex - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 3400451757 - Field 1768692339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account Category</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -128,45 +103,100 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Account Subcategory Entry No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3400451757 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Description - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3400451757 - Field 1526897239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Direct Posting</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Direct Posting - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 4012257394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reconciliation Account</source>
+        <trans-unit id="Table 3400451757 - Field 1018417860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter Tag List</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Reconciliation Account - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Filter Tag List - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 59113118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General Posting Type</source>
+        <trans-unit id="Table 3400451757 - Field 3740542262 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter Tag Template</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Gen. Posting Type - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Filter Tag Template - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3400451757 - Field 633819257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General Business Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Gen. Bus. Posting Group - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3400451757 - Field 59113118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Posting Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Gen. Posting Type - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3400451757 - Field 2139693550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General Product Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Gen. Prod. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3400451757 - Field 2959099382 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Income/Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Income/Balance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3400451757 - Field 3851491086 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Indention Level</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Indention Level - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3400451757 - Field 4012257394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reconciliation Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Reconciliation Account - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3400451757 - Field 1241781896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sort Index</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field SortIndex - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3400451757 - Field 2801749846 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tag</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Tag - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3400451757 - Field 1617657750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tag Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Tag Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3400451757 - Field 3195781979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tag Value</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field TagValue - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3400451757 - Field 305562489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tax Area Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Tax Area Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3400451757 - Field 2552458873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Group Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Tax Group Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3400451757 - Field 53839102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tax Liable</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Tax Liable - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 2552458873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tax Group Code</source>
+        <trans-unit id="Table 3400451757 - Field 3463728519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Begin/End</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Tax Group Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Total Begin/End - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3400451757 - Field 1654284642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Totals Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Totals Group - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3400451757 - Field 1844012642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Business Posting Group</source>
@@ -178,35 +208,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 3195781979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tag Value</source>
+        <trans-unit id="Table 2536781498 - Field 3927818408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field TagValue - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 3851491086 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Indention Level</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Indention Level - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 1654284642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Totals Group</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Totals Group - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 3463728519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Total Begin/End</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Total Begin/End - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 3740542262 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Filter Tag Template</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Filter Tag Template - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3400451757 - Field 1018417860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Filter Tag List</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Selected Tag Hgd - Field Filter Tag List - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Table Hgd - Field Desciption - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2536781498 - Field 2996397865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Package ID</source>
@@ -218,10 +223,80 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Table Hgd - Field Table No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2536781498 - Field 3927818408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 1717704941 - Field 1768692339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account Category</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Account Category - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 3855426514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account Subcategory Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Account Subcategory Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 3699788827 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Account Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Table Hgd - Field Desciption - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 1526897239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direct Posting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Direct Posting - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 1018417860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter Tag List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Filter Tag List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 3740542262 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter Tag Template</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Filter Tag Template - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 633819257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Business Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Gen. Bus. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 59113118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Posting Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Gen. Posting Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 2139693550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Product Posting Group</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Gen. Prod. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 28344312 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Groups</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Groups - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 3597949816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Help Text</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Help Text - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 2959099382 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Income/Balance</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Income/Balance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 2996397865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Package ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 4012257394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reconciliation Account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Reconciliation Account - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1717704941 - Field 2801749846 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tag</source>
@@ -233,65 +308,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Tag Type - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 3699788827 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account Type</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Account Type - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 1768692339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account Category</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Account Category - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 2959099382 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Income/Balance</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Income/Balance - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 3855426514 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account Subcategory Entry No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Account Subcategory Entry No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 1526897239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Direct Posting</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Direct Posting - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 4012257394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reconciliation Account</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Reconciliation Account - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 59113118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General Posting Type</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Gen. Posting Type - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 633819257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General Business Posting Group</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Gen. Bus. Posting Group - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 2139693550 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>General Product Posting Group</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Gen. Prod. Posting Group - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1717704941 - Field 305562489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tax Area Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Tax Area Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 53839102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tax Liable</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Tax Liable - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1717704941 - Field 2552458873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tax Group Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Tax Group Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1717704941 - Field 53839102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Liable</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Tax Liable - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1717704941 - Field 1844012642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Business Posting Group</source>
@@ -303,170 +333,155 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field VAT Prod. Posting Group - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 28344312 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Groups</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Groups - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Description - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 3597949816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Help Text</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Help Text - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 2996397865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Package ID</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Package ID - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 3740542262 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Filter Tag Template</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Filter Tag Template - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 1717704941 - Field 1018417860 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Filter Tag List</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field Filter Tag List - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 557355547 - Method 232785309 - NamedType 2833377072" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 557355547 - Method 232785309 - NamedType 3724238339" size-unit="char" translate="yes" xml:space="preserve">
           <source>This seems to be clean new company, do you want to start the onboarding process?</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Assisted Setup Hgd - Method StartOnBoarding - NamedType L</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Assisted Setup Hgd - Method StartOnBoarding - NamedType NewCompanyLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 3132997375" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Data in package %1 required a account not present in your chart of account, please check the setup.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method CreateDataFromPackages - NamedType L1</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 751119930" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Data in package %1 have created an incomplete setup, please check the setup.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method CreateDataFromPackages - NamedType L2</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 3132997375" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This should never happen, a total-end account without a total-begin account</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method BuildChartOfAccountFromTags - NamedType L1</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 751119930" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Error 1: Cannot insert %1 as sort %2 because %3 is already there</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method BuildChartOfAccountFromTags - NamedType L2</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 470793674 - NamedType 3132997375" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Error 2: Cannot insert %1 as sort %2 because %3 is already there</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method CreateTotal - NamedType L1</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 3132997375" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Reading package list #1## of #2##</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method GetPackages - NamedType L1</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 751119930" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cannot read package list, error %1</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method GetPackages - NamedType L2</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 113423313" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cannot contact Package Server</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method GetPackages - NamedType L3</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 2101264222" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Call to package server blocked by your environment</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method GetPackages - NamedType ExternalCallNotAllowed</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 4267410125 - NamedType 3132997375" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No modules selected, aborting</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RunTheProcess - NamedType L1</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3132997375" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Base Setup</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L1</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 751119930" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Financial Management</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L2</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 113423313" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sales and Account Receivables</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L3</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2026513164" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Purchase and Account Payables</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L4</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 1388816547" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Inventory</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L5</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3301906398" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Jobs</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L6</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2664209781" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fixed Assets</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L7</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 282332336" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Warehouse</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L8</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3939603015" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Service Management</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L9</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2739948207" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Relationship Management</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L10</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3377644824" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Human Resources</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L11</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 4015341441" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Production and Planning</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L12</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 2833377072" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 2824126877" size-unit="char" translate="yes" xml:space="preserve">
           <source>Chart Of Accounts Excel File</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Onboarding Import COA Hgd - Method OnRun - NamedType L</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Onboarding Import COA Hgd - Method OnRun - NamedType ExcelFileLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 751119930" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 3474705795" size-unit="char" translate="yes" xml:space="preserve">
           <source>income</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Onboarding Import COA Hgd - Method OnRun - NamedType L2</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Onboarding Import COA Hgd - Method OnRun - NamedType IncomeLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 1221214661" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This should never happen, a total-end account without a total-begin account</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method BuildChartOfAccountFromTags - NamedType ShouldNeverHappenLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 638652439 - NamedType 1074812704" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error 1: Cannot insert %1 as sort %2 because %3 is already there</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method BuildChartOfAccountFromTags - NamedType CannotInsertLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 2805080289" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data in package %1 required a account not present in your chart of account, please check the setup.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method CreateDataFromPackages - NamedType L1Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2363872101 - NamedType 241018048" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data in package %1 have created an incomplete setup, please check the setup.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method CreateDataFromPackages - NamedType L2Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 470793674 - NamedType 1074812704" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error 2: Cannot insert %1 as sort %2 because %3 is already there</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method CreateTotal - NamedType CannotInsertLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 228489830" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reading package list #1## of #2##</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method GetPackages - NamedType ReadingPackageLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 1937202539" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cannot read package list, error %1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method GetPackages - NamedType CannotReadLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 2879294944" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cannot contact Package Server</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method GetPackages - NamedType CannotContactPackageServerLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 3158220713 - NamedType 3818929668" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Call to package server blocked by your environment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method GetPackages - NamedType ExternalCallNotAllowedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2805080289" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Base Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L1Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 241018048" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Financial Management</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L2Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 1830023391" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales and Account Receivables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L3Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3806581062" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase and Account Payables</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L4Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3938077477" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inventory</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L5Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 652857988" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Jobs</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L6Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 2921443875" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed Assets</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L7Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3834557642" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warehouse</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L8Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 54950121" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Service Management</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L9Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 3638758097" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Relationship Management</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L10Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 1370172210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Human Resources</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L11Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 2985958784 - NamedType 1206192271" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Production and Planning</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RefreshModules - NamedType L12Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3750340733 - Method 4267410125 - NamedType 1677844534" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No modules selected, aborting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Management Hgd - Method RunTheProcess - NamedType NoModulesSelectLbl</note>
         </trans-unit>
         <trans-unit id="Page 45914334 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>OnBoarding</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 0 Hgd - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 45914334 - Method 716454850 - NamedType 2805080289" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All the setup will go into company "</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 0 Hgd - Method OnOpenPage - NamedType L1Lbl</note>
+        </trans-unit>
+        <trans-unit id="Page 45914334 - Method 716454850 - NamedType 241018048" size-unit="char" translate="yes" xml:space="preserve">
+          <source>", make sure you're in the right company before continue.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 0 Hgd - Method OnOpenPage - NamedType L2Lbl</note>
+        </trans-unit>
         <trans-unit id="Page 45914334 - Control 1830295791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>OnBoarding - Get Started</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 0 Hgd - Control grp - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 45914334 - Control 3123527090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Click start to initiate the onboarding process.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 0 Hgd - Control Info - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 45914334 - Control 3800514526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>OnBoarding is a tool that will let you select setup for the entire system in one easy operation.</source>
@@ -477,21 +492,6 @@
           <source>You can get a minimal chart of account with everything needed for the chosen setup. Document numbers for everything are also generated.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 0 Hgd - Control What - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 45914334 - Control 3123527090 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Click start to initiate the onboarding process.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 0 Hgd - Control Info - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 45914334 - Method 716454850 - NamedType 3132997375" size-unit="char" translate="yes" xml:space="preserve">
-          <source>All the setup will go into company "</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 0 Hgd - Method OnOpenPage - NamedType L1</note>
-        </trans-unit>
-        <trans-unit id="Page 45914334 - Method 716454850 - NamedType 751119930" size-unit="char" translate="yes" xml:space="preserve">
-          <source>", make sure you're in the right company before continue.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 0 Hgd - Method OnOpenPage - NamedType L2</note>
         </trans-unit>
         <trans-unit id="Page 673191301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>OnBoarding</source>
@@ -538,10 +538,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 2 Hgd - Action ContinueAction - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 4253442988 - Action 152052329 - Method 1377591017 - NamedType 2833377072" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4253442988 - Action 152052329 - Method 1377591017 - NamedType 3800751548" size-unit="char" translate="yes" xml:space="preserve">
           <source>You can only select one package from this screen</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 2 Hgd - Action ContinueAction - Method OnAction - NamedType L</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 2 Hgd - Action ContinueAction - Method OnAction - NamedType OnlyOnePackageErrorLbl</note>
         </trans-unit>
         <trans-unit id="Page 4180736083 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>OnBoarding</source>
@@ -553,35 +553,35 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Control g1 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 4180736083 - Control 1776184068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Chart Of Account Action</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Control How - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 4180736083 - Control 2914529955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Auto-generation Parameters</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Control AutoBuild - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 4180736083 - Control 767275308 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>First Account Number</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Control FirstAccountNumber - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4180736083 - Control 464900788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4180736083 - Control 3468603197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account Number Increment</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Control AccountIncrement - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Control AccountIncrementCtl - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 4180736083 - Control 1816656908 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Chart Of Account Totals</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Control CreateCOATotals - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 4180736083 - Control 2207307435 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4180736083 - Control 1401726494 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total Accounts Increment</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Control AccountIncrementTotals - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Control AccountIncrementTotalsCtl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4180736083 - Control 2838565861 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Chart Of Account Totals</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Control CreateCOATotalsCtl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4180736083 - Control 3111230981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>First Account Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Control FirstAccountNumberCtl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4180736083 - Control 1776184068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Chart Of Account Action</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Control How - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4180736083 - Action 742034285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Back</source>
@@ -593,10 +593,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Action ContinueAction - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 4180736083 - Action 152052329 - Method 1377591017 - NamedType 2833377072" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 4180736083 - Action 152052329 - Method 1377591017 - NamedType 1408663482" size-unit="char" translate="yes" xml:space="preserve">
           <source>Select a Chart of Account Method first.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Action ContinueAction - Method OnAction - NamedType L</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 3 Hgd - Action ContinueAction - Method OnAction - NamedType SelectChartOfAccountErrorLbl</note>
         </trans-unit>
         <trans-unit id="Page 709981178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>OnBoarding</source>
@@ -607,11 +607,6 @@
           <source>Instructions</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 4 Hgd - Control instructions - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 709981178 - Control 1088699231 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Upload an XLSX Excel spreadsheet file. The first sheet in the file should have the following layout with a header row and be called "sheet1".</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 4 Hgd - Control l1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 709981178 - Control 2623828734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>A Column: Account Number</source>
@@ -628,35 +623,40 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 4 Hgd - Control c3 - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 709981178 - Control 1088699231 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Upload an XLSX Excel spreadsheet file. The first sheet in the file should have the following layout with a header row and be called "sheet1".</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 4 Hgd - Control l1 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 709981178 - Action 742034285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Back</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 4 Hgd - Action Back - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 709981178 - Action 3201496503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Import Excel File</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 4 Hgd - Action Import - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 709981178 - Action 2980616220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Continue</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 4 Hgd - Action ContinueActin - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 709981178 - Action 3201496503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Excel File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 4 Hgd - Action Import - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3410260257 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>OnBoarding, Define your chart of accounts</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 5 Hgd - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3410260257 - Control 3195781979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Account Number</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 5 Hgd - Control TagValue - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 3410260257 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 5 Hgd - Control Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3410260257 - Control 3195781979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Account Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 5 Hgd - Control TagValue - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3410260257 - Control 3463728519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account Type</source>
@@ -678,30 +678,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 6 Hgd - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1364873160 - Control 3195781979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>G/L Account No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 6 Hgd - Control TagValue - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 1364873160 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 6 Hgd - Control Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1364873160 - Control 3195781979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Account No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 6 Hgd - Control TagValue - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1364873160 - Action 742034285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Back</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 6 Hgd - Action Back - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1364873160 - Action 1841379954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Verify Assignments</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 6 Hgd - Action GenerateCOA - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 1364873160 - Action 152052329 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Continue</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 6 Hgd - Action ContinueAction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1364873160 - Action 1841379954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Verify Assignments</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 6 Hgd - Action GenerateCOA - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2622837743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>OnBoarding</source>
@@ -713,11 +713,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 7 Hgd - Control g1 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2622837743 - Control 1776184068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Document numbering action</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 7 Hgd - Control How - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 2622837743 - Control 2914529955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Auto-generation Parameters</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -727,6 +722,11 @@
           <source>First Number</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 7 Hgd - Control FirstAccountNumber - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2622837743 - Control 1776184068 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document numbering action</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 7 Hgd - Control How - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2622837743 - Action 742034285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Back</source>
@@ -738,25 +738,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 7 Hgd - Action ContinueAction - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2622837743 - Action 152052329 - Method 1377591017 - NamedType 2833377072" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2622837743 - Action 152052329 - Method 1377591017 - NamedType 2798586178" size-unit="char" translate="yes" xml:space="preserve">
           <source>Select a document number method first.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 7 Hgd - Action ContinueAction - Method OnAction - NamedType L</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 7 Hgd - Action ContinueAction - Method OnAction - NamedType SelectDocNumberMethodLbl</note>
         </trans-unit>
         <trans-unit id="Page 1813651286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>OnBoarding, Document numbers</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 8 Hgd - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1813651286 - Control 3195781979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Start Number</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 8 Hgd - Control TagValue - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 1813651286 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 8 Hgd - Control Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1813651286 - Control 3195781979 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 8 Hgd - Control TagValue - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1813651286 - Action 742034285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Back</source>
@@ -777,6 +777,11 @@
           <source>Review and Finish</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 Hgd - Control grp - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 489421437 - Control 674738499 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>5. Create a Configuration Package for easy export of generated setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 Hgd - Control CreateRapidStartCtl - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 489421437 - Control 156978454 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Now we're ready to finish this, the following will happened:</source>
@@ -803,11 +808,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 Hgd - Control Step4 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 489421437 - Control 1852137694 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>5. Create a Configuration Package for easy export of generated setup</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 Hgd - Control CreateRapidStart - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 489421437 - Action 742034285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Back</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -818,10 +818,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 Hgd - Action ContinueAction - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 489421437 - Action 152052329 - Method 1377591017 - NamedType 2833377072" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 489421437 - Action 152052329 - Method 1377591017 - NamedType 2724524181" size-unit="char" translate="yes" xml:space="preserve">
           <source>All done, all the packages you have select have been applied, please verify the setup before you start posting.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 Hgd - Action ContinueAction - Method OnAction - NamedType L</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 Hgd - Action ContinueAction - Method OnAction - NamedType AllDoneLbl</note>
         </trans-unit>
       </group>
     </body>

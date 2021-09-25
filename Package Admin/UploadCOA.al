@@ -7,15 +7,15 @@ codeunit 70310076 "Onboarding Import COA Hgd"
     trigger OnRun();
     var
         ExcelBuffer: Record "Excel Buffer";
+        GL: Record "G/L Account";
         InS: InStream;
         FileName: Text;
         row: Integer;
-        col: Integer;
-        GL: Record "G/L Account";
-        L: Label 'Chart Of Accounts Excel File';
-        L2: Label 'income';
+        //col: Integer;
+        ExcelFileLbl: Label 'Chart Of Accounts Excel File';
+        IncomeLbl: Label 'income';
     begin
-        if UploadIntoStream(L, '', '', FileName, InS) then begin
+        if UploadIntoStream(ExcelFileLbl, '', '', FileName, InS) then begin
             ExcelBuffer.OpenBookStream(InS, 'Sheet1');
             ExcelBuffer.ReadSheet();
             GetLastRowandColumn(ExcelBuffer);
@@ -28,7 +28,7 @@ codeunit 70310076 "Onboarding Import COA Hgd"
                 GL.VALIDATE("No.", GetTextCell(ExcelBuffer, row, 1));
                 GL.INSERT(TRUE);
                 GL.VALIDATE(Name, GetTextCell(ExcelBuffer, row, 2));
-                if strpos(lowercase(GetTextCell(ExcelBuffer, row, 3)), L2) <> 0 then
+                if strpos(lowercase(GetTextCell(ExcelBuffer, row, 3)), IncomeLbl) <> 0 then
                     Gl.VALIDATE("Income/Balance", GL."Income/Balance"::"Income Statement")
                 else
                     GL.VALIDATE("Income/Balance", GL."Income/Balance"::"Balance Sheet");
@@ -64,9 +64,9 @@ codeunit 70310076 "Onboarding Import COA Hgd"
     procedure GetLastRowandColumn(var ExcelBuffer: Record "Excel Buffer")
     begin
         ExcelBuffer.SETRANGE("Row No.", 1);
-        TotalColumns := ExcelBuffer.COUNT;
-        ExcelBuffer.RESET;
-        IF ExcelBuffer.FINDLAST THEN
+        TotalColumns := ExcelBuffer.COUNT();
+        ExcelBuffer.reset();
+        IF ExcelBuffer.FINDLAST() THEN
             TotalRows := ExcelBuffer."Row No.";
     end;
 }

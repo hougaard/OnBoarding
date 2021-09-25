@@ -21,7 +21,7 @@ page 70310075 "OnBoarding Step 0 Hgd"
                     ApplicationArea = All;
                     Caption = 'You can get a minimal chart of account with everything needed for the chosen setup. Document numbers for everything are also generated.';
                 }
-                field(CompanyInformation; CompanyInformation)
+                field(CompanyInformationCtl; CompanyInformation)
                 {
                     ApplicationArea = All;
                     Editable = false;
@@ -51,6 +51,7 @@ page 70310075 "OnBoarding Step 0 Hgd"
             action(Start)
             {
                 ApplicationArea = All;
+                Image = Start;
                 InFooterBar = true;
                 trigger OnAction()
                 var
@@ -64,12 +65,12 @@ page 70310075 "OnBoarding Step 0 Hgd"
     }
     trigger OnOpenPage()
     var
-        L1: Label 'All the setup will go into company "';
-        L2: Label '", make sure you''re in the right company before continue.';
+        L1Lbl: Label 'All the setup will go into company "';
+        L2Lbl: Label '", make sure you''re in the right company before continue.';
     begin
-        CompanyInformation := L1 +
+        CompanyInformation := L1Lbl +
                               CompanyName() +
-                              L2;
+                              L2Lbl;
     end;
 
     var

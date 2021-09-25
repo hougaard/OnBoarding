@@ -16,7 +16,7 @@ codeunit 70310077 "OnBoarding Test Hgd"
         Modules: Record "OnBoarding Modules Hgd";
     begin
         Mgt.RefreshModules();
-        if Modules.Count <> 12 then
+        if Modules.Count() <> 12 then
             error('Test fail: RefreshModules');
     end;
 
@@ -31,10 +31,10 @@ codeunit 70310077 "OnBoarding Test Hgd"
     var
         Modules: Record "OnBoarding Modules Hgd";
         Packages: Record "OnBoarding Package Hgd";
-        PF: Record "OnBoarding Field Hgd";
+        //PF: Record "OnBoarding Field Hgd";
         sTag: Record "Analysis Selected Dimension";
-        Method: Option " ","Generate one for me","I'll upload one","Use the existing";
-        NS_Method: Option " ","Generate them for me","I will do this myself";
+        //Method: Option " ","Generate one for me","I'll upload one","Use the existing";
+        // NS_Method: Option " ","Generate them for me","I will do this myself";
 
         // Auto Gen Parameters
         FirstAccountNumber: Integer;
@@ -43,23 +43,23 @@ codeunit 70310077 "OnBoarding Test Hgd"
         CreateCOATotals: Boolean;
         CountryCode: Code[10];
 
-        ModulesDone: Boolean;
-        ModulesContinue: Boolean;
+        //ModulesDone: Boolean;
+        //ModulesContinue: Boolean;
         BaseID: Text;
-        Appl: Codeunit "Application System Constants";
-        Mgt: Codeunit "OnBoarding Management Hgd";
+    //Appl: Codeunit "Application System Constants";
+    //Mgt: Codeunit "OnBoarding Management Hgd";
     //A: Codeunit Assert;
     begin
         // Start
-        sTag.Deleteall;
+        sTag.Deleteall();
 
         // Select Modules
         Mgt.RefreshModules();
-        if Modules.Findset then
+        if Modules.findset() then
             repeat
                 Modules.validate(Select, true);
-                modules.modify;
-            until Modules.next = 0;
+                modules.modify();
+            until Modules.next() = 0;
 
         MGt.GetPackages('BASE-SETUP-', true);
         Packages.Setrange(Description, '*CA*');
@@ -70,7 +70,7 @@ codeunit 70310077 "OnBoarding Test Hgd"
         BaseID := Packages.ID;
         CountryCode := Packages.Country;
         Mgt.GetPackages('_' + CountryCode + '_' + Packages."Minimum Version", false);
-        Packages.Reset;
+        Packages.reset();
         Packages.ModifyAll(Select, true);
         FirstAccountNumber := 1000;
         AccountIncrement := 10;

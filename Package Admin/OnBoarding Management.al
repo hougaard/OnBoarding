@@ -3,12 +3,12 @@ codeunit 70310075 "OnBoarding Management Hgd"
     procedure CreateRapidStartPackage()
     var
         ConfigPackage: Record "Config. Package";
-        ConfigMgt: Codeunit "Config. Package Management";
+        //ConfigMgt: Codeunit "Config. Package Management";
         Packages: Record "OnBoarding Package Hgd";
         Tables: Record "OnBoarding Table Hgd";
     begin
 
-        ConfigPackage.INIT;
+        ConfigPackage.INIT();
         ConfigPackage.validate(Code, 'ONBOARDING');
         if not ConfigPackage.INSERT(TRUE) then
             ConfigPackage.MODIFY(TRUE);
@@ -17,14 +17,14 @@ codeunit 70310075 "OnBoarding Management Hgd"
         ConfigPackage.MODIFY(TRUE);
 
         Packages.Setrange(Select, true);
-        if packages.findset then
+        if packages.findset() then
             repeat
                 Tables.Setrange("Package ID", Packages.ID);
-                if tables.findset then
+                if tables.findset() then
                     repeat
                         AddTableToConfigPackage(ConfigPackage, Tables."Table No.");
-                    until tables.next = 0;
-            until packages.next = 0;
+                    until tables.next() = 0;
+            until packages.next() = 0;
         AddTableToConfigPackage(ConfigPackage, DATABASE::"G/L Account");
         AddTableToConfigPackage(ConfigPackage, DATABASE::"No. Series");
         AddTableToConfigPackage(ConfigPackage, DATABASE::"No. Series Line");
@@ -35,7 +35,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
     var
         ConfigTable: Record "Config. Package Table";
     begin
-        ConfigTable.INIT;
+        ConfigTable.INIT();
         ConfigTable."Package Code" := ConfigPackage.Code;
         COnfigTable.validate("Table ID", TableNo);
         if Configtable.INSERT(TRUE) then begin
@@ -50,11 +50,11 @@ codeunit 70310075 "OnBoarding Management Hgd"
     begin
         sTag.SetRange("Tag Type", Stag."Tag Type"::"No. Series");
         sTag.SetFilter(TagValue, '=%1', '');
-        if stag.findset then
+        if stag.findset() then
             repeat
-                Stag.TagValue := GetCamel(stag.Description) + format(StartNumber);
+                Stag.TagValue := copystr(GetCamel(stag.Description) + format(StartNumber), 1, MaxStrLen(Stag.TagValue));
                 Stag.Modify();
-            until stag.next = 0;
+            until stag.next() = 0;
     end;
 
     procedure GetCamel(t: Text): Text
@@ -62,7 +62,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
         i: Integer;
         O: Text;
     begin
-        for i := 1 to StrLen(t) do begin
+        for i := 1 to StrLen(t) do
             if t[i] > '9' then
                 if (UpperCase(t[i]) = t[i]) then
                     if i > 1 then begin
@@ -71,7 +71,6 @@ codeunit 70310075 "OnBoarding Management Hgd"
                             o += t[i];
                     end else
                         o += t[i];
-        end;
         exit(O);
     end;
 
@@ -92,10 +91,10 @@ codeunit 70310075 "OnBoarding Management Hgd"
         Package: Record "OnBoarding Package Hgd";
         T: Record "OnBoarding Table Hgd";
         F: Record "OnBoarding Field Hgd";
-        R: RecordRef;
-        Fr: FieldRef;
         tag: Record "Package Tag Hgd";
         stag: Record "OnBoarding Selected Tag Hgd";
+        R: RecordRef;
+        Fr: FieldRef;
         NewRec: Boolean;
         CurrentRec: Integer;
         _decimal: Decimal;
@@ -104,33 +103,32 @@ codeunit 70310075 "OnBoarding Management Hgd"
         _time: Time;
         _integer: Integer;
         _boolean: Boolean;
-        tt: Record "OnBoarding Selected Tag Hgd";
         FilterStr: Text;
         FilterList: List Of [Text];
         FilterArray: array[10] of Text;
         i: Integer;
-        L1: Label 'Data in package %1 required a account not present in your chart of account, please check the setup.';
-        L2: Label 'Data in package %1 have created an incomplete setup, please check the setup.';
+        L1Lbl: Label 'Data in package %1 required a account not present in your chart of account, please check the setup.';
+        L2Lbl: Label 'Data in package %1 have created an incomplete setup, please check the setup.';
     begin
         Package.Setrange(Select, true);
-        if Package.FINDSET then
+        if Package.findset() then
             repeat
                 //Message('Applying %1', Package.Description);
                 T.Setrange("Package ID", Package.ID);
-                if T.Findset then
+                if T.findset() then
                     repeat
                         R.OPEN(T."Table No.");
                         NewRec := true;
                         F.SETRANGE("Package ID", Package.ID);
                         F.SETRANGE("Table No.", T."Table No.");
-                        if F.FINDSET THEN begin
+                        if F.findset() then begin
                             CurrentRec := F."Record No.";
                             R.Init();
                             repeat
                                 if CurrentRec <> F."Record No." then begin
                                     // New Rec, time to insert
-                                    if not R.INSERT then
-                                        r.Modify;
+                                    if not R.INSERT() THEN
+                                        r.modify();
                                     R.Init();
                                     CurrentRec := F."Record No.";
                                 end;
@@ -138,52 +136,51 @@ codeunit 70310075 "OnBoarding Management Hgd"
 
                                 case Fr.Relation() of
                                     15:
-                                        begin
-                                            if format(f."Field Value") <> '' then begin
-                                                tag.GET(Package.ID, F."Field Value");
-                                                FilterList := tag."Filter Tag List".Split(',');
-                                                for i := 1 to FilterList.Count do begin
-                                                    FilterList.Get(i, FilterArray[i]);
-                                                    stag.setrange(tag, FilterArray[i]);
-                                                    if stag.FindFirst() then begin
-                                                        FilterArray[i] := stag.TagValue;
-                                                    end else begin
-                                                        if tag.get(FilterArray[i]) then begin
-                                                            // Now to check if the account needed is actually a End-Total
-                                                            // That we have created
-                                                            if tag."Account Type" = tag."Account Type"::"End-Total" then begin
-                                                                stag.reset;
-                                                                stag.setrange(Description, tag.Description);
-                                                                if stag.FindFirst() then begin
-                                                                    FilterArray[i] := stag.TagValue;
-                                                                end else begin
-                                                                    message(L1, package.Description);
-                                                                    FilterArray[i] := 'MISSING';
-                                                                end;
+                                        if format(f."Field Value") <> '' then begin
+                                            tag.GET(Package.ID, F."Field Value");
+                                            FilterList := tag."Filter Tag List".Split(',');
+                                            for i := 1 to FilterList.Count() do begin
+                                                FilterList.Get(i, FilterArray[i]);
+                                                stag.setrange(tag, FilterArray[i]);
+                                                if stag.FindFirst() then
+                                                    FilterArray[i] := stag.TagValue
+                                                else
+                                                    if tag.get(FilterArray[i]) then
+                                                        // Now to check if the account needed is actually a End-Total
+                                                        // That we have created
+                                                        if tag."Account Type" = tag."Account Type"::"End-Total" then begin
+                                                            stag.reset();
+                                                            stag.setrange(Description, tag.Description);
+                                                            if stag.FindFirst() then
+                                                                FilterArray[i] := stag.TagValue
+                                                            else begin
+                                                                message(L1Lbl, package.Description);
+                                                                FilterArray[i] := 'MISSING';
                                                             end;
-                                                        end else begin
-                                                            message(L2, package.Description);
+                                                        end
+                                                        else begin
+                                                            message(L2Lbl, package.Description);
                                                             FilterArray[i] := 'MISSING';
                                                         end;
-                                                    end;
-                                                end;
-                                                FilterStr := StrSubstNo(tag."Filter Tag Template",
-                                                                        FilterArray[1],
-                                                                        FilterArray[2],
-                                                                        FilterArray[3],
-                                                                        FilterArray[4],
-                                                                        FilterArray[5],
-                                                                        FilterArray[6],
-                                                                        FilterArray[7],
-                                                                        FilterArray[8],
-                                                                        FilterArray[9],
-                                                                        FilterArray[10]);
-                                                if FilterStr = '' then
-                                                    error('Table %1, Field %2, Filter=%3, List=%4',
-                                                    R.Number, Fr.Number, tag."Filter Tag Template", tag."Filter Tag List");
-                                                Fr.Value := FilterStr;
+
                                             end;
+                                            FilterStr := StrSubstNo(tag."Filter Tag Template",
+                                                                    FilterArray[1],
+                                                                    FilterArray[2],
+                                                                    FilterArray[3],
+                                                                    FilterArray[4],
+                                                                    FilterArray[5],
+                                                                    FilterArray[6],
+                                                                    FilterArray[7],
+                                                                    FilterArray[8],
+                                                                    FilterArray[9],
+                                                                    FilterArray[10]);
+                                            if FilterStr = '' then
+                                                error('Table %1, Field %2, Filter=%3, List=%4',
+                                                R.Number(), Fr.Number(), tag."Filter Tag Template", tag."Filter Tag List");
+                                            Fr.Value := FilterStr;
                                         end;
+
                                     308:
                                         begin
                                             stag.setrange(tag, f."Field Value");
@@ -208,14 +205,14 @@ codeunit 70310075 "OnBoarding Management Hgd"
                                                 end;
                                             'integer',
                                             'option':
-                                                begin
-                                                    if F."Field Value" = '' then
-                                                        fr.value := 0
-                                                    else begin
-                                                        evaluate(_integer, F."Field Value", 9);
-                                                        fr.value := _integer;
-                                                    end;
+
+                                                if F."Field Value" = '' then
+                                                    fr.value := 0
+                                                else begin
+                                                    evaluate(_integer, F."Field Value", 9);
+                                                    fr.value := _integer;
                                                 end;
+
                                             'date':
                                                 begin
                                                     evaluate(_date, f."Field Value", 9);
@@ -233,13 +230,13 @@ codeunit 70310075 "OnBoarding Management Hgd"
                                                 end;
                                         end;
                                 end;
-                            until F.NEXT = 0;
-                            if not R.INSERT then
+                            until F.next() = 0;
+                            if not R.INSERT() THEN
                                 R.Modify();
                         end;
-                        R.CLOSE;
-                    until T.NEXT = 0;
-            until Package.NEXT = 0;
+                        R.CLOSE();
+                    until T.next() = 0;
+            until Package.next() = 0;
     end;
 
     procedure CreateChartOfAccounts()
@@ -249,7 +246,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
         Indent: Codeunit "G/L Account-Indent";
     begin
         stag.setrange("Tag Type", stag."Tag Type"::"G/L Account");
-        if stag.findset then
+        if stag.findset() then
             repeat
                 if not GL.GET(stag.TagValue) then begin
                     // We're missing this G/L Account, create it!
@@ -280,7 +277,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
                     GL."VAT Prod. Posting Group" := stag."VAT Prod. Posting Group";
                     GL.MODIFY(true);
                 end;
-            until stag.next = 0;
+            until stag.next() = 0;
         Indent.Indent();
     end;
 
@@ -291,7 +288,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
         nsl: Record "No. Series Line";
     begin
         stag.setrange("Tag Type", stag."Tag Type"::"No. Series");
-        if stag.findset then
+        if stag.findset() then
             repeat
                 if not NS.GET(copystr(stag.Tag, 2)) then begin // Only create NS if not exist
                     ns.Init();
@@ -306,7 +303,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
                     nsl.validate("Starting No.", stag.TagValue);
                     nsl.Modify(true);
                 end;
-            until stag.next = 0;
+            until stag.next() = 0;
     end;
 
     procedure VerifyAccountAssignment()
@@ -322,10 +319,10 @@ codeunit 70310075 "OnBoarding Management Hgd"
         STag: Record "OnBoarding Selected Tag Hgd";
         Tag: Record "Package Tag Hgd";
         Packages: Record "OnBoarding Package Hgd";
-        Totals: List of [Text];
-        Total: Text;
         StagTest: Record "OnBoarding Selected Tag Hgd";
         StagTest2: Record "OnBoarding Selected Tag Hgd";
+        Totals: List of [Text];
+        Total: Text;
         AfterIndex: Integer;
         BeforeIndex: Integer;
         i: Integer;
@@ -334,37 +331,37 @@ codeunit 70310075 "OnBoarding Management Hgd"
         ParentIndention: Integer;
         NotFirst: Boolean;
         TotalsCount: Integer;
-        L1: Label 'This should never happen, a total-end account without a total-begin account';
-        L2: Label 'Error 1: Cannot insert %1 as sort %2 because %3 is already there';
+        ShouldNeverHappenLbl: Label 'This should never happen, a total-end account without a total-begin account';
+        CannotInsertLbl: Label 'Error 1: Cannot insert %1 as sort %2 because %3 is already there';
     begin
-        sTag.DELETEALL;
+        sTag.DELETEALL();
         Packages.SetRange(Select, true);
-        if Packages.FINDSET then
+        if Packages.findset() then
             repeat
                 Tag.setrange("Package ID", Packages.ID);
                 Tag.Setrange("Tag Type", Tag."Tag Type"::"G/L Account");
-                if tag.findset then
+                if tag.findset() then
                     repeat
                         Totals := tag.Groups.Split(',');
                         if Totals.Count() > 0 then
                             Totals.Get(1, Total)
                         else
                             Total := '';
-                        Stag.Reset;
+                        Stag.reset();
                         Stag.setrange(Tag, Tag.Tag);
-                        if not stag.findfirst then begin
+                        if not stag.findfirst() then begin
                             // A tag we haven't see before,
                             // First we'll check if the totals
                             // group this account is part of is
                             // already known
-                            stag.Reset;
+                            stag.reset();
                             if Total <> '' then begin
                                 //Message('%1 has groups: %2', tag.Description, tag.Groups);
-                                StagTest.RESET;
+                                StagTest.reset();
                                 StagTest.Setrange("Income/Balance", Tag."Income/Balance");
                                 StagTest.setrange("Totals Group", Total);
                                 StagTest.setrange("Total Begin/End", stagtest."Total Begin/End"::"End");
-                                if StagTest.findfirst then begin
+                                if StagTest.findfirst() then begin
                                     // This group is know, lets add the account in that
                                     AfterIndex := StagTest.SortIndex;
                                     StagTest.Setrange("Totals Group"); // Reset so we can step back to 
@@ -372,17 +369,17 @@ codeunit 70310075 "OnBoarding Management Hgd"
                                     if StagTest.next(-1) = -1 then
                                         BeforeIndex := StagTest.SortIndex
                                     else
-                                        error(L1);
+                                        error(ShouldNeverHappenLbl);
                                     Stag.Init();
                                     Stag.TransferFrom(tag);
                                     Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
                                     Stag.Tag := Tag.Tag;
                                     Stag.Description := Tag.Description;
                                     Stag."Indention Level" := StagTest."Indention Level";
-                                    if not Stag.INSERT then begin
-                                        stagtest2.reset;
+                                    if not Stag.INSERT() THEN begin
+                                        stagtest2.reset();
                                         stagtest2.get(Stag.SortIndex);
-                                        error(L2,
+                                        error(CannotInsertLbl,
                                                 Stag.Description,
                                                 Stag.SortIndex,
                                                 StagTest2.Description);
@@ -395,48 +392,46 @@ codeunit 70310075 "OnBoarding Management Hgd"
                                     TotalsCount := Totals.Count();
                                     for i := TotalsCount downto 1 do begin
                                         Totals.get(i, Total);
-                                        StagTest.RESET;
+                                        StagTest.reset();
                                         StagTest.SetRange("Income/Balance", tag."Income/Balance");
                                         StagTest.setrange("Totals Group", Total);
-                                        if not StagTest.findfirst then begin
+                                        if not StagTest.findfirst() then begin
                                             // This group does not exists, let's figure out where to create it
                                             // in the number range
                                             if i = TotalsCount then begin
                                                 // This is a new top level
                                                 ParentTotalBegin := CreateTotal(Tag, GetMax(Tag), Total, 1, 0); // Begin
                                                 ParentTotalEnd := CreateTotal(Tag, ParentTotalBegin, Total, 2, 0); // End
-                                            end else begin
+                                            end else
                                                 if ParentTotalEnd <> 0 then begin
                                                     ParentTotalBegin := CreateTotal(Tag, ParentTotalBegin, Total, 1, ParentIndention); // Begin
                                                     ParentTotalEnd := CreateTotal(Tag, ParentTotalBegin, Total, 2, ParentIndention); // End
                                                     stagTest2.get(Tag."Income/Balance", ParentTotalEnd);
                                                     ParentIndention := stagTest2."Indention Level";
-                                                end else begin
+                                                end else
                                                     error('!!!5!!!!');
-                                                end;
-                                            end;
                                         end else begin
                                             ParentTotalBegin := StagTest.SortIndex;
                                             ParentIndention := stagtest."Indention Level";
-                                            stagtest.next;
+                                            stagtest.next();
                                             ParentTotalEnd := Stagtest.SortIndex;
                                         end;
                                     end;
                                     // So At this point, all totals will be there, 
                                     // let's find the End of the inner total and
                                     // place the account just before that.
-                                    StagTest.reset;
+                                    StagTest.reset();
                                     Totals.get(1, Total);
                                     stagtest.setrange("Totals Group", total);
                                     stagtest.Setrange("Total Begin/End", stagtest."Total Begin/End"::"End");
-                                    if stagtest.findfirst then begin
+                                    if stagtest.findfirst() then begin
                                         AfterIndex := StagTest.SortIndex;
                                         StagTest.Setrange("Totals Group"); // Reset so we can step back to 
                                         StagTest.Setrange("Total Begin/End"); // find the prevoius Index
                                         if StagTest.next(-1) = -1 then
                                             BeforeIndex := StagTest.SortIndex
                                         else
-                                            error(L1);
+                                            error(ShouldNeverHappenLbl);
                                         Stag.Init();
                                         sTag.TransferFrom(tag);
                                         Stag.SortIndex := ROUND((AfterIndex - BeforeIndex) / 2 + BeforeIndex, 1);
@@ -444,10 +439,10 @@ codeunit 70310075 "OnBoarding Management Hgd"
                                         Stag.Description := Tag.Description;
                                         Stag."Indention Level" := StagTest."Indention Level" + 1;
                                         stag."Income/Balance" := Tag."Income/Balance";
-                                        if not Stag.INSERT then begin
-                                            stagtest2.reset;
+                                        if not Stag.INSERT() THEN begin
+                                            stagtest2.reset();
                                             stagtest2.get(Tag."Income/Balance", Stag.SortIndex);
-                                            error(L2,
+                                            error(CannotInsertLbl,
                                                 Stag.Description,
                                                 Stag.SortIndex,
                                                 StagTest2.Description);
@@ -456,20 +451,19 @@ codeunit 70310075 "OnBoarding Management Hgd"
                                     end else
                                         error('Cannot find the total we just created');
                                 end;
-                            end else begin
+                            end else
                                 // tag not part of any totals....
                                 error('TODO: Account outside total %1', format(tag));
-                            end;
-                        end else begin
-                            // Ignore this tag for now...
                         end;
-                    until tag.next = 0;
-            until Packages.NEXT = 0;
+                    // else begin
+                    // Ignore this tag for now...
+                    until tag.next() = 0;
+            until Packages.next() = 0;
         // Now assign account numbers to the account we have just created
-        stag.reset;
+        stag.reset();
         stag.setrange("Tag Type", stag."Tag Type"::"G/L Account");
         stag.SetCurrentKey("Income/Balance", SortIndex);
-        if stag.findset then
+        if stag.findset() then
             repeat
                 if NotFirst then
                     if stag."Total Begin/End" = stag."Total Begin/End"::" " then
@@ -480,13 +474,13 @@ codeunit 70310075 "OnBoarding Management Hgd"
                 stag.TagValue := Format(FirstAccount, 0, 9);
                 stag.Modify();
                 NotFirst := true;
-            until stag.next = 0;
+            until stag.next() = 0;
         if not CreateTotals then Begin
             // We'll just remove the totals again
-            stag.reset;
+            stag.reset();
             stag.setrange("Tag Type", stag."Tag Type"::"G/L Account");
             stag.setrange("Total Begin/End", 1, 2);
-            stag.deleteall;
+            stag.deleteall();
         end;
     end;
 
@@ -495,7 +489,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
         st: Record "OnBoarding Selected Tag Hgd";
     begin
         st.Setrange("Income/Balance", Tag."Income/Balance");
-        if st.findlast then
+        if st.findlast() then
             exit(st.SortIndex)
         else
             exit(0);
@@ -509,26 +503,26 @@ codeunit 70310075 "OnBoarding Management Hgd"
     var
         NewTotal: Record "OnBoarding Selected Tag Hgd";
         stagtest2: Record "OnBoarding Selected Tag Hgd";
-        L1: Label 'Error 2: Cannot insert %1 as sort %2 because %3 is already there';
+        CannotInsertLbl: Label 'Error 2: Cannot insert %1 as sort %2 because %3 is already there';
     begin
         NewTotal.Init();
         stagtest2.setrange("Income/Balance", tag."Income/Balance");
         if stagtest2.get(Tag."Income/Balance", BeforeIndex) then begin
-            if stagtest2.next = 1 then begin
-                NewTotal.SortIndex := round((stagtest2.SortIndex - BeforeIndex) / 2, 1) + BeforeIndex;
-            end else
+            if stagtest2.next() = 1 then
+                NewTotal.SortIndex := round((stagtest2.SortIndex - BeforeIndex) / 2, 1) + BeforeIndex
+            else
                 NewTotal.SortIndex := round((2000000000 - BeforeIndex) / 2, 1) + BeforeIndex;
         end else
             NewTotal.SortIndex := BeforeIndex + 10000;
-        NewTotal.Description := Total;
+        NewTotal.Description := copystr(Total, 1, maxstrlen(NewTotal.Description));
         NewTotal."Income/Balance" := tag."Income/Balance";
         NewTotal."Indention Level" := ParentIndention + 1;
         NewTotal."Total Begin/End" := BeginEnd;
-        NewTotal."Totals Group" := Total;
-        if not NewTotal.INSERT then begin
-            stagtest2.reset;
+        NewTotal."Totals Group" := copystr(Total, 1, MaxStrLen(NewTotal."Totals Group"));
+        if not NewTotal.INSERT() THEN begin
+            stagtest2.reset();
             stagtest2.get(Tag."Income/Balance", NewTotal.SortIndex);
-            error(L1,
+            error(CannotInsertLbl,
                     NewTotal.Description,
                     NewTotal.SortIndex,
                     StagTest2.Description);
@@ -538,6 +532,11 @@ codeunit 70310075 "OnBoarding Management Hgd"
 
     procedure GetPackages(NameFilter: Text; ApplSupportOnly: Boolean)
     var
+        Package: Record "OnBoarding Package Hgd";
+        pTable: Record "OnBoarding Table Hgd";
+        pField: Record "OnBoarding Field Hgd";
+        Tag: Record "Package Tag Hgd";
+        Appl: Codeunit "Application System Constants";
         http: HttpClient;
         jsonTxt: Text;
         response: HttpResponseMessage;
@@ -548,28 +547,23 @@ codeunit 70310075 "OnBoarding Management Hgd"
         filename: Text;
         value: JsonToken;
         Headers: HttpHeaders;
-        Package: Record "OnBoarding Package Hgd";
-        pTable: Record "OnBoarding Table Hgd";
-        pField: Record "OnBoarding Field Hgd";
-        Tag: Record "Package Tag Hgd";
         D: Dialog;
         FC: Integer;
-        Appl: Codeunit "Application System Constants";
         CountryFilter: Text;
         VersionFilter: Text;
         Download: Boolean;
-        L1: Label 'Reading package list #1## of #2##';
-        L2: Label 'Cannot read package list, error %1';
-        L3: Label 'Cannot contact Package Server';
-        ExternalCallNotAllowed: Label 'Call to package server blocked by your environment';
+        ReadingPackageLbl: Label 'Reading package list #1## of #2##';
+        CannotReadLbl: Label 'Cannot read package list, error %1';
+        CannotContactPackageServerLbl: Label 'Cannot contact Package Server';
+        ExternalCallNotAllowedLbl: Label 'Call to package server blocked by your environment';
     begin
         if GuiAllowed() then
-            D.Open(L1);
+            D.Open(ReadingPackageLbl);
 
-        Package.DELETEALL;
-        pTable.DELETEALL;
-        pField.DELETEALL;
-        Tag.DELETEALL;
+        Package.DELETEALL();
+        pTable.DELETEALL();
+        pField.DELETEALL();
+        Tag.DELETEALL();
 
         CountryFilter := copystr(Appl.OriginalApplicationVersion(), 1, 2);
         VersionFilter := copystr(Appl.PlatformProductVersion(), 1, 2);
@@ -579,8 +573,8 @@ codeunit 70310075 "OnBoarding Management Hgd"
         Headers.Add('User-Agent', 'Dynamics 365 Business Central');
         request.Method('GET');
         if http.Send(request, response) then begin
-            if response.IsBlockedByEnvironment then
-                error(ExternalCallNotAllowed);
+            if response.IsBlockedByEnvironment() then
+                error(ExternalCallNotAllowedLbl);
             if response.HttpStatusCode() = 200 then begin
                 response.Content().ReadAs(jsonTxt);
                 files.ReadFrom(jsonTxt);
@@ -599,18 +593,17 @@ codeunit 70310075 "OnBoarding Management Hgd"
                             if ApplSupportOnly then begin
                                 if CountryFilter <> 'US' then
                                     Download := strpos(filename, '_' + CountryFilter + '_' + VersionFilter) <> 0
-                                else begin
+                                else
                                     Download := (strpos(filename, '_US_' + VersionFilter) <> 0) or
                                                 (strpos(filename, '_CA_' + VersionFilter) <> 0) or
                                                 (strpos(filename, '_MX_' + VersionFilter) <> 0);
-                                end;
                             end else
                                 Download := true;
                             if Download then begin
                                 filename := copystr(filename, 2, strlen(filename) - 2);
                                 if http.Get(filename, response) then begin
-                                    if response.IsBlockedByEnvironment then
-                                        error(ExternalCallNotAllowed);
+                                    if response.IsBlockedByEnvironment() then
+                                        error(ExternalCallNotAllowedLbl);
                                     if response.HttpStatusCode() = 200 then begin
                                         response.Content().ReadAs(jsonTxt);
                                         ImportPackage(jsonTxt);
@@ -623,38 +616,38 @@ codeunit 70310075 "OnBoarding Management Hgd"
                 if GuiAllowed() then
                     D.Close();
             end else
-                Error(L2, response.HttpStatusCode());
+                Error(CannotReadLbl, response.HttpStatusCode());
         end else
-            Error(L3);
+            Error(CannotContactPackageServerLbl);
     end;
 
     procedure ImportPackage(JsonTxt: Text)
     var
+        Package: Record "OnBoarding Package Hgd";
         jPackage: JsonObject;
         jInfoToken: JsonToken;
-        jInfo: JsonObject;
+        //jInfo: JsonObject;
         jTables: JsonArray;
         jTablesToken: JsonToken;
         jTableToken: JsonToken;
         jTable: JsonObject;
-        Package: Record "OnBoarding Package Hgd";
-        pTable: Record "OnBoarding Table Hgd";
-        pField: Record "OnBoarding Field Hgd";
+        //pTable: Record "OnBoarding Table Hgd";
+        //pField: Record "OnBoarding Field Hgd";
         Keys: List of [Text];
         Values: List of [JsonToken];
         TableTxt: Text;
         TableNo: Integer;
         jRecords: JsonArray;
     begin
-        if jPackage.ReadFrom(JsonTxt) then begin
+        if jPackage.ReadFrom(JsonTxt) then
             if jPackage.Get('Info', jInfoToken) then begin
                 Package.Init();
-                Package.ID := GetTextFromToken(JInfoToken, 'ID');
-                Package."Module" := GetTextFromToken(jInfoToken, 'Module');
-                Package.Description := GetTextFromToken(jInfoToken, 'Description');
-                Package."Minimum Version" := GetTextFromToken(jInfoToken, 'Version');
-                Package.Author := GetTextFromToken(jInfoToken, 'Author');
-                Package.Country := GetTextFromToken(jInfoToken, 'Country');
+                Package.ID := copystr(GetTextFromToken(JInfoToken, 'ID'), 1, maxstrlen(package.id));
+                Package."Module" := copystr(GetTextFromToken(jInfoToken, 'Module'), 1, maxstrlen(package.Module));
+                Package.Description := copystr(GetTextFromToken(jInfoToken, 'Description'), 1, maxstrlen(package.Description));
+                Package."Minimum Version" := copystr(GetTextFromToken(jInfoToken, 'Version'), 1, MaxStrLen(package."Minimum Version"));
+                Package.Author := copystr(GetTextFromToken(jInfoToken, 'Author'), 1, maxstrlen(package.Author));
+                Package.Country := copystr(GetTextFromToken(jInfoToken, 'Country'), 1, maxstrlen(package.Country));
                 //Package.ID += Package.Country;
                 if strpos(Package.ID, 'BASE') <> 0 then
                     Package.SortIndex := -1; // Make sure base packages are shown first.
@@ -673,19 +666,18 @@ codeunit 70310075 "OnBoarding Management Hgd"
                     end;
                 end;
             end;
-        end;
     end;
 
-    procedure ImportRecords(PackageID: Text; TableNo: Integer; jRecords: JsonArray)
+    procedure ImportRecords(PackageID: Code[30]; TableNo: Integer; jRecords: JsonArray)
     var
         TableRec: Record "OnBoarding Table Hgd";
+        FieldRec: Record "OnBoarding Field Hgd";
         R: RecordRef;
         jRecordToken: JsonToken;
         jRecord: JsonObject;
-        jFieldToken: JsonToken;
+        //jFieldToken: JsonToken;
         jField: JsonToken;
         RecNo: Integer;
-        FieldRec: Record "OnBoarding Field Hgd";
         FieldNoTxt: Text;
         FieldNo: Integer;
         Keys: List of [Text];
@@ -696,14 +688,14 @@ codeunit 70310075 "OnBoarding Management Hgd"
         TableRec."Package ID" := PackageID;
         TableRec."Table No." := TableNo;
         R.OPEN(TableNo);
-        TableRec.Desciption := R.Caption();
+        TableRec.Desciption := copystr(R.Caption(), 1, MaxStrLen(tablerec.Desciption));
         TableRec.Insert();
         foreach jRecordToken in jRecords do begin
             RecNo += 1;
             jRecord := jRecordToken.AsObject();
             Keys := jRecord.Keys();
             Values := jRecord.Values();
-            for i := 1 to Keys.Count do begin
+            for i := 1 to Keys.Count() do begin
                 FieldRec.Init();
                 FieldRec."Package ID" := PackageID;
                 FieldRec."Table No." := TableNo;
@@ -714,15 +706,15 @@ codeunit 70310075 "OnBoarding Management Hgd"
                 FieldRec."Field No." := FieldNo;
                 case FieldNoTxt[1] of
                     'f':
-                        FieldRec."Field Value" := jField.AsValue().AsText();
+                        FieldRec."Field Value" := copystr(jField.AsValue().AsText(), 1, maxstrlen(fieldrec."Field Value"));
                     'G':
                         begin
-                            FieldRec."Field Value" := CreateTag(PackageID, 'G', jField);
+                            FieldRec."Field Value" := copystr(CreateTag(PackageID, 'G', jField), 1, maxstrlen(fieldrec."Field Value"));
                             FieldRec."Special Action" := FieldRec."Special Action"::Account;
                         END;
                     'N':
                         begin
-                            FieldRec."Field Value" := CreateTag(PackageID, 'N', jField);
+                            FieldRec."Field Value" := copystr(CreateTag(PackageID, 'N', jField), 1, maxstrlen(fieldrec."Field Value"));
                             FieldRec."Special Action" := FieldRec."Special Action"::"Number Series";
                         end;
                 end;
@@ -731,7 +723,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
         end;
     end;
 
-    procedure CreateTag(PackageID: Text; TagType: Text; jField: JsonToken): Text;
+    procedure CreateTag(PackageID: Code[30]; TagType: Text; jField: JsonToken): Text;
     var
         Tag: Record "Package Tag Hgd";
         Tag2: Record "Package Tag Hgd";
@@ -744,13 +736,13 @@ codeunit 70310075 "OnBoarding Management Hgd"
                     Tag.Init();
                     Tag."Package ID" := PackageID;
                     FilterTagCounter += 1;
-                    Tag.Tag := TagType + format(FilterTagCounter, 0, 9);
+                    Tag.Tag := copystr(TagType + format(FilterTagCounter, 0, 9), 1, MaxStrLen(tag.Tag));
                     Tag."Tag Type" := Tag."Tag Type"::"Account Filter";
                     Tag.Description := 'Filter Tag';
-                    Tag."Filter Tag Template" := GetTextFromToken(jField, 'Filter');
+                    Tag."Filter Tag Template" := copystr(GetTextFromToken(jField, 'Filter'), 1, maxstrlen(tag."Filter Tag Template"));
 
                     A := GetArrayFromToken(jField, 'Accounts');
-                    if A.Count > 0 then
+                    if A.Count() > 0 then
                         foreach T in A do begin
                             if Tag."Filter Tag List" <> '' then
                                 Tag."Filter Tag List" += ',';
@@ -758,27 +750,27 @@ codeunit 70310075 "OnBoarding Management Hgd"
                             if Tag."Filter Tag List" <> '' then begin
                                 Tag2.Init();
                                 Tag2."Package ID" := PackageID;
-                                Tag2.Tag := GetTextFromToken(T, 'f1');
+                                Tag2.Tag := copystr(GetTextFromToken(T, 'f1'), 1, MaxStrLen(tag2.tag));
                                 Tag2."Tag Type" := Tag."Tag Type"::"G/L Account";
-                                Tag2.Description := GetTextFromToken(T, 'f2');
-                                Tag2.Groups := GetTextFromToken(T, 'Totals');
+                                Tag2.Description := copystr(GetTextFromToken(T, 'f2'), 1, MaxStrLen(tag2.Description));
+                                Tag2.Groups := copystr(GetTextFromToken(T, 'Totals'), 1, MaxStrLen(tag2.Groups));
 
                                 Tag2."Account Category" := GetOptionFromToken(T, 'f8');
                                 Tag2."Income/Balance" := GetOptionFromToken(T, 'f9');
                                 Tag2."Direct Posting" := GetBooleanFromToken(T, 'f14');
                                 Tag2."Reconciliation Account" := GetBooleanFromToken(T, 'f16');
                                 Tag2."Gen. Posting Type" := GetOptionFromToken(T, 'f43');
-                                Tag2."Gen. Bus. Posting Group" := GetTextFromToken(T, 'f44');
-                                Tag2."Gen. Prod. Posting Group" := GetTextFromToken(T, 'f45');
-                                Tag2."Tax Area Code" := GetTextFromToken(T, 'f54');
+                                Tag2."Gen. Bus. Posting Group" := copystr(GetTextFromToken(T, 'f44'), 1, MaxStrLen(Tag2."Gen. Bus. Posting Group"));
+                                Tag2."Gen. Prod. Posting Group" := copystr(GetTextFromToken(T, 'f45'), 1, maxstrlen(Tag2."Gen. Prod. Posting Group"));
+                                Tag2."Tax Area Code" := copystr(GetTextFromToken(T, 'f54'), 1, MaxStrLen(Tag2."Tax Area Code"));
                                 Tag2."Tax Liable" := GetBooleanFromToken(T, 'f55');
-                                tag2."Tax Group Code" := GetTextFromToken(T, 'f56');
-                                tag2."VAT Bus. Posting Group" := GetTextFromToken(T, 'f57');
-                                tag2."VAT Prod. Posting Group" := GetTextFromToken(T, 'f58');
-                                if Tag2.INSERT then; // Ignore since we can get sam tag from two packages
+                                tag2."Tax Group Code" := copystr(GetTextFromToken(T, 'f56'), 1, maxstrlen(tag2."Tax Group Code"));
+                                tag2."VAT Bus. Posting Group" := copystr(GetTextFromToken(T, 'f57'), 1, maxstrlen(tag2."VAT Bus. Posting Group"));
+                                tag2."VAT Prod. Posting Group" := copystr(GetTextFromToken(T, 'f58'), 1, maxstrlen(tag2."VAT Prod. Posting Group"));
+                                if Tag2.INSERT() THEN; // Ignore since we can get sam tag from two packages
                             end;
                         end;
-                    if Tag.INSERT then;
+                    if Tag.INSERT() THEN;
                 end;
             'N':
                 begin
@@ -786,8 +778,8 @@ codeunit 70310075 "OnBoarding Management Hgd"
                     Tag."Package ID" := PackageID;
                     Tag.Tag := TagType + GetTextFromToken(jField, 'f1');
                     Tag."Tag Type" := Tag."Tag Type"::"No. Series";
-                    Tag.Description := GetTextFromToken(jField, 'f2');
-                    if Tag.INSERT then;
+                    Tag.Description := copystr(GetTextFromToken(jField, 'f2'), 1, MaxStrLen(tag.Description));
+                    if Tag.INSERT() THEN;
                 end;
         end;
         exit(Tag.Tag);
@@ -797,7 +789,6 @@ codeunit 70310075 "OnBoarding Management Hgd"
     var
         O: JsonObject;
         V: JsonToken;
-        Data: Text;
     begin
         O := T.AsObject();
         if O.Get(Member, V) then
@@ -837,7 +828,6 @@ codeunit 70310075 "OnBoarding Management Hgd"
         O: JsonObject;
         V: JsonToken;
         Data: Text;
-        Op: Boolean;
     begin
         O := T.AsObject();
         if O.Get(Member, V) then begin
@@ -850,6 +840,9 @@ codeunit 70310075 "OnBoarding Management Hgd"
 
     procedure RunTheProcess()
     var
+        Modules: Record "OnBoarding Modules Hgd";
+        Packages: Record "OnBoarding Package Hgd";
+        sTag: Record "Analysis Selected Dimension";
         Step1: Page "OnBoarding Step 1 Hgd"; // Select Modules
         Step2: Page "OnBoarding Step 2 Hgd"; // Select Packages
         Step3: Page "OnBoarding Step 3 Hgd"; // Select how to Chart of Account
@@ -864,10 +857,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
         State: Option "Start","Select Modules","Select Packages","Chart of Accounts action","Upload COA","Edit COA","Map to existing COA","Number Series Action","Edit Number Series","Review and Confirm";
         Done: Boolean;
 
-        Modules: Record "OnBoarding Modules Hgd";
-        Packages: Record "OnBoarding Package Hgd";
-        PF: Record "OnBoarding Field Hgd";
-        sTag: Record "Analysis Selected Dimension";
+        //PF: Record "OnBoarding Field Hgd";
         Method: Option " ","Generate one for me","I'll upload one","Use the existing";
         NS_Method: Option " ","Generate them for me","I will do this myself";
 
@@ -881,8 +871,8 @@ codeunit 70310075 "OnBoarding Management Hgd"
         ModulesDone: Boolean;
         ModulesContinue: Boolean;
         BaseID: Text;
-        Appl: Codeunit "Application System Constants";
-        L1: Label 'No modules selected, aborting';
+        //Appl: Codeunit "Application System Constants";
+        NoModulesSelectLbl: Label 'No modules selected, aborting';
 
     begin
         State := 0; //State::"Chart of Accounts action"; // We start at zero
@@ -901,7 +891,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
                 State::"Select Modules":
                     begin
                         GetPackages('BASE-SETUP-', true);
-                        COMMIT;
+                        COMMIT();
                         clear(Step1);
                         Step1.Editable(true);
                         Step1.RunModal();
@@ -915,13 +905,13 @@ codeunit 70310075 "OnBoarding Management Hgd"
                         Modules.SETRANGE(Select, true);
                         Modules.SetCurrentKey("Sorting Order");
                         if not Modules.IsEmpty() THEN BEGIN
-                            if Modules.FINDFIRST then
+                            if Modules.findfirst() then
                                 repeat
-                                    Packages.RESET;
+                                    Packages.reset();
                                     Packages.Setrange("Module", Modules."Module ID");
                                     if Modules."Sorting Order" > 0 then
                                         Packages.setrange(Country, CountryCode);
-                                    COMMIT;
+                                    COMMIT();
                                     clear(Step2);
                                     Step2.SetTableView(Packages);
                                     Step2.Editable(true);
@@ -930,40 +920,39 @@ codeunit 70310075 "OnBoarding Management Hgd"
                                     if Step2.Continue() then begin
                                         if Modules."Sorting Order" = 0 then begin
                                             Packages.SetRange(Select, true);
-                                            packages.findfirst;
+                                            packages.findfirst();
                                             BaseID := Packages.ID;
                                             CountryCode := Packages.Country;
                                             GetPackages('_' + CountryCode + '_' + Packages."Minimum Version", false);
-                                            Packages.Reset;
+                                            Packages.reset();
                                             Packages.Get(BaseID);
                                             Packages.Select := true; // Reselect base package
-                                            Packages.MODIFY;
+                                            Packages.modify();
                                         end;
-                                        ModulesDone := Modules.NEXT = 0;
+                                        ModulesDone := Modules.next() = 0;
                                         ModulesContinue := true;
-                                    end else begin
+                                    end else
                                         if Modules.NEXT(-2) <> 2 then begin
                                             State := State::"Select Modules";
                                             ModulesDone := true;
                                             ModulesContinue := false;
                                         end;
-                                    end;
                                 until ModulesDone;
-                            if ModulesContinue then begin
+                            if ModulesContinue then
                                 State := State::"Chart of Accounts action";
-                            end;
+
                         END else
-                            Error(L1);
+                            Error(NoModulesSelectLbl);
                     end;
                 State::"Chart of Accounts action":
                     begin
-                        Packages.reset;
+                        Packages.reset();
                         packages.Setrange(Select, true);
                         if not packages.IsEmpty() then begin
                             clear(Step3);
                             Step3.Editable(true);
                             Step3.RunModal();
-                            if Step3.Continue() then begin
+                            if Step3.Continue() then
                                 case Step3.GetMethod() of
                                     Method::"Generate one for me":
                                         begin
@@ -978,22 +967,18 @@ codeunit 70310075 "OnBoarding Management Hgd"
                                             State := State::"Edit COA";
                                         end;
                                     Method::"I'll upload one":
-                                        begin
-                                            State := State::"Upload COA";
-                                        end;
+                                        State := State::"Upload COA";
                                     Method::"Use the existing":
-                                        begin
-                                            State := State::"Map to existing COA";
-                                        end;
-                                end;
-                            end else
+                                        State := State::"Map to existing COA";
+                                end
+                            else
                                 State := State::"Select Packages";
                         end;
                     end;
                 State::"Upload COA":
                     begin
                         SelectTagsFromSelectedPackages(false);
-                        COMMIT;
+                        COMMIT();
                         Clear(Step4);
                         Step4.RunModal();
                         if Step4.Continue() then
@@ -1004,7 +989,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
                 State::"Edit COA":
                     begin
                         SelectTagsFromSelectedPackages(true);
-                        COMMIT;
+                        COMMIT();
                         Clear(Step5);
                         Step5.RunModal();
                         if Step5.Continue() then
@@ -1015,7 +1000,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
                 State::"Map to existing COA":
                     begin
                         SelectTagsFromSelectedPackages(false);
-                        COMMIT;
+                        COMMIT();
                         Clear(Step6);
                         Step6.RunModal();
                         if Step6.Continue() then
@@ -1053,7 +1038,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
                             State := State::"Edit Number Series";
                     End;
             end;
-            COMMIT;
+            COMMIT();
         until Done;
     end;
 
@@ -1065,12 +1050,12 @@ codeunit 70310075 "OnBoarding Management Hgd"
         Sort: Integer;
     begin
         Package.SetRange(Select, true);
-        if Package.FINDSET then
+        if Package.findset() then
             repeat
                 Tag.setrange("Package ID", Package.ID);
                 if OnlyNumberSeries then
                     tag.Setrange("Tag Type", Tag."Tag Type"::"No. Series");
-                if Tag.findset then
+                if Tag.findset() then
                     repeat
                         Stag.Init();
                         STag.Tag := Tag.Tag;
@@ -1079,34 +1064,34 @@ codeunit 70310075 "OnBoarding Management Hgd"
                         Sort -= 1;
                         Stag.SortIndex := Sort;
                         if STag.Insert() then; // We allow getting
-                        // the same tag from
-                        // multiple packages
-                    until tag.next = 0;
-            until Package.next = 0;
+                                               // the same tag from
+                                               // multiple packages
+                    until tag.next() = 0;
+            until Package.next() = 0;
     end;
 
     procedure RefreshModules()
     var
         Modules: Record "OnBoarding Modules Hgd";
-        L1: Label 'Base Setup';
-        L2: Label 'Financial Management';
-        L3: Label 'Sales and Account Receivables';
-        L4: Label 'Purchase and Account Payables';
-        L5: Label 'Inventory';
-        L6: Label 'Jobs';
-        L7: Label 'Fixed Assets';
-        L8: Label 'Warehouse';
-        L9: Label 'Service Management';
-        L10: Label 'Relationship Management';
-        L11: Label 'Human Resources';
-        L12: Label 'Production and Planning';
+        L1Lbl: Label 'Base Setup';
+        L2Lbl: Label 'Financial Management';
+        L3Lbl: Label 'Sales and Account Receivables';
+        L4Lbl: Label 'Purchase and Account Payables';
+        L5Lbl: Label 'Inventory';
+        L6Lbl: Label 'Jobs';
+        L7Lbl: Label 'Fixed Assets';
+        L8Lbl: Label 'Warehouse';
+        L9Lbl: Label 'Service Management';
+        L10Lbl: Label 'Relationship Management';
+        L11Lbl: Label 'Human Resources';
+        L12Lbl: Label 'Production and Planning';
     begin
-        Modules.DELETEALL;
+        Modules.DELETEALL();
 
         Modules.Init();
         Modules."Module ID" := 'BASE';
         Modules."Select" := true;
-        Modules.Description := L1;
+        Modules.Description := L1Lbl;
         Modules."Sorting Order" := 0;
         Modules.Insert();
 
@@ -1114,77 +1099,77 @@ codeunit 70310075 "OnBoarding Management Hgd"
         Modules.Init();
         Modules."Module ID" := 'FIN';
         Modules."Select" := false;
-        Modules.Description := L2;
+        Modules.Description := L2Lbl;
         Modules."Sorting Order" := 1;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'SALE';
         Modules."Select" := false;
-        Modules.Description := L3;
+        Modules.Description := L3Lbl;
         Modules."Sorting Order" := 2;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'PURCHASE';
         Modules."Select" := false;
-        Modules.Description := L4;
+        Modules.Description := L4Lbl;
         Modules."Sorting Order" := 3;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'INVENTORY';
         Modules."Select" := false;
-        Modules.Description := L5;
+        Modules.Description := L5Lbl;
         Modules."Sorting Order" := 4;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'JOB';
         Modules."Select" := false;
-        Modules.Description := L6;
+        Modules.Description := L6Lbl;
         Modules."Sorting Order" := 5;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'FA';
         Modules."Select" := false;
-        Modules.Description := L7;
+        Modules.Description := L7Lbl;
         Modules."Sorting Order" := 6;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'WAREHOUSE';
         Modules."Select" := false;
-        Modules.Description := L8;
+        Modules.Description := L8Lbl;
         Modules."Sorting Order" := 7;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'SERVICE';
         Modules."Select" := false;
-        Modules.Description := L9;
+        Modules.Description := L9Lbl;
         Modules."Sorting Order" := 8;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'MARKETING';
         Modules."Select" := false;
-        Modules.Description := L10;
+        Modules.Description := L10Lbl;
         Modules."Sorting Order" := 9;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'HR';
         Modules."Select" := false;
-        Modules.Description := L11;
+        Modules.Description := L11Lbl;
         Modules."Sorting Order" := 10;
         Modules.Insert();
 
         Modules.Init();
         Modules."Module ID" := 'PRODUCTION';
         Modules."Select" := false;
-        Modules.Description := L12;
+        Modules.Description := L12Lbl;
         Modules."Sorting Order" := 11;
         Modules.Insert();
     end;

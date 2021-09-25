@@ -12,7 +12,7 @@ table 70310077 "OnBoarding Field Hgd"
         {
             Caption = 'Table No.';
             DataClassification = SystemMetadata;
-            TableRelation = "OnBoarding Table Hgd" where ("Package ID" = field ("Package ID"));
+            TableRelation = "OnBoarding Table Hgd" where("Package ID" = field("Package ID"));
         }
         field(3; "Record No."; Integer)
         {
@@ -30,7 +30,7 @@ table 70310077 "OnBoarding Field Hgd"
             DataClassification = SystemMetadata;
             OptionMembers = " ","Account","Number Series","Account Filter";
         }
-        field(100; "Field Value"; Text[250])
+        field(100; "Field Value"; Text[2000])
         {
             Caption = 'Field Value';
             DataClassification = SystemMetadata;

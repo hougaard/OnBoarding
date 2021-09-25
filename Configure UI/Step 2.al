@@ -54,6 +54,7 @@ page 70310077 "OnBoarding Step 2 Hgd"
             action(Back)
             {
                 Caption = 'Back';
+                Image = Cancel;
                 InFooterBar = true;
                 ApplicationArea = All;
                 trigger OnAction()
@@ -64,18 +65,19 @@ page 70310077 "OnBoarding Step 2 Hgd"
             action(ContinueAction)
             {
                 InFooterBar = true;
+                Image = Continue;
                 ApplicationArea = All;
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 var
                     PTest: Record "OnBoarding Package Hgd";
-                    L: Label 'You can only select one package from this screen';
+                    OnlyOnePackageErrorLbl: Label 'You can only select one package from this screen';
                 begin
                     PTest.Setrange("Module", Rec."Module");
                     PTest.setrange(Select, true);
                     if not AllowMultiple then
                         if Ptest.Count() <> 1 then
-                            error(L);
+                            error(OnlyOnePackageErrorLbl);
                     ContinuePressed := true;
                     CurrPage.Close();
                 end;

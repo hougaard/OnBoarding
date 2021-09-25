@@ -17,17 +17,11 @@ page 70310082 "OnBoarding Step 7 Hgd"
                     begin
                         case Method of
                             Method::"Generate them for me":
-                                begin
-                                    AutoBuildVisible := true;
-                                end;
+                                AutoBuildVisible := true;
                             Method::" ":
-                                begin
-                                    AutoBuildVisible := false;
-                                End;
+                                AutoBuildVisible := false;
                             Method::"I will do this myself":
-                                begin
-                                    AutoBuildVisible := false;
-                                end;
+                                AutoBuildVisible := false;
                         end;
                     end;
                 }
@@ -51,6 +45,7 @@ page 70310082 "OnBoarding Step 7 Hgd"
             action(Back)
             {
                 Caption = 'Back';
+                Image = Cancel;
                 ApplicationArea = All;
                 InFooterBar = true;
                 trigger OnAction()
@@ -62,16 +57,17 @@ page 70310082 "OnBoarding Step 7 Hgd"
             {
                 InFooterBar = true;
                 ApplicationArea = All;
+                Image = Continue;
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 var
-                    L: Label 'Select a document number method first.';
+                    SelectDocNumberMethodLbl: Label 'Select a document number method first.';
                 begin
                     if Method <> Method::" " then begin
                         ContinuePressed := true;
                         CurrPage.Close();
                     end else
-                        error(L);
+                        error(SelectDocNumberMethodLbl);
                 end;
             }
         }

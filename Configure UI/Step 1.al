@@ -41,6 +41,7 @@ page 70310076 "OnBoarding Step 1 Hgd"
                 Caption = 'Back';
                 ApplicationArea = All;
                 InFooterBar = true;
+                Image = Cancel;
                 trigger OnAction()
                 begin
                     CurrPage.Close();
@@ -50,6 +51,7 @@ page 70310076 "OnBoarding Step 1 Hgd"
             {
                 InFooterBar = true;
                 ApplicationArea = All;
+                Image = Continue;
                 Caption = 'Continue to next step';
                 trigger OnAction()
                 begin
