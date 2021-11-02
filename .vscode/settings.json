@@ -11,5 +11,6 @@
     "al.codeAnalyzers": [
         "${AppSourceCop}","${CodeCop}","${UICop}"
     ],
-    "al.defaultLaunchConfigurationName": "ONB"
+    "al.defaultLaunchConfigurationName": "ONB",
+    "al.ruleSetPath": "alrules.json"
 }

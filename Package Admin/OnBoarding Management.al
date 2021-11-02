@@ -95,7 +95,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
         stag: Record "OnBoarding Selected Tag Hgd";
         R: RecordRef;
         Fr: FieldRef;
-        NewRec: Boolean;
+        //NewRec: Boolean;
         CurrentRec: Integer;
         _decimal: Decimal;
         _date: Date;
@@ -118,7 +118,7 @@ codeunit 70310075 "OnBoarding Management Hgd"
                 if T.findset() then
                     repeat
                         R.OPEN(T."Table No.");
-                        NewRec := true;
+                        //NewRec := true;
                         F.SETRANGE("Package ID", Package.ID);
                         F.SETRANGE("Table No.", T."Table No.");
                         if F.findset() then begin
@@ -263,10 +263,10 @@ codeunit 70310075 "OnBoarding Management Hgd"
                         else
                             Gl.Validate("Account Type", gl."Account Type"::Posting);
                     end;
-                    GL."Account Category" := stag."Account Category";
+                    GL."Account Category" := "G/L Account Category".FromInteger(stag."Account Category");
                     GL."Account Subcategory Entry No." := stag."Account Subcategory Entry No.";
                     GL."Gen. Bus. Posting Group" := stag."Gen. Bus. Posting Group";
-                    GL."Gen. Posting Type" := stag."Gen. Posting Type";
+                    GL."Gen. Posting Type" := "General Posting Type".FromInteger(stag."Gen. Posting Type");
                     GL."Gen. Prod. Posting Group" := stag."Gen. Prod. Posting Group";
                     GL."Direct Posting" := stag."Direct Posting";
                     GL."Tax Area Code" := stag."Tax Area Code";

@@ -223,6 +223,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table OnBoarding Table Hgd - Field Table No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3706383642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package Builder Table</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Builder Table Hgd - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3706383642 - Field 284195533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filters</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Builder Table Hgd - Field Filters - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3706383642 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Builder Table Hgd - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3706383642 - Field 3256664953 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table No..</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Package Builder Table Hgd - Field Table No.. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1717704941 - Field 1768692339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account Category</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -332,11 +352,6 @@
           <source>VAT Product Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Package Tag Hgd - Field VAT Prod. Posting Group - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 557355547 - Method 232785309 - NamedType 3724238339" size-unit="char" translate="yes" xml:space="preserve">
-          <source>This seems to be clean new company, do you want to start the onboarding process?</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit OnBoarding Assisted Setup Hgd - Method StartOnBoarding - NamedType NewCompanyLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 1727675484 - Method 1665861916 - NamedType 2824126877" size-unit="char" translate="yes" xml:space="preserve">
           <source>Chart Of Accounts Excel File</source>
@@ -822,6 +837,26 @@
           <source>All done, all the packages you have select have been applied, please verify the setup before you start posting.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page OnBoarding Step 9 Hgd - Action ContinueAction - Method OnAction - NamedType AllDoneLbl</note>
+        </trans-unit>
+        <trans-unit id="Page 3857794076 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OnBoarding Package Builder</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Package Builder Hgd - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3857794076 - Control 284195533 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Filters field</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Package Builder Hgd - Control Filters - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3857794076 - Control 2961552353 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Package Builder Hgd - Control Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3857794076 - Control 3256664953 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Table No.. field</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Package Builder Hgd - Control Table No.. - Property ToolTip</note>
         </trans-unit>
       </group>
     </body>

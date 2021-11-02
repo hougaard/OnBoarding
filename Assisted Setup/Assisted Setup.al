@@ -31,24 +31,24 @@ codeunit 70310078 "OnBoarding Assisted Setup Hgd"
     // [EventSubscriber(ObjectType::Codeunit, 
     //                  Codeunit::LogInManagement, 
     //                  'OnAfterCompanyOpen', '', true, true)]
-    local procedure StartOnBoarding()
-    var
-        GL: Record "G/L Account";
-        Packages: Record "OnBoarding Modules Hgd";
-        NewCompanyLbl: Label 'This seems to be clean new company, do you want to start the onboarding process?';
-    begin
-        //if GuiAllowed then
-        if GL.IsEmpty() then
-            if Packages.IsEmpty() then
-                if confirm(NewCompanyLbl) then
-                    page.run(Page::"OnBoarding Step 0 Hgd")
-                else begin
-                    // To prevent asking again
-                    Packages.INIT();
-                    Packages."Module ID" := '_';
-                    Packages.INSERT();
-                end;
-    end;
+    // local procedure StartOnBoarding()
+    // var
+    //     GL: Record "G/L Account";
+    //     Packages: Record "OnBoarding Modules Hgd";
+    //     NewCompanyLbl: Label 'This seems to be clean new company, do you want to start the onboarding process?';
+    // begin
+    //     //if GuiAllowed then
+    //     if GL.IsEmpty() then
+    //         if Packages.IsEmpty() then
+    //             if confirm(NewCompanyLbl) then
+    //                 page.run(Page::"OnBoarding Step 0 Hgd")
+    //             else begin
+    //                 // To prevent asking again
+    //                 Packages.INIT();
+    //                 Packages."Module ID" := '_';
+    //                 Packages.INSERT();
+    //             end;
+    // end;
 
     /*
     local procedure IsCompleted(AAS: Record "Aggregated Assisted Setup"): Integer
